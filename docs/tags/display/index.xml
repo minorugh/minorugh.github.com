@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>display on minoru&#39;s Github Site</title>
+    <title>display on Emacs Life</title>
     <link>http://minorugh.github.io/tags/display/</link>
-    <description>Recent content in display on minoru&#39;s Github Site</description>
+    <description>Recent content in display on Emacs Life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 24 Nov 2021 14:01:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/display/index.xml" rel="self" type="application/rss+xml" />
