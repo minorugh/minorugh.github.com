@@ -5,10 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。
-  先週時点では「テストとかなくてもいいから動けばいいだろ」って気持ちだったけどなんとなーくテストを追加したくなったりあんまり慣れてない docker-compose 対応してみたりしていたのと平日はこのプログラムに触れてなかったので、結構日が空いてしまった。
-まあ、それはともかくとして、とりあえず https://github.com/mugijiru/ember-rails-todo-app/ に置いておいた現時点の最新コミットで v1.1.1 のタグを振ってるやつは自分の知ってる一番古いスタイルで書かれてる状態にしてある。
-使ってる Gem  Ember.js 関係  ember-rails ember-source jquery-rails  Ember.js は 2 系まで jquery に依存しているので  よく見ると ember-rails の依存に入ってるから書かなくて良かったな……     active_model_serializers 0.9  0.9 系じゃないとうまく動かないっぽい     CSS framework  bootstrap-sass  レガシー感の演出のため敢えてこれにしている     テスト関係  rspec-rails factory_bot_rails database_rewinder capybara selenium-webdriver    あたり。" />
+<meta name="description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。 先週時点では「テストとかなくてもいいから動けばいいだ" />
 <meta name="keywords" content="blog,developer,personal" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -50,13 +47,10 @@
 
 
 <meta itemprop="name" content="ember-rails で書いた Web アプリを GitHub で公開した">
-<meta itemprop="description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。
-  先週時点では「テストとかなくてもいいから動けばいいだろ」って気持ちだったけどなんとなーくテストを追加したくなったりあんまり慣れてない docker-compose 対応してみたりしていたのと平日はこのプログラムに触れてなかったので、結構日が空いてしまった。
-まあ、それはともかくとして、とりあえず https://github.com/mugijiru/ember-rails-todo-app/ に置いておいた現時点の最新コミットで v1.1.1 のタグを振ってるやつは自分の知ってる一番古いスタイルで書かれてる状態にしてある。
-使ってる Gem  Ember.js 関係  ember-rails ember-source jquery-rails  Ember.js は 2 系まで jquery に依存しているので  よく見ると ember-rails の依存に入ってるから書かなくて良かったな……     active_model_serializers 0.9  0.9 系じゃないとうまく動かないっぽい     CSS framework  bootstrap-sass  レガシー感の演出のため敢えてこれにしている     テスト関係  rspec-rails factory_bot_rails database_rewinder capybara selenium-webdriver    あたり。">
+<meta itemprop="description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。 先週時点では「テストとかなくてもいいから動けばいいだ">
 <meta itemprop="datePublished" content="2021-02-21T15:40:00+09:00" />
 <meta itemprop="dateModified" content="2021-02-21T15:40:00+09:00" />
-<meta itemprop="wordCount" content="91">
+<meta itemprop="wordCount" content="837">
 
 
 
@@ -64,10 +58,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ember-rails で書いた Web アプリを GitHub で公開した"/>
-<meta name="twitter:description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。
-  先週時点では「テストとかなくてもいいから動けばいいだろ」って気持ちだったけどなんとなーくテストを追加したくなったりあんまり慣れてない docker-compose 対応してみたりしていたのと平日はこのプログラムに触れてなかったので、結構日が空いてしまった。
-まあ、それはともかくとして、とりあえず https://github.com/mugijiru/ember-rails-todo-app/ に置いておいた現時点の最新コミットで v1.1.1 のタグを振ってるやつは自分の知ってる一番古いスタイルで書かれてる状態にしてある。
-使ってる Gem  Ember.js 関係  ember-rails ember-source jquery-rails  Ember.js は 2 系まで jquery に依存しているので  よく見ると ember-rails の依存に入ってるから書かなくて良かったな……     active_model_serializers 0.9  0.9 系じゃないとうまく動かないっぽい     CSS framework  bootstrap-sass  レガシー感の演出のため敢えてこれにしている     テスト関係  rspec-rails factory_bot_rails database_rewinder capybara selenium-webdriver    あたり。"/>
+<meta name="twitter:description" content="この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。 先週時点では「テストとかなくてもいいから動けばいいだ"/>
 
 
 
@@ -124,6 +115,11 @@
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -139,7 +135,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        2 minutes
 
         
       </p>
@@ -238,7 +234,7 @@ Ember アプリが複数動いてる状態により近くなったんじゃな�
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        91 Words
+        837 Words
       </p>
 
       <p>

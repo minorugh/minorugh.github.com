@@ -13,19 +13,7 @@
       <pubDate>Thu, 29 Apr 2021 19:03:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/try-org-agenda/</guid>
-      <description>昨年から org-mode をもっと活用していこうということで、 org-clock を使い始めたり org-pomodoro を導入したり org-habits を設定してみたりしている麦汁さんです。
-org-mode は機能が豊富過ぎてマジで何が出来るのか全貌を把握し切れてないのですが、そんな中で、やっぱり全然把握できてなくて使ってなかった機能の1つが org-agenda ってやつ。
-なんかうまく使うと、予定を組んでたり締切を設定していたりするタスクが一目瞭然になってお仕事などが捗るという素敵な機能らしいのだけど、どうもイマイチ使い方がわからなくて放置していました。
-ただまあ仕事が捗るなら試してみる価値はあるよな〜ということで、今年の頭ぐらいから使い始めている。
-まず、平日朝イチでやっておきたい習慣タスクに対して Weekday と Start の2つのタグを振ってるか、 Daily というタグを振ってるのでそれを表示できるやつを以下のように仕込んでる。
-(&amp;#34;hs&amp;#34; &amp;#34;Weekday Start&amp;#34; ((tags &amp;#34;Weekday&amp;amp;Start|Daily&amp;#34; ((org-super-agenda-groups &amp;#39;((:name &amp;#34;予定が過ぎてる作業&amp;#34; :scheduled past) (:name &amp;#34;今日の作業&amp;#34; :scheduled today) (:discard (:anything t)))))))) https://github.com/mugijiru/.emacs.d/blob/a523566f2be993655f74ebf20afc4da444019f5e/inits/60-org.el#L89-L93
-麦汁さんのやりたいことを実現するには、デフォルトの org-agenda だとなんか機能が足りないっぽかったのでそれを補うために org-super-agenda も使っている。
-とりあえず上の例の2行目でタグによる絞り込みをしているがこれは org-mode の標準機能を使っていて https://orgmode.org/manual/Storing-searches.html#Storing-searches あたりに書いてる方法で絞り込んでいる。
-で、その後に org-super-agenda の機能である Group Selectors というやつでスケジュール通りのやつと、スケジュールが過ぎてるやつとで表示を切り分けてる。
-(:discard (:anything t)) は、そこまでの条件にマッチしなかったやつを全部無視するような設定。これがないと Other items という形で全部並んでしまって邪魔になる。
-最初の絞り込みで綺麗に絞り込めると良いかもしれないが、そこまで高度な機能は org-mode には備わってなさそう。それか、そういう高度な機能を見つけて使いこなせる能力を俺が有してないか。
-まあそれはともかく、上の感じでタスクを登録していると以下のように表示される。
-Headlines with TAGS match: Weekday&amp;amp;Start|Daily 予定が過ぎてる作業 next-actions:TODO 排便 :Weekday:Start: 今日の作業 next-actions:TODO 体重・体脂肪率計測 :Daily: 実際のやつはもっと色々あるというか、そもそもわざわざ排便を org-mode で管理はしてないのであくまでサンプルとして2つ置いてるだけだとご認識ください。</description>
+      <description>昨年から org-mode をもっと活用していこうということで、 org-clock を使い始めたり org-pomodoro を導入したり org-habits を設定してみたりしている麦汁さんです。 org-mode は機能が豊富過ぎてマジ</description>
     </item>
     
   </channel>

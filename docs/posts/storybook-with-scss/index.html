@@ -5,17 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。
-それは置いといて、汎用的なコンポーネントライブラリみたいなのを作ってみたくなったので趣味で Storybook を動かしてみている。
-なのでそこで流行りっぽい Storybook で作ってみているのだが素の CSS だと面倒なので SCSS を採用することにした。
-SCSS なのは Brace は欲しかったのと、ライブラリの更新が頻繁なので、更新間隔が空きがちな Stylus より良さそうと思ったから。
-というわけで @storybook/html の 6.3.8 を入れてるわけだけどそこに scss が使えるようにということで
-npm install --save-dev css-loader sass-loader style-loader とかしたら
-npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われてしまう。
-適当に --legacy-peer-deps で突っ込んでもで突っ込んでも、結局は起動時にエラーになってしまう。
-で、面倒なら真面目に調べると、 Storybook の内部で使われてる Webpack が 4 系で、最新の sass-loader, css-loader, style-loader だと Webpack 5 でしか動かないのでそこで依存関係が解決できないってことがわかった。 npm の依存関係のエラー読みにくいでござる。
-というわけで Webpack4 のサポートをしていたバージョンである
- style-loader@2 css-loader@5 sass-loader@10  を入れることで解決した。" />
+<meta name="description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。 それは置いといて、汎" />
 <meta name="keywords" content="blog,developer,personal" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -57,20 +47,10 @@ npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われて
 
 
 <meta itemprop="name" content="Storybook の SCSS 対応でハマった">
-<meta itemprop="description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。
-それは置いといて、汎用的なコンポーネントライブラリみたいなのを作ってみたくなったので趣味で Storybook を動かしてみている。
-なのでそこで流行りっぽい Storybook で作ってみているのだが素の CSS だと面倒なので SCSS を採用することにした。
-SCSS なのは Brace は欲しかったのと、ライブラリの更新が頻繁なので、更新間隔が空きがちな Stylus より良さそうと思ったから。
-というわけで @storybook/html の 6.3.8 を入れてるわけだけどそこに scss が使えるようにということで
-npm install --save-dev css-loader sass-loader style-loader とかしたら
-npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われてしまう。
-適当に --legacy-peer-deps で突っ込んでもで突っ込んでも、結局は起動時にエラーになってしまう。
-で、面倒なら真面目に調べると、 Storybook の内部で使われてる Webpack が 4 系で、最新の sass-loader, css-loader, style-loader だと Webpack 5 でしか動かないのでそこで依存関係が解決できないってことがわかった。 npm の依存関係のエラー読みにくいでござる。
-というわけで Webpack4 のサポートをしていたバージョンである
- style-loader@2 css-loader@5 sass-loader@10  を入れることで解決した。">
+<meta itemprop="description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。 それは置いといて、汎">
 <meta itemprop="datePublished" content="2021-09-17T12:07:00+09:00" />
 <meta itemprop="dateModified" content="2021-09-17T12:07:00+09:00" />
-<meta itemprop="wordCount" content="76">
+<meta itemprop="wordCount" content="509">
 
 
 
@@ -78,17 +58,7 @@ npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われて
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Storybook の SCSS 対応でハマった"/>
-<meta name="twitter:description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。
-それは置いといて、汎用的なコンポーネントライブラリみたいなのを作ってみたくなったので趣味で Storybook を動かしてみている。
-なのでそこで流行りっぽい Storybook で作ってみているのだが素の CSS だと面倒なので SCSS を採用することにした。
-SCSS なのは Brace は欲しかったのと、ライブラリの更新が頻繁なので、更新間隔が空きがちな Stylus より良さそうと思ったから。
-というわけで @storybook/html の 6.3.8 を入れてるわけだけどそこに scss が使えるようにということで
-npm install --save-dev css-loader sass-loader style-loader とかしたら
-npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われてしまう。
-適当に --legacy-peer-deps で突っ込んでもで突っ込んでも、結局は起動時にエラーになってしまう。
-で、面倒なら真面目に調べると、 Storybook の内部で使われてる Webpack が 4 系で、最新の sass-loader, css-loader, style-loader だと Webpack 5 でしか動かないのでそこで依存関係が解決できないってことがわかった。 npm の依存関係のエラー読みにくいでござる。
-というわけで Webpack4 のサポートをしていたバージョンである
- style-loader@2 css-loader@5 sass-loader@10  を入れることで解決した。"/>
+<meta name="twitter:description" content="この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。 それは置いといて、汎"/>
 
 
 
@@ -147,6 +117,11 @@ npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われて
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -162,7 +137,7 @@ npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われて
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        2 minutes
 
         
       </p>
@@ -228,7 +203,7 @@ Webpack5 対応にもなってなさそうなので、本当に使って大丈�
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        76 Words
+        509 Words
       </p>
 
       <p>

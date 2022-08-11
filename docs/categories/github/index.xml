@@ -13,22 +13,7 @@
       <pubDate>Sun, 30 May 2021 09:50:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/using-actions-in-github/</guid>
-      <description>個人リポジトリでは CI などを GitHub Actions に任せている。で、誰かが作ってくれた色々な Action に助けられている。
-というわけでそれらを、より多く助けられてるなってやつから紹介してみようと思う。
-正直、自分が何を使ってたかを後から調べる時にこの記事を読めば大体済むよねってなりそうなので書いている部分が大きい。すーぐ忘れるもん。
-actions/checkout https://github.com/marketplace/actions/checkout
-多分 GitHub Actions を使ってる人ならみんな使ってる。だって普通チェックアウトするもんね。使うよね。
-今のところ自分は単純に checkout するのにしか使ってないが何気にオプションが多い。それらの使い方もしっかり書かれていて良い。
-普通に使う分には
-- uses: actions/checkout@v2 with: ref: ${{ github.head_ref }} submodules: true だけで良い。これで checkout される。楽。
-自分の場合は submodule が必要だった際に
-with: submodules: true としてみたり、 pull_request で動かしたいけど、その hash ではなく branch をチェックアウトしたい時に
-with: ref: ${{ github.head_ref }} としたりなどしてた。
-lazy-actions/slatify https://github.com/marketplace/actions/slatify
-Slack 通知用の Action ですね。オプションが結構充実している。 CI 終了後に成功/失敗を通知するのに使っている。
-Slack の方に Incoming Webhook を用意してそこを使ってメッセージを飛ばせるようにするやつ。
-自分の場合はこんな感じで、成功失敗に関わらず通知を飛ばしていて、ただ失敗の場合は here mention が飛ぶようにしている。
-- name: Notify slack build result uses: lazy-actions/slatify@master if: always() with: type: ${{ job.</description>
+      <description>個人リポジトリでは CI などを GitHub Actions に任せている。で、誰かが作ってくれた色々な Action に助けられている。 というわけでそれらを、より多く助けられてるなって</description>
     </item>
     
     <item>
@@ -37,12 +22,7 @@ Slack の方に Incoming Webhook を用意してそこを使ってメッセー�
       <pubDate>Sat, 29 May 2021 23:31:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/hugo-build-in-github-actions/</guid>
-      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたのでそれを使って build を自動化しました。
-「しました」って書いているけど実は今書いてるこの記事自体がその実験用の記事であり、これを書いている時点ではまだ自動化検証中。なので記事に乗せられるものはほとんどない。
-一応 https://github.com/mugijiru/mugijiru.github.com/tree/master/.github/workflows/build.yml のあたりにそれ用の workflow が入って来る予定。
-使ってるのは hugo-setup というやつ。 run: hugo するだけで build してくれるようで便利そう。 minify は差分的に微妙な感じするのでとりあえず使わないことにした
-成功可否はいつものように Slack 通知するし push して放置したら良いのは良さそう。
-ま、これで build しないで済むようになったらちょっと楽になりそうで楽しみ。</description>
+      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたの</description>
     </item>
     
   </channel>

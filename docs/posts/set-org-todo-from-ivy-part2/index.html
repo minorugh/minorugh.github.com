@@ -5,20 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。
-何がダメだったかというと org-todo-keywords-for-agenda という変数を使ってるのがダメだった。
-この変数、何かよくわからんタイミングで設定されたりするっぽくてほとんどの場合で空の値になっていた。
-というわけで、ちょっと例の関数だと使いたい時にその値が空になっていてばかりで正直使い物にならない関数になっていた。死蔵していた。
-まあ俺はそんな半端な状態で放置するような男ではない。嘘です。1年ぐらい放置していました。だけど逆にいうと1年越しでなんとか対応しました。というのが以下の PR になります。
-https://github.com/mugijiru/.emacs.d/pull/231
-PR の description にも書いている通り愚直に org-todo-keywords を加工するように変更している。
-私の設定している org-todo-keywords は現在は
-((sequence &amp;#34;TODO&amp;#34; &amp;#34;DOING(!)&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE(!)&amp;#34; &amp;#34;SOMEDAY(s)&amp;#34;)) という感じ。
-これを
-(mapcar (lambda (element) (replace-regexp-in-string &amp;#34;\(.&#43;\)&amp;#34; &amp;#34;&amp;#34; element)) (--remove (string= &amp;#34;|&amp;#34; it) (cdar org-todo-keywords))) のような処理で
-&amp;#39;(&amp;#34;TODO&amp;#34; &amp;#34;DOING&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;DONE&amp;#34; &amp;#34;SOMEDAY&amp;#34;) みたいな感じで、キー指定の (s) や、未完了or完了状態を区切る | とかを取り除いた文字列のリストにしている。
-org-todo-keywords は本当は
-(setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE&amp;#34;) (sequence &amp;#34;REPORT&amp;#34; &amp;#34;BUG&amp;#34; &amp;#34;KNOWNCAUSE&amp;#34; &amp;#34;|&amp;#34; &amp;#34;FIXED&amp;#34;) (sequence &amp;#34;|&amp;#34; &amp;#34;CANCELED&amp;#34;))) みたいに複数のシーケンスを持つことができるけどそういう使い方はしてないので、そういうケースは無視している。" />
+<meta name="description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。 何がダメだったかというと org-todo-keywords-for-agenda という変数" />
 <meta name="keywords" content="blog,developer,personal" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -60,23 +47,10 @@ org-todo-keywords は本当は
 
 
 <meta itemprop="name" content="org-todo を ivy で設定できるようにするパート2">
-<meta itemprop="description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。
-何がダメだったかというと org-todo-keywords-for-agenda という変数を使ってるのがダメだった。
-この変数、何かよくわからんタイミングで設定されたりするっぽくてほとんどの場合で空の値になっていた。
-というわけで、ちょっと例の関数だと使いたい時にその値が空になっていてばかりで正直使い物にならない関数になっていた。死蔵していた。
-まあ俺はそんな半端な状態で放置するような男ではない。嘘です。1年ぐらい放置していました。だけど逆にいうと1年越しでなんとか対応しました。というのが以下の PR になります。
-https://github.com/mugijiru/.emacs.d/pull/231
-PR の description にも書いている通り愚直に org-todo-keywords を加工するように変更している。
-私の設定している org-todo-keywords は現在は
-((sequence &#34;TODO&#34; &#34;DOING(!)&#34; &#34;WAIT&#34; &#34;|&#34; &#34;DONE(!)&#34; &#34;SOMEDAY(s)&#34;)) という感じ。
-これを
-(mapcar (lambda (element) (replace-regexp-in-string &#34;\(.&#43;\)&#34; &#34;&#34; element)) (--remove (string= &#34;|&#34; it) (cdar org-todo-keywords))) のような処理で
-&#39;(&#34;TODO&#34; &#34;DOING&#34; &#34;WAIT&#34; &#34;DONE&#34; &#34;SOMEDAY&#34;) みたいな感じで、キー指定の (s) や、未完了or完了状態を区切る | とかを取り除いた文字列のリストにしている。
-org-todo-keywords は本当は
-(setq org-todo-keywords &#39;((sequence &#34;TODO&#34; &#34;|&#34; &#34;DONE&#34;) (sequence &#34;REPORT&#34; &#34;BUG&#34; &#34;KNOWNCAUSE&#34; &#34;|&#34; &#34;FIXED&#34;) (sequence &#34;|&#34; &#34;CANCELED&#34;))) みたいに複数のシーケンスを持つことができるけどそういう使い方はしてないので、そういうケースは無視している。">
+<meta itemprop="description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。 何がダメだったかというと org-todo-keywords-for-agenda という変数">
 <meta itemprop="datePublished" content="2021-06-10T20:53:00+09:00" />
 <meta itemprop="dateModified" content="2021-06-10T20:53:00+09:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="wordCount" content="528">
 
 
 
@@ -84,20 +58,7 @@ org-todo-keywords は本当は
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="org-todo を ivy で設定できるようにするパート2"/>
-<meta name="twitter:description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。
-何がダメだったかというと org-todo-keywords-for-agenda という変数を使ってるのがダメだった。
-この変数、何かよくわからんタイミングで設定されたりするっぽくてほとんどの場合で空の値になっていた。
-というわけで、ちょっと例の関数だと使いたい時にその値が空になっていてばかりで正直使い物にならない関数になっていた。死蔵していた。
-まあ俺はそんな半端な状態で放置するような男ではない。嘘です。1年ぐらい放置していました。だけど逆にいうと1年越しでなんとか対応しました。というのが以下の PR になります。
-https://github.com/mugijiru/.emacs.d/pull/231
-PR の description にも書いている通り愚直に org-todo-keywords を加工するように変更している。
-私の設定している org-todo-keywords は現在は
-((sequence &#34;TODO&#34; &#34;DOING(!)&#34; &#34;WAIT&#34; &#34;|&#34; &#34;DONE(!)&#34; &#34;SOMEDAY(s)&#34;)) という感じ。
-これを
-(mapcar (lambda (element) (replace-regexp-in-string &#34;\(.&#43;\)&#34; &#34;&#34; element)) (--remove (string= &#34;|&#34; it) (cdar org-todo-keywords))) のような処理で
-&#39;(&#34;TODO&#34; &#34;DOING&#34; &#34;WAIT&#34; &#34;DONE&#34; &#34;SOMEDAY&#34;) みたいな感じで、キー指定の (s) や、未完了or完了状態を区切る | とかを取り除いた文字列のリストにしている。
-org-todo-keywords は本当は
-(setq org-todo-keywords &#39;((sequence &#34;TODO&#34; &#34;|&#34; &#34;DONE&#34;) (sequence &#34;REPORT&#34; &#34;BUG&#34; &#34;KNOWNCAUSE&#34; &#34;|&#34; &#34;FIXED&#34;) (sequence &#34;|&#34; &#34;CANCELED&#34;))) みたいに複数のシーケンスを持つことができるけどそういう使い方はしてないので、そういうケースは無視している。"/>
+<meta name="twitter:description" content="org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。 何がダメだったかというと org-todo-keywords-for-agenda という変数"/>
 
 
 
@@ -156,6 +117,11 @@ org-todo-keywords は本当は
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -171,7 +137,7 @@ org-todo-keywords は本当は
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        2 minutes
 
         
       </p>
@@ -240,7 +206,7 @@ org-todo を ivy で設定できるようにしたつもりだったんですけ
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        83 Words
+        528 Words
       </p>
 
       <p>

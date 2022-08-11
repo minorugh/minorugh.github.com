@@ -13,17 +13,7 @@
       <pubDate>Sun, 06 Mar 2022 23:36:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/check-updates-emacs-packages-with-el-get-lock/</guid>
-      <description>変なこだわりがあったり時代の波に乗れてなかったりで use-package を使わずに el-get を使い続けている麦汁です。
-このところは el-get-lock で今入れているバージョンがわかるようにしつつ定期的に el-get-update-all 的なことをしていました。そこもまあ非同期でまとめて更新処理がかかると変なことになるので適当なスクリプト組んでたけども。
-で、なんでそんなことをしているかというと今入れているバージョンとアップデートしたバージョンの差分をチェックしたいから。
-まあ Emacs 界隈では基本的にそんな差分チェックとかしてないで入れてしまう世界っぽいのですが、個人的な妙なこだわりで差分チェックをしたくって、この運用を続けていた。
-なのだけどまとめて更新すると https://github.com/mugijiru/.emacs.d/pull/396/files こんな感じになって差分を調べるのがマジ大変。そしてちょっとサボるとめっちゃ溜まるのでめっちゃ大変。
-というわけでそれがしんどくなったので el-get-lock の lock ファイルの情報から 更新があるパッケージの情報がわかる更新チェックスクリプトを書いてみた。
-自前の el-get の初期化ファイル に依存しているので動かすにはこちらも必要だし当然自分の el-get.lock ファイルも必要なのだけど自分用に書いたスクリプトなのでそのあたりはそんなに気にしてない。
-使い方 更新のあるパッケージの数が知りたい場合 $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute t) と叩けばその数を出力してくれる。 el-get-lock-update-check-execute の第一引数が t だと更新が必要なパッケージの数だけ表示するようになっている。
-まあ作りが雑なので標準エラー出力にもごちゃごちゃ吐かれるから
-$ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute t) 2&amp;gt; /dev/null としてそのあたりの情報は捨てた方がいい
-更新のあるパッケージがどれなのか知りたい場合 $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute) と叩けばどのパッケージが更新可能なのか吐いてくれる。どのパッケージが更新可能か分かれば後は (el-get-update hoge-package) とか実行してあげれば良い。 https://github.com/mugijiru/.emacs.d/pull/467 などはそうやって更新して el-get.</description>
+      <description>変なこだわりがあったり時代の波に乗れてなかったりで use-package を使わずに el-get を使い続けている麦汁です。 このところは el-get-lock で今入れているバージョンがわかるよう</description>
     </item>
     
     <item>
@@ -32,20 +22,7 @@ $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eva
       <pubDate>Tue, 30 Nov 2021 19:28:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/retirement-2021/</guid>
-      <description>約5年前、沖縄から出て来て東京の会社に就職しましたが、今年で退職することにしました。
-最終出社は11月で、12月いっぱいは有休消化なので一ヶ月まるまる休みになります。一ヶ月ずっと休みなので、ちゃんと社会復帰ができるか若干心配ではあります。
-これまでの5年間 約5年前、東京のとあるスタートアップ企業に Rails エンジニア(サーバサイドもフロントもやるよ)ということで入社しました。
-入社当時、開発者は私を含めて片手で数えられる程度しかいない小規模なチームでした。数えるのに二進数を使って片手で31までとかいうのは無しな。
-小規模ではあるものの、その前の職場と比較すると、 CI が整備されていてコードレビュー文化があるなどモダンなチーム開発ができる環境だな〜と思って入社しました。あ、でも CI は前の職場でもしれっと Jenkins 立ててたか自分で。
-入社してしばらくは、人見知りと沖縄なまりを発揮しながらプロダクトの機能開発に従事しつつ、ごちゃっていた CSS を少々マシにしたりといった活動をしてました。
-私が入社した後も業務委託のエンジニアが参画したりで気付いたら片手では数えられないほどの人数になったためサブチームに分割され、その片方を引っ張る立場になったりしました。開発チーム全体からするとサブリーダー的な感じなのかな。ちなみにこの時が多分一番ゴリゴリ開発してた。
-その後は元のリーダーがいなくなったのもあってリーダーに繰り上がったりしました。確かリーダーになった時はまだ割と普通に開発してたけど、その後は色々な事情も重なって、段々と開発からは離れていっていわゆる上流工程だとか管理だとかそういったものの比重が少しずつ増えて行きました。
-というわけで、開発というか実装するのに飢えたりしてたので、開発したいなあとか思いながら転職サイトを眺めたりしていたら結果辞める方向になりました。
-書いてて結構適当だな、まいっか。
-これからどうするのか 上述の通り、転職サイトを眺めていて、その時に東京のとある会社とマッチングしたため、来年1月からはそちらにお世話になる予定です。そこでも Rails とフロントエンドに携わる予定となっています。
-12月いっぱいは有休消化の長期休暇となるため社会復帰が困難かとは思いますが、頑張ってちゃんと働こうと思っています。ちゃんと働けるように休み中も午前には起きるようにするね。
-ちなみに休みの間は沖縄に帰省したりするので沖縄にいる方々はよろしくな。あと帰省前は東京にいるから東京にいる方々もよろしくな。あくまで帰省するだけで U ターンするわけではないので来年も引き続き都内にいます。大体家の中だけど。
-あとは、遠方だったりで直接会ったりできないけど新しい門出を祝いたい方や応援したい方向けに Wishlist を用意しておきましたのでよろしくお願いします^^ https://www.amazon.co.jp/hz/wishlist/ls/2DVSD4OJ72M7V</description>
+      <description>約5年前、沖縄から出て来て東京の会社に就職しましたが、今年で退職することにしました。 最終出社は11月で、12月いっぱいは有休消化なので一ヶ月</description>
     </item>
     
     <item>
@@ -54,15 +31,7 @@ $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eva
       <pubDate>Wed, 24 Nov 2021 15:58:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/xp-pen-star-g640s-with-manjaro/</guid>
-      <description>今年の前半ぐらいに購入しておいて放置していた XP-PEN の Star G640S を Manjaro Linux 環境で使えるか試してみたらとりあえずあっさり動いたというメモ。
-まず最初は単に接続して使えるかを試したら、とりあえず動いた。
-そんでもって、設定を変更したいな〜と思ったら 公式にドライバがあるし、 AUR にはそれにパッチを当てたやつが転がっていた
-というわけで
-yay -S xp-pen-tablet したらそれが入って来た。
-その上で pentablet というのを rofi から起動すると XP PEN の設定ソフトが起動したのでそれを使って適当に設定したらその通りに動いて良かった。具体的には、配置の関係上、上下さかさまで使うように設定した。 USB ケーブルの位置がね……。
-ちなみに xp-pen というのも AUR には転がってるけどもベースとなってるバージョンがちょびっとだけ古いのと人気度的に xp-pen-tablet の方が上だったので、そっちを選んでいる。
-他にも Krita ってソフトで試したんだけど、筆圧もちゃんと検知するみたいだしこれは良さそう。とはいえ絵を描いたりはしないので、筆圧は実は要らないんだけども。
-まあ普通に使えて良かったので今後使うかもしれない。うん。</description>
+      <description>今年の前半ぐらいに購入しておいて放置していた XP-PEN の Star G640S を Manjaro Linux 環境で使えるか試してみたらとりあえずあっさり動いたというメモ。 まず最初は単に接続し</description>
     </item>
     
     <item>
@@ -71,20 +40,7 @@ yay -S xp-pen-tablet したらそれが入って来た。
       <pubDate>Wed, 24 Nov 2021 14:01:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</guid>
-      <description>Manjaro Linux の設定を弄ってる系の記事です。まあまだ2記事目だけど。
-家には外部ディスプレイが存在するけどまあ必ずいつも繋いでるわけでもないので、両方の状態に対応できるようにしたいよねって思ってた。
-それをするには XRandR とそれの設定を保存したりするのに autorandr を使えばいいというのがわかった。ありがとう Arch Wiki。今確認していると autorandr ではなくて xlayoutdisplay とやらでも良さそうだがね……。
-まあそれはさておき、ひとまずはディスプレイに繋いでる状態をなんとかしたかったので最初は
-xrandr --output eDP-1 --mode 2880x1620 --right-of DP-2 というコードを .xprofile に書いていた。 eDP-1 がノート PC のディスプレイで DP-2 が外部接続しているディスプレイである。つまり eDP-1 は 2880x1620 の解像度で出力し DP-2 の右側に配置する、といった感じである。
-DP-2 自体の設定はどこかにいったが、まあ解像度を弄ってるぐらいなのでとりあえずヨシ。
-とりあえずこれにより、ディスプレイを繋いでる状態は良かったんだけどもディスプレイを切り離した時に、仮想デスクトップ2が切り離した方に表示されてるような認識をされていたので困ってしまった。
-調べたところ
-xrandr --output eDP-1 --mode 2880x1620 --output DP-2 --off を実行することで DP-2 つまり外部ディスプレイをオフにできることがわかった。
-というわけで、手動でコマンドを叩く前提にはなるが一旦解決はした。
-そしてこれらそれぞれの状態を autorandr で保存するためまずは繋いでる状態で
-autorandr --save docked として保存し、切り離して先のコマンドを実行し、ノートのディスプレイだけを使える状態にした上で
-autorandr --save mobile と実行することで、それぞれの状態を
- docked mobile  として記録しておいた。</description>
+      <description>Manjaro Linux の設定を弄ってる系の記事です。まあまだ2記事目だけど。 家には外部ディスプレイが存在するけどまあ必ずいつも繋いでるわけでもないので、両方の</description>
     </item>
     
     <item>
@@ -93,20 +49,7 @@ autorandr --save mobile と実行することで、それぞれの状態を
       <pubDate>Sun, 10 Oct 2021 19:01:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/thinkpad-p14s-gen2-intel-with-manjaro-linux/</guid>
-      <description>先月、「えいやっ」で Lenovo ThinkPad P14s Gen 2 (第11世代インテル) を購入した。詳細は面倒だから省くけどそれなりの構成にしている。なお AMD 版にしなかったのは Linux をちゃんと動かせるか不安だったから。
-で、そのマシンに Manjaro Linux を載せて色々設定している。この記事は、そのあたりでどういう設定を書いているかの備忘録的なそれです。
-だってさ〜、絶対忘れるじゃん。だからある程度書いておこうかなって。そしてその上でまた後で入れ直ししてそれを見ながらセットアップし直そうかなと。そしたら多分その時に見逃していた部分も修正できそうだし。
-というわけでなんか適当につらつらと書いていく。
-ま、Twitter につぶやいていたことを記憶で補完しながら書いている感じだけどね。
-Twitter でのつぶやきだと Twilog で
- https://twilog.org/mugijiru/date-211003 https://twilog.org/mugijiru/date-211009  あたりに該当する部分。まだ2日しか触れてないのよな。うん。
-Manjaro Linux のインストール https://manjaro.org/download/ から Xfce 版のやつをダウンロードして Windows PC で DVD に iso ファイルを書き込んでそれを使ってセットアップしてた。
-その際に https://www.mimir.yokohama/useful/0023-installing-manjaro.html を参考にした。まあパーティションどうしたらいいんだっけ以外は特に悩まなかったけど。
-あとは光学ドライブは大昔に購入した外付けのやつなので荷物の奥底から引っ張り出して「うわー USB type B のケーブルはどこだ〜!」「電源アダプタもねえぞー!」とか一人で騒いでた。みんなも機器を仕舞う時はそれに使うケーブルなども一緒に仕舞うようにしような。
-あとパーティションは自動で切ってるけど swap 領域はメモリ拡張すると足らないのでなんとかする必要がありそう。
-Font 設定 デフォルトの Terminal である xfce4-terminal のフォントが何故か文字間が広くて気持ち悪いので Sazanami と IPA フォントを入れた記憶がある。
-history を漁ると
-$ pacman -S ttf-sazanami $ pacman -S otf-ipafont が出て来たのでとりあえずそうやって入れているっぽい。</description>
+      <description>先月、「えいやっ」で Lenovo ThinkPad P14s Gen 2 (第11世代インテル) を購入した。詳細は面倒だから省くけどそれなりの構成にしている。なお AMD 版にしなかったのは Linux</description>
     </item>
     
     <item>
@@ -115,20 +58,7 @@ $ pacman -S ttf-sazanami $ pacman -S otf-ipafont が出て来たのでとりあ�
       <pubDate>Sun, 26 Sep 2021 13:09:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ginza-rails-37/</guid>
-      <description>ブログ書くまでが勉強会って話もあるのでブログに残しておきます。正直そういうのサボりがちだけどね……。
-一昨日の夜にオンライン開催していた 銀座Rails#37 に参加しました。
-今回話されたテーマは
- Google Play IAB(In-App Billing) 〜Railsでのサーバサイド対応のすべて〜 Kaigi on Rails 2021タイムテーブル完全解説 Ruby/Railsと遠隔講義：受講者評点がリモートでも伸びた理由 既存のRESTful なRails プロジェクトに、GraphQLの導入を検討した話  の4本立てと、リンクアンドモチベーション様及び DeNA 様のスポンサーセッション。
-Google Play IAB(In-App Billing) 〜Railsでのサーバサイド対応のすべて〜 この話は正直私の能力不足で「なんか知らんがすごそうだ」って感じでした。決済周りも Google Play 周りも Android も全然わからん……。
-TL を見てると Google Play IAB は筋が良さそうみたいな雰囲気を感じた。あと、テーブル設計も含めた大分具体的な話もしているのでこのあたりに手を出す人にはとても役立ちそうな雰囲気を感じたので資料をチェックしておくと良さそう
-https://speakerdeck.com/mitsuboshi/google-play-iab-in-app-billing-railsdefalsesabasaidodui-ying-falsesubete
-Kaigi on Rails 2021タイムテーブル完全解説 Kaigi on Rails 2021 の各発表のタイムテーブル、つまりそれぞれの時間でどういう話がされるのかを制限時間内に解説してくれていた。タイムテーブルはこちらから
-色々興味深い話がありそうなので私も参加登録しておきました。イエイ。金曜日は有休を取ろうと思います。
-その前に業務としての参加を上司に打診しようかな。業務に役立ちそうな内容がたくさんあるのでチーム全員参加してもらいたい。
-参加登録は https://kaigionrails.doorkeeper.jp/events/127662 で受付中。
-Ruby/Railsと遠隔講義：受講者評点がリモートでも伸びた理由 資料が探せなかったので記憶頼りの記述になるけど講義の地道な改善で評点が上がったというお話でした。情報のインプットはオンデマンドでできるようにして講義では課題を実施してもらうとか。
-Kaigi on Rails 2021 でも yasulab さんの発表があるので関係した話が聞けるかも? https://kaigionrails.org/2021/talks/yasulab/
-既存のRESTful なRails プロジェクトに、GraphQLの導入を検討した話 最終的には GraphQL の導入は一旦見送りにしたよという発表でした。今回の発表で、私はこの発表が一番好きでした。</description>
+      <description>ブログ書くまでが勉強会って話もあるのでブログに残しておきます。正直そういうのサボりがちだけどね……。 一昨日の夜にオンライン開催していた 銀座R</description>
     </item>
     
     <item>
@@ -137,17 +67,7 @@ Kaigi on Rails 2021 でも yasulab さんの発表があるので関係した話
       <pubDate>Fri, 17 Sep 2021 12:07:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/storybook-with-scss/</guid>
-      <description>この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。
-それは置いといて、汎用的なコンポーネントライブラリみたいなのを作ってみたくなったので趣味で Storybook を動かしてみている。
-なのでそこで流行りっぽい Storybook で作ってみているのだが素の CSS だと面倒なので SCSS を採用することにした。
-SCSS なのは Brace は欲しかったのと、ライブラリの更新が頻繁なので、更新間隔が空きがちな Stylus より良さそうと思ったから。
-というわけで @storybook/html の 6.3.8 を入れてるわけだけどそこに scss が使えるようにということで
-npm install --save-dev css-loader sass-loader style-loader とかしたら
-npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われてしまう。
-適当に --legacy-peer-deps で突っ込んでもで突っ込んでも、結局は起動時にエラーになってしまう。
-で、面倒なら真面目に調べると、 Storybook の内部で使われてる Webpack が 4 系で、最新の sass-loader, css-loader, style-loader だと Webpack 5 でしか動かないのでそこで依存関係が解決できないってことがわかった。 npm の依存関係のエラー読みにくいでござる。
-というわけで Webpack4 のサポートをしていたバージョンである
- style-loader@2 css-loader@5 sass-loader@10  を入れることで解決した。</description>
+      <description>この記事は、2021年9月16日に起きたことなので、多分賞味期限は凄く短かい内容だけど、自分用にメモとして書いています。 それは置いといて、汎</description>
     </item>
     
     <item>
@@ -156,14 +76,7 @@ npm ERR! code ERESOLVE npm ERR! ERESOLVE could not resolve などと言われて
       <pubDate>Thu, 16 Sep 2021 10:22:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/configure-webpack-dev-server-with-emacs/</guid>
-      <description>また同じ罠を踏んだ時に同じ対応ができるようにということでメモ。
-プライベートで vue-cli とかを使って npm run serve とかしている時にファイルを変更する度に
-[Error: ENOENT: no such file or directory, stat &amp;#39;/path/to/src/components/.#HelloWorld.vue&amp;#39;] とか怒られて辛かった。 Emacs のロックファイルである。
-ロックファイルを生成しないというのもアリかもしれないが正常に保存されれば自動で消えるファイルだしそこに手を入れるよりは、監視対象ファイルを制限した方が良さそう、と判断して調べた。
-npm run serve では裏側で webpack-dev-server が動いているようなのでそこで watch 対象からロックファイルを外すべく vue.config.js を以下のように設定した。
-module.exports = { configureWebpack: { devServer: { watchOptions: { ignored: [&amp;#39;node_modules&amp;#39;, &amp;#39;public&amp;#39;, &amp;#39;**/.#*&amp;#39;], } } } } 肝は &#39;**/.#*&#39; である。 Emacs のロックファイルは .# の後にオリジナルのファイル名がくっついてくる形なのでそいつを全部無視する、というだけ。
-これでファイルを変更しても怒られなくなってハッピー。
-ちなみに同じ問題が React の開発の時にも発生するので多分同じような方法で直せる。まだ試してないけど。</description>
+      <description>また同じ罠を踏んだ時に同じ対応ができるようにということでメモ。 プライベートで vue-cli とかを使って npm run serve とかしている時にファイルを変更する度に [Error: ENOENT: no</description>
     </item>
     
     <item>
@@ -172,10 +85,7 @@ module.exports = { configureWebpack: { devServer: { watchOptions: { ignored: [&a
       <pubDate>Sun, 22 Aug 2021 00:50:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-cli-rails-with-rails6-without-deprecation-warning/</guid>
-      <description>ember-cli-rails なアプリを Rails6 対応にしてみた。が、リリースされている Gem をそのまま使うと
- DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper, ActionText::TagHelper, and EmberCliRailsAssetsHelper.
-Being able to do this is deprecated. Autoloading during initialization is going to be an error condition in future versions of Rails.
-Reloading does not reboot the application, and therefore code executed during initialization does not run again. So, if you reload ActionText::ContentHelper, for example, the expected changes won&amp;rsquo;t be reflected in that stale Module object.</description>
+      <description>ember-cli-rails なアプリを Rails6 対応にしてみた。が、リリースされている Gem をそのまま使うと DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper, ActionText::TagHelper, and EmberCliRailsAssetsHelper. Being able to do this is deprecated. Autoloading during initialization is going to be an error condition in future versions of Rails. Reloading does not</description>
     </item>
     
     <item>
@@ -184,18 +94,7 @@ Reloading does not reboot the application, and therefore code executed during in
       <pubDate>Sun, 11 Jul 2021 13:42:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/sticky-shift-with-key-chord/</guid>
-      <description>Emacs 使っていると左手小指を酷使しますよね。
-まあそれはみんな分かり切ってるので、それぞれが色々な工夫で、左手小指を必要以上に使わないような対応をされていると思います。
-私もそんな中の一人で、最近もうシフトキーを押したくないなあという気持ちになって来ました。
-というわけで key-chord を使って Sticky Shift を一部実現して少しだけシフトキーを押さなくても済むような状態を作ってみました。
-とりあえず以下の文章を読むのが面倒だったら https://github.com/mugijiru/.emacs.d/pull/324/files#diff-9fab5d4bac36f504628abcc3cea5b2a1092d96f7bd2286944d5b822c6821bb3a にコードがあるのでそっちを見てもらえればと。
-実現したこと セミコロン + アルファベットで対応する大文字を出力 プログラムを書いているとやれ camelCase だの PascalCase だのでちょくちょくと大文字を入力する機会多いですよね。
-というわけで、例えば ;a と素早く入力したら A が出力されるようにしてみたというのが以下のコードになります。
-(mapc (lambda (key) (key-chord-define-global (concat &amp;#34;;&amp;#34; (char-to-string key)) (char-to-string (- key 32)))) (number-sequence ?a ?z)) number=sequence で a から z までのシーケンスを作成して ; との組み合わせを key-chord に食わせて対応するアルファベットの大文字を渡しているというシンプルな構成。
-key-chord-define-global などは第二引数に文字列を与えるとそれをそのまま define-key の第三引数に渡すのであたかもそれが入力されたかのような振舞をするのでそれを利用している。
-といいつつ Hydra とか magit の上でそれをやってもうまくいかないのでキーボード入力とは少し違う様子。
-セミコロン2回でシフトキーが押された状態にする 上に書いたように Hydra とか magit とかでいい感じに動かすためにはまだ足りてない。
-が、それをいい感じに解決する方法をまだ知らないので以下の実装により ;; と入力することで、シフトキーが押されてる状態を実現している。</description>
+      <description>Emacs 使っていると左手小指を酷使しますよね。 まあそれはみんな分かり切ってるので、それぞれが色々な工夫で、左手小指を必要以上に使わないような対応を</description>
     </item>
     
     <item>
@@ -204,20 +103,7 @@ key-chord-define-global などは第二引数に文字列を与えるとそれ�
       <pubDate>Sun, 13 Jun 2021 15:18:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/testing-my-emacs-command/</guid>
-      <description>これまで Emacs Lisp のテストコードを書いてなかった。
-というのも、自分は特にパッケージを作ってるわけでもなく、設定ファイルを弄ってるだけなので動かなくなっても困るのは自分だけ、という状況なのでまあテストしなくてもいいかな、みたいな。
-とは思っているものの、やっぱりテストコード書いてみたいよねってことで設定ファイルに書いている自作の関数やコマンドをテストすることにした。
-自作関数のテスト 自作コマンドの内部で使ってる関数のテストを https://github.com/mugijiru/.emacs.d/pull/233 で書いてみた。
-なぜそんなものをテストしているかというと、リファクタリングしたかったので、ならテスト書いた方がいいよね〜みたいな。
-テストコードは以下のような感じ。前提条件として org-todo-keywords を用意して、関数を実行した時の期待する結果と、実際の結果を should マクロを使って合っていることを確認している。
-(ert-deftest test:my/org-todo-keyword-strings () &amp;#34;Test of `my/org-todo-keyword-strings&amp;#39;.&amp;#34; (setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;DOING(!)&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE(!)&amp;#34; &amp;#34;SOMEDAY(s)&amp;#34;))) (should (equal &amp;#39;(&amp;#34;TODO&amp;#34; &amp;#34;DOING&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;DONE&amp;#34; &amp;#34;SOMEDAY&amp;#34;) (my/org-todo-keyword-strings)))) ま、とても簡単な例だと思う。
-ちなみにこの記事や出した PR では setq を使ってるけど、最新のコードでは let を使うようにテストを書き直してある。
-ivy を使った自作コマンドのテスト 上に示した PR では ivy を使った処理はテストができない(しづらい)と判断しコマンド内部で使ってる関数だけテストしている。
-だけどやっぱり ivy を使ってるコマンド自体もテストしてみたいよねということで以下の PR を作った
-https://github.com/mugijiru/.emacs.d/pull/235
-with-simulated-input の導入 ivy を使ってるコマンドのテストで難しそうだなと思っていたのが ivy の操作部分のシミュレーション。
-なのだけど https://github.com/DarwinAwardWinner/with-simulated-input を見つけて解決した。
-こいつはユーザーの入力を文字列で表現してその通りに操作をしてくれるようなライブラリ。</description>
+      <description>これまで Emacs Lisp のテストコードを書いてなかった。 というのも、自分は特にパッケージを作ってるわけでもなく、設定ファイルを弄ってるだけなので動かなく</description>
     </item>
     
     <item>
@@ -226,20 +112,7 @@ with-simulated-input の導入 ivy を使ってるコマンドのテストで難
       <pubDate>Thu, 10 Jun 2021 20:53:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/set-org-todo-from-ivy-part2/</guid>
-      <description>org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。
-何がダメだったかというと org-todo-keywords-for-agenda という変数を使ってるのがダメだった。
-この変数、何かよくわからんタイミングで設定されたりするっぽくてほとんどの場合で空の値になっていた。
-というわけで、ちょっと例の関数だと使いたい時にその値が空になっていてばかりで正直使い物にならない関数になっていた。死蔵していた。
-まあ俺はそんな半端な状態で放置するような男ではない。嘘です。1年ぐらい放置していました。だけど逆にいうと1年越しでなんとか対応しました。というのが以下の PR になります。
-https://github.com/mugijiru/.emacs.d/pull/231
-PR の description にも書いている通り愚直に org-todo-keywords を加工するように変更している。
-私の設定している org-todo-keywords は現在は
-((sequence &amp;#34;TODO&amp;#34; &amp;#34;DOING(!)&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE(!)&amp;#34; &amp;#34;SOMEDAY(s)&amp;#34;)) という感じ。
-これを
-(mapcar (lambda (element) (replace-regexp-in-string &amp;#34;\(.+\)&amp;#34; &amp;#34;&amp;#34; element)) (--remove (string= &amp;#34;|&amp;#34; it) (cdar org-todo-keywords))) のような処理で
-&amp;#39;(&amp;#34;TODO&amp;#34; &amp;#34;DOING&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;DONE&amp;#34; &amp;#34;SOMEDAY&amp;#34;) みたいな感じで、キー指定の (s) や、未完了or完了状態を区切る | とかを取り除いた文字列のリストにしている。
-org-todo-keywords は本当は
-(setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE&amp;#34;) (sequence &amp;#34;REPORT&amp;#34; &amp;#34;BUG&amp;#34; &amp;#34;KNOWNCAUSE&amp;#34; &amp;#34;|&amp;#34; &amp;#34;FIXED&amp;#34;) (sequence &amp;#34;|&amp;#34; &amp;#34;CANCELED&amp;#34;))) みたいに複数のシーケンスを持つことができるけどそういう使い方はしてないので、そういうケースは無視している。</description>
+      <description>org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。 何がダメだったかというと org-todo-keywords-for-agenda という変数</description>
     </item>
     
     <item>
@@ -248,22 +121,7 @@ org-todo-keywords は本当は
       <pubDate>Sun, 30 May 2021 09:50:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/using-actions-in-github/</guid>
-      <description>個人リポジトリでは CI などを GitHub Actions に任せている。で、誰かが作ってくれた色々な Action に助けられている。
-というわけでそれらを、より多く助けられてるなってやつから紹介してみようと思う。
-正直、自分が何を使ってたかを後から調べる時にこの記事を読めば大体済むよねってなりそうなので書いている部分が大きい。すーぐ忘れるもん。
-actions/checkout https://github.com/marketplace/actions/checkout
-多分 GitHub Actions を使ってる人ならみんな使ってる。だって普通チェックアウトするもんね。使うよね。
-今のところ自分は単純に checkout するのにしか使ってないが何気にオプションが多い。それらの使い方もしっかり書かれていて良い。
-普通に使う分には
-- uses: actions/checkout@v2 with: ref: ${{ github.head_ref }} submodules: true だけで良い。これで checkout される。楽。
-自分の場合は submodule が必要だった際に
-with: submodules: true としてみたり、 pull_request で動かしたいけど、その hash ではなく branch をチェックアウトしたい時に
-with: ref: ${{ github.head_ref }} としたりなどしてた。
-lazy-actions/slatify https://github.com/marketplace/actions/slatify
-Slack 通知用の Action ですね。オプションが結構充実している。 CI 終了後に成功/失敗を通知するのに使っている。
-Slack の方に Incoming Webhook を用意してそこを使ってメッセージを飛ばせるようにするやつ。
-自分の場合はこんな感じで、成功失敗に関わらず通知を飛ばしていて、ただ失敗の場合は here mention が飛ぶようにしている。
-- name: Notify slack build result uses: lazy-actions/slatify@master if: always() with: type: ${{ job.</description>
+      <description>個人リポジトリでは CI などを GitHub Actions に任せている。で、誰かが作ってくれた色々な Action に助けられている。 というわけでそれらを、より多く助けられてるなって</description>
     </item>
     
     <item>
@@ -272,12 +130,7 @@ Slack の方に Incoming Webhook を用意してそこを使ってメッセー�
       <pubDate>Sat, 29 May 2021 23:31:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/hugo-build-in-github-actions/</guid>
-      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたのでそれを使って build を自動化しました。
-「しました」って書いているけど実は今書いてるこの記事自体がその実験用の記事であり、これを書いている時点ではまだ自動化検証中。なので記事に乗せられるものはほとんどない。
-一応 https://github.com/mugijiru/mugijiru.github.com/tree/master/.github/workflows/build.yml のあたりにそれ用の workflow が入って来る予定。
-使ってるのは hugo-setup というやつ。 run: hugo するだけで build してくれるようで便利そう。 minify は差分的に微妙な感じするのでとりあえず使わないことにした
-成功可否はいつものように Slack 通知するし push して放置したら良いのは良さそう。
-ま、これで build しないで済むようになったらちょっと楽になりそうで楽しみ。</description>
+      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたの</description>
     </item>
     
     <item>
@@ -286,15 +139,7 @@ Slack の方に Incoming Webhook を用意してそこを使ってメッセー�
       <pubDate>Mon, 24 May 2021 09:02:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-introduction/</guid>
-      <description>ちょっとした事情で Ember.js 入門的なサムシングをすることになったけどどうせなら公開情報にしちゃえって気持ちになったので資料化する前にブログの記事にしちゃうぞ、というエントリです。
-想定する読者 携わっているシステムが ember-rails を利用して作られているために令和になっても 2018 年にサポートが切れてしまった Ember.js@2.18 のアプリケーションをなんとか動かし続けないといけない哀れな子羊たち
-記事を書いている人 Rails と Ember.js と Vue.js での開発をしたことがある人。 React や Angular はやったことない。なので比較には Rails と Vue.js を出しがち
-この記事で書かないこと 既に存在してしまっている ember-rails アプリケーションの保守をする人達向けの記事なので、 ember-rails を使って新規で Ember.js アプリを構築する、みたいなことは書きません。
-それに今更 ember-rails で構築するのはよろしくないですし、 Rails で Ember.js やりたいなら ember-cli-rails にしておいた方が良いですよ。
-どうしても構築から知りたい人は ember-rails-todo-app で ember-rails アプリを構築したあたりのコミット を見たりとかしたらなんとなくわかるかもだけどまああんまり要らないよね。
-Ember.js と ember-rails の簡単な紹介 Ember.js とは Ember.js はWebフロントエンドMVCフレームワークの1種。昔流行ったよね WebフロントエンドMVC。残念ながら最近はもう主流ではない。
-Ruby on Rails の影響を受けてるようなので、 Rails エンジニアが取っ付きやすいフレームワークになっている。多分。
-ember-rails とは ember-rails は Ember.js をいい感じに Rails と連携してくれる素敵な Gem です。これを使うと Rails 上で動く Ember.</description>
+      <description>ちょっとした事情で Ember.js 入門的なサムシングをすることになったけどどうせなら公開情報にしちゃえって気持ちになったので資料化する前にブログの記事にし</description>
     </item>
     
     <item>
@@ -303,20 +148,7 @@ ember-rails とは ember-rails は Ember.js をいい感じに Rails と連携�
       <pubDate>Sun, 09 May 2021 14:35:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/update-emberjs-3_4-to-latest/</guid>
-      <description>いつも Ember.js ネタを書く時に使ってる https://github.com/mugijiru/ember-rails-todo-app のリポジトリですが、ゴールデンウィークで Ember.js の最新版への対応を完了させました。
-そこへの対応のために https://github.com/mugijiru/ember-components の addon の方も 2.18 から最新化することになりました。
-対応の方針 どう対応させていったかというと、 ember-cli-rails の Ember.js を 2.18 から 3.4 にアップデート の記事でも書いた
- 3系で LTS であったバージョンを順番に適用していく方針
- を実際にやってみたって感じ。
-実際の対応 eslint 対応 3.4 に上げた後に、eslint で怒られてるのに対応できそうだなとなったので 3.8 に上げる前に修正をした
-https://github.com/mugijiru/ember-rails-todo-app/pull/66
-大きな変更点は jQuery を使って要素を取得していたところを純粋な JS に書き換えたところぐらい。
-3.4 → 3.8 https://github.com/mugijiru/ember-rails-todo-app/pull/67
- ember-cli-update --to 3.8 yarn ember-cli-update --codemods  を叩いたぐらい。codemods では特がないので難しいところは何もない。
-3.8 → 3.12 https://github.com/mugijiru/ember-rails-todo-app/pull/68
-3.8 に上げるよりはちょっと面倒だった。
-が、基本的には
- ember-cli-update --to 3.12 yarn ember-cli-update --codemods  を叩いてるだけである。</description>
+      <description>いつも Ember.js ネタを書く時に使ってる https://github.com/mugijiru/ember-rails-todo-app のリポジトリですが、ゴールデンウィークで Ember.js の最新版への対応を完了させました。 そこへの対応のために https://github.com/mugijiru/ember-components の addon の方も</description>
     </item>
     
     <item>
@@ -325,19 +157,7 @@ https://github.com/mugijiru/ember-rails-todo-app/pull/66
       <pubDate>Thu, 29 Apr 2021 19:03:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/try-org-agenda/</guid>
-      <description>昨年から org-mode をもっと活用していこうということで、 org-clock を使い始めたり org-pomodoro を導入したり org-habits を設定してみたりしている麦汁さんです。
-org-mode は機能が豊富過ぎてマジで何が出来るのか全貌を把握し切れてないのですが、そんな中で、やっぱり全然把握できてなくて使ってなかった機能の1つが org-agenda ってやつ。
-なんかうまく使うと、予定を組んでたり締切を設定していたりするタスクが一目瞭然になってお仕事などが捗るという素敵な機能らしいのだけど、どうもイマイチ使い方がわからなくて放置していました。
-ただまあ仕事が捗るなら試してみる価値はあるよな〜ということで、今年の頭ぐらいから使い始めている。
-まず、平日朝イチでやっておきたい習慣タスクに対して Weekday と Start の2つのタグを振ってるか、 Daily というタグを振ってるのでそれを表示できるやつを以下のように仕込んでる。
-(&amp;#34;hs&amp;#34; &amp;#34;Weekday Start&amp;#34; ((tags &amp;#34;Weekday&amp;amp;Start|Daily&amp;#34; ((org-super-agenda-groups &amp;#39;((:name &amp;#34;予定が過ぎてる作業&amp;#34; :scheduled past) (:name &amp;#34;今日の作業&amp;#34; :scheduled today) (:discard (:anything t)))))))) https://github.com/mugijiru/.emacs.d/blob/a523566f2be993655f74ebf20afc4da444019f5e/inits/60-org.el#L89-L93
-麦汁さんのやりたいことを実現するには、デフォルトの org-agenda だとなんか機能が足りないっぽかったのでそれを補うために org-super-agenda も使っている。
-とりあえず上の例の2行目でタグによる絞り込みをしているがこれは org-mode の標準機能を使っていて https://orgmode.org/manual/Storing-searches.html#Storing-searches あたりに書いてる方法で絞り込んでいる。
-で、その後に org-super-agenda の機能である Group Selectors というやつでスケジュール通りのやつと、スケジュールが過ぎてるやつとで表示を切り分けてる。
-(:discard (:anything t)) は、そこまでの条件にマッチしなかったやつを全部無視するような設定。これがないと Other items という形で全部並んでしまって邪魔になる。
-最初の絞り込みで綺麗に絞り込めると良いかもしれないが、そこまで高度な機能は org-mode には備わってなさそう。それか、そういう高度な機能を見つけて使いこなせる能力を俺が有してないか。
-まあそれはともかく、上の感じでタスクを登録していると以下のように表示される。
-Headlines with TAGS match: Weekday&amp;amp;Start|Daily 予定が過ぎてる作業 next-actions:TODO 排便 :Weekday:Start: 今日の作業 next-actions:TODO 体重・体脂肪率計測 :Daily: 実際のやつはもっと色々あるというか、そもそもわざわざ排便を org-mode で管理はしてないのであくまでサンプルとして2つ置いてるだけだとご認識ください。</description>
+      <description>昨年から org-mode をもっと活用していこうということで、 org-clock を使い始めたり org-pomodoro を導入したり org-habits を設定してみたりしている麦汁さんです。 org-mode は機能が豊富過ぎてマジ</description>
     </item>
     
     <item>
@@ -346,14 +166,7 @@ Headlines with TAGS match: Weekday&amp;amp;Start|Daily 予定が過ぎてる作�
       <pubDate>Thu, 29 Apr 2021 18:03:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/why-not-use-org-pomodoro/</guid>
-      <description>org-pomodoro って便利な org-mode の拡張があるんですよ。 org-clock とポモドーロテクニックを組み合わせて使える便利なやつ。
-デフォルト設定で話すと、何か TODO にカーソルを乗せてる状態で起動したらそいつが clock-in した上で25分のタイマーが動いて、 25分経過したら clock-out した上で、5分の休憩が挟まってその休憩終了時には「次のポモドーロ開始するかい?」みたいなのが出て来てそこでまた M-x org-pomodoro を叩いたらまた25分のタイマーが開始して……みたいなやつ。
-まあ使い方それで合ってたかちょっと自信ないけど。というのも、表題の通りで、最近使ってないんですよね。便利な雰囲気なのに。
-なんで馴染まないのかな〜。やっぱり割込み作業が多くて pomodoro を乱されるから? あとは会議が挟まってくるとどう運用していいかわからなくなるから?
-前者の解決は、タイマー起動中は Slack の通知を切って見れないようにするぐらいじゃないと多分割込みを防げないよな〜という気はする。ちょっとその運用考えるか。
-後者は、まあ会議の時はもう pomodoro 放置でいいっていう割り切りかな。
-という悩みがあるのでポモドーロテクニックを1年以上継続しているぞ! みたいな猛者の方はどうやってそれを維持しているか教えてほしい。
-org-clock は使ってるけどね。pomodoro 存在を忘れてた。無念。</description>
+      <description>org-pomodoro って便利な org-mode の拡張があるんですよ。 org-clock とポモドーロテクニックを組み合わせて使える便利なやつ。 デフォルト設定で話すと、何か TODO にカーソルを乗せて</description>
     </item>
     
     <item>
@@ -362,32 +175,7 @@ org-clock は使ってるけどね。pomodoro 存在を忘れてた。無念。<
       <pubDate>Sun, 25 Apr 2021 23:46:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/research-rpa/</guid>
-      <description>RPA ちょっとだけ調べてみたのでとりあえず Blog 記事にする。ちなみにいくつかリンク張るけど、面倒なのでアフィリエイトとかそういうのにはなってない。お金は好きだけど面倒が勝った。
-モチベーション 身の回りで RPA 導入するって話があってそれ聞いて色々思うところがあったから調べてしまった。そんで折角調べたんだから世の中に出してしまえ、というぐらいの軽い気持ち。
-そんな軽い気持ちなので、まだどれ1つ試してはいない。
-あと、記事中でやたら Excel のことを気にしているけど、自動化してデータ取りたいやつの半分ぐらいは Excel だろっていう偏見があるからです。
-RPA とは わざわざ説明要らない気がするけど一応。
-ロボティクス・プロセス・オートメーションとかいうやつでざっくり言うと「機械に任せて自動化しようぜ」ってやつ。あと、プログラマではない人も扱えるようにコードは書かないとか、昔からある画面自動操作とちょっと違って、仮想環境上で実行されるとかあるっぽい。ま、細かいことは知らん。動きゃいいんだよ動きゃ。
-RPA の分類 ざっくりと
- スタンドアローン型 オンプレミス型 クラウド型  と分かれる。
-スタンドアローン型 デスクトップ型とも言われるやつ。一台のマシンにインストールしてその中で完結するタイプ。感覚的には一番わかりやすいんじゃないかな。 RDA(ロボティクス・デスクトップ・オートメーション)と呼んで他と区別されることもあるらしい。
-各個人のマシンにインストールして動かすので操作対象の制限が少なく個人作業の効率化に向いている。
-インストールして使うタイプなので、大体 OS の制限がある。っていうか Windows で使ってくださいって言われる印象がある。
-仕組みが単純だからなのか比較的安価なのが多いっぽい。とはいえ、大体初期導入で20万円とか30万円とか取られて月々10万円取られる、みたいなのがお約束。
-で、個人の作業の効率化には向いているけど、会社全体とか部署全体の効率化のために他の人が作ったシナリオを流用したい、みたいなのには向かない。だって各個人のマシンに入れるものですし。
-それを回避するために、こいつを自社管理サーバ(オンプレでも AWS でも)にインストールして、 1アカウントを使い回してリモートデスクトップでアクセスして操作する、みたいなのはバカげた考えなのでやめた方がいい。
-共通アカウントって時点でセキュアじゃないし、誰かのロボットが動いていると自分の処理が動かせないので待ちが発生するし、サーバの管理コストも発生するしでコストメリットに対するデメリットがでかいはず。導入しようとしている人にそれが理解できるか知らんけど。
-オンプレミス型 サーバ型とも言われるやつ。オンプレサーバにインストールしてみんなで使うみたいな用途向け。
-オンプレサーバに入れるので
- 情報が社外に流出しないようにしたい イントラネットのサーバにアクセスしたい 使用状態の監視をしたい  みたいなことを要求しがちな大企業でも導入しやすそうな気がしている。
-一方で、オンプレサーバに入れるとなるとサーバ管理コストも発生するし、多分仕組み上お値段もお高めになるかなって気はしている。
-オンプレミス型とは書いているけど別に AWS EC2 上で動かしても問題はないはず。イントラネットに閉じる、みたいなのとはズレてくるからメリットが薄れそうだけど。
-正直3分類の中で一番興味ないのでほとんど調べてない。つまりできないこととかもよくわからん。
-多分、サーバにはサーバソフトウェアを入れた上で、各自のマシンにはクライアントソフトウェアを入れて、それ経由でサーバにアクセスして、実際の処理は各自のマシンで実行される仕組みにしているんじゃないかな。じゃないと大企業で大事な Excel などの操作もできなさそう(やりにくそう)だし。
-クラウド型 みんな大好きクラウド環境で動くタイプ。クラウド環境で動くので、使用場所を問わないし管理もしやすいやつ。ほっといても運営がどんどん機能追加してくれるしね。多分。
-ブラウザ上で完結している場合は Excel などの操作はできないが、それを解決するために別途クライアントをインストールする、というタイプもある。
-ただ、多分クライアントソフトの開発にそれほどリソースが割けないので対応ソフトウェアが多くはない、ということもありそう。まあ時代はクラウドなので今時 Excel などのローカル環境で動くソフトウェアなんて使いませんよねハハハ。
-オンプレ型と違ってサーバ管理コストは発生しないのでエンジニアの端くれとしてはオンプレ型よりこっちの方が好み。だって情シスでもないのにサーバ管理させられたくないっしょ。通常業務が滞る。</description>
+      <description>RPA ちょっとだけ調べてみたのでとりあえず Blog 記事にする。ちなみにいくつかリンク張るけど、面倒なのでアフィリエイトとかそういうのにはなってない。お</description>
     </item>
     
     <item>
@@ -396,16 +184,7 @@ RPA の分類 ざっくりと
       <pubDate>Sun, 04 Apr 2021 15:38:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/update-emberjs-2.18to3/</guid>
-      <description>前回までで ember-rails と ember-cli-rails の共存周りを一通り済ませてそのあたりは大体満足したので次の段階である Ember.js アプリの最新化を進めていくぞい。
-で、どう進めていくかというと 2.18 は最新版からはかなり遠いので 3系で LTS であったバージョンを順番に適用していく方針。
-それ以外のところだと基本的に https://cli.emberjs.com/release/basic-use/upgrading/ に従って対応をしていく。
-というのを実践した PR がこちらになります。 https://github.com/mugijiru/ember-rails-todo-app/pull/61
-ember-cli の更新 https://github.com/mugijiru/ember-rails-todo-app/pull/61/commits/0b71b86330ab46ec8df46cdcb308daf3ed766681 のコミットでやっていることですね。
-まずは Dockerfile で入れている ember-cli を 2.18 から 3.4 にする。 3.4 系の最終バージョンは 3.4.4 なのでそれを指定している。
-# install ember-cliRUN yarn global add ember-cli@3.4.4ember-cli-update の導入 https://github.com/mugijiru/ember-rails-todo-app/pull/61/commits/ded293ff2f686081549d0019e500facb5c2aaa3d のコミットでやってることですね。
-Ember.js をアップデートする際には ember-cli-update を使うのが王道っぽいのでそれも Dockerfile でインストールしておく。
-# install ember-cli-updateRUN yarn global add ember-cli-updateまた、こいつは今後も 3 系で更新していくにあたり必要と思われるので ember-cli よりも先に入れておくことにする。
-bundle &amp;amp;&amp;amp; yarn Dockerfile を更新したので bundle install と yarn install を実行しておく。</description>
+      <description>前回までで ember-rails と ember-cli-rails の共存周りを一通り済ませてそのあたりは大体満足したので次の段階である Ember.js アプリの最新化を進めていくぞい。 で、どう進めていくかと</description>
     </item>
     
     <item>
@@ -414,15 +193,7 @@ bundle &amp;amp;&amp;amp; yarn Dockerfile を更新したので bundle install �
       <pubDate>Fri, 26 Mar 2021 01:49:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-components-addon-as-gem/</guid>
-      <description>前回の記事 で Ember.js の共通コンポーネントを詰めた Addon を NPM package にしたわけですが、今度はそいつを割と無理やり Gem 化して ember-rails でも使えるようにしたよ、というお話です。
-目的 Ember.js の Addon として切り出した共通コンポーネントを同一ソースで ember-rails でも使いたいな〜、使えるようにしたいな〜、という目的。
-ほら。 ember-rails で1つの Rails アプリケーションの上に複数の Ember.js アプリを動かしていて一部ずつ ember-cli-rails 移行を進めていたらどうしても混ざる時期あるじゃないですか。
-そういう時に共通コンポーネントは同一ソースで両方で動かせると多分便利じゃないですか。
-ember-components の Gem 化 Gem にして ember-rails でも使えるようにするために色々やりました。こんなにやらないといけないのかってぐらいやった気がします。。。
-Component の書き方を古い方式に戻した ember-rails だとどうも
-import Component from &amp;#39;@ember/component&amp;#39; export default Component.extend({}) という書き方だと読み込んでくれないようなので全部以下のように書き換えている。
-import Ember from &amp;#39;ember export default Ember.Component.extend({}) で、この変更を加えると eslint に怒られるので新しい記述を要求する eslint のルールをオフにしてあげる必要がある。悲しい。
-rules: { &amp;#39;ember/new-module-imports&amp;#39;: &amp;#39;off&amp;#39; }, components を ember-rails で読み込めるようにする ember-libs というフォルダに共通コンポーネントとして分割した時も同じようなことをしたんだけど ember-rails に components を読み込ませるためのコードをこのリポジトリに用意してある。</description>
+      <description>前回の記事 で Ember.js の共通コンポーネントを詰めた Addon を NPM package にしたわけですが、今度はそいつを割と無理やり Gem 化して ember-rails でも使えるようにしたよ、というお話で</description>
     </item>
     
     <item>
@@ -431,19 +202,7 @@ rules: { &amp;#39;ember/new-module-imports&amp;#39;: &amp;#39;off&amp;#39; }, co
       <pubDate>Wed, 24 Mar 2021 13:04:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/my-ember-libs-to-npm/</guid>
-      <description>相変わらず Rails における Ember.js 関連で遊んでいます。
-今回の記事で書くのは「Ember.js Addon を別リポジトリに分離して NPM パッケージにして利用する」なんだけど、後追いで出す「分離したリポジトリを Gem としても使えるようにし ember-rails 環境で動かす」という感じに記事の前振りです。
-本当は1つの記事にしたかったけど記述量が増えたから分割……。
-目的 なんでこんなことをしているかというと「単一ソースで ember-cli にも ember-rails にも対応したい」「じゃあ NPM と Gem で公開してインスコしたらいいんじゃね」という考えから。
-というのも、この一連の記事は ember-rails から ember-cli-rails に徐々に移行していく手段を確立することが目的なので、 1つの Rails の中に複数の Ember.js アプリがあって ember-rails と ember-cli-rails が混在している状況も有り得るかなあと。
-そういう時に、共通コンポーネントは単一ソースで使いたいよね〜と思って両対応ができるようにしてみている。
-まあ今回は ember-cli-rails だけの対応なんだけども。
-実践 ember-cli-rails に移行した時に元々 RAILS_ROOT/app/assets/javascripts/ember-libs というところに共通コンポーネントとして置いていたファイル群を RAILS_ROOT/ember/my-components というところに Ember.js のアドオンという形で設置していました。
-正直そのままの方が、同一リポジトリなので改修とかしやすいんだけど「他のプロジェクトでも使いたい」といった時には分離も必要になるかなと。まあ今回の目的は別のところにあるけども。
-従来の実装を ember-components に移植 https://github.com/mugijiru/ember-components/commit/847981e9732385d08db4f5f703813196622b80d2
-でやっていること。
-基本的には、元々のソースを addons 以下に置いているだけ。なんとなく、コンポーネントの prefix を my- から mg- に変えてるけど。
-あとは ember-cli-htmlbars を dependencies にも移動する必要あり。</description>
+      <description>相変わらず Rails における Ember.js 関連で遊んでいます。 今回の記事で書くのは「Ember.js Addon を別リポジトリに分離して NPM パッケージにして利用する」なんだ</description>
     </item>
     
     <item>
@@ -452,15 +211,7 @@ rules: { &amp;#39;ember/new-module-imports&amp;#39;: &amp;#39;off&amp;#39; }, co
       <pubDate>Sat, 06 Mar 2021 17:05:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/migrate-ember-rails-to-ember-cli-rails/</guid>
-      <description>Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。
-やったことはいつも通り GitHub の PR にしています。
-PR の Description で「Rails 側ではこうした」「Ember 側ではこうした」みたいに書いているのでここではある程度時系列に沿ったような書き方にしようかな。
-完全に時系列通りには書かないので、正確な時系列でどうしたか知りたかったら PR のコミットログを追ってください
-アプリの前提 これまで作って来た https://github.com/mugijiru/ember-rails-todo-app が前提になります。ざっくり内容を書くと
- ember-rails で Ember.js 2.18 の環境を動かしている Sprockets での ES6 Module 対応済 現実世界の複雑さを持ち込むために敢えて以下の手法を導入  Embedded Ember App Multiple で動かせる構成 一部コンポーネントの共通ライブラリ化  ember-libs という名前で別フォルダに切り出している   Bootstrap の利用   複雑さでは以下もありうるが面倒などの理由でやってない  i18n.js での多言語対応 コンポーネント以外の共通ライブラリ化    という感じ。
-ember-rails 用の JS のコードが読まれないようにコメントアウト https://github.com/mugijiru/ember-rails-todo-app/pull/18/commits/8dd44540bd7d352e497f87a9a12df5ad3cf6efbb のあたりのコミット。
-本当は後からやった手順だけど、ここで読まれてるコードが邪魔になるので先にコメントアウトしておく方が後の手順でハマらなくて済むのでここに置いといた。
-まあ実は ember-cli-rails のアプリが読まれるところで ember-rails が require されてなければいいだけなので application.</description>
+      <description>Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。 やったことはいつも通り GitHub の</description>
     </item>
     
     <item>
@@ -469,15 +220,7 @@ ember-rails 用の JS のコードが読まれないようにコメントアウ�
       <pubDate>Sun, 28 Feb 2021 13:10:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-inject-from-rails/</guid>
-      <description>フロントエンドのフレームワークを使っていて、そのフレームワークで Server Side Rendering をしてない時に API 経由でデータ渡すよりも表示用の HTML 経由で直接データを渡したい時がある。
-ember-rails を使ってる時もそれはあって、今回は Haml 経由で Ember.js に情報を渡して表示する方法を書いてみた。もちろん旧来版と ES6 Module 対応版の両方で実装している。
-旧来版 https://github.com/mugijiru/ember-rails-todo-app/pull/16 で実装したやつ。
-おおまかな実装内容 こちらは名前空間に Ember.js の外からアクセスできるので Haml 内に JavaScript を埋め込んで Ember に渡すというちょっと乱暴なことができる。
-今回は email を todo-items テンプレート内で表示したかったので Ember.js の呼び出し元の haml 内で
-:javascript TodoApp.register(&amp;#39;session:current-user&amp;#39;, Ember.Object.extend({ email: &amp;#39;#{current_user.email}&amp;#39; })); TodoApp.inject(&amp;#39;controller:todo-items&amp;#39;, &amp;#39;current-user&amp;#39;, &amp;#39;session:current-user&amp;#39;); と書いてみた。
-以下にもう少し詳細に書いてみる。
-ユーザー情報の登録 TodoApp.register(&amp;#39;session:current-user&amp;#39;, Ember.Object.extend({ email: &amp;#39;#{current_user.email}&amp;#39; })); という記述で JavaScript の中に Haml での Ruby のコード呼び出し機能を用いて email を EmberObject を継承したクラスにぶち込んでいる。
-正直 :javascript で書いて Ruby のコードを呼び出すのは結構乱暴だとは思うけどできちゃうのでやっちゃった。</description>
+      <description>フロントエンドのフレームワークを使っていて、そのフレームワークで Server Side Rendering をしてない時に API 経由でデータ渡すよりも表示用の HTML 経由で直接データを渡し</description>
     </item>
     
     <item>
@@ -486,20 +229,7 @@ ember-rails を使ってる時もそれはあって、今回は Haml 経由で E
       <pubDate>Sun, 28 Feb 2021 11:19:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-component-in-subfolder/</guid>
-      <description>Ember.js に限らずコンポーネントは増えてくるとサブフォルダに分割して管理したくなるよね。ということでそのあたりの記事。
-これも、ES6 Module 対応版と旧来版の両方を書く。 ES6 Module 対応版は何も考えることがないので、この記事は旧来版のためにあるようなものだけど。
-ES6 Module 対応版の場合 上に書いたようにこれは https://github.com/mugijiru/ember-rails-todo-app/pull/14 に実装してあるけどとっても簡単
-component をサブフォルダに移動 components の下に適当なフォルダを掘ってその中に移動するだけ。
-template をサブフォルダに移動 templates/components の下に適当なフォルダを掘ってその中に移動するだけ。
-template からの呼び出し template, component をそれぞれ
- template templates/components/hoge/fuga.hbs component components/hoge/fuga.module.es6  と配置した場合は {{hoge/fuga}} と書いて呼び出せばいい感じに動く。以上。
-こういう感じで動くように ember-resolver@0.1.21 が作られてるっぽいのでとても楽。
-Ember.js のドキュメントなどを見ている感じだと多分もっと新しいバージョンでも同じ感じで動くっぽい。というわけで Ember.js@3 にしても多分動きそうなので安心感がある。
-旧来版の場合 これは GlobalsResolver の挙動のおかげでちょっと大変。
-と言っても https://github.com/mugijiru/ember-rails-todo-app/pull/15 で実装してある。
-今回やりたかったことは、テンプレートとコンポーネントをサブフォルダに移動して扱えるようにすることなので、その実現方法を書いておく
-template からの呼び出し {{hoge/fuga}} と呼び出した際に GlobalsResolver でどう解釈されるとかというと 前の記事 にも書いたように Hoge という名前空間の FugaComponent を探しに行くようになってるというのが前提。
-component をサブフォルダに移動 GlobalsRegister の解釈に合わせて FugaCompnent を Hoge 名前空間に所属させればいいので</description>
+      <description>Ember.js に限らずコンポーネントは増えてくるとサブフォルダに分割して管理したくなるよね。ということでそのあたりの記事。 これも、ES6 Module 対応版と旧来版</description>
     </item>
     
     <item>
@@ -508,16 +238,7 @@ component をサブフォルダに移動 GlobalsRegister の解釈に合わせ�
       <pubDate>Sun, 28 Feb 2021 10:45:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-extract-common-libs/</guid>
-      <description>ember-rails を使って1つの Rails アプリの上に複数の Ember.js アプリケーションを動かしていると各アプリで同じようなコンポーネントを使っていたり、あるいは同じようなコンポーネントが必要だというのに気付いて共通ライブラリとして実装したくなることがある。あるんだよ。
-というわけで、その共通化を2パターンでやってみた。 2パターンというのは 旧来の書き方の場合と ES6 Module 対応版の場合とである。
-なおいずれのパターンもサーバへのデプロイはやってないのでもしかしたらサーバ環境では動かないかもしれないがご容赦を。
-旧来版 先に答えを出すと https://github.com/mugijiru/ember-rails-todo-app/pull/13 に実装した通りである。
-template からの呼び出し template で {{ember-libs/button}} と書いた場合に Resolver には component:ember-libs/button として解釈するように要求されるっぽい。これはソースからではなく、挙動的に確かめただけ。
-コンポーネントの探索 旧来の書き方の場合に探索に使われるのが GlobalsResolver というやつ。
-この GlobalsResolver というやつは コメント にも書かれてるように component:ember-libs/button と渡されたら、 GlobalsResolver は EmberLibs.ButtonComponent として解釈するようになっている。つまり EmberLibs という名前空間の ButtonComponent を探しに行くようになっている。
-名前空間の定義 というわけで、まずは ember-libs/ember-libs.js.es6 に書いてるように
-window.EmberLibs = Ember.Namespace.create() と書くことで EmberLibs という名前空間を定義してやる。
-一応 ember-libs/ember-libs.js.es6 では require の順番として ember はそこで定義している実装を使うので先に require してそのファイルで定義している名前空間を components で使うので components を require するより前に require_self をしている。</description>
+      <description>ember-rails を使って1つの Rails アプリの上に複数の Ember.js アプリケーションを動かしていると各アプリで同じようなコンポーネントを使っていたり、あるいは同じようなコ</description>
     </item>
     
     <item>
@@ -526,11 +247,7 @@ window.EmberLibs = Ember.Namespace.create() と書くことで EmberLibs とい�
       <pubDate>Tue, 23 Feb 2021 20:45:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-complete-modulize/</guid>
-      <description>#10 サブフォルダのファイルを全て module に移行した #11 残りのファイルも module 化した  でやってることで全てだけど 前回の記事 でやってた内容を完了まで持って行った。
-サブフォルダ以下の ES6 Module 化 https://github.com/mugijiru/ember-rails-todo-app/pull/10 でやったこと。
-これは基本的に単純で、ほぼ前回の記事でやってることを全部のフォルダに適用しただけ。
-Model だけ命名規則が他と違うので import 関連の処理をそこだけ分岐している
-&amp;lt;% if dir == &#39;models&#39; %&amp;gt; &amp;lt;% klass_name = module_name.underscore.camelize %&amp;gt; &amp;lt;% else %&amp;gt; &amp;lt;% klass_name = &amp;quot;#{module_name.underscore.camelize}#{dir.underscore.singularize.camelize}&amp;quot; %&amp;gt; &amp;lt;% end %&amp;gt; import &amp;lt;%= klass_name %&amp;gt; from &#39;todo-app/modules/&amp;lt;%= dir %&amp;gt;/&amp;lt;%= module_name %&amp;gt;&#39;; TodoApp.&amp;lt;%= klass_name %&amp;gt; = &amp;lt;%= klass_name %&amp;gt;; Model は models/hoge.module.es6 とあったら Hoge として使われるようにして、他は例えば Component だと components/fuga.</description>
+      <description>#10 サブフォルダのファイルを全て module に移行した #11 残りのファイルも module 化した でやってることで全てだけど 前回の記事 でやってた内容を完了まで持って行った</description>
     </item>
     
     <item>
@@ -539,14 +256,7 @@ Model だけ命名規則が他と違うので import 関連の処理をそこだ
       <pubDate>Sun, 21 Feb 2021 22:41:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-partial-modulize/</guid>
-      <description>これは何? ember-rails を古いスタイルで書いておいてそれをモダン化していく企画の第一弾の記事。
-何をしたのか 今回は ES6 module を使ってない ember-rails アプリケーションで一部のファイルだけ ES6 Module にしてみた。
-何が嬉しい? 今回扱ってるアプリケーションのサイズはとても小さいのでまとめて置き換えることも可能というか、ぶっちゃけ 古いスタイルに書き換えた PR を revert するだけで ES6 Module 化できたりする。
-しかし、世の中に潜んでいる、レガシー化した ember-rails のプロジェクトでは全部まとめて ES6 Module にするのはファイル数が多過ぎて困難かと考え、敢えて一部のファイルだけ ES6 Module 化する方法を探してみた。
-どうやったらできるの? 簡単に言うと ES6 Module 形式で書いたやつを import して Ember.js Application の Namespace に放り込めばいいだけ。
-Example まずはコンポーネントなどを app/assets/javascripts/ember-app/components/foo.module.es6 ってファイル名で
-import Ember from &amp;#39;ember&amp;#39;; export default Ember.Component.extend({}); のように書いておく。拡張子が .module.es6 というのがポイントで、そうしておくと ember-es6_template という Gem が自動的に ES6 の module として判定してくれるようになっている https://github.com/tricknotes/ember-es6%5Ftemplate/blob/c1c7b8d23be7669a0aa6c5f9c71b916a3799f9a6/lib/ember/es6%5Ftemplate/sprockets.rb#L10
-そして app/assets/javascripts/ember-app/application.js.es6 の末尾にでも</description>
+      <description>これは何? ember-rails を古いスタイルで書いておいてそれをモダン化していく企画の第一弾の記事。 何をしたのか 今回は ES6 module を使ってない ember-rails アプリケーションで一部</description>
     </item>
     
     <item>
@@ -555,10 +265,7 @@ import Ember from &amp;#39;ember&amp;#39;; export default Ember.Component.extend
       <pubDate>Sun, 21 Feb 2021 15:40:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/publish-ember-rails-app/</guid>
-      <description>この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。
-  先週時点では「テストとかなくてもいいから動けばいいだろ」って気持ちだったけどなんとなーくテストを追加したくなったりあんまり慣れてない docker-compose 対応してみたりしていたのと平日はこのプログラムに触れてなかったので、結構日が空いてしまった。
-まあ、それはともかくとして、とりあえず https://github.com/mugijiru/ember-rails-todo-app/ に置いておいた現時点の最新コミットで v1.1.1 のタグを振ってるやつは自分の知ってる一番古いスタイルで書かれてる状態にしてある。
-使ってる Gem  Ember.js 関係  ember-rails ember-source jquery-rails  Ember.js は 2 系まで jquery に依存しているので  よく見ると ember-rails の依存に入ってるから書かなくて良かったな……     active_model_serializers 0.9  0.9 系じゃないとうまく動かないっぽい     CSS framework  bootstrap-sass  レガシー感の演出のため敢えてこれにしている     テスト関係  rspec-rails factory_bot_rails database_rewinder capybara selenium-webdriver    あたり。</description>
+      <description>この間の記事 で書いたように ember-rails で簡単なアプリケーションを作ってた。よくある TODO アプリである。 先週時点では「テストとかなくてもいいから動けばいいだ</description>
     </item>
     
     <item>
@@ -567,17 +274,7 @@ import Ember from &amp;#39;ember&amp;#39;; export default Ember.Component.extend
       <pubDate>Sat, 13 Feb 2021 01:15:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/ember-rails-in-2021/</guid>
-      <description>少し思うところがあって、 2021 年になったというのに ember-rails を使って新規で Web アプリを書いている。
-ember-rails とは? ember-rails は Ember.js という Web フロントエンド MVC なフレームワークを Rails といい感じに連携してくれて快適な Web アプリケーション開発体験を提供してくれるものであった。
-過去形なのは、ember-rails は Rails3 とか 4 とかの時代に主に使われていて既にメンテナンスされてないのと、今はそれよりも良い ember-cli-rails というのがあるから。
-今 ember-rails を使うと何がつらいか 色々つらい。
-まずメンテナンスが止まってる なので Rails 6 で動くかがわからない。多分、試している人はいないし、自分もそこまで試す気力はない。
-Ember.js のサポートが 2.18.2 までとなっている。 より詳細に話すと ember-rails が依存している Gem である ember-source で本当は 3.0.0.beta.2 まで出てるんだけど、β版のことは無視する。 https://rubygems.org/gems/ember-source/versions/2.18.2
-で、その 2.18.2 は既にサポートされてないバージョンである。
-サポートされてないバージョンを使うのはセキュリティ面でもまずいしもはや情報もあまり落ちてないので苦行である。
-Ember.js 公式サイトのドキュメントが過去のバージョンのものも残されているのでそれを頼りにするしかない。というか公式で残しててくれてありがとう。それがないと何もできないよ。
-ember-rails だと Ember.js の addon が導入できない 例えば Handlebars でロジックを書く上でとても基本的な比較用のヘルパーを提供してくれる ember-truth-helper が使えない。これが使えないはめっちゃ不便で、それをなんとかするために同じようなコードを自前で用意するハメになる。
-他にも ember-community-russia/awesome-ember に載っている色々なものが使えないわけだ。つらいどころか悲しくなってくる。</description>
+      <description>少し思うところがあって、 2021 年になったというのに ember-rails を使って新規で Web アプリを書いている。 ember-rails とは? ember-rails は Ember.js という Web フロントエンド MVC なフレームワークを</description>
     </item>
     
     <item>
@@ -586,17 +283,7 @@ ember-rails だと Ember.js の addon が導入できない 例えば Handlebars
       <pubDate>Sat, 23 Jan 2021 23:18:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/add-browse-at-remote/</guid>
-      <description>仕事中、プルリクのレビューをする際に、「ここのコードがこんな感じになってるから〜」みたいな感じで既存コードへのリンクを張ることがちょくちょくある。
-そういうことをする時、まずそもそも差し示したいコードを確認するんだけどその時は Emacs の中で探す方が早い。で、探して確認するまではいいんだけど、そこから GitHub 上のコードへのリンクを取得しようとするとちょっと面倒。
-これまでは、GitHub のリポジトリのトップからディレクトリを辿って行って当該コードを再度探していました。めんどくさいねっ。
-というわけで解決する手段を探していて最近導入したのが browse-at-remote というやつ。
-こいつを入れてる状態で、GitHub のリポジトリに突っ込んであるコードの上で M-x browse-at-remote を実行すると GitHub でのリポジトリでのコードの位置でブラウザを開いてくれる。
-コードの上でと書いたけど、リージョンを選択していればその範囲が選択された状態で実行すると選択した行がハイライトされた状態で開いて便利。
-その状態から GitHub 上で Copy permalink をしておいて PR のコメントにコピーしたリンクを貼り付けるとコードも表示されて便利。
-で、結構よく使うコマンドとなったので Hydra から即呼び出せるようにしてある。
-Global に使うコマンドを突っ込んでる Hydra は key-chord で jk を叩くと呼べるようにしていてその中で B を叩けば browse-at-point が呼ばれるようにしてある。
-というわけで、導入と Hydra の設定を追加しているプルリクが以下になります。 https://github.com/mugijiru/.emacs.d/pull/205
-という使い方をしているけど、実は似た機能を提供している git-link で git-link-use-commit のフラグを立てておいて他にもいくつか設定を入れたりしたらもっといい感じのことができるのかもしれない。今度試すか……。</description>
+      <description>仕事中、プルリクのレビューをする際に、「ここのコードがこんな感じになってるから〜」みたいな感じで既存コードへのリンクを張ることがちょくちょく</description>
     </item>
     
     <item>
@@ -625,11 +312,7 @@ Web サイトを再構築してみることにした。&lt;/p&gt;</description>
       <pubDate>Sun, 20 Dec 2020 12:15:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/profile/</guid>
-      <description>伝統俳句を趣味とする余生人。俳句結社での活動は引退し、いまは使命として俳句初心者を対象とした無料添削と個人ホームページでインターネット句会を運営している。
-もともとは理系のエンジニアなのでコンピュータープログラミングにも興味があり、ビギナーのパッチワークながら全自動のWeb句会システムなども自作している。
-好きなエディタは Emacs。文章管理、WEBページ管理等々のすべてをEmacs上で作業していて、そのためのEmacs設定のチューニングに余念がない。サブで Vim も使っている。
-1943年生まれ。神戸市在住。
-経歴  2001年 無料添削指導を始める。 2000年 WEB Site『ゴスペル俳句』を公開 1995年 結社を離脱 1993年 ひいらぎ結社賞を受賞 1992年 ひいらぎ推薦作家となる 1991年 ひいらぎ同人となる 1986年 俳句結社かつらぎ入会 阿波野青畝先生に師事 1985年 俳句結社ひいらぎ入会 小路紫峡先生に師事  SNSなど  Twitter @minoruGH GitHub minorugh Blog みのるの備忘録 Web Page ゴスペル俳句  </description>
+      <description>伝統俳句を趣味とする余生人。俳句結社での活動は引退し、いまは使命として俳句初心者を対象とした無料添削と個人ホームページでインターネット句会を</description>
     </item>
     
     <item>
@@ -638,8 +321,7 @@ Web サイトを再構築してみることにした。&lt;/p&gt;</description>
       <pubDate>Sun, 20 Dec 2020 11:59:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/about/</guid>
-      <description>この Web サイトは、みのるの個人サイトです。
-気が向いたらブログ記事を更新したりするはず。</description>
+      <description>この Web サイトは、みのるの個人サイトです。 気が向いたらブログ記事を更新したりするはず。</description>
     </item>
     
     <item>
@@ -648,15 +330,7 @@ Web サイトを再構築してみることにした。&lt;/p&gt;</description>
       <pubDate>Sun, 31 May 2020 01:32:00 +0900</pubDate>
       
       <guid>http://minorugh.github.io/posts/set-org-todo-from-ivy/</guid>
-      <description>posframe っていいですよね。いきなりタイトルと関係なさそうな単語出したけど。まあ ivy-posframe を使ってるので ivy を使うと posframe が使えて便利って話なんだけど。
-ところで話は若干変わって、 org-todo って実行するとウインドウが分割されてバッファが表示されてそこから選ぶ形になるじゃないですか。もしかしたら設定がちゃんとしてたりしたらならないのかもしれませんけど、とりあえず私の環境だとなるんですよ。
-で、それだと何が問題かというとウインドウ分割される時に元々見ていたバッファがガチャガチャと移動しちゃってつらいんですよ。 posframe を使えるとそれが起きなくて便利なんですよ。
-というわけで、org-todo でキーワード選ぶ時にも posframe が使えるといいなって思ったんですよ。
-で、色々調べた結果、自分にはそういうのを提供してくれる設定とか拡張とか見つけられなかったんですよ。
-じゃあ作るしかないじゃん? というわけで、そういう関数作った
-(defun my/org-todo () (interactive) (ivy-read &amp;#34;Org todo: &amp;#34; org-todo-keywords-for-agenda :require-match t :sort nil :action (lambda (keyword) (org-todo keyword)))) org-todo の代わりにこの関数を呼ぶと ivy で TODO のキーワードが設定できる。 ivy は ivy-posframe を使ってるから、画面がガチャガチャ動かなくなる。便利。
-この変更に関する Emacs の設定ファイルへの Pull request は https://github.com/mugijiru/.emacs.d/pull/74 に置いてるので興味があれば見てもらえると。
-ところで ivy でこういう選択するインターフェース書いたの初めて。とりあえず書いてみたらできたので、また別のやつも ivy を使って書いてみたい。</description>
+      <description>posframe っていいですよね。いきなりタイトルと関係なさそうな単語出したけど。まあ ivy-posframe を使ってるので ivy を使うと posframe が使えて便利って話なんだけど。 ところで話</description>
     </item>
     
     <item>
@@ -665,11 +339,7 @@ Web サイトを再構築してみることにした。&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://minorugh.github.io/privacy_policy/</guid>
-      <description>アクセス情報の収集 当サイトでは Google Analytics によるアクセス情報の収集を行っています。
-Google Analytics ではデータの収集のためにお使いのウェブブラウザから Google にアクセスしたページの URL やユーザーの IP アドレスなどの情報が自動的に送信されます。また、Google がお使いのブラウザに Cookie を設定したり、既存の Cookie を読み取ったりする場合もあります。
-詳細は以下をご確認ください。 https://policies.google.com/technologies/partner-sites
-広告の配信 当サイトでは Google AdSense による広告配信を行っています。
- Google などの第三者配信事業者が Cookie を使用してユーザーがそのウェブサイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告が配信されます Google が広告 Cookie を使用することにより、ユーザーがそのサイトや他のサイトにアクセスした際の情報に基づいて、 Google やそのパートナーが適切な広告をユーザーに表示できます。 ユーザーは、広告設定 でパーソナライズ広告を無効にできます。または、http://www.aboutads.info/choices/ にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にできます。  </description>
+      <description>アクセス情報の収集 当サイトでは Google Analytics によるアクセス情報の収集を行っています。 Google Analytics ではデータの収集のためにお使いのウェブブラウザから Google にアクセス</description>
     </item>
     
     <item>
@@ -678,7 +348,7 @@ Google Analytics ではデータの収集のためにお使いのウェブブラ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://minorugh.github.io/projects/</guid>
-      <description> Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesでバックアップ不要な開発環境。 UpFSTP SFTPでホームページを更新するためのプログラム。  </description>
+      <description>Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesでバックアップ不要な開発環境。 UpFSTP SFTPでホームページを更新するためのプログラム。</description>
     </item>
     
   </channel>

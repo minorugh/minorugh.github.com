@@ -5,15 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。
-やったことはいつも通り GitHub の PR にしています。
-PR の Description で「Rails 側ではこうした」「Ember 側ではこうした」みたいに書いているのでここではある程度時系列に沿ったような書き方にしようかな。
-完全に時系列通りには書かないので、正確な時系列でどうしたか知りたかったら PR のコミットログを追ってください
-アプリの前提 これまで作って来た https://github.com/mugijiru/ember-rails-todo-app が前提になります。ざっくり内容を書くと
- ember-rails で Ember.js 2.18 の環境を動かしている Sprockets での ES6 Module 対応済 現実世界の複雑さを持ち込むために敢えて以下の手法を導入  Embedded Ember App Multiple で動かせる構成 一部コンポーネントの共通ライブラリ化  ember-libs という名前で別フォルダに切り出している   Bootstrap の利用   複雑さでは以下もありうるが面倒などの理由でやってない  i18n.js での多言語対応 コンポーネント以外の共通ライブラリ化    という感じ。
-ember-rails 用の JS のコードが読まれないようにコメントアウト https://github.com/mugijiru/ember-rails-todo-app/pull/18/commits/8dd44540bd7d352e497f87a9a12df5ad3cf6efbb のあたりのコミット。
-本当は後からやった手順だけど、ここで読まれてるコードが邪魔になるので先にコメントアウトしておく方が後の手順でハマらなくて済むのでここに置いといた。
-まあ実は ember-cli-rails のアプリが読まれるところで ember-rails が require されてなければいいだけなので application." />
+<meta name="description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。 やったことはいつも通り GitHub の" />
 <meta name="keywords" content="blog,developer,personal" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -55,18 +47,10 @@ ember-rails 用の JS のコードが読まれないようにコメントアウ�
 
 
 <meta itemprop="name" content="ember-rails から ember-cli-rails へ">
-<meta itemprop="description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。
-やったことはいつも通り GitHub の PR にしています。
-PR の Description で「Rails 側ではこうした」「Ember 側ではこうした」みたいに書いているのでここではある程度時系列に沿ったような書き方にしようかな。
-完全に時系列通りには書かないので、正確な時系列でどうしたか知りたかったら PR のコミットログを追ってください
-アプリの前提 これまで作って来た https://github.com/mugijiru/ember-rails-todo-app が前提になります。ざっくり内容を書くと
- ember-rails で Ember.js 2.18 の環境を動かしている Sprockets での ES6 Module 対応済 現実世界の複雑さを持ち込むために敢えて以下の手法を導入  Embedded Ember App Multiple で動かせる構成 一部コンポーネントの共通ライブラリ化  ember-libs という名前で別フォルダに切り出している   Bootstrap の利用   複雑さでは以下もありうるが面倒などの理由でやってない  i18n.js での多言語対応 コンポーネント以外の共通ライブラリ化    という感じ。
-ember-rails 用の JS のコードが読まれないようにコメントアウト https://github.com/mugijiru/ember-rails-todo-app/pull/18/commits/8dd44540bd7d352e497f87a9a12df5ad3cf6efbb のあたりのコミット。
-本当は後からやった手順だけど、ここで読まれてるコードが邪魔になるので先にコメントアウトしておく方が後の手順でハマらなくて済むのでここに置いといた。
-まあ実は ember-cli-rails のアプリが読まれるところで ember-rails が require されてなければいいだけなので application.">
+<meta itemprop="description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。 やったことはいつも通り GitHub の">
 <meta itemprop="datePublished" content="2021-03-06T17:05:00+09:00" />
 <meta itemprop="dateModified" content="2021-03-06T17:05:00+09:00" />
-<meta itemprop="wordCount" content="985">
+<meta itemprop="wordCount" content="5678">
 
 
 
@@ -74,15 +58,7 @@ ember-rails 用の JS のコードが読まれないようにコメントアウ�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ember-rails から ember-cli-rails へ"/>
-<meta name="twitter:description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。
-やったことはいつも通り GitHub の PR にしています。
-PR の Description で「Rails 側ではこうした」「Ember 側ではこうした」みたいに書いているのでここではある程度時系列に沿ったような書き方にしようかな。
-完全に時系列通りには書かないので、正確な時系列でどうしたか知りたかったら PR のコミットログを追ってください
-アプリの前提 これまで作って来た https://github.com/mugijiru/ember-rails-todo-app が前提になります。ざっくり内容を書くと
- ember-rails で Ember.js 2.18 の環境を動かしている Sprockets での ES6 Module 対応済 現実世界の複雑さを持ち込むために敢えて以下の手法を導入  Embedded Ember App Multiple で動かせる構成 一部コンポーネントの共通ライブラリ化  ember-libs という名前で別フォルダに切り出している   Bootstrap の利用   複雑さでは以下もありうるが面倒などの理由でやってない  i18n.js での多言語対応 コンポーネント以外の共通ライブラリ化    という感じ。
-ember-rails 用の JS のコードが読まれないようにコメントアウト https://github.com/mugijiru/ember-rails-todo-app/pull/18/commits/8dd44540bd7d352e497f87a9a12df5ad3cf6efbb のあたりのコミット。
-本当は後からやった手順だけど、ここで読まれてるコードが邪魔になるので先にコメントアウトしておく方が後の手順でハマらなくて済むのでここに置いといた。
-まあ実は ember-cli-rails のアプリが読まれるところで ember-rails が require されてなければいいだけなので application."/>
+<meta name="twitter:description" content="Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。 やったことはいつも通り GitHub の"/>
 
 
 
@@ -143,6 +119,11 @@ ember-rails 用の JS のコードが読まれないようにコメントアウ�
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -158,7 +139,7 @@ ember-rails 用の JS のコードが読まれないようにコメントアウ�
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        5 minutes
+        12 minutes
 
         
       </p>
@@ -540,7 +521,7 @@ GitHub Actions でもテストが通るし普通に使えるようになる。�
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        985 Words
+        5678 Words
       </p>
 
       <p>
