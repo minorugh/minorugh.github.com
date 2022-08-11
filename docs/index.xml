@@ -678,7 +678,7 @@ Google Analytics ではデータの収集のためにお使いのウェブブラ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://minorugh.github.io/projects/</guid>
-      <description> Emacs Config Emacs の設定についてのドキュメント Ember rails TODO App Ember.js 関連の検証用プロジェクト。ember-rails から ember-cli-rails に乗り換えて最新の Ember.js にアップグレードしたりしている Ember Components Ember.js 検証関連プロジェクト。ember-rails と ember-cli-rails の両方で使える Addon を作ったりしている  </description>
+      <description> Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesでバックアップ不要な開発環境。 UpFSTP SFTPでホームページを更新するためのプログラム。  </description>
     </item>
     
   </channel>
