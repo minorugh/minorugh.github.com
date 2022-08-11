@@ -6,16 +6,7 @@
     <description>Recent content on minoru&#39;s GitHub Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 11 Aug 2022 17:49:31 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test</title>
-      <link>http://minorugh.github.io/posts/test/</link>
-      <pubDate>Thu, 11 Aug 2022 17:49:31 +0900</pubDate>
-      
-      <guid>http://minorugh.github.io/posts/test/</guid>
-      <description>hoge</description>
-    </item>
-    
+    <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>
       <link>http://minorugh.github.io/posts/windows11-upgrade/</link>
