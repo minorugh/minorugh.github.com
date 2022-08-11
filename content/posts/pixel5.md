@@ -7,7 +7,7 @@ title = "他社SIMで楽天リンクを使えるようにする"
 +++
 Pixel3の性能には何一つ不満はなくとても快適だったが、なにもせずに置いているだけでもみるみるバッテリーが減っていくので唯一それがストレスだった。Pixel6が発売されるまでは様子を見ようと思っていたのだけれど辛抱できず、pixel5をポチってしまった。
 
-![Alt Text](https://live.staticflickr.com/65535/51158000785_199f1a94ec_o.png) 
+![Alt Text](https://live.staticflickr.com/65535/52278392878_01d66478d9_z.jpg) 
 
 ## Dual SIM を試す
 
