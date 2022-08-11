@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on みのる&#39;s Hugo Site</title>
+    <title>Linux on minoru&#39;s Github Site</title>
     <link>http://minorugh.github.io/categories/linux/</link>
-    <description>Recent content in Linux on みのる&#39;s Hugo Site</description>
+    <description>Recent content in Linux on minoru&#39;s Github Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 24 Nov 2021 15:58:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
