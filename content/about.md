@@ -6,7 +6,7 @@ draft = false
 
 この Web サイトは、みのるの個人サイトです。
 
+`Hugo + GitHub Pages` で構築しています。
+
 Emacsの設定や自動化のためのプログラミング開発などの備忘録として公開しています。
 
-----
-`Hugo + GitHub Pages` で構築しています。
