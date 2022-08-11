@@ -3,11 +3,11 @@ title = "Projects"
 draft = false
 +++
 
-[Emacs Configuration](https://minorugh.github.io/.emacs.d/)
-: Emacs の設定についてのドキュメント
+## [Emacs Configuration](https://minorugh.github.io/.emacs.d/)
+Emacs の設定についてのドキュメント
 
-[Dotfiles](https://github.com/minorugh/dotfiles)
-: Dotfilesでバックアップ不要な開発環境。
+## [Dotfiles](https://github.com/minorugh/dotfiles)
+Dotfilesでバックアップ不要な開発環境。
 
-[UpFSTP](https://github.com/minorugh/upsftp)
-: SFTPでホームページを更新するためのプログラム。
+## [UpFSTP](https://github.com/minorugh/upsftp)
+SFTPでホームページを更新するためのプログラム。
