@@ -1,7 +1,7 @@
 baseURL = "http://minorugh.github.io/"
 languageCode = "ja-jp"
 HasCJKLanguage = true
-title = "minoru's Hugo Site"
+title = "minoru's GitHub Pages"
 theme = "hello-friend-ng"
 paginate       = 20
 publishDir     = "docs"
