@@ -1,3 +1,64 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "http://minorugh.github.io/"
+languageCode = "ja-jp"
+title = "みのる's Hugo Site"
+theme = "hello-friend-ng"
+paginate       = 20
+publishDir     = "docs"
+
+
+[params]
+    author = "minoru"
+    info = "Emacs を使って 趣味の俳句ホームページの管理をしている人"
+    description = "みのるの個人サイト"
+    keywords = "blog,developer,personal"
+
+    # for hello-frint-ng
+    dateform          = "2006年01月02日"
+    dateformShort     = "01月02日"
+    dateformNum       = "2006年01月02日"
+    dateformNumTime   = "2006年01月02日 15:04"
+
+    disableReadOtherPosts = false
+    enableSharingButtons  = true
+
+    homeSubtitle = "みのるの個人サイト"
+
+    enableGitInfo = false
+
+    customCSS = ["/css/amazon.css", "/css/adsense.css"]
+
+    # amazonJpAffiliate = "nue06-22"
+
+  [params.logo]
+    logoText = "$ cd /home/minorugh"
+  # Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/minorugh"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/minorugh"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    identifier = "profile"
+    name = "Profile"
+    url = "/profile/"
+    weight = 2
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 4
+
