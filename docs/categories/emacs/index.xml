@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/categories/emacs/</link>
+    <description>Recent content in Emacs on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 06 Mar 2022 23:36:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>el-get-lock の情報を使ってパッケージの更新確認ができるようにした</title>
+      <link>http://minorugh.github.io/posts/check-updates-emacs-packages-with-el-get-lock/</link>
+      <pubDate>Sun, 06 Mar 2022 23:36:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/check-updates-emacs-packages-with-el-get-lock/</guid>
+      <description>変なこだわりがあったり時代の波に乗れてなかったりで use-package を使わずに el-get を使い続けている麦汁です。
+このところは el-get-lock で今入れているバージョンがわかるようにしつつ定期的に el-get-update-all 的なことをしていました。そこもまあ非同期でまとめて更新処理がかかると変なことになるので適当なスクリプト組んでたけども。
+で、なんでそんなことをしているかというと今入れているバージョンとアップデートしたバージョンの差分をチェックしたいから。
+まあ Emacs 界隈では基本的にそんな差分チェックとかしてないで入れてしまう世界っぽいのですが、個人的な妙なこだわりで差分チェックをしたくって、この運用を続けていた。
+なのだけどまとめて更新すると https://github.com/mugijiru/.emacs.d/pull/396/files こんな感じになって差分を調べるのがマジ大変。そしてちょっとサボるとめっちゃ溜まるのでめっちゃ大変。
+というわけでそれがしんどくなったので el-get-lock の lock ファイルの情報から 更新があるパッケージの情報がわかる更新チェックスクリプトを書いてみた。
+自前の el-get の初期化ファイル に依存しているので動かすにはこちらも必要だし当然自分の el-get.lock ファイルも必要なのだけど自分用に書いたスクリプトなのでそのあたりはそんなに気にしてない。
+使い方 更新のあるパッケージの数が知りたい場合 $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute t) と叩けばその数を出力してくれる。 el-get-lock-update-check-execute の第一引数が t だと更新が必要なパッケージの数だけ表示するようになっている。
+まあ作りが雑なので標準エラー出力にもごちゃごちゃ吐かれるから
+$ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute t) 2&amp;gt; /dev/null としてそのあたりの情報は捨てた方がいい
+更新のあるパッケージがどれなのか知りたい場合 $ emacs --batch -Q -l /home/mugijiru/.emacs.d//el-get-lock-update-check.el --eval=(el-get-lock-update-check-execute) と叩けばどのパッケージが更新可能なのか吐いてくれる。どのパッケージが更新可能か分かれば後は (el-get-update hoge-package) とか実行してあげれば良い。 https://github.com/mugijiru/.emacs.d/pull/467 などはそうやって更新して el-get.</description>
+    </item>
+    
+    <item>
+      <title>Emacs のロックファイルと Webpack dev server の設定</title>
+      <link>http://minorugh.github.io/posts/configure-webpack-dev-server-with-emacs/</link>
+      <pubDate>Thu, 16 Sep 2021 10:22:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/configure-webpack-dev-server-with-emacs/</guid>
+      <description>また同じ罠を踏んだ時に同じ対応ができるようにということでメモ。
+プライベートで vue-cli とかを使って npm run serve とかしている時にファイルを変更する度に
+[Error: ENOENT: no such file or directory, stat &amp;#39;/path/to/src/components/.#HelloWorld.vue&amp;#39;] とか怒られて辛かった。 Emacs のロックファイルである。
+ロックファイルを生成しないというのもアリかもしれないが正常に保存されれば自動で消えるファイルだしそこに手を入れるよりは、監視対象ファイルを制限した方が良さそう、と判断して調べた。
+npm run serve では裏側で webpack-dev-server が動いているようなのでそこで watch 対象からロックファイルを外すべく vue.config.js を以下のように設定した。
+module.exports = { configureWebpack: { devServer: { watchOptions: { ignored: [&amp;#39;node_modules&amp;#39;, &amp;#39;public&amp;#39;, &amp;#39;**/.#*&amp;#39;], } } } } 肝は &#39;**/.#*&#39; である。 Emacs のロックファイルは .# の後にオリジナルのファイル名がくっついてくる形なのでそいつを全部無視する、というだけ。
+これでファイルを変更しても怒られなくなってハッピー。
+ちなみに同じ問題が React の開発の時にも発生するので多分同じような方法で直せる。まだ試してないけど。</description>
+    </item>
+    
+    <item>
+      <title>key-chord を使って Sticky Shift を一部実現した</title>
+      <link>http://minorugh.github.io/posts/sticky-shift-with-key-chord/</link>
+      <pubDate>Sun, 11 Jul 2021 13:42:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/sticky-shift-with-key-chord/</guid>
+      <description>Emacs 使っていると左手小指を酷使しますよね。
+まあそれはみんな分かり切ってるので、それぞれが色々な工夫で、左手小指を必要以上に使わないような対応をされていると思います。
+私もそんな中の一人で、最近もうシフトキーを押したくないなあという気持ちになって来ました。
+というわけで key-chord を使って Sticky Shift を一部実現して少しだけシフトキーを押さなくても済むような状態を作ってみました。
+とりあえず以下の文章を読むのが面倒だったら https://github.com/mugijiru/.emacs.d/pull/324/files#diff-9fab5d4bac36f504628abcc3cea5b2a1092d96f7bd2286944d5b822c6821bb3a にコードがあるのでそっちを見てもらえればと。
+実現したこと セミコロン + アルファベットで対応する大文字を出力 プログラムを書いているとやれ camelCase だの PascalCase だのでちょくちょくと大文字を入力する機会多いですよね。
+というわけで、例えば ;a と素早く入力したら A が出力されるようにしてみたというのが以下のコードになります。
+(mapc (lambda (key) (key-chord-define-global (concat &amp;#34;;&amp;#34; (char-to-string key)) (char-to-string (- key 32)))) (number-sequence ?a ?z)) number=sequence で a から z までのシーケンスを作成して ; との組み合わせを key-chord に食わせて対応するアルファベットの大文字を渡しているというシンプルな構成。
+key-chord-define-global などは第二引数に文字列を与えるとそれをそのまま define-key の第三引数に渡すのであたかもそれが入力されたかのような振舞をするのでそれを利用している。
+といいつつ Hydra とか magit の上でそれをやってもうまくいかないのでキーボード入力とは少し違う様子。
+セミコロン2回でシフトキーが押された状態にする 上に書いたように Hydra とか magit とかでいい感じに動かすためにはまだ足りてない。
+が、それをいい感じに解決する方法をまだ知らないので以下の実装により ;; と入力することで、シフトキーが押されてる状態を実現している。</description>
+    </item>
+    
+    <item>
+      <title>ivy を使った自作コマンドなどをテストするようにした</title>
+      <link>http://minorugh.github.io/posts/testing-my-emacs-command/</link>
+      <pubDate>Sun, 13 Jun 2021 15:18:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/testing-my-emacs-command/</guid>
+      <description>これまで Emacs Lisp のテストコードを書いてなかった。
+というのも、自分は特にパッケージを作ってるわけでもなく、設定ファイルを弄ってるだけなので動かなくなっても困るのは自分だけ、という状況なのでまあテストしなくてもいいかな、みたいな。
+とは思っているものの、やっぱりテストコード書いてみたいよねってことで設定ファイルに書いている自作の関数やコマンドをテストすることにした。
+自作関数のテスト 自作コマンドの内部で使ってる関数のテストを https://github.com/mugijiru/.emacs.d/pull/233 で書いてみた。
+なぜそんなものをテストしているかというと、リファクタリングしたかったので、ならテスト書いた方がいいよね〜みたいな。
+テストコードは以下のような感じ。前提条件として org-todo-keywords を用意して、関数を実行した時の期待する結果と、実際の結果を should マクロを使って合っていることを確認している。
+(ert-deftest test:my/org-todo-keyword-strings () &amp;#34;Test of `my/org-todo-keyword-strings&amp;#39;.&amp;#34; (setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;DOING(!)&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE(!)&amp;#34; &amp;#34;SOMEDAY(s)&amp;#34;))) (should (equal &amp;#39;(&amp;#34;TODO&amp;#34; &amp;#34;DOING&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;DONE&amp;#34; &amp;#34;SOMEDAY&amp;#34;) (my/org-todo-keyword-strings)))) ま、とても簡単な例だと思う。
+ちなみにこの記事や出した PR では setq を使ってるけど、最新のコードでは let を使うようにテストを書き直してある。
+ivy を使った自作コマンドのテスト 上に示した PR では ivy を使った処理はテストができない(しづらい)と判断しコマンド内部で使ってる関数だけテストしている。
+だけどやっぱり ivy を使ってるコマンド自体もテストしてみたいよねということで以下の PR を作った
+https://github.com/mugijiru/.emacs.d/pull/235
+with-simulated-input の導入 ivy を使ってるコマンドのテストで難しそうだなと思っていたのが ivy の操作部分のシミュレーション。
+なのだけど https://github.com/DarwinAwardWinner/with-simulated-input を見つけて解決した。
+こいつはユーザーの入力を文字列で表現してその通りに操作をしてくれるようなライブラリ。</description>
+    </item>
+    
+    <item>
+      <title>org-todo を ivy で設定できるようにするパート2</title>
+      <link>http://minorugh.github.io/posts/set-org-todo-from-ivy-part2/</link>
+      <pubDate>Thu, 10 Jun 2021 20:53:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/set-org-todo-from-ivy-part2/</guid>
+      <description>org-todo を ivy で設定できるようにした という記事で org-todo を ivy で設定できるようにしたつもりだったんですけど、ダメでした。
+何がダメだったかというと org-todo-keywords-for-agenda という変数を使ってるのがダメだった。
+この変数、何かよくわからんタイミングで設定されたりするっぽくてほとんどの場合で空の値になっていた。
+というわけで、ちょっと例の関数だと使いたい時にその値が空になっていてばかりで正直使い物にならない関数になっていた。死蔵していた。
+まあ俺はそんな半端な状態で放置するような男ではない。嘘です。1年ぐらい放置していました。だけど逆にいうと1年越しでなんとか対応しました。というのが以下の PR になります。
+https://github.com/mugijiru/.emacs.d/pull/231
+PR の description にも書いている通り愚直に org-todo-keywords を加工するように変更している。
+私の設定している org-todo-keywords は現在は
+((sequence &amp;#34;TODO&amp;#34; &amp;#34;DOING(!)&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE(!)&amp;#34; &amp;#34;SOMEDAY(s)&amp;#34;)) という感じ。
+これを
+(mapcar (lambda (element) (replace-regexp-in-string &amp;#34;\(.+\)&amp;#34; &amp;#34;&amp;#34; element)) (--remove (string= &amp;#34;|&amp;#34; it) (cdar org-todo-keywords))) のような処理で
+&amp;#39;(&amp;#34;TODO&amp;#34; &amp;#34;DOING&amp;#34; &amp;#34;WAIT&amp;#34; &amp;#34;DONE&amp;#34; &amp;#34;SOMEDAY&amp;#34;) みたいな感じで、キー指定の (s) や、未完了or完了状態を区切る | とかを取り除いた文字列のリストにしている。
+org-todo-keywords は本当は
+(setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;|&amp;#34; &amp;#34;DONE&amp;#34;) (sequence &amp;#34;REPORT&amp;#34; &amp;#34;BUG&amp;#34; &amp;#34;KNOWNCAUSE&amp;#34; &amp;#34;|&amp;#34; &amp;#34;FIXED&amp;#34;) (sequence &amp;#34;|&amp;#34; &amp;#34;CANCELED&amp;#34;))) みたいに複数のシーケンスを持つことができるけどそういう使い方はしてないので、そういうケースは無視している。</description>
+    </item>
+    
+    <item>
+      <title>org-agenda を活用し始めた</title>
+      <link>http://minorugh.github.io/posts/try-org-agenda/</link>
+      <pubDate>Thu, 29 Apr 2021 19:03:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/try-org-agenda/</guid>
+      <description>昨年から org-mode をもっと活用していこうということで、 org-clock を使い始めたり org-pomodoro を導入したり org-habits を設定してみたりしている麦汁さんです。
+org-mode は機能が豊富過ぎてマジで何が出来るのか全貌を把握し切れてないのですが、そんな中で、やっぱり全然把握できてなくて使ってなかった機能の1つが org-agenda ってやつ。
+なんかうまく使うと、予定を組んでたり締切を設定していたりするタスクが一目瞭然になってお仕事などが捗るという素敵な機能らしいのだけど、どうもイマイチ使い方がわからなくて放置していました。
+ただまあ仕事が捗るなら試してみる価値はあるよな〜ということで、今年の頭ぐらいから使い始めている。
+まず、平日朝イチでやっておきたい習慣タスクに対して Weekday と Start の2つのタグを振ってるか、 Daily というタグを振ってるのでそれを表示できるやつを以下のように仕込んでる。
+(&amp;#34;hs&amp;#34; &amp;#34;Weekday Start&amp;#34; ((tags &amp;#34;Weekday&amp;amp;Start|Daily&amp;#34; ((org-super-agenda-groups &amp;#39;((:name &amp;#34;予定が過ぎてる作業&amp;#34; :scheduled past) (:name &amp;#34;今日の作業&amp;#34; :scheduled today) (:discard (:anything t)))))))) https://github.com/mugijiru/.emacs.d/blob/a523566f2be993655f74ebf20afc4da444019f5e/inits/60-org.el#L89-L93
+麦汁さんのやりたいことを実現するには、デフォルトの org-agenda だとなんか機能が足りないっぽかったのでそれを補うために org-super-agenda も使っている。
+とりあえず上の例の2行目でタグによる絞り込みをしているがこれは org-mode の標準機能を使っていて https://orgmode.org/manual/Storing-searches.html#Storing-searches あたりに書いてる方法で絞り込んでいる。
+で、その後に org-super-agenda の機能である Group Selectors というやつでスケジュール通りのやつと、スケジュールが過ぎてるやつとで表示を切り分けてる。
+(:discard (:anything t)) は、そこまでの条件にマッチしなかったやつを全部無視するような設定。これがないと Other items という形で全部並んでしまって邪魔になる。
+最初の絞り込みで綺麗に絞り込めると良いかもしれないが、そこまで高度な機能は org-mode には備わってなさそう。それか、そういう高度な機能を見つけて使いこなせる能力を俺が有してないか。
+まあそれはともかく、上の感じでタスクを登録していると以下のように表示される。
+Headlines with TAGS match: Weekday&amp;amp;Start|Daily 予定が過ぎてる作業 next-actions:TODO 排便 :Weekday:Start: 今日の作業 next-actions:TODO 体重・体脂肪率計測 :Daily: 実際のやつはもっと色々あるというか、そもそもわざわざ排便を org-mode で管理はしてないのであくまでサンプルとして2つ置いてるだけだとご認識ください。</description>
+    </item>
+    
+    <item>
+      <title>最近 org-pomodoro 使ってないことに気付いた</title>
+      <link>http://minorugh.github.io/posts/why-not-use-org-pomodoro/</link>
+      <pubDate>Thu, 29 Apr 2021 18:03:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/why-not-use-org-pomodoro/</guid>
+      <description>org-pomodoro って便利な org-mode の拡張があるんですよ。 org-clock とポモドーロテクニックを組み合わせて使える便利なやつ。
+デフォルト設定で話すと、何か TODO にカーソルを乗せてる状態で起動したらそいつが clock-in した上で25分のタイマーが動いて、 25分経過したら clock-out した上で、5分の休憩が挟まってその休憩終了時には「次のポモドーロ開始するかい?」みたいなのが出て来てそこでまた M-x org-pomodoro を叩いたらまた25分のタイマーが開始して……みたいなやつ。
+まあ使い方それで合ってたかちょっと自信ないけど。というのも、表題の通りで、最近使ってないんですよね。便利な雰囲気なのに。
+なんで馴染まないのかな〜。やっぱり割込み作業が多くて pomodoro を乱されるから? あとは会議が挟まってくるとどう運用していいかわからなくなるから?
+前者の解決は、タイマー起動中は Slack の通知を切って見れないようにするぐらいじゃないと多分割込みを防げないよな〜という気はする。ちょっとその運用考えるか。
+後者は、まあ会議の時はもう pomodoro 放置でいいっていう割り切りかな。
+という悩みがあるのでポモドーロテクニックを1年以上継続しているぞ! みたいな猛者の方はどうやってそれを維持しているか教えてほしい。
+org-clock は使ってるけどね。pomodoro 存在を忘れてた。無念。</description>
+    </item>
+    
+    <item>
+      <title>browse-at-remote を導入した</title>
+      <link>http://minorugh.github.io/posts/add-browse-at-remote/</link>
+      <pubDate>Sat, 23 Jan 2021 23:18:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/add-browse-at-remote/</guid>
+      <description>仕事中、プルリクのレビューをする際に、「ここのコードがこんな感じになってるから〜」みたいな感じで既存コードへのリンクを張ることがちょくちょくある。
+そういうことをする時、まずそもそも差し示したいコードを確認するんだけどその時は Emacs の中で探す方が早い。で、探して確認するまではいいんだけど、そこから GitHub 上のコードへのリンクを取得しようとするとちょっと面倒。
+これまでは、GitHub のリポジトリのトップからディレクトリを辿って行って当該コードを再度探していました。めんどくさいねっ。
+というわけで解決する手段を探していて最近導入したのが browse-at-remote というやつ。
+こいつを入れてる状態で、GitHub のリポジトリに突っ込んであるコードの上で M-x browse-at-remote を実行すると GitHub でのリポジトリでのコードの位置でブラウザを開いてくれる。
+コードの上でと書いたけど、リージョンを選択していればその範囲が選択された状態で実行すると選択した行がハイライトされた状態で開いて便利。
+その状態から GitHub 上で Copy permalink をしておいて PR のコメントにコピーしたリンクを貼り付けるとコードも表示されて便利。
+で、結構よく使うコマンドとなったので Hydra から即呼び出せるようにしてある。
+Global に使うコマンドを突っ込んでる Hydra は key-chord で jk を叩くと呼べるようにしていてその中で B を叩けば browse-at-point が呼ばれるようにしてある。
+というわけで、導入と Hydra の設定を追加しているプルリクが以下になります。 https://github.com/mugijiru/.emacs.d/pull/205
+という使い方をしているけど、実は似た機能を提供している git-link で git-link-use-commit のフラグを立てておいて他にもいくつか設定を入れたりしたらもっといい感じのことができるのかもしれない。今度試すか……。</description>
+    </item>
+    
+    <item>
+      <title>org-todo を ivy で設定できるようにした</title>
+      <link>http://minorugh.github.io/posts/set-org-todo-from-ivy/</link>
+      <pubDate>Sun, 31 May 2020 01:32:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/set-org-todo-from-ivy/</guid>
+      <description>posframe っていいですよね。いきなりタイトルと関係なさそうな単語出したけど。まあ ivy-posframe を使ってるので ivy を使うと posframe が使えて便利って話なんだけど。
+ところで話は若干変わって、 org-todo って実行するとウインドウが分割されてバッファが表示されてそこから選ぶ形になるじゃないですか。もしかしたら設定がちゃんとしてたりしたらならないのかもしれませんけど、とりあえず私の環境だとなるんですよ。
+で、それだと何が問題かというとウインドウ分割される時に元々見ていたバッファがガチャガチャと移動しちゃってつらいんですよ。 posframe を使えるとそれが起きなくて便利なんですよ。
+というわけで、org-todo でキーワード選ぶ時にも posframe が使えるといいなって思ったんですよ。
+で、色々調べた結果、自分にはそういうのを提供してくれる設定とか拡張とか見つけられなかったんですよ。
+じゃあ作るしかないじゃん? というわけで、そういう関数作った
+(defun my/org-todo () (interactive) (ivy-read &amp;#34;Org todo: &amp;#34; org-todo-keywords-for-agenda :require-match t :sort nil :action (lambda (keyword) (org-todo keyword)))) org-todo の代わりにこの関数を呼ぶと ivy で TODO のキーワードが設定できる。 ivy は ivy-posframe を使ってるから、画面がガチャガチャ動かなくなる。便利。
+この変更に関する Emacs の設定ファイルへの Pull request は https://github.com/mugijiru/.emacs.d/pull/74 に置いてるので興味があれば見てもらえると。
+ところで ivy でこういう選択するインターフェース書いたの初めて。とりあえず書いてみたらできたので、また別のやつも ivy を使って書いてみたい。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/categories/hugo/</link>
+    <description>Recent content in Hugo on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 29 May 2021 23:31:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo の build を GitHub Actions でやることにした</title>
+      <link>http://minorugh.github.io/posts/hugo-build-in-github-actions/</link>
+      <pubDate>Sat, 29 May 2021 23:31:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/hugo-build-in-github-actions/</guid>
+      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたのでそれを使って build を自動化しました。
+「しました」って書いているけど実は今書いてるこの記事自体がその実験用の記事であり、これを書いている時点ではまだ自動化検証中。なので記事に乗せられるものはほとんどない。
+一応 https://github.com/mugijiru/mugijiru.github.com/tree/master/.github/workflows/build.yml のあたりにそれ用の workflow が入って来る予定。
+使ってるのは hugo-setup というやつ。 run: hugo するだけで build してくれるようで便利そう。 minify は差分的に微妙な感じするのでとりあえず使わないことにした
+成功可否はいつものように Slack 通知するし push して放置したら良いのは良さそう。
+ま、これで build しないで済むようになったらちょっと楽になりそうで楽しみ。</description>
+    </item>
+    
+  </channel>
+</rss>

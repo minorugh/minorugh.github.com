@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/categories/rails/</link>
+    <description>Recent content in Rails on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 26 Sep 2021 13:09:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>銀座Rails#37に参加した</title>
+      <link>http://minorugh.github.io/posts/ginza-rails-37/</link>
+      <pubDate>Sun, 26 Sep 2021 13:09:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ginza-rails-37/</guid>
+      <description>ブログ書くまでが勉強会って話もあるのでブログに残しておきます。正直そういうのサボりがちだけどね……。
+一昨日の夜にオンライン開催していた 銀座Rails#37 に参加しました。
+今回話されたテーマは
+ Google Play IAB(In-App Billing) 〜Railsでのサーバサイド対応のすべて〜 Kaigi on Rails 2021タイムテーブル完全解説 Ruby/Railsと遠隔講義：受講者評点がリモートでも伸びた理由 既存のRESTful なRails プロジェクトに、GraphQLの導入を検討した話  の4本立てと、リンクアンドモチベーション様及び DeNA 様のスポンサーセッション。
+Google Play IAB(In-App Billing) 〜Railsでのサーバサイド対応のすべて〜 この話は正直私の能力不足で「なんか知らんがすごそうだ」って感じでした。決済周りも Google Play 周りも Android も全然わからん……。
+TL を見てると Google Play IAB は筋が良さそうみたいな雰囲気を感じた。あと、テーブル設計も含めた大分具体的な話もしているのでこのあたりに手を出す人にはとても役立ちそうな雰囲気を感じたので資料をチェックしておくと良さそう
+https://speakerdeck.com/mitsuboshi/google-play-iab-in-app-billing-railsdefalsesabasaidodui-ying-falsesubete
+Kaigi on Rails 2021タイムテーブル完全解説 Kaigi on Rails 2021 の各発表のタイムテーブル、つまりそれぞれの時間でどういう話がされるのかを制限時間内に解説してくれていた。タイムテーブルはこちらから
+色々興味深い話がありそうなので私も参加登録しておきました。イエイ。金曜日は有休を取ろうと思います。
+その前に業務としての参加を上司に打診しようかな。業務に役立ちそうな内容がたくさんあるのでチーム全員参加してもらいたい。
+参加登録は https://kaigionrails.doorkeeper.jp/events/127662 で受付中。
+Ruby/Railsと遠隔講義：受講者評点がリモートでも伸びた理由 資料が探せなかったので記憶頼りの記述になるけど講義の地道な改善で評点が上がったというお話でした。情報のインプットはオンデマンドでできるようにして講義では課題を実施してもらうとか。
+Kaigi on Rails 2021 でも yasulab さんの発表があるので関係した話が聞けるかも? https://kaigionrails.org/2021/talks/yasulab/
+既存のRESTful なRails プロジェクトに、GraphQLの導入を検討した話 最終的には GraphQL の導入は一旦見送りにしたよという発表でした。今回の発表で、私はこの発表が一番好きでした。</description>
+    </item>
+    
+    <item>
+      <title>ember-cli-rails アプリで Rails6 の Deprecation Warning が出ないようにした</title>
+      <link>http://minorugh.github.io/posts/ember-cli-rails-with-rails6-without-deprecation-warning/</link>
+      <pubDate>Sun, 22 Aug 2021 00:50:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-cli-rails-with-rails6-without-deprecation-warning/</guid>
+      <description>ember-cli-rails なアプリを Rails6 対応にしてみた。が、リリースされている Gem をそのまま使うと
+ DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper, ActionText::TagHelper, and EmberCliRailsAssetsHelper.
+Being able to do this is deprecated. Autoloading during initialization is going to be an error condition in future versions of Rails.
+Reloading does not reboot the application, and therefore code executed during initialization does not run again. So, if you reload ActionText::ContentHelper, for example, the expected changes won&amp;rsquo;t be reflected in that stale Module object.</description>
+    </item>
+    
+    <item>
+      <title>ember-rails アプリケーション保守入門</title>
+      <link>http://minorugh.github.io/posts/ember-rails-introduction/</link>
+      <pubDate>Mon, 24 May 2021 09:02:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-introduction/</guid>
+      <description>ちょっとした事情で Ember.js 入門的なサムシングをすることになったけどどうせなら公開情報にしちゃえって気持ちになったので資料化する前にブログの記事にしちゃうぞ、というエントリです。
+想定する読者 携わっているシステムが ember-rails を利用して作られているために令和になっても 2018 年にサポートが切れてしまった Ember.js@2.18 のアプリケーションをなんとか動かし続けないといけない哀れな子羊たち
+記事を書いている人 Rails と Ember.js と Vue.js での開発をしたことがある人。 React や Angular はやったことない。なので比較には Rails と Vue.js を出しがち
+この記事で書かないこと 既に存在してしまっている ember-rails アプリケーションの保守をする人達向けの記事なので、 ember-rails を使って新規で Ember.js アプリを構築する、みたいなことは書きません。
+それに今更 ember-rails で構築するのはよろしくないですし、 Rails で Ember.js やりたいなら ember-cli-rails にしておいた方が良いですよ。
+どうしても構築から知りたい人は ember-rails-todo-app で ember-rails アプリを構築したあたりのコミット を見たりとかしたらなんとなくわかるかもだけどまああんまり要らないよね。
+Ember.js と ember-rails の簡単な紹介 Ember.js とは Ember.js はWebフロントエンドMVCフレームワークの1種。昔流行ったよね WebフロントエンドMVC。残念ながら最近はもう主流ではない。
+Ruby on Rails の影響を受けてるようなので、 Rails エンジニアが取っ付きやすいフレームワークになっている。多分。
+ember-rails とは ember-rails は Ember.js をいい感じに Rails と連携してくれる素敵な Gem です。これを使うと Rails 上で動く Ember.</description>
+    </item>
+    
+    <item>
+      <title>Ember.js@3.4 から最新の 3.26 に上げた</title>
+      <link>http://minorugh.github.io/posts/update-emberjs-3_4-to-latest/</link>
+      <pubDate>Sun, 09 May 2021 14:35:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/update-emberjs-3_4-to-latest/</guid>
+      <description>いつも Ember.js ネタを書く時に使ってる https://github.com/mugijiru/ember-rails-todo-app のリポジトリですが、ゴールデンウィークで Ember.js の最新版への対応を完了させました。
+そこへの対応のために https://github.com/mugijiru/ember-components の addon の方も 2.18 から最新化することになりました。
+対応の方針 どう対応させていったかというと、 ember-cli-rails の Ember.js を 2.18 から 3.4 にアップデート の記事でも書いた
+ 3系で LTS であったバージョンを順番に適用していく方針
+ を実際にやってみたって感じ。
+実際の対応 eslint 対応 3.4 に上げた後に、eslint で怒られてるのに対応できそうだなとなったので 3.8 に上げる前に修正をした
+https://github.com/mugijiru/ember-rails-todo-app/pull/66
+大きな変更点は jQuery を使って要素を取得していたところを純粋な JS に書き換えたところぐらい。
+3.4 → 3.8 https://github.com/mugijiru/ember-rails-todo-app/pull/67
+ ember-cli-update --to 3.8 yarn ember-cli-update --codemods  を叩いたぐらい。codemods では特がないので難しいところは何もない。
+3.8 → 3.12 https://github.com/mugijiru/ember-rails-todo-app/pull/68
+3.8 に上げるよりはちょっと面倒だった。
+が、基本的には
+ ember-cli-update --to 3.12 yarn ember-cli-update --codemods  を叩いてるだけである。</description>
+    </item>
+    
+    <item>
+      <title>ember-cli-rails の Ember.js を 2.18 から 3.4 にアップデート</title>
+      <link>http://minorugh.github.io/posts/update-emberjs-2.18to3/</link>
+      <pubDate>Sun, 04 Apr 2021 15:38:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/update-emberjs-2.18to3/</guid>
+      <description>前回までで ember-rails と ember-cli-rails の共存周りを一通り済ませてそのあたりは大体満足したので次の段階である Ember.js アプリの最新化を進めていくぞい。
+で、どう進めていくかというと 2.18 は最新版からはかなり遠いので 3系で LTS であったバージョンを順番に適用していく方針。
+それ以外のところだと基本的に https://cli.emberjs.com/release/basic-use/upgrading/ に従って対応をしていく。
+というのを実践した PR がこちらになります。 https://github.com/mugijiru/ember-rails-todo-app/pull/61
+ember-cli の更新 https://github.com/mugijiru/ember-rails-todo-app/pull/61/commits/0b71b86330ab46ec8df46cdcb308daf3ed766681 のコミットでやっていることですね。
+まずは Dockerfile で入れている ember-cli を 2.18 から 3.4 にする。 3.4 系の最終バージョンは 3.4.4 なのでそれを指定している。
+# install ember-cliRUN yarn global add ember-cli@3.4.4ember-cli-update の導入 https://github.com/mugijiru/ember-rails-todo-app/pull/61/commits/ded293ff2f686081549d0019e500facb5c2aaa3d のコミットでやってることですね。
+Ember.js をアップデートする際には ember-cli-update を使うのが王道っぽいのでそれも Dockerfile でインストールしておく。
+# install ember-cli-updateRUN yarn global add ember-cli-updateまた、こいつは今後も 3 系で更新していくにあたり必要と思われるので ember-cli よりも先に入れておくことにする。
+bundle &amp;amp;&amp;amp; yarn Dockerfile を更新したので bundle install と yarn install を実行しておく。</description>
+    </item>
+    
+    <item>
+      <title>自作の Ember.js Addon を ember-rails 用に無理やり Gem 化した</title>
+      <link>http://minorugh.github.io/posts/ember-components-addon-as-gem/</link>
+      <pubDate>Fri, 26 Mar 2021 01:49:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-components-addon-as-gem/</guid>
+      <description>前回の記事 で Ember.js の共通コンポーネントを詰めた Addon を NPM package にしたわけですが、今度はそいつを割と無理やり Gem 化して ember-rails でも使えるようにしたよ、というお話です。
+目的 Ember.js の Addon として切り出した共通コンポーネントを同一ソースで ember-rails でも使いたいな〜、使えるようにしたいな〜、という目的。
+ほら。 ember-rails で1つの Rails アプリケーションの上に複数の Ember.js アプリを動かしていて一部ずつ ember-cli-rails 移行を進めていたらどうしても混ざる時期あるじゃないですか。
+そういう時に共通コンポーネントは同一ソースで両方で動かせると多分便利じゃないですか。
+ember-components の Gem 化 Gem にして ember-rails でも使えるようにするために色々やりました。こんなにやらないといけないのかってぐらいやった気がします。。。
+Component の書き方を古い方式に戻した ember-rails だとどうも
+import Component from &amp;#39;@ember/component&amp;#39; export default Component.extend({}) という書き方だと読み込んでくれないようなので全部以下のように書き換えている。
+import Ember from &amp;#39;ember export default Ember.Component.extend({}) で、この変更を加えると eslint に怒られるので新しい記述を要求する eslint のルールをオフにしてあげる必要がある。悲しい。
+rules: { &amp;#39;ember/new-module-imports&amp;#39;: &amp;#39;off&amp;#39; }, components を ember-rails で読み込めるようにする ember-libs というフォルダに共通コンポーネントとして分割した時も同じようなことをしたんだけど ember-rails に components を読み込ませるためのコードをこのリポジトリに用意してある。</description>
+    </item>
+    
+    <item>
+      <title>Ember.js の共通コンポーネントの NPM への分離</title>
+      <link>http://minorugh.github.io/posts/my-ember-libs-to-npm/</link>
+      <pubDate>Wed, 24 Mar 2021 13:04:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/my-ember-libs-to-npm/</guid>
+      <description>相変わらず Rails における Ember.js 関連で遊んでいます。
+今回の記事で書くのは「Ember.js Addon を別リポジトリに分離して NPM パッケージにして利用する」なんだけど、後追いで出す「分離したリポジトリを Gem としても使えるようにし ember-rails 環境で動かす」という感じに記事の前振りです。
+本当は1つの記事にしたかったけど記述量が増えたから分割……。
+目的 なんでこんなことをしているかというと「単一ソースで ember-cli にも ember-rails にも対応したい」「じゃあ NPM と Gem で公開してインスコしたらいいんじゃね」という考えから。
+というのも、この一連の記事は ember-rails から ember-cli-rails に徐々に移行していく手段を確立することが目的なので、 1つの Rails の中に複数の Ember.js アプリがあって ember-rails と ember-cli-rails が混在している状況も有り得るかなあと。
+そういう時に、共通コンポーネントは単一ソースで使いたいよね〜と思って両対応ができるようにしてみている。
+まあ今回は ember-cli-rails だけの対応なんだけども。
+実践 ember-cli-rails に移行した時に元々 RAILS_ROOT/app/assets/javascripts/ember-libs というところに共通コンポーネントとして置いていたファイル群を RAILS_ROOT/ember/my-components というところに Ember.js のアドオンという形で設置していました。
+正直そのままの方が、同一リポジトリなので改修とかしやすいんだけど「他のプロジェクトでも使いたい」といった時には分離も必要になるかなと。まあ今回の目的は別のところにあるけども。
+従来の実装を ember-components に移植 https://github.com/mugijiru/ember-components/commit/847981e9732385d08db4f5f703813196622b80d2
+でやっていること。
+基本的には、元々のソースを addons 以下に置いているだけ。なんとなく、コンポーネントの prefix を my- から mg- に変えてるけど。
+あとは ember-cli-htmlbars を dependencies にも移動する必要あり。</description>
+    </item>
+    
+    <item>
+      <title>ember-rails から ember-cli-rails へ</title>
+      <link>http://minorugh.github.io/posts/migrate-ember-rails-to-ember-cli-rails/</link>
+      <pubDate>Sat, 06 Mar 2021 17:05:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/migrate-ember-rails-to-ember-cli-rails/</guid>
+      <description>Ember.js 関係で最も書きたかった記事にやっと辿り着いた。表題の通りで、 ember-rails から ember-cli-rails に置き換える、という記事です。多分長くなる。
+やったことはいつも通り GitHub の PR にしています。
+PR の Description で「Rails 側ではこうした」「Ember 側ではこうした」みたいに書いているのでここではある程度時系列に沿ったような書き方にしようかな。
+完全に時系列通りには書かないので、正確な時系列でどうしたか知りたかったら PR のコミットログを追ってください
+アプリの前提 これまで作って来た https://github.com/mugijiru/ember-rails-todo-app が前提になります。ざっくり内容を書くと
+ ember-rails で Ember.js 2.18 の環境を動かしている Sprockets での ES6 Module 対応済 現実世界の複雑さを持ち込むために敢えて以下の手法を導入  Embedded Ember App Multiple で動かせる構成 一部コンポーネントの共通ライブラリ化  ember-libs という名前で別フォルダに切り出している   Bootstrap の利用   複雑さでは以下もありうるが面倒などの理由でやってない  i18n.js での多言語対応 コンポーネント以外の共通ライブラリ化    という感じ。
+ember-rails 用の JS のコードが読まれないようにコメントアウト https://github.com/mugijiru/ember-rails-todo-app/pull/18/commits/8dd44540bd7d352e497f87a9a12df5ad3cf6efbb のあたりのコミット。
+本当は後からやった手順だけど、ここで読まれてるコードが邪魔になるので先にコメントアウトしておく方が後の手順でハマらなくて済むのでここに置いといた。
+まあ実は ember-cli-rails のアプリが読まれるところで ember-rails が require されてなければいいだけなので application.</description>
+    </item>
+    
+    <item>
+      <title>ember-rails でユーザー情報を Rails から inject</title>
+      <link>http://minorugh.github.io/posts/ember-rails-inject-from-rails/</link>
+      <pubDate>Sun, 28 Feb 2021 13:10:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-inject-from-rails/</guid>
+      <description>フロントエンドのフレームワークを使っていて、そのフレームワークで Server Side Rendering をしてない時に API 経由でデータ渡すよりも表示用の HTML 経由で直接データを渡したい時がある。
+ember-rails を使ってる時もそれはあって、今回は Haml 経由で Ember.js に情報を渡して表示する方法を書いてみた。もちろん旧来版と ES6 Module 対応版の両方で実装している。
+旧来版 https://github.com/mugijiru/ember-rails-todo-app/pull/16 で実装したやつ。
+おおまかな実装内容 こちらは名前空間に Ember.js の外からアクセスできるので Haml 内に JavaScript を埋め込んで Ember に渡すというちょっと乱暴なことができる。
+今回は email を todo-items テンプレート内で表示したかったので Ember.js の呼び出し元の haml 内で
+:javascript TodoApp.register(&amp;#39;session:current-user&amp;#39;, Ember.Object.extend({ email: &amp;#39;#{current_user.email}&amp;#39; })); TodoApp.inject(&amp;#39;controller:todo-items&amp;#39;, &amp;#39;current-user&amp;#39;, &amp;#39;session:current-user&amp;#39;); と書いてみた。
+以下にもう少し詳細に書いてみる。
+ユーザー情報の登録 TodoApp.register(&amp;#39;session:current-user&amp;#39;, Ember.Object.extend({ email: &amp;#39;#{current_user.email}&amp;#39; })); という記述で JavaScript の中に Haml での Ruby のコード呼び出し機能を用いて email を EmberObject を継承したクラスにぶち込んでいる。
+正直 :javascript で書いて Ruby のコードを呼び出すのは結構乱暴だとは思うけどできちゃうのでやっちゃった。</description>
+    </item>
+    
+    <item>
+      <title>ember-rails でコンポーネントをサブフォルダに配置する</title>
+      <link>http://minorugh.github.io/posts/ember-rails-component-in-subfolder/</link>
+      <pubDate>Sun, 28 Feb 2021 11:19:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-component-in-subfolder/</guid>
+      <description>Ember.js に限らずコンポーネントは増えてくるとサブフォルダに分割して管理したくなるよね。ということでそのあたりの記事。
+これも、ES6 Module 対応版と旧来版の両方を書く。 ES6 Module 対応版は何も考えることがないので、この記事は旧来版のためにあるようなものだけど。
+ES6 Module 対応版の場合 上に書いたようにこれは https://github.com/mugijiru/ember-rails-todo-app/pull/14 に実装してあるけどとっても簡単
+component をサブフォルダに移動 components の下に適当なフォルダを掘ってその中に移動するだけ。
+template をサブフォルダに移動 templates/components の下に適当なフォルダを掘ってその中に移動するだけ。
+template からの呼び出し template, component をそれぞれ
+ template templates/components/hoge/fuga.hbs component components/hoge/fuga.module.es6  と配置した場合は {{hoge/fuga}} と書いて呼び出せばいい感じに動く。以上。
+こういう感じで動くように ember-resolver@0.1.21 が作られてるっぽいのでとても楽。
+Ember.js のドキュメントなどを見ている感じだと多分もっと新しいバージョンでも同じ感じで動くっぽい。というわけで Ember.js@3 にしても多分動きそうなので安心感がある。
+旧来版の場合 これは GlobalsResolver の挙動のおかげでちょっと大変。
+と言っても https://github.com/mugijiru/ember-rails-todo-app/pull/15 で実装してある。
+今回やりたかったことは、テンプレートとコンポーネントをサブフォルダに移動して扱えるようにすることなので、その実現方法を書いておく
+template からの呼び出し {{hoge/fuga}} と呼び出した際に GlobalsResolver でどう解釈されるとかというと 前の記事 にも書いたように Hoge という名前空間の FugaComponent を探しに行くようになってるというのが前提。
+component をサブフォルダに移動 GlobalsRegister の解釈に合わせて FugaCompnent を Hoge 名前空間に所属させればいいので</description>
+    </item>
+    
+    <item>
+      <title>ember-rails でコンポーネントを共通ライブラリとして切り出す</title>
+      <link>http://minorugh.github.io/posts/ember-rails-extract-common-libs/</link>
+      <pubDate>Sun, 28 Feb 2021 10:45:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-extract-common-libs/</guid>
+      <description>ember-rails を使って1つの Rails アプリの上に複数の Ember.js アプリケーションを動かしていると各アプリで同じようなコンポーネントを使っていたり、あるいは同じようなコンポーネントが必要だというのに気付いて共通ライブラリとして実装したくなることがある。あるんだよ。
+というわけで、その共通化を2パターンでやってみた。 2パターンというのは 旧来の書き方の場合と ES6 Module 対応版の場合とである。
+なおいずれのパターンもサーバへのデプロイはやってないのでもしかしたらサーバ環境では動かないかもしれないがご容赦を。
+旧来版 先に答えを出すと https://github.com/mugijiru/ember-rails-todo-app/pull/13 に実装した通りである。
+template からの呼び出し template で {{ember-libs/button}} と書いた場合に Resolver には component:ember-libs/button として解釈するように要求されるっぽい。これはソースからではなく、挙動的に確かめただけ。
+コンポーネントの探索 旧来の書き方の場合に探索に使われるのが GlobalsResolver というやつ。
+この GlobalsResolver というやつは コメント にも書かれてるように component:ember-libs/button と渡されたら、 GlobalsResolver は EmberLibs.ButtonComponent として解釈するようになっている。つまり EmberLibs という名前空間の ButtonComponent を探しに行くようになっている。
+名前空間の定義 というわけで、まずは ember-libs/ember-libs.js.es6 に書いてるように
+window.EmberLibs = Ember.Namespace.create() と書くことで EmberLibs という名前空間を定義してやる。
+一応 ember-libs/ember-libs.js.es6 では require の順番として ember はそこで定義している実装を使うので先に require してそのファイルで定義している名前空間を components で使うので components を require するより前に require_self をしている。</description>
+    </item>
+    
+    <item>
+      <title>古い ember-rails App で ES6 Module 化を完了した</title>
+      <link>http://minorugh.github.io/posts/ember-rails-complete-modulize/</link>
+      <pubDate>Tue, 23 Feb 2021 20:45:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-complete-modulize/</guid>
+      <description>#10 サブフォルダのファイルを全て module に移行した #11 残りのファイルも module 化した  でやってることで全てだけど 前回の記事 でやってた内容を完了まで持って行った。
+サブフォルダ以下の ES6 Module 化 https://github.com/mugijiru/ember-rails-todo-app/pull/10 でやったこと。
+これは基本的に単純で、ほぼ前回の記事でやってることを全部のフォルダに適用しただけ。
+Model だけ命名規則が他と違うので import 関連の処理をそこだけ分岐している
+&amp;lt;% if dir == &#39;models&#39; %&amp;gt; &amp;lt;% klass_name = module_name.underscore.camelize %&amp;gt; &amp;lt;% else %&amp;gt; &amp;lt;% klass_name = &amp;quot;#{module_name.underscore.camelize}#{dir.underscore.singularize.camelize}&amp;quot; %&amp;gt; &amp;lt;% end %&amp;gt; import &amp;lt;%= klass_name %&amp;gt; from &#39;todo-app/modules/&amp;lt;%= dir %&amp;gt;/&amp;lt;%= module_name %&amp;gt;&#39;; TodoApp.&amp;lt;%= klass_name %&amp;gt; = &amp;lt;%= klass_name %&amp;gt;; Model は models/hoge.module.es6 とあったら Hoge として使われるようにして、他は例えば Component だと components/fuga.</description>
+    </item>
+    
+    <item>
+      <title>古い ember-rails App で一部ファイルを ES6 Module 化</title>
+      <link>http://minorugh.github.io/posts/ember-rails-partial-modulize/</link>
+      <pubDate>Sun, 21 Feb 2021 22:41:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-partial-modulize/</guid>
+      <description>これは何? ember-rails を古いスタイルで書いておいてそれをモダン化していく企画の第一弾の記事。
+何をしたのか 今回は ES6 module を使ってない ember-rails アプリケーションで一部のファイルだけ ES6 Module にしてみた。
+何が嬉しい? 今回扱ってるアプリケーションのサイズはとても小さいのでまとめて置き換えることも可能というか、ぶっちゃけ 古いスタイルに書き換えた PR を revert するだけで ES6 Module 化できたりする。
+しかし、世の中に潜んでいる、レガシー化した ember-rails のプロジェクトでは全部まとめて ES6 Module にするのはファイル数が多過ぎて困難かと考え、敢えて一部のファイルだけ ES6 Module 化する方法を探してみた。
+どうやったらできるの? 簡単に言うと ES6 Module 形式で書いたやつを import して Ember.js Application の Namespace に放り込めばいいだけ。
+Example まずはコンポーネントなどを app/assets/javascripts/ember-app/components/foo.module.es6 ってファイル名で
+import Ember from &amp;#39;ember&amp;#39;; export default Ember.Component.extend({}); のように書いておく。拡張子が .module.es6 というのがポイントで、そうしておくと ember-es6_template という Gem が自動的に ES6 の module として判定してくれるようになっている https://github.com/tricknotes/ember-es6%5Ftemplate/blob/c1c7b8d23be7669a0aa6c5f9c71b916a3799f9a6/lib/ember/es6%5Ftemplate/sprockets.rb#L10
+そして app/assets/javascripts/ember-app/application.js.es6 の末尾にでも</description>
+    </item>
+    
+    <item>
+      <title>2021年にもなって ember-rails で新規アプリを書いてみてる</title>
+      <link>http://minorugh.github.io/posts/ember-rails-in-2021/</link>
+      <pubDate>Sat, 13 Feb 2021 01:15:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/ember-rails-in-2021/</guid>
+      <description>少し思うところがあって、 2021 年になったというのに ember-rails を使って新規で Web アプリを書いている。
+ember-rails とは? ember-rails は Ember.js という Web フロントエンド MVC なフレームワークを Rails といい感じに連携してくれて快適な Web アプリケーション開発体験を提供してくれるものであった。
+過去形なのは、ember-rails は Rails3 とか 4 とかの時代に主に使われていて既にメンテナンスされてないのと、今はそれよりも良い ember-cli-rails というのがあるから。
+今 ember-rails を使うと何がつらいか 色々つらい。
+まずメンテナンスが止まってる なので Rails 6 で動くかがわからない。多分、試している人はいないし、自分もそこまで試す気力はない。
+Ember.js のサポートが 2.18.2 までとなっている。 より詳細に話すと ember-rails が依存している Gem である ember-source で本当は 3.0.0.beta.2 まで出てるんだけど、β版のことは無視する。 https://rubygems.org/gems/ember-source/versions/2.18.2
+で、その 2.18.2 は既にサポートされてないバージョンである。
+サポートされてないバージョンを使うのはセキュリティ面でもまずいしもはや情報もあまり落ちてないので苦行である。
+Ember.js 公式サイトのドキュメントが過去のバージョンのものも残されているのでそれを頼りにするしかない。というか公式で残しててくれてありがとう。それがないと何もできないよ。
+ember-rails だと Ember.js の addon が導入できない 例えば Handlebars でロジックを書く上でとても基本的な比較用のヘルパーを提供してくれる ember-truth-helper が使えない。これが使えないはめっちゃ不便で、それをなんとかするために同じようなコードを自前で用意するハメになる。
+他にも ember-community-russia/awesome-ember に載っている色々なものが使えないわけだ。つらいどころか悲しくなってくる。</description>
+    </item>
+    
+  </channel>
+</rss>

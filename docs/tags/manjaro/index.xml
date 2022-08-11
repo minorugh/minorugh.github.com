@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manjaro on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/tags/manjaro/</link>
+    <description>Recent content in Manjaro on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 24 Nov 2021 15:58:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro Linux にペンタブレット(XP-PEN Star G640S)を設定した</title>
+      <link>http://minorugh.github.io/posts/xp-pen-star-g640s-with-manjaro/</link>
+      <pubDate>Wed, 24 Nov 2021 15:58:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/xp-pen-star-g640s-with-manjaro/</guid>
+      <description>今年の前半ぐらいに購入しておいて放置していた XP-PEN の Star G640S を Manjaro Linux 環境で使えるか試してみたらとりあえずあっさり動いたというメモ。
+まず最初は単に接続して使えるかを試したら、とりあえず動いた。
+そんでもって、設定を変更したいな〜と思ったら 公式にドライバがあるし、 AUR にはそれにパッチを当てたやつが転がっていた
+というわけで
+yay -S xp-pen-tablet したらそれが入って来た。
+その上で pentablet というのを rofi から起動すると XP PEN の設定ソフトが起動したのでそれを使って適当に設定したらその通りに動いて良かった。具体的には、配置の関係上、上下さかさまで使うように設定した。 USB ケーブルの位置がね……。
+ちなみに xp-pen というのも AUR には転がってるけどもベースとなってるバージョンがちょびっとだけ古いのと人気度的に xp-pen-tablet の方が上だったので、そっちを選んでいる。
+他にも Krita ってソフトで試したんだけど、筆圧もちゃんと検知するみたいだしこれは良さそう。とはいえ絵を描いたりはしないので、筆圧は実は要らないんだけども。
+まあ普通に使えて良かったので今後使うかもしれない。うん。</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Linux のディスプレイ周りの設定を弄った</title>
+      <link>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</link>
+      <pubDate>Wed, 24 Nov 2021 14:01:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</guid>
+      <description>Manjaro Linux の設定を弄ってる系の記事です。まあまだ2記事目だけど。
+家には外部ディスプレイが存在するけどまあ必ずいつも繋いでるわけでもないので、両方の状態に対応できるようにしたいよねって思ってた。
+それをするには XRandR とそれの設定を保存したりするのに autorandr を使えばいいというのがわかった。ありがとう Arch Wiki。今確認していると autorandr ではなくて xlayoutdisplay とやらでも良さそうだがね……。
+まあそれはさておき、ひとまずはディスプレイに繋いでる状態をなんとかしたかったので最初は
+xrandr --output eDP-1 --mode 2880x1620 --right-of DP-2 というコードを .xprofile に書いていた。 eDP-1 がノート PC のディスプレイで DP-2 が外部接続しているディスプレイである。つまり eDP-1 は 2880x1620 の解像度で出力し DP-2 の右側に配置する、といった感じである。
+DP-2 自体の設定はどこかにいったが、まあ解像度を弄ってるぐらいなのでとりあえずヨシ。
+とりあえずこれにより、ディスプレイを繋いでる状態は良かったんだけどもディスプレイを切り離した時に、仮想デスクトップ2が切り離した方に表示されてるような認識をされていたので困ってしまった。
+調べたところ
+xrandr --output eDP-1 --mode 2880x1620 --output DP-2 --off を実行することで DP-2 つまり外部ディスプレイをオフにできることがわかった。
+というわけで、手動でコマンドを叩く前提にはなるが一旦解決はした。
+そしてこれらそれぞれの状態を autorandr で保存するためまずは繋いでる状態で
+autorandr --save docked として保存し、切り離して先のコマンドを実行し、ノートのディスプレイだけを使える状態にした上で
+autorandr --save mobile と実行することで、それぞれの状態を
+ docked mobile  として記録しておいた。</description>
+    </item>
+    
+    <item>
+      <title>ThinkPad P14s Gen 2 (第11世代インテル) に Manjaro Linux を入れてみている</title>
+      <link>http://minorugh.github.io/posts/thinkpad-p14s-gen2-intel-with-manjaro-linux/</link>
+      <pubDate>Sun, 10 Oct 2021 19:01:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/thinkpad-p14s-gen2-intel-with-manjaro-linux/</guid>
+      <description>先月、「えいやっ」で Lenovo ThinkPad P14s Gen 2 (第11世代インテル) を購入した。詳細は面倒だから省くけどそれなりの構成にしている。なお AMD 版にしなかったのは Linux をちゃんと動かせるか不安だったから。
+で、そのマシンに Manjaro Linux を載せて色々設定している。この記事は、そのあたりでどういう設定を書いているかの備忘録的なそれです。
+だってさ〜、絶対忘れるじゃん。だからある程度書いておこうかなって。そしてその上でまた後で入れ直ししてそれを見ながらセットアップし直そうかなと。そしたら多分その時に見逃していた部分も修正できそうだし。
+というわけでなんか適当につらつらと書いていく。
+ま、Twitter につぶやいていたことを記憶で補完しながら書いている感じだけどね。
+Twitter でのつぶやきだと Twilog で
+ https://twilog.org/mugijiru/date-211003 https://twilog.org/mugijiru/date-211009  あたりに該当する部分。まだ2日しか触れてないのよな。うん。
+Manjaro Linux のインストール https://manjaro.org/download/ から Xfce 版のやつをダウンロードして Windows PC で DVD に iso ファイルを書き込んでそれを使ってセットアップしてた。
+その際に https://www.mimir.yokohama/useful/0023-installing-manjaro.html を参考にした。まあパーティションどうしたらいいんだっけ以外は特に悩まなかったけど。
+あとは光学ドライブは大昔に購入した外付けのやつなので荷物の奥底から引っ張り出して「うわー USB type B のケーブルはどこだ〜!」「電源アダプタもねえぞー!」とか一人で騒いでた。みんなも機器を仕舞う時はそれに使うケーブルなども一緒に仕舞うようにしような。
+あとパーティションは自動で切ってるけど swap 領域はメモリ拡張すると足らないのでなんとかする必要がありそう。
+Font 設定 デフォルトの Terminal である xfce4-terminal のフォントが何故か文字間が広くて気持ち悪いので Sazanami と IPA フォントを入れた記憶がある。
+history を漁ると
+$ pacman -S ttf-sazanami $ pacman -S otf-ipafont が出て来たのでとりあえずそうやって入れているっぽい。</description>
+    </item>
+    
+  </channel>
+</rss>

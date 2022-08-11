@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>display on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/tags/display/</link>
+    <description>Recent content in display on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 24 Nov 2021 14:01:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/display/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro Linux のディスプレイ周りの設定を弄った</title>
+      <link>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</link>
+      <pubDate>Wed, 24 Nov 2021 14:01:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</guid>
+      <description>Manjaro Linux の設定を弄ってる系の記事です。まあまだ2記事目だけど。
+家には外部ディスプレイが存在するけどまあ必ずいつも繋いでるわけでもないので、両方の状態に対応できるようにしたいよねって思ってた。
+それをするには XRandR とそれの設定を保存したりするのに autorandr を使えばいいというのがわかった。ありがとう Arch Wiki。今確認していると autorandr ではなくて xlayoutdisplay とやらでも良さそうだがね……。
+まあそれはさておき、ひとまずはディスプレイに繋いでる状態をなんとかしたかったので最初は
+xrandr --output eDP-1 --mode 2880x1620 --right-of DP-2 というコードを .xprofile に書いていた。 eDP-1 がノート PC のディスプレイで DP-2 が外部接続しているディスプレイである。つまり eDP-1 は 2880x1620 の解像度で出力し DP-2 の右側に配置する、といった感じである。
+DP-2 自体の設定はどこかにいったが、まあ解像度を弄ってるぐらいなのでとりあえずヨシ。
+とりあえずこれにより、ディスプレイを繋いでる状態は良かったんだけどもディスプレイを切り離した時に、仮想デスクトップ2が切り離した方に表示されてるような認識をされていたので困ってしまった。
+調べたところ
+xrandr --output eDP-1 --mode 2880x1620 --output DP-2 --off を実行することで DP-2 つまり外部ディスプレイをオフにできることがわかった。
+というわけで、手動でコマンドを叩く前提にはなるが一旦解決はした。
+そしてこれらそれぞれの状態を autorandr で保存するためまずは繋いでる状態で
+autorandr --save docked として保存し、切り離して先のコマンドを実行し、ノートのディスプレイだけを使える状態にした上で
+autorandr --save mobile と実行することで、それぞれの状態を
+ docked mobile  として記録しておいた。</description>
+    </item>
+    
+  </channel>
+</rss>

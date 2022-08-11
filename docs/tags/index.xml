@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on みのる&#39;s Hugo Site</title>
+    <link>http://minorugh.github.io/tags/</link>
+    <description>Recent content in Tags on みのる&#39;s Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 24 Nov 2021 15:58:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>config</title>
+      <link>http://minorugh.github.io/tags/config/</link>
+      <pubDate>Wed, 24 Nov 2021 15:58:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manjaro</title>
+      <link>http://minorugh.github.io/tags/manjaro/</link>
+      <pubDate>Wed, 24 Nov 2021 15:58:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/manjaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentablet</title>
+      <link>http://minorugh.github.io/tags/pentablet/</link>
+      <pubDate>Wed, 24 Nov 2021 15:58:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/pentablet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>display</title>
+      <link>http://minorugh.github.io/tags/display/</link>
+      <pubDate>Wed, 24 Nov 2021 14:01:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/display/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skk</title>
+      <link>http://minorugh.github.io/tags/skk/</link>
+      <pubDate>Sun, 10 Oct 2021 19:01:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/skk/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
