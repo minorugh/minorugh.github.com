@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>雑記 on Emacs Life</title>
+    <title>雑記 on minoru&#39;s Hugo Site</title>
     <link>http://minorugh.github.io/categories/%E9%9B%91%E8%A8%98/</link>
-    <description>Recent content in 雑記 on Emacs Life</description>
+    <description>Recent content in 雑記 on minoru&#39;s Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Tue, 30 Nov 2021 19:28:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/%E9%9B%91%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />

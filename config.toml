@@ -1,6 +1,6 @@
 baseURL = "http://minorugh.github.io/"
 languageCode = "ja-jp"
-title = "Emacs Life"
+title = "minoru's Hugo Site"
 theme = "hello-friend-ng"
 paginate       = 20
 publishDir     = "docs"
