@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://minorugh.github.io/categories/</loc>
-    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://minorugh.github.io/</loc>
-    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
+    <lastmod>2022-08-11T17:49:31+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://minorugh.github.io/posts/</loc>
+    <lastmod>2022-08-11T17:49:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/test/</loc>
+    <lastmod>2022-08-11T17:49:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/categories/</loc>
     <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
