@@ -68,9 +68,9 @@ publishDir     = "docs"
     name = "Projects"
     url = "/projects/"
     weight = 3
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/posts/"
-    weight = 4
+  # [[menu.main]]
+  #   identifier = "blog"
+  #   name = "Blog"
+  #   url = "/posts/"
+  #   weight = 4
 
