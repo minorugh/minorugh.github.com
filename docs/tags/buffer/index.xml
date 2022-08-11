@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>buffer on minoru&#39;s GitHub Pages</title>
+    <link>http://minorugh.github.io/tags/buffer/</link>
+    <description>Recent content in buffer on minoru&#39;s GitHub Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 04 Sep 2019 17:03:29 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/buffer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scratch bufferを付箋として使う</title>
+      <link>http://minorugh.github.io/posts/scratch-for-sticky-note/</link>
+      <pubDate>Wed, 04 Sep 2019 17:03:29 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/scratch-for-sticky-note/</guid>
+      <description>Emacsのscratchバッファーを簡易メモとして使うために作られたパッケージはいくつかありますが、設定だけで実現できる簡単なものを紹介し</description>
+    </item>
+    
+    <item>
+      <title>Emacsのウインドウ操作の履歴をUndo/Redoする：winner-mode</title>
+      <link>http://minorugh.github.io/posts/buffer-undo-redo-with-winner-mode/</link>
+      <pubDate>Thu, 28 Mar 2019 16:34:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/buffer-undo-redo-with-winner-mode/</guid>
+      <description>emacsでいろいろ作業していると意図しない形で勝手にウインドウズが分割されたりします。設定して &amp;ldquo;C-g&amp;rdquo; で隠せるものもありますが、それも出来ないと</description>
+    </item>
+    
+    <item>
+      <title>Scratch bufferをKILLさせない：emacs-lock-mode</title>
+      <link>http://minorugh.github.io/posts/dont-kill-scratch-bufffer/</link>
+      <pubDate>Thu, 28 Mar 2019 16:12:24 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/dont-kill-scratch-bufffer/</guid>
+      <description>わざわざscratch bufferをkillする人はいないと思いますが、&amp;ldquo;kill-other-windows&amp;rdquo; など</description>
+    </item>
+    
+    <item>
+      <title>Scratchバッファの保存と復元</title>
+      <link>http://minorugh.github.io/posts/unkillable-scratch/</link>
+      <pubDate>Mon, 24 Sep 2018 17:11:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/unkillable-scratch/</guid>
+      <description>&lt;p&gt;Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
+これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>タブを使わない究極のバッファー移動</title>
+      <link>http://minorugh.github.io/posts/iflipb/</link>
+      <pubDate>Mon, 24 Sep 2018 08:24:19 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/iflipb/</guid>
+      <description>&lt;p&gt;Emacsのバッファー移動は、tabbar /  ELscreen    などのタブ系を使っていましたが、diredなどの隠れていてほしいバッファーまで開いてしまうのが嫌でした。
+そんなときに、るびきちさんのこの記事を読んでiflipb.elを試してみましたのでレポートします。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emacsの不要なバッファーを自動的にkillする</title>
+      <link>http://minorugh.github.io/posts/tempbuf/</link>
+      <pubDate>Fri, 21 Sep 2018 18:58:53 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/tempbuf/</guid>
+      <description>&lt;p&gt;Emacsのbufferをtabで切り替えるのはあまり好きでないので switch-buffer の機能を使っているが、magitやdired関係の不要なバッファーが沢山増えていくと煩わしくなる。&lt;/p&gt;
+&lt;p&gt;手動で削除すれば済む話ではあるが、やっぱり自動化したい。MELPAでいろいろpackageを探したが適当なものがなく、ググっていたら下記の記事を見つけました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

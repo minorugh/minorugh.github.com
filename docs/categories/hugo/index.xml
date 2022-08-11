@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on minoru&#39;s GitHub Pages</title>
+    <title>hugo on minoru&#39;s GitHub Pages</title>
     <link>http://minorugh.github.io/categories/hugo/</link>
-    <description>Recent content in Hugo on minoru&#39;s GitHub Pages</description>
+    <description>Recent content in hugo on minoru&#39;s GitHub Pages</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 29 May 2021 23:31:00 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jul 2020 10:38:24 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo の build を GitHub Actions でやることにした</title>
-      <link>http://minorugh.github.io/posts/hugo-build-in-github-actions/</link>
-      <pubDate>Sat, 29 May 2021 23:31:00 +0900</pubDate>
+      <title>HUGOブログテーマをMainroadに変更</title>
+      <link>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</link>
+      <pubDate>Wed, 15 Jul 2020 10:38:24 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/hugo-build-in-github-actions/</guid>
-      <description>このサイトを構築するにあたりいつも手元で Hugo を build して push していたけどもまあだるいし、そろそろ GitHub Actions にも慣れて来たし探したら既に Action が提供されていたの</description>
+      <guid>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</guid>
+      <description>Emacsライフの備忘録として使っていたブログを、俳句サイトのシステム管理ノートとしても使うためにテーマを変更しました。 Emacs関連のTi</description>
+    </item>
+    
+    <item>
+      <title>Debian９にHUGO最新バージョンをインストールする</title>
+      <link>http://minorugh.github.io/posts/hugo-install-to-debian/</link>
+      <pubDate>Tue, 23 Jan 2018 20:12:25 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/hugo-install-to-debian/</guid>
+      <description>はじめに Emacs+HUGOをMac環境メインで使っているが、Windows10（ThinkPad）上のVboxにdebianを入れて予備環</description>
+    </item>
+    
+    <item>
+      <title>JavaScriptを使ってHugoサイト内に全文検索を取り付けてみた</title>
+      <link>http://minorugh.github.io/posts/full-text-search-in-hugo/</link>
+      <pubDate>Mon, 15 Jan 2018 20:42:43 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/full-text-search-in-hugo/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;素敵なTipsを見つけたので、静的サイトジェネレータHugoを使って生成したコンテンツに全文検索を取り付けてみました。
+クライアント側のJavaScriptを使って日本語のキーワードも検索可能です。
+まずは、完成したページをご覧ください。→ &lt;a href=&#34;http://minorugh.github.io/search/&#34;&gt;サイト内全文検索&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>easy-hugoでマルチブログライフを愉しむ</title>
+      <link>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</link>
+      <pubDate>Wed, 22 Nov 2017 17:12:36 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</guid>
+      <description>&lt;p&gt;easy-hugo の作者 masasam さんが、我儘な私のリクエストに応えて数々のアップデートをしてくださいましたので、感謝の気持ちをこめて紹介させていただきます。
+easy-hugo は、package-install できますが、頻繁に更新されているので、&lt;a href=&#34;https://github.com/masasam/emacs-easy-hugo&#34;&gt;作者のページ&lt;/a&gt; で最新情報をチェックされるといいです。&lt;/p&gt;</description>
     </item>
     
   </channel>

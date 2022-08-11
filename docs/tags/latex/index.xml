@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on minoru&#39;s GitHub Pages</title>
+    <link>http://minorugh.github.io/tags/latex/</link>
+    <description>Recent content in Latex on minoru&#39;s GitHub Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 10 Feb 2020 09:09:09 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apt installを使わずにTeXLiveを導入する</title>
+      <link>http://minorugh.github.io/posts/install-texlive-without-apt/</link>
+      <pubDate>Mon, 10 Feb 2020 09:09:09 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/install-texlive-without-apt/</guid>
+      <description>TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live</description>
+    </item>
+    
+    <item>
+      <title>YaTeXからplatexを使えるようにする</title>
+      <link>http://minorugh.github.io/posts/platex-from-yatex/</link>
+      <pubDate>Sat, 29 Sep 2018 14:12:56 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/platex-from-yatex/</guid>
+      <description>&lt;p&gt;MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。&lt;/p&gt;
+&lt;p&gt;今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。&lt;/p&gt;
+&lt;p&gt;今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PDFJモジュールをサーバーに置いてPerlでPDFを自動生成させる</title>
+      <link>http://minorugh.github.io/posts/use-pdfj-in-server/</link>
+      <pubDate>Sat, 25 Feb 2017 21:52:14 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/use-pdfj-in-server/</guid>
+      <description>目的 全自動で稼働させているインターネット句会の中で全員の投句が済んだあと、ランダムに並べ替えて清記表を作成する作業工程がある。 参加者はそれを</description>
+    </item>
+    
+  </channel>
+</rss>

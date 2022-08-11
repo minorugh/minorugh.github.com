@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>perl on minoru&#39;s GitHub Pages</title>
+    <link>http://minorugh.github.io/tags/perl/</link>
+    <description>Recent content in perl on minoru&#39;s GitHub Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 12 Sep 2021 21:00:38 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Downloadした CGI Scriptを Severへ Uploadするときは改行コードを修正する必要あり</title>
+      <link>http://minorugh.github.io/posts/line-feed-code/</link>
+      <pubDate>Sun, 12 Sep 2021 21:00:38 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/line-feed-code/</guid>
+      <description>Windowsから Linuxに移行してから Webで Downloadした CGIスクリプトをそのまま FTPアプリでアップロードすると必ずエラーに</description>
+    </item>
+    
+    <item>
+      <title>Perlで未定義値かどうかを判定する方法</title>
+      <link>http://minorugh.github.io/posts/use-of-uninitialized-value/</link>
+      <pubDate>Sun, 13 Jan 2019 18:36:50 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/use-of-uninitialized-value/</guid>
+      <description>機嫌よく動いていた自作のスクリプトに use warnings; を入れたら作業そのものは止まることなく終了するのだけれど、 Use of uninitialized value ... と叱られるようになった。 foreach my $line (@log){</description>
+    </item>
+    
+    <item>
+      <title>Formをhtmlに直接表示しないでcgiで別窓表示する</title>
+      <link>http://minorugh.github.io/posts/multipurpose-formmail/</link>
+      <pubDate>Mon, 05 Nov 2018 17:09:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/multipurpose-formmail/</guid>
+      <description>&lt;p&gt;読者からのFeedbackを受け付けるためにホームページ上のコンテンツごとにメールフォームを貼っていた。
+SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃されることが多くなったので、各ページにフォームを貼り付けるのはやめてCGIで表示させるようにした。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Perl:文字列前後のスペース＆タブを削除</title>
+      <link>http://minorugh.github.io/posts/perl-delete-tab/</link>
+      <pubDate>Sat, 23 Sep 2017 22:07:14 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/perl-delete-tab/</guid>
+      <description>運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが</description>
+    </item>
+    
+    <item>
+      <title>UpFtpをMacとLinuxとで共用する方法</title>
+      <link>http://minorugh.github.io/posts/upftp-between-mac-linux/</link>
+      <pubDate>Mon, 17 Jul 2017 17:19:35 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/upftp-between-mac-linux/</guid>
+      <description>UpFtpと言うのは、結城浩さんの作られたMakeWebと併せて使うためのFTP自動化ツールのことです。 Makeweb:テキストをXHTML</description>
+    </item>
+    
+    <item>
+      <title>PDFJモジュールをサーバーに置いてPerlでPDFを自動生成させる</title>
+      <link>http://minorugh.github.io/posts/use-pdfj-in-server/</link>
+      <pubDate>Sat, 25 Feb 2017 21:52:14 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/use-pdfj-in-server/</guid>
+      <description>目的 全自動で稼働させているインターネット句会の中で全員の投句が済んだあと、ランダムに並べ替えて清記表を作成する作業工程がある。 参加者はそれを</description>
+    </item>
+    
+  </channel>
+</rss>

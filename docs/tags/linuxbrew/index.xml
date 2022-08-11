@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linuxbrew on minoru&#39;s GitHub Pages</title>
+    <link>http://minorugh.github.io/tags/linuxbrew/</link>
+    <description>Recent content in linuxbrew on minoru&#39;s GitHub Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Thu, 25 Nov 2021 10:16:28 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/linuxbrew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian11 (bullseye)に Linuxbrewを install</title>
+      <link>http://minorugh.github.io/posts/linuxbrew/</link>
+      <pubDate>Thu, 25 Nov 2021 10:16:28 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/linuxbrew/</guid>
+      <description>GitHub CLIツール ghをインストールするのに brewの方が簡単だったので Debianに Linuxbrewをインストールすることにした。 Mac時代</description>
+    </item>
+    
+  </channel>
+</rss>

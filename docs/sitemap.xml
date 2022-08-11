@@ -4,257 +4,302 @@
   
   <url>
     <loc>http://minorugh.github.io/categories/</loc>
-    <lastmod>2022-03-06T23:36:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/posts/check-updates-emacs-packages-with-el-get-lock/</loc>
-    <lastmod>2022-03-06T23:36:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/categories/emacs/</loc>
-    <lastmod>2022-03-06T23:36:00+09:00</lastmod>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://minorugh.github.io/</loc>
-    <lastmod>2022-03-06T23:36:00+09:00</lastmod>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://minorugh.github.io/posts/</loc>
-    <lastmod>2022-03-06T23:36:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/posts/retirement-2021/</loc>
-    <lastmod>2021-11-30T19:28:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/categories/%E9%9B%91%E8%A8%98/</loc>
-    <lastmod>2021-11-30T19:28:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/tags/config/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/categories/linux/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/tags/manjaro/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/posts/xp-pen-star-g640s-with-manjaro/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/tags/pentablet/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
     <loc>http://minorugh.github.io/tags/</loc>
-    <lastmod>2021-11-24T15:58:00+09:00</lastmod>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/tags/display/</loc>
-    <lastmod>2021-11-24T14:01:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/categories/tech/</loc>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/xrandr-and-autorandr-on-manjaro/</loc>
-    <lastmod>2021-11-24T14:01:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/windows/</loc>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/tags/skk/</loc>
-    <lastmod>2021-10-10T19:01:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/windows11-upgrade/</loc>
+    <lastmod>2022-01-31T19:20:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/thinkpad-p14s-gen2-intel-with-manjaro-linux/</loc>
-    <lastmod>2021-10-10T19:01:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/linux/</loc>
+    <lastmod>2022-01-26T10:29:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/rails/</loc>
-    <lastmod>2021-09-26T13:09:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/slack/</loc>
+    <lastmod>2022-01-26T10:29:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ginza-rails-37/</loc>
-    <lastmod>2021-09-26T13:09:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/slack-in-minimized/</loc>
+    <lastmod>2022-01-26T10:29:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/frontend/</loc>
-    <lastmod>2021-09-17T12:07:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/sylpheed/</loc>
+    <lastmod>2022-01-26T10:19:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/storybook-with-scss/</loc>
-    <lastmod>2021-09-17T12:07:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/minimize-startup-sylpheed/</loc>
+    <lastmod>2022-01-26T10:19:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/configure-webpack-dev-server-with-emacs/</loc>
-    <lastmod>2021-09-16T10:22:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/autostartssh/</loc>
+    <lastmod>2022-01-23T12:10:02+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-cli-rails-with-rails6-without-deprecation-warning/</loc>
-    <lastmod>2021-08-22T00:50:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/ssh/</loc>
+    <lastmod>2022-01-23T12:10:02+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/ember-js/</loc>
-    <lastmod>2021-08-22T00:50:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/emacs/</loc>
+    <lastmod>2022-01-19T19:43:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/sticky-shift-with-key-chord/</loc>
-    <lastmod>2021-07-11T13:42:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/netsftpforeign/</loc>
+    <lastmod>2022-01-19T19:43:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/testing-my-emacs-command/</loc>
-    <lastmod>2021-06-13T15:18:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/categories/perl/</loc>
+    <lastmod>2022-01-19T19:43:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/set-org-todo-from-ivy-part2/</loc>
-    <lastmod>2021-06-10T20:53:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/sftp/</loc>
+    <lastmod>2022-01-19T19:43:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/github/</loc>
-    <lastmod>2021-05-30T09:50:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/upsftp/</loc>
+    <lastmod>2022-01-19T19:43:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/using-actions-in-github/</loc>
-    <lastmod>2021-05-30T09:50:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/iframe/</loc>
+    <lastmod>2021-12-30T12:03:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/hugo/</loc>
-    <lastmod>2021-05-29T23:31:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/auto-height-of-iframe/</loc>
+    <lastmod>2021-12-30T12:03:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/hugo-build-in-github-actions/</loc>
-    <lastmod>2021-05-29T23:31:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/javascript/</loc>
+    <lastmod>2021-12-30T12:03:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-introduction/</loc>
-    <lastmod>2021-05-24T09:02:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/jquery/</loc>
+    <lastmod>2021-12-30T12:03:29+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/update-emberjs-3_4-to-latest/</loc>
-    <lastmod>2021-05-09T14:35:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/gh/</loc>
+    <lastmod>2021-11-25T12:01:10+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/categories/org/</loc>
-    <lastmod>2021-04-29T19:03:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/github-cli/</loc>
+    <lastmod>2021-11-25T12:01:10+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/try-org-agenda/</loc>
-    <lastmod>2021-04-29T19:03:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/linuxbrew/</loc>
+    <lastmod>2021-11-25T10:16:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/why-not-use-org-pomodoro/</loc>
-    <lastmod>2021-04-29T18:03:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/linuxbrew/</loc>
+    <lastmod>2021-11-25T10:16:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/research-rpa/</loc>
-    <lastmod>2021-04-25T23:46:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/elisp/</loc>
+    <lastmod>2021-11-18T08:41:01+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/update-emberjs-2.18to3/</loc>
-    <lastmod>2021-04-04T15:38:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/categories/emacs/</loc>
+    <lastmod>2021-11-18T08:41:01+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-components-addon-as-gem/</loc>
-    <lastmod>2021-03-26T01:49:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/pangu-spacing/</loc>
+    <lastmod>2021-11-18T08:41:01+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/my-ember-libs-to-npm/</loc>
-    <lastmod>2021-03-24T13:04:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/ac-mozc/</loc>
+    <lastmod>2021-11-13T20:20:44+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/migrate-ember-rails-to-ember-cli-rails/</loc>
-    <lastmod>2021-03-06T17:05:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/mozc/</loc>
+    <lastmod>2021-11-13T20:20:44+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-inject-from-rails/</loc>
-    <lastmod>2021-02-28T13:10:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/debian/</loc>
+    <lastmod>2021-09-26T07:24:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-component-in-subfolder/</loc>
-    <lastmod>2021-02-28T11:19:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/debian-consol/</loc>
+    <lastmod>2021-09-26T07:24:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-extract-common-libs/</loc>
-    <lastmod>2021-02-28T10:45:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/open-last-closed-buffer/</loc>
+    <lastmod>2021-09-17T14:24:33+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-complete-modulize/</loc>
-    <lastmod>2021-02-23T20:45:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/cycle-theme/</loc>
+    <lastmod>2021-09-16T14:31:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-partial-modulize/</loc>
-    <lastmod>2021-02-21T22:41:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/theme/</loc>
+    <lastmod>2021-09-16T14:31:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/publish-ember-rails-app/</loc>
-    <lastmod>2021-02-21T15:40:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/line-feed-code/</loc>
+    <lastmod>2021-09-12T21:00:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/ember-rails-in-2021/</loc>
-    <lastmod>2021-02-13T01:15:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/perl/</loc>
+    <lastmod>2021-09-12T21:00:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/add-browse-at-remote/</loc>
-    <lastmod>2021-01-23T23:18:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/css/</loc>
+    <lastmod>2021-09-10T14:11:41+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/happy-new-year-2021/</loc>
-    <lastmod>2021-01-02T20:31:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/tags/html/</loc>
+    <lastmod>2021-09-10T14:11:41+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/starting-hugo/</loc>
-    <lastmod>2020-12-20T15:22:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/iframe/</loc>
+    <lastmod>2021-09-10T14:11:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/gist/</loc>
+    <lastmod>2021-09-01T12:38:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/gist-on-emacs/</loc>
+    <lastmod>2021-09-01T12:38:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/github/</loc>
+    <lastmod>2021-08-29T07:31:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/jekyll-rtd-theme/</loc>
+    <lastmod>2021-08-29T07:31:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/jekyll/</loc>
+    <lastmod>2021-08-29T07:31:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/debian-update-10-to-11/</loc>
+    <lastmod>2021-08-23T08:21:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/categories/linux/</loc>
+    <lastmod>2021-08-23T08:21:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/install-emacs27.2/</loc>
+    <lastmod>2021-08-21T17:34:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/camera/</loc>
+    <lastmod>2021-05-12T10:37:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/categories/life/</loc>
+    <lastmod>2021-05-12T10:37:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/end-of-life/</loc>
+    <lastmod>2021-05-12T10:37:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/pixel/</loc>
+    <lastmod>2021-05-04T16:01:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/pixel5/</loc>
+    <lastmod>2021-05-04T16:01:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/montor/</loc>
+    <lastmod>2021-05-03T20:40:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/u2421e/</loc>
+    <lastmod>2021-05-03T20:40:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/pixel3/</loc>
+    <lastmod>2021-03-24T20:46:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/pxcel/</loc>
+    <lastmod>2021-03-24T20:46:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/xface4-panel-not-display/</loc>
+    <lastmod>2021-03-03T21:22:54+09:00</lastmod>
   </url>
   
   <url>
@@ -268,8 +313,413 @@
   </url>
   
   <url>
-    <loc>http://minorugh.github.io/posts/set-org-todo-from-ivy/</loc>
-    <lastmod>2020-05-31T01:32:00+09:00</lastmod>
+    <loc>http://minorugh.github.io/posts/disable-xim-on-emacs/</loc>
+    <lastmod>2020-09-09T21:18:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/blog/</loc>
+    <lastmod>2020-07-15T10:38:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/categories/hugo/</loc>
+    <lastmod>2020-07-15T10:38:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</loc>
+    <lastmod>2020-07-15T10:38:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/install-texlive-without-apt/</loc>
+    <lastmod>2020-02-10T09:09:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/latex/</loc>
+    <lastmod>2020-02-10T09:09:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/buffer/</loc>
+    <lastmod>2019-09-04T17:03:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/scratch-for-sticky-note/</loc>
+    <lastmod>2019-09-04T17:03:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/mac/</loc>
+    <lastmod>2019-09-03T14:56:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/eikana-app/</loc>
+    <lastmod>2019-09-03T14:56:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/set-functoin-key-on-emacs/</loc>
+    <lastmod>2019-09-01T22:46:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/hydra/</loc>
+    <lastmod>2019-09-01T22:46:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/hide-ds_store-from-emacs/</loc>
+    <lastmod>2019-08-08T12:18:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/hydra-pinky/</loc>
+    <lastmod>2019-08-01T12:27:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/neotree/</loc>
+    <lastmod>2019-07-27T15:51:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/neotree/</loc>
+    <lastmod>2019-07-27T15:51:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/swiper/</loc>
+    <lastmod>2019-07-11T16:32:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/swiper-region/</loc>
+    <lastmod>2019-07-11T16:32:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/e2ps/</loc>
+    <lastmod>2019-07-04T19:13:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/direx/</loc>
+    <lastmod>2019-04-08T19:31:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/direxjump-to-project-directory/</loc>
+    <lastmod>2019-04-08T19:31:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/cycle-custom-themes-emacs/</loc>
+    <lastmod>2019-04-08T09:56:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/dashboard/</loc>
+    <lastmod>2019-04-02T12:11:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/display-list-of-qiita-on-dashboard/</loc>
+    <lastmod>2019-04-02T12:11:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/buffer-undo-redo-with-winner-mode/</loc>
+    <lastmod>2019-03-28T16:34:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/dont-kill-scratch-bufffer/</loc>
+    <lastmod>2019-03-28T16:12:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/open-terminal-in-current-directory-from-emacs/</loc>
+    <lastmod>2019-03-26T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/terminal/</loc>
+    <lastmod>2019-03-26T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/emacs-key-binding-with-hydra/</loc>
+    <lastmod>2019-03-25T16:37:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/multiple-make-commands/</loc>
+    <lastmod>2019-03-04T14:20:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/makefile/</loc>
+    <lastmod>2019-03-04T14:20:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</loc>
+    <lastmod>2019-02-21T10:59:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/use-of-uninitialized-value/</loc>
+    <lastmod>2019-01-13T18:36:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/php/</loc>
+    <lastmod>2018-12-20T19:23:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/rss/</loc>
+    <lastmod>2018-12-20T19:23:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/update-information-by-rss-feed/</loc>
+    <lastmod>2018-12-20T19:23:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/chrome/</loc>
+    <lastmod>2018-12-03T22:38:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/emacs-chrome-together/</loc>
+    <lastmod>2018-12-03T22:38:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/multipurpose-formmail/</loc>
+    <lastmod>2018-11-05T17:09:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/twitter/</loc>
+    <lastmod>2018-10-15T14:19:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/multi-account-for-twimode/</loc>
+    <lastmod>2018-10-15T14:19:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/ifeq-for-makefile/</loc>
+    <lastmod>2018-10-15T13:13:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/platex-from-yatex/</loc>
+    <lastmod>2018-09-29T14:12:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/unkillable-scratch/</loc>
+    <lastmod>2018-09-24T17:11:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/iflipb/</loc>
+    <lastmod>2018-09-24T08:24:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/tempbuf/</loc>
+    <lastmod>2018-09-21T18:58:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/too-many-open-file/</loc>
+    <lastmod>2018-05-02T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/hydra-view-mode/</loc>
+    <lastmod>2018-04-30T18:16:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/delete-matching-lines/</loc>
+    <lastmod>2018-04-30T16:14:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/emacs26.1-rc1-to-debian./</loc>
+    <lastmod>2018-04-28T16:18:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/win10-upgrade/</loc>
+    <lastmod>2018-02-13T18:32:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/htaccess/</loc>
+    <lastmod>2018-01-23T20:51:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/write-encode-in-htaccess/</loc>
+    <lastmod>2018-01-23T20:51:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/hugo-install-to-debian/</loc>
+    <lastmod>2018-01-23T20:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/full-text-search-in-hugo/</loc>
+    <lastmod>2018-01-15T20:42:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/lunr/</loc>
+    <lastmod>2018-01-15T20:42:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/search/</loc>
+    <lastmod>2018-01-15T20:42:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/minibuffer-menu-by-hydra/</loc>
+    <lastmod>2018-01-10T20:36:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/vim-like-view-mode/</loc>
+    <lastmod>2018-01-04T19:09:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/vim/</loc>
+    <lastmod>2018-01-04T19:09:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</loc>
+    <lastmod>2017-11-22T17:12:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/ruby/</loc>
+    <lastmod>2017-11-18T15:43:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/ruby-open-method/</loc>
+    <lastmod>2017-11-18T15:43:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/makefile-error/</loc>
+    <lastmod>2017-11-17T15:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/dashboard/</loc>
+    <lastmod>2017-10-16T15:09:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/emacs25.3-to-debian/</loc>
+    <lastmod>2017-09-25T18:41:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/disable-sip-sierra/</loc>
+    <lastmod>2017-09-24T20:28:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/illustrator-error-on-sierra/</loc>
+    <lastmod>2017-09-23T22:33:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/perl-delete-tab/</loc>
+    <lastmod>2017-09-23T22:07:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/ftp/</loc>
+    <lastmod>2017-07-17T17:19:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/upftp-between-mac-linux/</loc>
+    <lastmod>2017-07-17T17:19:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/howm/</loc>
+    <lastmod>2017-07-17T16:35:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/open-junk-file&#43;howm/</loc>
+    <lastmod>2017-07-17T16:35:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/whitespace/</loc>
+    <lastmod>2017-06-26T22:50:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/whitespace-like-jaspace/</loc>
+    <lastmod>2017-06-26T22:50:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/howm&#43;dropbox/</loc>
+    <lastmod>2017-06-09T20:40:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/mozc-temp/</loc>
+    <lastmod>2017-05-25T19:48:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/iterm2-color-theme/</loc>
+    <lastmod>2017-05-17T23:43:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</loc>
+    <lastmod>2017-05-17T21:15:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/livedown/</loc>
+    <lastmod>2017-02-25T22:27:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/tags/markdown/</loc>
+    <lastmod>2017-02-25T22:27:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/posts/use-pdfj-in-server/</loc>
+    <lastmod>2017-02-25T21:52:14+09:00</lastmod>
   </url>
   
   <url>
