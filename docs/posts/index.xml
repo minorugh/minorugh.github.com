@@ -5,19 +5,8 @@
         <description>Recent content in Posts on ChangeLog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
-        <lastBuildDate>Fri, 12 Aug 2022 22:39:54 +0900</lastBuildDate>
+        <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate>
         <atom:link href="http://minorugh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Hoihoi</title>
-            <link>http://minorugh.github.io/posts/hoihoi/</link>
-            <pubDate>Fri, 12 Aug 2022 22:39:54 +0900</pubDate>
-            
-            <guid>http://minorugh.github.io/posts/hoihoi/</guid>
-            <description>test</description>
-            <content type="html"><![CDATA[<p>test</p>
-]]></content>
-        </item>
         
         <item>
             <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>
