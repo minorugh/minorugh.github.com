@@ -6,5 +6,5 @@ draft = false
 
 このWebサイトは、Emacsの設定や自動化のためのスクリプト開発などの`ChangeLog`として公開しています。
 
-`Hugo`+`GitHubPages`で構築しています。
+`Hugo`+`GitHub Pages`で構築しています。
 
