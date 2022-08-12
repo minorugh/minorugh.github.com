@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 16 Sep 2021 14:31:40 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs : 作業目的別にテーマを切り替えて使う</title>
-      <link>http://minorugh.github.io/posts/cycle-theme/</link>
+      <link>http://minorugh.github.io/post/cycle-theme/</link>
       <pubDate>Thu, 16 Sep 2021 14:31:40 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/cycle-theme/</guid>
+      <guid>http://minorugh.github.io/post/cycle-theme/</guid>
       <description>Melpaから package installできる Emacsテーマは、たくさんあってお好みで選べるようになりとても便利なのですが、一つに絞り込むのは難しい</description>
     </item>
     
     <item>
       <title>Emacs：複数のテーマを切り替えて使う</title>
-      <link>http://minorugh.github.io/posts/cycle-custom-themes-emacs/</link>
+      <link>http://minorugh.github.io/post/cycle-custom-themes-emacs/</link>
       <pubDate>Mon, 08 Apr 2019 09:56:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/cycle-custom-themes-emacs/</guid>
+      <guid>http://minorugh.github.io/post/cycle-custom-themes-emacs/</guid>
       <description>Emacsを快適に使うためにいろいろ自分好みのテーマを模索します。私の場合、deeper-blue misterioso material と変遷し、今は doom-dracula を使っています。 それぞ</description>
     </item>
     

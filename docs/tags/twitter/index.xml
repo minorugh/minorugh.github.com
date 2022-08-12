@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 15 Oct 2018 14:19:10 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>複数アカウトでtwittering-modeを使う </title>
-      <link>http://minorugh.github.io/posts/multi-account-for-twimode/</link>
+      <link>http://minorugh.github.io/post/multi-account-for-twimode/</link>
       <pubDate>Mon, 15 Oct 2018 14:19:10 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/multi-account-for-twimode/</guid>
+      <guid>http://minorugh.github.io/post/multi-account-for-twimode/</guid>
       <description>&lt;p&gt;EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&amp;ldquo;な〜んだ(^o^)&amp;rdquo; という落ちでしょうね。&lt;/p&gt;</description>
     </item>
     

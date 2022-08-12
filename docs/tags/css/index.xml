@@ -9,19 +9,19 @@
     <lastBuildDate>Fri, 10 Sep 2021 14:11:41 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iframeに異なるドメイン（クロスドメイン）のコンテンツを読み込んで高さを自動調節する方法</title>
-      <link>http://minorugh.github.io/posts/iframe/</link>
+      <link>http://minorugh.github.io/post/iframe/</link>
       <pubDate>Fri, 10 Sep 2021 14:11:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/iframe/</guid>
+      <guid>http://minorugh.github.io/post/iframe/</guid>
       <description>wordpressでサイトを構築したときに掲示板をつけることになりました。 bbpressをはじめ何種類かのプラグインも試しましたが、不要な機</description>
     </item>
     
     <item>
       <title>iPadでBootstrapのnavbarをcollapseさせる</title>
-      <link>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</link>
+      <link>http://minorugh.github.io/post/navbar-collapse-for-ipad/</link>
       <pubDate>Thu, 21 Feb 2019 10:59:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</guid>
+      <guid>http://minorugh.github.io/post/navbar-collapse-for-ipad/</guid>
       <description>CSSフレームワークのBootstrapを使って、ナビゲーション（navbar）を導入する場合、Bootstrapのデフォルトだと、iPad</description>
     </item>
     

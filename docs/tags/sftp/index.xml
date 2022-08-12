@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 19 Jan 2022 19:43:07 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/sftp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UpFtpを改造して UpSFTPを作った</title>
-      <link>http://minorugh.github.io/posts/upsftp/</link>
+      <link>http://minorugh.github.io/post/upsftp/</link>
       <pubDate>Wed, 19 Jan 2022 19:43:07 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/upsftp/</guid>
+      <guid>http://minorugh.github.io/post/upsftp/</guid>
       <description>ホームページを更新するのに結城浩さん作の upftp.plを FTPSモードで使っていたが SFTPで使えるようにしたいと思い試してみました。 upftp.pl N</description>
     </item>
     

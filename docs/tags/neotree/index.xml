@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 27 Jul 2019 15:51:23 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/neotree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>neotreeを試してみる</title>
-      <link>http://minorugh.github.io/posts/neotree/</link>
+      <link>http://minorugh.github.io/post/neotree/</link>
       <pubDate>Sat, 27 Jul 2019 15:51:23 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/neotree/</guid>
+      <guid>http://minorugh.github.io/post/neotree/</guid>
       <description>以下の機能を盛り込んで実用的なneotreeの設定を試してみました。 アイコン表示（use all-the-icons） 文字サイズの変更（縮小）</description>
     </item>
     

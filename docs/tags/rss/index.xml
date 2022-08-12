@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 20 Dec 2018 19:23:18 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSSフィードを取得してブログの更新情報を表示</title>
-      <link>http://minorugh.github.io/posts/update-information-by-rss-feed/</link>
+      <link>http://minorugh.github.io/post/update-information-by-rss-feed/</link>
       <pubDate>Thu, 20 Dec 2018 19:23:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/update-information-by-rss-feed/</guid>
+      <guid>http://minorugh.github.io/post/update-information-by-rss-feed/</guid>
       <description>phpスクリプトに初挑戦した。 参考にした情報 ブログの更新情報をPHPで読み込んで表示する方法 記事更新後7日間はNew表示する 基本的には参考サ</description>
     </item>
     

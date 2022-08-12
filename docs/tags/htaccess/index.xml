@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 23 Jan 2018 20:51:12 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/htaccess/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WEBソース表示等での文字化け対策を.htaccessに書く</title>
-      <link>http://minorugh.github.io/posts/write-encode-in-htaccess/</link>
+      <link>http://minorugh.github.io/post/write-encode-in-htaccess/</link>
       <pubDate>Tue, 23 Jan 2018 20:51:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/write-encode-in-htaccess/</guid>
+      <guid>http://minorugh.github.io/post/write-encode-in-htaccess/</guid>
       <description>はじめに WEB環境のファイルの文字コードは、基本的に全てUTF-8で統一している。 テキストファイル、Perl、cgi、Ruby、js、htm</description>
     </item>
     

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac" />
+<meta name="keywords" content="blog,developer,personal, slack, linux" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/post/slack-in-minimized/" />
+
+
+    <title>
+        
+            SlackAppを最小化状態で自動起動する for Linux :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="SlackAppを最小化状態で自動起動する for Linux">
+<meta itemprop="description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac">
+<meta itemprop="datePublished" content="2022-01-26T10:29:22+09:00" />
+<meta itemprop="dateModified" content="2022-01-26T10:29:22+09:00" />
+<meta itemprop="wordCount" content="297">
+
+
+
+<meta itemprop="keywords" content="slack,linux," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SlackAppを最小化状態で自動起動する for Linux"/>
+<meta name="twitter:description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac"/>
+
+
+
+
+
+    <meta property="article:section" content="tech" />
+
+
+
+    <meta property="article:published_time" content="2022-01-26 10:29:22 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://minorugh.github.io/post/slack-in-minimized/">SlackAppを最小化状態で自動起動する for Linux</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>元ネタ
+<a href="https://bre.is/tEgwhUeT">SlackAppを最小化状態で自動起動する</a></p>
+<p>SlackAppを自動起動にしている場合は <code>~/.config/autostart/slack.desktop</code> と言うファイルがあります。 私の環境では、<code>slack.desktop</code> は <code>/usr/share/applications/slack.desktop</code> に存在していました。 なので、編集するには `sudo`` が必要です。</p>
+<pre><code class="language-conf" data-lang="conf">[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack Desktop
+GenericName=Slack Client for Linux
+Exec=/usr/bin/slack %U
+Icon=/usr/share/pixmaps/slack.png
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;
+</code></pre><p>Exec が実際に実行するコマンドを指定しています。<code>/usr/bin/slack</code> が本体なので、この直後に <code>--startup</code> を挿入すれば最小化状態で自動起動するようになります。</p>
+<pre><code class="language-conf" data-lang="conf">Exec=/usr/bin/slack --startup %U
+</code></pre><p>おそらく、SlackAppをアップデートすると <code>/usr/share/applications/slack.desktop</code> は上書きされて <code>--startup</code> が消えるので、<code>~/.config/autostart/</code> にはシンボリックリンクではなく、コピーを置くなどのしたほうがいいです。</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/slack/">slack</a></span>
+        <span class="tag"><a href="http://minorugh.github.io/tags/linux/">linux</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/tech/">tech</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

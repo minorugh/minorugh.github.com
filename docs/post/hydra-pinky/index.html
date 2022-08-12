@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="私のEmacs設定は、プログラマー masasamさんのブログ「 Solist Work Blog」から多くのことを吸収して日々成長しています。 そのブログの中にある" />
+<meta name="keywords" content="blog,developer,personal, hydra" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/post/hydra-pinky/" />
+
+
+    <title>
+        
+            view-modeを超えるhydra-pinkyの設定 :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="view-modeを超えるhydra-pinkyの設定">
+<meta itemprop="description" content="私のEmacs設定は、プログラマー masasamさんのブログ「 Solist Work Blog」から多くのことを吸収して日々成長しています。 そのブログの中にある">
+<meta itemprop="datePublished" content="2019-08-01T12:27:34+09:00" />
+<meta itemprop="dateModified" content="2019-08-01T12:27:34+09:00" />
+<meta itemprop="wordCount" content="1260">
+
+
+
+<meta itemprop="keywords" content="hydra," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="view-modeを超えるhydra-pinkyの設定"/>
+<meta name="twitter:description" content="私のEmacs設定は、プログラマー masasamさんのブログ「 Solist Work Blog」から多くのことを吸収して日々成長しています。 そのブログの中にある"/>
+
+
+
+
+
+    <meta property="article:section" content="emacs" />
+
+
+
+    <meta property="article:published_time" content="2019-08-01 12:27:34 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://minorugh.github.io/post/hydra-pinky/">view-modeを超えるhydra-pinkyの設定</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>私のEmacs設定は、プログラマー <a href="https://github.com/masasam">masasam</a>さんのブログ「 <a href="https://solist.work/blog/">Solist Work Blog</a>」から多くのことを吸収して日々成長しています。
+そのブログの中にある<a href="https://solist.work/blog/page/3/">Emacs Pinkyをhydraで解決する</a> の記事からhydra-pinkyの設定を参考にして更に使いやすくカスタマイズしてみました。</p>
+<h2 id="screen-shot">Screen Shot</h2>
+<p><img src="https://live.staticflickr.com/65535/48441308482_2210006a97_b.jpg" alt="hydra-pinky"></p>
+<p>hydra-pinky を発動するとミニバッファーに赤文字のメニューがでてきます。 hydra発動中はこの表示が続くのでわかりやすいです。 赤い表示のキーをタイプしている間はいつまでたってもhydraは解除されません。
+hydraが終了する条件は、定義された赤いキー以外をタイプするか、青文字の &ldquo;q&rdquo;：quit を押した場合です。</p>
+<p>つまりhydra-pinkyは、発動中はvew-modeに似た動作をし、そこから抜けると普通の編集モードに戻る…という仕組みです。
+複雑なキーバインドを覚える必要もなくGUIでスピーディーにキー操作できるのはとてもありがたいです。
+私自身はもともとブラインドタッチを使えないのでEmacs-pinkyの他にもいろいろhydraを活用しています。</p>
+<p><a href="https://qiita.com/minoruGH/items/3776090fba46b1f9c228">HydraでEmacsのキーバインド問題を解消</a></p>
+<h2 id="sequential-command">sequential-command</h2>
+<p><a href="https://github.com/rubikitch/sequential-command">rubikitch/sequential-command</a></p>
+<p>Emacsを再起動して、C-a C-a C-aすると、行頭にいって、バッファーの頭にいって、元に戻る。
+また、C-e C-e C-eすると行頭にいって、バッファーの頭にいって、元に戻るというシンプルな機能ですが、なにげに便利です。</p>
+<p>pinkyでは、&ldquo;a&rdquo;,&ldquo;e&quot;キーに割り当てています。</p>
+<h2 id="window-toggle-division">window-toggle-division</h2>
+<p>Windowの縦分割、横分割をtoggleで切り替えします。</p>
+<h2 id="iflipbバッファー移動">iflipb：バッファー移動</h2>
+<p>バッファー移動は、<code>next-buffer</code> <code>previous-buffer</code> を使ってもいいのですが、不要なbufferはignoreしてくれるfilipbを使います。
+<a href="https://qiita.com/minoruGH/items/aa96e92c1434f87940d6">Emacs:タブを使わない究極のバッファー移動</a></p>
+<h2 id="矢印キーの扱い">矢印キーの扱い</h2>
+<p>Emacserの方から見ると邪道だと言われそうですが、私はカーソル移動に矢印キーを使うことも多いです。基本は、h,j,k,lを使うようにしていてもうっかり矢印キーに触れるとhydra-pinkyが消えてしまうので、pinky発動中は矢印関係の操作で消えないようにしています。</p>
+<h2 id="設定">設定</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; sequential-command</span>
+(use-package sequential-command-config
+  :commands sequential-command-setup-keys
+  :hook (after-init <span style="color:#f92672">.</span> sequential-command-setup-keys))
+
+<span style="color:#75715e">;; other-window-or-split</span>
+(bind-key
+ <span style="color:#e6db74">&#34;C-q&#34;</span>
+ (defun other-window-or-split ()
+   <span style="color:#e6db74">&#34;If there is one window, open split window.
+</span><span style="color:#e6db74">If there are two or more windows, it will go to another window.&#34;</span>
+   (interactive)
+   (when (one-window-p)
+     (split-window-horizontally))
+   (other-window <span style="color:#ae81ff">1</span>)))
+
+<span style="color:#75715e">;; window-toggle-division</span>
+(defun window-toggle-division ()
+  <span style="color:#e6db74">&#34;Replace vertical &lt;-&gt; horizontal when divided into two.&#34;</span>
+  (interactive)
+  (unless (<span style="color:#a6e22e">=</span> (count-windows <span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">2</span>)
+    (<span style="color:#a6e22e">error</span> <span style="color:#e6db74">&#34;Not divided into two!&#34;</span>))
+  (let ((before-height)
+        (other-buf (<span style="color:#a6e22e">window-buffer</span> (<span style="color:#a6e22e">next-window</span>))))
+    (setq before-height (window-height))
+    (delete-other-windows)
+    (if (<span style="color:#a6e22e">=</span> (window-height) before-height)
+        (split-window-vertically)
+      (split-window-horizontally))
+    (other-window <span style="color:#ae81ff">1</span>)
+    (switch-to-buffer other-buf)
+    (other-window <span style="color:#ae81ff">-1</span>)))
+
+<span style="color:#75715e">;; iflipb</span>
+(setq iflipb-wrap-around <span style="color:#66d9ef">t</span>)
+(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span> <span style="color:#e6db74">&#34;dir]$&#34;</span>))
+
+<span style="color:#75715e">;; Hydra-pinky</span>
+(bind-key [f11] <span style="color:#e6db74">&#39;hydra-pinky/body</span>)
+(key-chord-define-global
+ <span style="color:#e6db74">&#34;::&#34;</span>
+ (defhydra hydra-pinky (:color red :hint <span style="color:#66d9ef">nil</span>)
+   <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74"> ：_0_._1_._2_._3_._o_._S_._x_   ：_j_._k_._h_._l_._c_._a_._e_._b_._v_._SPC_._w_._s_._/_   ：_n_._p_._u_._t_   ：_&lt;_-_:_-_&gt;_   ：_q_uit&#34;</span>
+   <span style="color:#75715e">;; window</span>
+   (<span style="color:#e6db74">&#34;0&#34;</span> delete-window)
+   (<span style="color:#e6db74">&#34;1&#34;</span> delete-other-windows)
+   (<span style="color:#e6db74">&#34;2&#34;</span> split-window-below)
+   (<span style="color:#e6db74">&#34;3&#34;</span> split-window-right)
+   (<span style="color:#e6db74">&#34;o&#34;</span> other-window-or-split)
+   (<span style="color:#e6db74">&#34;S&#34;</span> window-swap-states)
+   (<span style="color:#e6db74">&#34;x&#34;</span> window-toggle-division)
+   <span style="color:#75715e">;; page</span>
+   (<span style="color:#e6db74">&#34;a&#34;</span> seq-home)
+   (<span style="color:#e6db74">&#34;e&#34;</span> seq-end)
+   (<span style="color:#e6db74">&#34;j&#34;</span> next-line)
+   (<span style="color:#e6db74">&#34;k&#34;</span> previous-line)
+   (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#a6e22e">forward-char</span>)
+   (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#a6e22e">backward-char</span>)
+   (<span style="color:#e6db74">&#34;c&#34;</span> recenter-top-bottom)
+   (<span style="color:#e6db74">&#34;&lt;down&gt;&#34;</span> next-line)
+   (<span style="color:#e6db74">&#34;&lt;up&gt;&#34;</span> previous-line)
+   (<span style="color:#e6db74">&#34;&lt;right&gt;&#34;</span> <span style="color:#a6e22e">forward-char</span>)
+   (<span style="color:#e6db74">&#34;&lt;left&gt;&#34;</span> <span style="color:#a6e22e">backward-char</span>)
+   (<span style="color:#e6db74">&#34;&lt;C-up&gt;&#34;</span> backward-paragraph)
+   (<span style="color:#e6db74">&#34;&lt;C-down&gt;&#34;</span> forward-paragraph)
+   (<span style="color:#e6db74">&#34;&lt;C-left&gt;&#34;</span> left-word)
+   (<span style="color:#e6db74">&#34;&lt;C-right&gt;&#34;</span> right-word)
+   (<span style="color:#e6db74">&#34;b&#34;</span> scroll-down-command)
+   (<span style="color:#e6db74">&#34;v&#34;</span> scroll-up-command)
+   (<span style="color:#e6db74">&#34;SPC&#34;</span> set-mark-command)
+   (<span style="color:#e6db74">&#34;w&#34;</span> avy-goto-word-1)
+   (<span style="color:#e6db74">&#34;s&#34;</span> swiper-isearch-region)
+   <span style="color:#75715e">;; git</span>
+   (<span style="color:#e6db74">&#34;n&#34;</span> git-gutter:next-hunk)
+   (<span style="color:#e6db74">&#34;p&#34;</span> git-gutter:previous-hunk)
+   (<span style="color:#e6db74">&#34;u&#34;</span> git-gutter:popup-hunk)
+   (<span style="color:#e6db74">&#34;t&#34;</span> git-gutter:toggle-popup-hunk)
+   <span style="color:#75715e">;; buffer</span>
+   (<span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">kill-buffer</span>)
+   (<span style="color:#e6db74">&#34;:&#34;</span> counsel-switch-buffer)
+   (<span style="color:#e6db74">&#34;&lt;&#34;</span> iflipb-previous-buffer)
+   (<span style="color:#e6db74">&#34;&gt;&#34;</span> iflipb-next-buffer)
+   <span style="color:#75715e">;; quit</span>
+   (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span>)))
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/hydra/">hydra</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/emacs/">emacs</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

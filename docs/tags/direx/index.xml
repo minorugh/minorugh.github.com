@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 08 Apr 2019 19:31:31 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/direx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>direx-project &#43; popwinで快適なディレクトリツリー環境を構築する</title>
-      <link>http://minorugh.github.io/posts/direxjump-to-project-directory/</link>
+      <link>http://minorugh.github.io/post/direxjump-to-project-directory/</link>
       <pubDate>Mon, 08 Apr 2019 19:31:31 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/direxjump-to-project-directory/</guid>
+      <guid>http://minorugh.github.io/post/direxjump-to-project-directory/</guid>
       <description>Emacsでディレクトリツリーを表示させるパッケージにはいくつかの選択肢があります。neotreeが人気のようですが表示幅が自由にカスタマイ</description>
     </item>
     

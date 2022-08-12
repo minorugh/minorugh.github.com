@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 11 Jul 2019 16:32:15 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/swiper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>swiper-region / swiper-isearch-region</title>
-      <link>http://minorugh.github.io/posts/swiper-region/</link>
+      <link>http://minorugh.github.io/post/swiper-region/</link>
       <pubDate>Thu, 11 Jul 2019 16:32:15 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/swiper-region/</guid>
+      <guid>http://minorugh.github.io/post/swiper-region/</guid>
       <description>swiper/swiper-isearchをregion選択からも使えるようにするための設定。isearchではmigemoも使えるようにし</description>
     </item>
     

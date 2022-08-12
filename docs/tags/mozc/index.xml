@@ -9,28 +9,28 @@
     <lastBuildDate>Sat, 13 Nov 2021 20:20:44 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/mozc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ac-mozc : モードレス日本語入力を試してみた</title>
-      <link>http://minorugh.github.io/posts/ac-mozc/</link>
+      <link>http://minorugh.github.io/post/ac-mozc/</link>
       <pubDate>Sat, 13 Nov 2021 20:20:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/ac-mozc/</guid>
+      <guid>http://minorugh.github.io/post/ac-mozc/</guid>
       <description>随分前に一度試してみたが、mozc.elと併用する時に若干変換ルールに違いがあって使いにくく、そのうち使わなくなっていた。 その後、elisp</description>
     </item>
     
     <item>
       <title>mozc-tempを使ったモードレス日本語入力が快適</title>
-      <link>http://minorugh.github.io/posts/mozc-temp/</link>
+      <link>http://minorugh.github.io/post/mozc-temp/</link>
       <pubDate>Thu, 25 May 2017 19:48:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/mozc-temp/</guid>
+      <guid>http://minorugh.github.io/post/mozc-temp/</guid>
       <description>モードレスに魅せられて、ac-mozcを導入して使っていたが、新しいモードレスのコードで、mozc-tempなるものがあることを知った。早速</description>
     </item>
     
     <item>
       <title>mozc_emacs_helper on macOS Sierra</title>
-      <link>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</link>
+      <link>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</link>
       <pubDate>Wed, 17 May 2017 21:15:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</guid>
+      <guid>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</guid>
       <description>macOS Sierra をクリーンインストールしたので mozc_emacs_helper を使えるようにした。google日本語入力と連携できるようにビルドできるという以下のサイトの Tips を参考にし</description>
     </item>
     

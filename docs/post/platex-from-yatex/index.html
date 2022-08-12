@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。
+今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。
+今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。
+" />
+<meta name="keywords" content="blog,developer,personal, latex" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/post/platex-from-yatex/" />
+
+
+    <title>
+        
+            YaTeXからplatexを使えるようにする :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="YaTeXからplatexを使えるようにする">
+<meta itemprop="description" content="MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。
+今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。
+今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。">
+<meta itemprop="datePublished" content="2018-09-29T14:12:56+09:00" />
+<meta itemprop="dateModified" content="2018-09-29T14:12:56+09:00" />
+<meta itemprop="wordCount" content="1877">
+
+
+
+<meta itemprop="keywords" content="latex," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="YaTeXからplatexを使えるようにする"/>
+<meta name="twitter:description" content="MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。
+今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。
+今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。"/>
+
+
+
+
+
+    <meta property="article:section" content="emacs" />
+
+
+
+    <meta property="article:published_time" content="2018-09-29 14:12:56 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://minorugh.github.io/post/platex-from-yatex/">YaTeXからplatexを使えるようにする</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。</p>
+<p>今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。</p>
+<p>今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。</p>
+<ul>
+<li><a href="https://qiita.com/tetsuo_jp/items/04a66b8f42946b5c5a5a">macでtex環境を削除</a></li>
+</ul>
+<h2 id="動作環境">動作環境</h2>
+<ul>
+<li>OS: macOS High Sierra 10.13.6</li>
+<li>Emacs: emacs-26.1-mac-7.1 （Download from <a href="https://github.com/railwaycat/homebrew-emacsmacport/releases">Emacs-Mac-Port</a>）</li>
+</ul>
+<h2 id="basictex-のインストール">BasicTeX のインストール</h2>
+<p>Texlive のフルパッケージまでは必要ないのでが容量の少ないBasicTexをインストールします。いろんな導入記事を参考にしましたが、シンプルでわかりやすかった TEX Wiki のサイトを参考にしました。</p>
+<ul>
+<li><a href="https://texwiki.texjp.org/?BasicTeX">TEX Wikki BasicTex</a></li>
+</ul>
+<h3 id="basictexpkg-でインストール">BasicTeX.pkg でインストール</h3>
+<p><a href="http://tug.org/mactex/morepackages.html">More Packages - MacTeX</a> または <a href="https://texwiki.texjp.org/?MacTeX#mirror">ミラーサイト (MacTeX)</a> から BasicTeX.pkg をダウンロードします。</p>
+<p>BasicTeX のインストールの流れは以下のとおりです。</p>
+<ol>
+<li>ダウンロードした BasicTeX.pkg をダブルクリックしてインストールします。</li>
+<li>ターミナル上で sudo tlmgr update &ndash;self &ndash;all を実行し，最新版までアップデートします。</li>
+<li>ターミナル上で sudo tlmgr paper a4 を実行してデフォルトの用紙サイズを A4 に変更します。</li>
+<li>**【重要】BasicTeX には標準で日本語 pTeX / upTeX が入っていません。**これらを使えるようにするために collection-langjapanese を追加でインストールします。collection-langjapanese をインストールすれば，依存関係で collection-langcjk もインストールされます。</li>
+</ol>
+<p>上記ターミナル上での手順をまとめると以下のとおりです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr update --self --all 
+sudo tlmgr paper a4 
+sudo tlmgr install collection-langjapanese
+</code></pre></div><h2 id="フォント関係の設定">フォント関係の設定</h2>
+<p>以下の記事を参考にしました。</p>
+<ul>
+<li><a href="http://doratex.hatenablog.jp/entry/20180501/1525144736#5">MacTeX 2018 のインストール＆日本語環境構築法</a></li>
+</ul>
+<h3 id="tlcontrib-からの追加インストール">TLContrib からの追加インストール</h3>
+<p>続いて，TLContrib をレポジトリとして登録し，そこからmacOS／ヒラギノ関連のパッケージをダウンロードします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr repository add http://contrib.texlive.info/current tlcontrib
+sudo tlmgr pinning add tlcontrib <span style="color:#e6db74">&#39;*&#39;</span>
+sudo tlmgr install japanese-otf-nonfree japanese-otf-uptex-nonfree ptex-fontmaps-macos cjk-gs-integrate-macos
+</code></pre></div><h3 id="ヒラギノフォントの準備">ヒラギノフォントの準備</h3>
+<p>続いて，macOS に標準で用意されている美しいヒラギノフォントを TeX で使用するため，次の一連のコマンドを実行します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cjk-gs-integrate --link-texmf --cleanup --force
+sudo cjk-gs-integrate-macos --link-texmf --force
+sudo mktexlsr
+</code></pre></div><h3 id="ヒラギノフォントの埋め込み設定">ヒラギノフォントの埋め込み設定</h3>
+<p>ヒラギノフォントを埋め込んだPDFを作成するために、次のコマンドを実行します。
+私の場合はmacOS 10.13 High Sierra ですが、macOS のバージョンによって実行するコマンドが異なります。macOSの他のバージョンでの設定は、前述の参考サイトの記事を見てください。</p>
+<h5 id="macos-1013-high-sierra-の場合">macOS 10.13 High Sierra の場合</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
+</code></pre></div><p>以上で，(u)pLaTeX + dvipdfmx によって，美しいヒラギノフォントを埋め込んだ和文PDFを作成できるようになりました。</p>
+<h2 id="自前のスタイルファイルの置き場所">自前のスタイルファイルの置き場所</h2>
+<p>私の場合、縦書き文書での利用が多く、バイブルとして下記の書を座右においています。</p>
+<ul>
+<li><a href="http://xymtex.my.coocan.jp/fujitas2/texlatex/index.html">藤田眞作著：pLaTeX2ε入門・縦横文書術</a></li>
+</ul>
+<p>そこには、縦組み関係のスタイルシートが多く紹介されていて <a href="http://xymtex.my.coocan.jp/fujitas2/texlatex/index.html">著者のホームページ</a> から必要なものをダウンロードできます。でもそれらはわかりやすい場所に置いておきたいと考えて下記の記事を参考にして専用のディレクトリを作りました。</p>
+<ul>
+<li><a href="http://ijairai.hatenablog.com/entry/2015/07/31/235043">Mac OS でのスタイルファイル（.sty）の置き場所</a></li>
+</ul>
+<h2 id="yatexの設定">YaTeXの設定</h2>
+<p>参考までに私の Emacs:YaTeXの設定を貼っておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#a6e22e">use-package</span> yatex)
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#f92672">.</span> yatex-mode))
+
+<span style="color:#75715e">;; Script for opening PDF generated from dvi in ​​Preview.app</span>
+<span style="color:#75715e">;; Create dvpd.sh as follows and place it in /usr/local/bin</span>
+<span style="color:#75715e">;; | #!/bin/bash</span>
+<span style="color:#75715e">;; | name=$1</span>
+<span style="color:#75715e">;; | dvipdfmx $1 &amp;&amp; open -a Preview.app ${name%.*}.pdf</span>
+
+(<span style="color:#66d9ef">setq</span> tex-command <span style="color:#e6db74">&#34;platex&#34;</span>
+      dviprint-command-format <span style="color:#e6db74">&#34;dvpd.sh %s&#34;</span>
+      YaTeX-kanji-code <span style="color:#66d9ef">nil</span>
+      YaTeX-latex-message-code <span style="color:#e6db74">&#39;utf-8</span>
+      Section-name <span style="color:#e6db74">&#34;documentclass&#34;</span>
+      makeindex-command <span style="color:#e6db74">&#34;mendex&#34;</span>
+      YaTeX-use-AMS-LaTeX <span style="color:#66d9ef">t</span>
+      YaTeX-use-LaTeX2e <span style="color:#66d9ef">t</span>
+      YaTeX-use-font-lock <span style="color:#66d9ef">t</span>)
+
+(add-hook <span style="color:#e6db74">&#39;yatex-mode-hook</span>
+   (lambda()
+    (<span style="color:#a6e22e">use-package</span> yatexprc)
+    (local-set-key [(M c)] <span style="color:#e6db74">&#39;YaTeX-typeset-buffer</span>)   <span style="color:#75715e">;; Type set</span>
+    (local-set-key [(M l)] <span style="color:#e6db74">&#39;YaTeX-lpr</span>)))            <span style="color:#75715e">;; Open PDF file</span>
+</code></pre></div><p>上記の設定で何をしているかというと</p>
+<ul>
+<li>Emacsでtexファイルを開き、YaTeX-typeset-bufferを実行するとplatexが実行されてdviファイルが生成されます。続いて、YaTeX-lprを実行するとdvpd.shが呼ばれてdvi-&gt;PDFが実行され、生成されたPDFをMacのPreview.appで自動的に開きます。</li>
+<li>これの自動化を実現させるためにあらかじめdvpd.shを次のように作成し、/usr/local/binに置きます。当然PATHが通っている必要があります。ターミナルで、/usr/local/binに移動し、<code> chmod +x dvpd.sh</code> を実行して dvpd.shをコマンドとして使うために実行権限を与えます。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># 生成されたPDFをPreview.appで開く</span>
+name<span style="color:#f92672">=</span>$1
+dvipdfmx $1 <span style="color:#f92672">&amp;&amp;</span> open -a Preview.app <span style="color:#e6db74">${</span>name%.*<span style="color:#e6db74">}</span>.pdf
+<span style="color:#75715e"># 不要ファイルを削除</span>
+rm *.au*
+rm *.dv*
+rm *.lo*
+rm *.ou*
+rm *.to*
+</code></pre></div><p>以上で、快適なYaTeX &amp; platex環境が実現します。</p>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/latex/">latex</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/emacs/">emacs</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

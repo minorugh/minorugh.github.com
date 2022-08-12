@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 15 Jan 2018 20:42:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScriptを使ってHugoサイト内に全文検索を取り付けてみた</title>
-      <link>http://minorugh.github.io/posts/full-text-search-in-hugo/</link>
+      <link>http://minorugh.github.io/post/full-text-search-in-hugo/</link>
       <pubDate>Mon, 15 Jan 2018 20:42:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/full-text-search-in-hugo/</guid>
+      <guid>http://minorugh.github.io/post/full-text-search-in-hugo/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;素敵なTipsを見つけたので、静的サイトジェネレータHugoを使って生成したコンテンツに全文検索を取り付けてみました。
 クライアント側のJavaScriptを使って日本語のキーワードも検索可能です。

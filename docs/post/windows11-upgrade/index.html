@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Windows11を導入するためには３つの条件が必須になっています。 １． CPU ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/" />
+<meta name="keywords" content="blog,developer,personal, windows" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/post/windows11-upgrade/" />
+
+
+    <title>
+        
+            Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編 :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編">
+<meta itemprop="description" content="Windows11を導入するためには３つの条件が必須になっています。 １． CPU ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/">
+<meta itemprop="datePublished" content="2022-01-31T19:20:43+09:00" />
+<meta itemprop="dateModified" content="2022-01-31T19:20:43+09:00" />
+<meta itemprop="wordCount" content="1324">
+
+
+
+<meta itemprop="keywords" content="windows," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編"/>
+<meta name="twitter:description" content="Windows11を導入するためには３つの条件が必須になっています。 １． CPU ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/"/>
+
+
+
+
+
+    <meta property="article:section" content="tech" />
+
+
+
+    <meta property="article:published_time" content="2022-01-31 19:20:43 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://minorugh.github.io/post/windows11-upgrade/">Windows11 非対応 CPU+TPM+セキュアブート回避最強編</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Windows11を導入するためには３つの条件が必須になっています。</p>
+<pre><code>１． CPU
+     ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/i7の8000以降）
+     ※ AMDの Ryzenシリーズは第2世代以降（Ryzen 5 2600以降）
+２． TPM1.2/2.0
+３． UEFI/セキュアブート（boot）
+</code></pre><p>我が家で家族が使っているマシン5台について、Windows11へのアップグレードを試みましたがいづれもシステムチェックで引っかかりアウトでした。</p>
+<p>まず最初に見つけた Tipsでレジストリを編集して3台は成功しました。</p>
+<ul>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/2110/13/news014.html">【 Microsoft公式情報＋α】互換性チェックを回避して Windows 11にアップグレードする方法</a></li>
+</ul>
+<p>しかし残りの2台（Thinkpad X220、L540）は、セキュアブートでひっかかって駄目。</p>
+<p>こちらもレジストリ編集でいけたという Tipsもあったので試しましたがアウトでした。</p>
+<p>諦めるのは癪なので、ググって「最強編」なる Tipsを見つけました。</p>
+<ul>
+<li><a href="https://www.broadcreation.com/blog/news/86520.html?utm_source=pocket_mylist">Windows11 非対応 CPU+TPM+セキュアブート回避の簡単まとめ（手っ取り早く導入する最強編）</a></li>
+</ul>
+<p>インスール用の ISOファイルを USBにコピーして、sourcesフォルダ内にある appraiserres.dllを削除してインストールするというものでした。
+ただし、その手順にやや注意事項があるようなので転載しておきます。</p>
+<h2 id="1-appraiserresdllを削除">1. appraiserres.dllを削除</h2>
+<p>ダウンロードした ISOファイルを直接編集して appraiserres.dllを削除しよとしてもできませんでしたので、一度 USBにコピーして作業しました。
+削除でもリネームでも構わないようで、念の為に Windows10の appraiserres.dllと差し替えるという方もいましたが、私の場合は削除で問題なくインストールできました。</p>
+<h2 id="2-isoファイルから起動">2. ISOファイルから起動</h2>
+<p>ISOファイルをダブルクリックすると下記の通りマウントされるので setup.exeを実行すます。</p>
+<p><img src="https://live.staticflickr.com/65535/51853953653_7236caf098_o.jpg" alt="Alt Text"></p>
+<h2 id="3-セットアップ画面">3. セットアップ画面</h2>
+<p>ISOファイル中の setup.exeを実行すると、何度か画面が変遷して下記の画面で入力まちになります。</p>
+<p><img src="https://live.staticflickr.com/65535/51853909983_83318d2014_o.jpg" alt="Alt Text"></p>
+<p>ここでのポイントは、必ず</p>
+<pre><code>「セットアップでの更新プログラムのダウンロード方法の変更」
+</code></pre><p>をクリックしてインストールしなければいけません。</p>
+<p>そのまま次へを押してしまいますとすステムチェックされてインストール出来ません。</p>
+<h2 id="4-更新プログラムの入手は今は実行しないを選ぶ">4. 更新プログラムの入手は「今は実行しない」を選ぶ</h2>
+<p>続いて次の画面に代わります。</p>
+<p><img src="https://live.staticflickr.com/65535/51854155839_5045731520_o.jpg" alt="Alt Text"></p>
+<p>ここでも大事なポイントがあり、</p>
+<pre><code>今は実行しない
+</code></pre><p>にチェックを入れて「次へ」を押します。</p>
+<p>この方法で残り2台も無事 Windows11へアップグレードできました。</p>
+<h2 id="5-この手法の問題点">5. この手法の問題点</h2>
+<p>先人の Tipsによるとこの最強編でインストールしたら日々のアップデートを自動でしてくれないとのことでした。</p>
+<p>けれども私の場合は、今のところ2台共その心配はなく機嫌よく動いて、自動アップデートにも対応しているようです。</p>
+<p>2台共 Windows10 Proだったのでそのへんが関係しているのかもされえません。</p>
+<p>まだ、完全に安心はできないですが暫く様子を見てみましょう。</p>
+<p>でも Micro Softが、どうな目算があってこんな意地悪な制限をするのか不可解、単なるパソコンメーカー販促への義理だてとしか思えない。</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/windows/">windows</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/tech/">tech</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

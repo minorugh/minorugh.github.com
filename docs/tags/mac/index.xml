@@ -9,82 +9,82 @@
     <lastBuildDate>Tue, 03 Sep 2019 14:56:12 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mac⌘英かな.appをEmacs専用に使う</title>
-      <link>http://minorugh.github.io/posts/eikana-app/</link>
+      <link>http://minorugh.github.io/post/eikana-app/</link>
       <pubDate>Tue, 03 Sep 2019 14:56:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/eikana-app/</guid>
+      <guid>http://minorugh.github.io/post/eikana-app/</guid>
       <description>macのkeyboard customizerとしては、 Karabiner-Element が有名ですが、Emacs専用として使うなら ⌘英かな.app が超簡単でおすすめです。 Download</description>
     </item>
     
     <item>
       <title>Hide .DS_Store file from Emacs</title>
-      <link>http://minorugh.github.io/posts/hide-ds_store-from-emacs/</link>
+      <link>http://minorugh.github.io/post/hide-ds_store-from-emacs/</link>
       <pubDate>Thu, 08 Aug 2019 12:18:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/hide-ds_store-from-emacs/</guid>
+      <guid>http://minorugh.github.io/post/hide-ds_store-from-emacs/</guid>
       <description>.DS_StoreファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場</description>
     </item>
     
     <item>
       <title>Macにe2psをインストールする</title>
-      <link>http://minorugh.github.io/posts/e2ps/</link>
+      <link>http://minorugh.github.io/post/e2ps/</link>
       <pubDate>Thu, 04 Jul 2019 19:13:26 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/e2ps/</guid>
+      <guid>http://minorugh.github.io/post/e2ps/</guid>
       <description>WtSeries : UNIXソフトからe2psをダウンロードして解凍します。 現在の最新バージョンは、e2ps-4.34 解凍フォルダー内のps-font.cを</description>
     </item>
     
     <item>
       <title>iPadでBootstrapのnavbarをcollapseさせる</title>
-      <link>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</link>
+      <link>http://minorugh.github.io/post/navbar-collapse-for-ipad/</link>
       <pubDate>Thu, 21 Feb 2019 10:59:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</guid>
+      <guid>http://minorugh.github.io/post/navbar-collapse-for-ipad/</guid>
       <description>CSSフレームワークのBootstrapを使って、ナビゲーション（navbar）を導入する場合、Bootstrapのデフォルトだと、iPad</description>
     </item>
     
     <item>
       <title>Macの &#39;too many open file&#39; エラーを解消する方法</title>
-      <link>http://minorugh.github.io/posts/too-many-open-file/</link>
+      <link>http://minorugh.github.io/post/too-many-open-file/</link>
       <pubDate>Wed, 02 May 2018 13:58:42 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/too-many-open-file/</guid>
+      <guid>http://minorugh.github.io/post/too-many-open-file/</guid>
       <description>MacでEmacsを起動しているときに &#39;too many open file&#39; と出て固まってしまうことがありました。 別環境のDebianで起動しているEmacsでは、そうし</description>
     </item>
     
     <item>
       <title>macOS SierraでSIPを無効にする方法</title>
-      <link>http://minorugh.github.io/posts/disable-sip-sierra/</link>
+      <link>http://minorugh.github.io/post/disable-sip-sierra/</link>
       <pubDate>Sun, 24 Sep 2017 20:28:52 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/disable-sip-sierra/</guid>
+      <guid>http://minorugh.github.io/post/disable-sip-sierra/</guid>
       <description>Sierraには、SIP（System Integrity Protecton）というセキュリティを強化機能が追加されていて、sudoを使ってもシステム用とされ</description>
     </item>
     
     <item>
       <title>SierraでIllustrator(CS3~6)のエラーを回避する方法</title>
-      <link>http://minorugh.github.io/posts/illustrator-error-on-sierra/</link>
+      <link>http://minorugh.github.io/post/illustrator-error-on-sierra/</link>
       <pubDate>Sat, 23 Sep 2017 22:33:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/illustrator-error-on-sierra/</guid>
+      <guid>http://minorugh.github.io/post/illustrator-error-on-sierra/</guid>
       <description>macOSをSierraにバージョンアップすると、せっかく構築した開発環境にいろいろ障害が出そうなので、ずっとMarvericsで頑張ってい</description>
     </item>
     
     <item>
       <title>UpFtpをMacとLinuxとで共用する方法</title>
-      <link>http://minorugh.github.io/posts/upftp-between-mac-linux/</link>
+      <link>http://minorugh.github.io/post/upftp-between-mac-linux/</link>
       <pubDate>Mon, 17 Jul 2017 17:19:35 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/upftp-between-mac-linux/</guid>
+      <guid>http://minorugh.github.io/post/upftp-between-mac-linux/</guid>
       <description>UpFtpと言うのは、結城浩さんの作られたMakeWebと併せて使うためのFTP自動化ツールのことです。 Makeweb:テキストをXHTML</description>
     </item>
     
     <item>
       <title>mozc_emacs_helper on macOS Sierra</title>
-      <link>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</link>
+      <link>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</link>
       <pubDate>Wed, 17 May 2017 21:15:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</guid>
+      <guid>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</guid>
       <description>macOS Sierra をクリーンインストールしたので mozc_emacs_helper を使えるようにした。google日本語入力と連携できるようにビルドできるという以下のサイトの Tips を参考にし</description>
     </item>
     

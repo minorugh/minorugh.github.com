@@ -9,29 +9,29 @@
     <lastBuildDate>Mon, 04 Mar 2019 14:20:41 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hydraで複数のmakeコマンドを自在に使う</title>
-      <link>http://minorugh.github.io/posts/multiple-make-commands/</link>
+      <link>http://minorugh.github.io/post/multiple-make-commands/</link>
       <pubDate>Mon, 04 Mar 2019 14:20:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/multiple-make-commands/</guid>
+      <guid>http://minorugh.github.io/post/multiple-make-commands/</guid>
       <description>ホームページ管理のためにEmacsをワークデスクとして色んな作業をしています。その中で何度も繰り返し行う作業はMakeファイルに書いて限りな</description>
     </item>
     
     <item>
       <title>makefile でのOS条件分岐</title>
-      <link>http://minorugh.github.io/posts/ifeq-for-makefile/</link>
+      <link>http://minorugh.github.io/post/ifeq-for-makefile/</link>
       <pubDate>Mon, 15 Oct 2018 13:13:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/ifeq-for-makefile/</guid>
+      <guid>http://minorugh.github.io/post/ifeq-for-makefile/</guid>
       <description>&lt;p&gt;自動化のためにmakefileを書いています。&lt;/p&gt;
 &lt;p&gt;私の場合、Linux端末とMacとの異なる環境で共通のmakefileを使いますので、条件分岐を勉強してみました。無手勝流ながら以下の設定でうまく作動してくれるようになりました。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Makefile の Suspicious line XXX. Save anyway を抑制する</title>
-      <link>http://minorugh.github.io/posts/makefile-error/</link>
+      <link>http://minorugh.github.io/post/makefile-error/</link>
       <pubDate>Fri, 17 Nov 2017 15:22:25 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/makefile-error/</guid>
+      <guid>http://minorugh.github.io/post/makefile-error/</guid>
       <description>&lt;p&gt;Emacsのmakefile-modeで行頭のtabを挿入するたびに &amp;ldquo;Suspicious line XXX. Save anyway?&amp;rdquo; というポップアップ・プロンプトが出る。
 この現象は、auto-save-buers との関係らしく、以下のおまじないを設定することででなくなった。&lt;/p&gt;</description>
     </item>

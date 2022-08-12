@@ -9,19 +9,19 @@
     <lastBuildDate>Sun, 26 Sep 2021 07:24:50 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian でコンソール画面の解像度を変更する</title>
-      <link>http://minorugh.github.io/posts/debian-consol/</link>
+      <link>http://minorugh.github.io/post/debian-consol/</link>
       <pubDate>Sun, 26 Sep 2021 07:24:50 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/debian-consol/</guid>
+      <guid>http://minorugh.github.io/post/debian-consol/</guid>
       <description>高解像度の pcで Debianを使うと GRUBの起動画面がとても小さくて見にくいので解像度を 800x600に変更した。 # /etc/default/grub # コメントアウトを外</description>
     </item>
     
     <item>
       <title>Debian 10(buster) を 11(bullseye)へ更新</title>
-      <link>http://minorugh.github.io/posts/debian-update-10-to-11/</link>
+      <link>http://minorugh.github.io/post/debian-update-10-to-11/</link>
       <pubDate>Mon, 23 Aug 2021 08:21:40 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/debian-update-10-to-11/</guid>
+      <guid>http://minorugh.github.io/post/debian-update-10-to-11/</guid>
       <description>Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま</description>
     </item>
     

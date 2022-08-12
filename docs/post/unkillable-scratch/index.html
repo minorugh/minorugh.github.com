@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。 これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。
+" />
+<meta name="keywords" content="blog,developer,personal, buffer" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/post/unkillable-scratch/" />
+
+
+    <title>
+        
+            Scratchバッファの保存と復元 :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Scratchバッファの保存と復元">
+<meta itemprop="description" content="Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
+これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。">
+<meta itemprop="datePublished" content="2018-09-24T17:11:06+09:00" />
+<meta itemprop="dateModified" content="2018-09-24T17:11:06+09:00" />
+<meta itemprop="wordCount" content="299">
+
+
+
+<meta itemprop="keywords" content="buffer," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scratchバッファの保存と復元"/>
+<meta name="twitter:description" content="Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
+これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。"/>
+
+
+
+
+
+    <meta property="article:section" content="emacs" />
+
+
+
+    <meta property="article:published_time" content="2018-09-24 17:11:06 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://minorugh.github.io/post/unkillable-scratch/">Scratchバッファの保存と復元</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
+これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。</p>
+<h2 id="unkillable-scratch">unkillable-scratch</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; unkillable-scratch</span>
+(<span style="color:#66d9ef">setq</span> unkillable-buffers <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;^\\*scratch*\\*$&#34;</span> <span style="color:#e6db74">&#34;^\\*dashboard\\*$&#34;</span>))
+(unkillable-scratch <span style="color:#ae81ff">1</span>)
+</code></pre></div><p>scratchバッファをkillさせないためのものですが、正規表現マッチを追加することで自由にカスタマイズできます。私の場合は、dashboardも消さないように追記しています。</p>
+<h2 id="persist-scratch">persist-scratch</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Persist and save/restore *scratch* buffer</span>
+(persistent-scratch-setup-default)
+</code></pre></div><p>scratchバッファの内容を保存して再起動時に復元させるものです。保存データーはデフォルトで<code>~/.emacs.d/.scratch</code>に保存されます。</p>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/buffer/">buffer</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/emacs/">emacs</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

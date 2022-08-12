@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 25 Nov 2021 10:16:28 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/linuxbrew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian11 (bullseye)に Linuxbrewを install</title>
-      <link>http://minorugh.github.io/posts/linuxbrew/</link>
+      <link>http://minorugh.github.io/post/linuxbrew/</link>
       <pubDate>Thu, 25 Nov 2021 10:16:28 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/posts/linuxbrew/</guid>
+      <guid>http://minorugh.github.io/post/linuxbrew/</guid>
       <description>GitHub CLIツール ghをインストールするのに brewの方が簡単だったので Debianに Linuxbrewをインストールすることにした。 Mac時代</description>
     </item>
     
