@@ -782,7 +782,7 @@ easy-hugo は、package-install できますが、頻繁に更新されている
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://minorugh.github.io/projects/</guid>
-      <description>Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesでバックアップ不要な開発環境。 UpFSTP SFTPでホームページを更新するためのプログラム。</description>
+      <description>Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesによるバックアップ不要な開発環境 UpFSTP SFTPでホームページを更新するためのPerlスクリプ</description>
     </item>
     
   </channel>

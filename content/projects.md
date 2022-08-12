@@ -7,7 +7,7 @@ draft = false
 Emacs の設定についてのドキュメント
 
 ## [Dotfiles](https://github.com/minorugh/dotfiles)
-Dotfilesでバックアップ不要な開発環境。
+Dotfilesによるバックアップ不要な開発環境
 
 ## [UpFSTP](https://github.com/minorugh/upsftp)
-SFTPでホームページを更新するためのプログラム。
+SFTPでホームページを更新するためのPerlスクリプト
