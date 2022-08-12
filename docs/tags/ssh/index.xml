@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 23 Jan 2022 12:10:02 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GUIの起動時にパスフレーズを自動入力して ssh-add を実行させる</title>
-      <link>http://minorugh.github.io/post/autostartssh/</link>
+      <link>http://minorugh.github.io/posts/autostartssh/</link>
       <pubDate>Sun, 23 Jan 2022 12:10:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/autostartssh/</guid>
+      <guid>http://minorugh.github.io/posts/autostartssh/</guid>
       <description>Emacsを作業テーブルとして常用的に SSHを使うので、ログイン時にパスフレーズを自動入力させて ssh-addを実行させるように環境構築した</description>
     </item>
     

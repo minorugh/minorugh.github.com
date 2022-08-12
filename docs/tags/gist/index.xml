@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 01 Sep 2021 12:38:38 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/gist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gist on Emacs</title>
-      <link>http://minorugh.github.io/post/gist-on-emacs/</link>
+      <link>http://minorugh.github.io/posts/gist-on-emacs/</link>
       <pubDate>Wed, 01 Sep 2021 12:38:38 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/gist-on-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/gist-on-emacs/</guid>
       <description>みなさん、Emacsで Gist 使ってますか？ 私も気軽に使っているのですが GitHub Gist の Webページを開いて直接コード書き込んだりコピペするというのは何げに</description>
     </item>
     

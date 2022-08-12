@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 18 Nov 2017 15:43:44 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RubyでWeb上からファイルをダウンロードする：openメソッドのお勉強</title>
-      <link>http://minorugh.github.io/post/ruby-open-method/</link>
+      <link>http://minorugh.github.io/posts/ruby-open-method/</link>
       <pubDate>Sat, 18 Nov 2017 15:43:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ruby-open-method/</guid>
+      <guid>http://minorugh.github.io/posts/ruby-open-method/</guid>
       <description>&lt;p&gt;別サイトで運用しているLINEBLOGの記事をダウンロードし、そこから更新情報を抜き出して自分のホームページに表示したかったのでRubyのお勉強を兼ねて試してみた。&lt;/p&gt;</description>
     </item>
     

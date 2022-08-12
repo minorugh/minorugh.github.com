@@ -9,217 +9,217 @@
     <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>
-      <link>http://minorugh.github.io/post/windows11-upgrade/</link>
+      <link>http://minorugh.github.io/posts/windows11-upgrade/</link>
       <pubDate>Mon, 31 Jan 2022 19:20:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/windows11-upgrade/</guid>
+      <guid>http://minorugh.github.io/posts/windows11-upgrade/</guid>
       <description>Windows11を導入するためには３つの条件が必須になっています。 １． CPU ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/</description>
     </item>
     
     <item>
       <title>SlackAppを最小化状態で自動起動する for Linux</title>
-      <link>http://minorugh.github.io/post/slack-in-minimized/</link>
+      <link>http://minorugh.github.io/posts/slack-in-minimized/</link>
       <pubDate>Wed, 26 Jan 2022 10:29:22 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/slack-in-minimized/</guid>
+      <guid>http://minorugh.github.io/posts/slack-in-minimized/</guid>
       <description>元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac</description>
     </item>
     
     <item>
       <title>Sylpheedをログイン時に最小化起動させる</title>
-      <link>http://minorugh.github.io/post/minimize-startup-sylpheed/</link>
+      <link>http://minorugh.github.io/posts/minimize-startup-sylpheed/</link>
       <pubDate>Wed, 26 Jan 2022 10:19:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/minimize-startup-sylpheed/</guid>
+      <guid>http://minorugh.github.io/posts/minimize-startup-sylpheed/</guid>
       <description>元ネタは下記 Sylpheedをログイン時に最小化起動する方法 Devil&amp;rsquo;s Pieのインストール sudo apt install devilspie 設定ファイルの作成 ~/.devilspie/に設定</description>
     </item>
     
     <item>
       <title>GUIの起動時にパスフレーズを自動入力して ssh-add を実行させる</title>
-      <link>http://minorugh.github.io/post/autostartssh/</link>
+      <link>http://minorugh.github.io/posts/autostartssh/</link>
       <pubDate>Sun, 23 Jan 2022 12:10:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/autostartssh/</guid>
+      <guid>http://minorugh.github.io/posts/autostartssh/</guid>
       <description>Emacsを作業テーブルとして常用的に SSHを使うので、ログイン時にパスフレーズを自動入力させて ssh-addを実行させるように環境構築した</description>
     </item>
     
     <item>
       <title>UpFtpを改造して UpSFTPを作った</title>
-      <link>http://minorugh.github.io/post/upsftp/</link>
+      <link>http://minorugh.github.io/posts/upsftp/</link>
       <pubDate>Wed, 19 Jan 2022 19:43:07 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/upsftp/</guid>
+      <guid>http://minorugh.github.io/posts/upsftp/</guid>
       <description>ホームページを更新するのに結城浩さん作の upftp.plを FTPSモードで使っていたが SFTPで使えるようにしたいと思い試してみました。 upftp.pl N</description>
     </item>
     
     <item>
       <title>iframeの高さを取得し自動調整する</title>
-      <link>http://minorugh.github.io/post/auto-height-of-iframe/</link>
+      <link>http://minorugh.github.io/posts/auto-height-of-iframe/</link>
       <pubDate>Thu, 30 Dec 2021 12:03:29 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/auto-height-of-iframe/</guid>
+      <guid>http://minorugh.github.io/posts/auto-height-of-iframe/</guid>
       <description>レスポンシブ Webデザインでは、iframeの高さが PCとスマホ・タブレットで結構変わってしまうことも多くて事前に高さを決め打ちで指定できま</description>
     </item>
     
     <item>
       <title>Linuxbrewで Github CLI（gh）を install</title>
-      <link>http://minorugh.github.io/post/github-cli/</link>
+      <link>http://minorugh.github.io/posts/github-cli/</link>
       <pubDate>Thu, 25 Nov 2021 12:01:10 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/github-cli/</guid>
+      <guid>http://minorugh.github.io/posts/github-cli/</guid>
       <description>先の Linuxbrewさえうまくインストールできれば、brewで ghを installするのは実に簡単。 install % brew install gh とするだけ。 コマンドラインで</description>
     </item>
     
     <item>
       <title>Debian11 (bullseye)に Linuxbrewを install</title>
-      <link>http://minorugh.github.io/post/linuxbrew/</link>
+      <link>http://minorugh.github.io/posts/linuxbrew/</link>
       <pubDate>Thu, 25 Nov 2021 10:16:28 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/linuxbrew/</guid>
+      <guid>http://minorugh.github.io/posts/linuxbrew/</guid>
       <description>GitHub CLIツール ghをインストールするのに brewの方が簡単だったので Debianに Linuxbrewをインストールすることにした。 Mac時代</description>
     </item>
     
     <item>
       <title>pangu-spacing.el : 全角と半角の間に自動でスペースを入れる</title>
-      <link>http://minorugh.github.io/post/pangu-spacing/</link>
+      <link>http://minorugh.github.io/posts/pangu-spacing/</link>
       <pubDate>Thu, 18 Nov 2021 08:41:01 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/pangu-spacing/</guid>
+      <guid>http://minorugh.github.io/posts/pangu-spacing/</guid>
       <description>pangu-spacing.el : 全角と半角の間に自動でスペースを入れる新実装 上記の Tipsを参考にして、markdown-modeに導入してみた。 日本語においては、いわ</description>
     </item>
     
     <item>
       <title>ac-mozc : モードレス日本語入力を試してみた</title>
-      <link>http://minorugh.github.io/post/ac-mozc/</link>
+      <link>http://minorugh.github.io/posts/ac-mozc/</link>
       <pubDate>Sat, 13 Nov 2021 20:20:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ac-mozc/</guid>
+      <guid>http://minorugh.github.io/posts/ac-mozc/</guid>
       <description>随分前に一度試してみたが、mozc.elと併用する時に若干変換ルールに違いがあって使いにくく、そのうち使わなくなっていた。 その後、elisp</description>
     </item>
     
     <item>
       <title>Debian でコンソール画面の解像度を変更する</title>
-      <link>http://minorugh.github.io/post/debian-consol/</link>
+      <link>http://minorugh.github.io/posts/debian-consol/</link>
       <pubDate>Sun, 26 Sep 2021 07:24:50 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/debian-consol/</guid>
+      <guid>http://minorugh.github.io/posts/debian-consol/</guid>
       <description>高解像度の pcで Debianを使うと GRUBの起動画面がとても小さくて見にくいので解像度を 800x600に変更した。 # /etc/default/grub # コメントアウトを外</description>
     </item>
     
     <item>
       <title>Emacs : Open Last Closed Buffer</title>
-      <link>http://minorugh.github.io/post/open-last-closed-buffer/</link>
+      <link>http://minorugh.github.io/posts/open-last-closed-buffer/</link>
       <pubDate>Fri, 17 Sep 2021 14:24:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/open-last-closed-buffer/</guid>
+      <guid>http://minorugh.github.io/posts/open-last-closed-buffer/</guid>
       <description>darkroom-modeを使うときは、Syntax Highlightが邪魔なので、どのモードのファイルであっても強制的に text-mode</description>
     </item>
     
     <item>
       <title>Emacs : 作業目的別にテーマを切り替えて使う</title>
-      <link>http://minorugh.github.io/post/cycle-theme/</link>
+      <link>http://minorugh.github.io/posts/cycle-theme/</link>
       <pubDate>Thu, 16 Sep 2021 14:31:40 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/cycle-theme/</guid>
+      <guid>http://minorugh.github.io/posts/cycle-theme/</guid>
       <description>Melpaから package installできる Emacsテーマは、たくさんあってお好みで選べるようになりとても便利なのですが、一つに絞り込むのは難しい</description>
     </item>
     
     <item>
       <title>Downloadした CGI Scriptを Severへ Uploadするときは改行コードを修正する必要あり</title>
-      <link>http://minorugh.github.io/post/line-feed-code/</link>
+      <link>http://minorugh.github.io/posts/line-feed-code/</link>
       <pubDate>Sun, 12 Sep 2021 21:00:38 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/line-feed-code/</guid>
+      <guid>http://minorugh.github.io/posts/line-feed-code/</guid>
       <description>Windowsから Linuxに移行してから Webで Downloadした CGIスクリプトをそのまま FTPアプリでアップロードすると必ずエラーに</description>
     </item>
     
     <item>
       <title>iframeに異なるドメイン（クロスドメイン）のコンテンツを読み込んで高さを自動調節する方法</title>
-      <link>http://minorugh.github.io/post/iframe/</link>
+      <link>http://minorugh.github.io/posts/iframe/</link>
       <pubDate>Fri, 10 Sep 2021 14:11:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iframe/</guid>
+      <guid>http://minorugh.github.io/posts/iframe/</guid>
       <description>wordpressでサイトを構築したときに掲示板をつけることになりました。 bbpressをはじめ何種類かのプラグインも試しましたが、不要な機</description>
     </item>
     
     <item>
       <title>Gist on Emacs</title>
-      <link>http://minorugh.github.io/post/gist-on-emacs/</link>
+      <link>http://minorugh.github.io/posts/gist-on-emacs/</link>
       <pubDate>Wed, 01 Sep 2021 12:38:38 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/gist-on-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/gist-on-emacs/</guid>
       <description>みなさん、Emacsで Gist 使ってますか？ 私も気軽に使っているのですが GitHub Gist の Webページを開いて直接コード書き込んだりコピペするというのは何げに</description>
     </item>
     
     <item>
       <title>GitHub Pagesにサイトを開設</title>
-      <link>http://minorugh.github.io/post/jekyll-rtd-theme/</link>
+      <link>http://minorugh.github.io/posts/jekyll-rtd-theme/</link>
       <pubDate>Sun, 29 Aug 2021 07:31:24 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/jekyll-rtd-theme/</guid>
+      <guid>http://minorugh.github.io/posts/jekyll-rtd-theme/</guid>
       <description>Emacsの設定に関する情報を備忘録としてまとめたので GitHub Pagesに置くことにした。 GitHub Pagesの場合は Jekyllプロジェクトを pushす</description>
     </item>
     
     <item>
       <title>Debian 10(buster) を 11(bullseye)へ更新</title>
-      <link>http://minorugh.github.io/post/debian-update-10-to-11/</link>
+      <link>http://minorugh.github.io/posts/debian-update-10-to-11/</link>
       <pubDate>Mon, 23 Aug 2021 08:21:40 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/debian-update-10-to-11/</guid>
+      <guid>http://minorugh.github.io/posts/debian-update-10-to-11/</guid>
       <description>Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま</description>
     </item>
     
     <item>
       <title>Emacs27.2をInstall</title>
-      <link>http://minorugh.github.io/post/install-emacs27.2/</link>
+      <link>http://minorugh.github.io/posts/install-emacs27.2/</link>
       <pubDate>Sat, 21 Aug 2021 17:34:15 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/install-emacs27.2/</guid>
+      <guid>http://minorugh.github.io/posts/install-emacs27.2/</guid>
       <description>Emacs27.2の安定版がリリースされたのでInstallした。 私の場合は、makefileを下記のように修正してmakeコマンドを実行す</description>
     </item>
     
     <item>
       <title>ゆっくりと終活 : カメラ機材を処分</title>
-      <link>http://minorugh.github.io/post/end-of-life/</link>
+      <link>http://minorugh.github.io/posts/end-of-life/</link>
       <pubDate>Wed, 12 May 2021 10:37:15 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/end-of-life/</guid>
+      <guid>http://minorugh.github.io/posts/end-of-life/</guid>
       <description>コロナ禍が原因というわけでもないが、趣味や活動の形も変わってきたのでまじめに断捨離に取り組むことにした。 特別深刻な話ではなく、楽しみながら…</description>
     </item>
     
     <item>
       <title>他社SIMで楽天リンクを使えるようにする</title>
-      <link>http://minorugh.github.io/post/pixel5/</link>
+      <link>http://minorugh.github.io/posts/pixel5/</link>
       <pubDate>Tue, 04 May 2021 16:01:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/pixel5/</guid>
+      <guid>http://minorugh.github.io/posts/pixel5/</guid>
       <description>Pixel3の性能には何一つ不満はなくとても快適だったが、なにもせずに置いているだけでもみるみるバッテリーが減っていくので唯一それがストレス</description>
     </item>
     
     <item>
       <title>外部モニター Dell U2421Eを購入</title>
-      <link>http://minorugh.github.io/post/u2421e/</link>
+      <link>http://minorugh.github.io/posts/u2421e/</link>
       <pubDate>Mon, 03 May 2021 20:40:09 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/u2421e/</guid>
+      <guid>http://minorugh.github.io/posts/u2421e/</guid>
       <description>愛用の外部モニターが大分老朽化してきたので、コロナ補助金の10万円で新しいモニター Dell U2421Eを買った。初代と同じ Dell製品。 選択条件と</description>
     </item>
     
     <item>
       <title>Googleのスマホ Pixel3 を買った</title>
-      <link>http://minorugh.github.io/post/pixel3/</link>
+      <link>http://minorugh.github.io/posts/pixel3/</link>
       <pubDate>Wed, 24 Mar 2021 20:46:49 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/pixel3/</guid>
+      <guid>http://minorugh.github.io/posts/pixel3/</guid>
       <description>本気で写真を撮るときは、一眼レフを使うので、スマホのカメラ性能云々など眼中になかった。 ところが、歳をとってカメラを持ち出すのがだんだん億劫に</description>
     </item>
     
     <item>
       <title>Xfce4のパネルが突然表示されなくなった時の対処法</title>
-      <link>http://minorugh.github.io/post/xface4-panel-not-display/</link>
+      <link>http://minorugh.github.io/posts/xface4-panel-not-display/</link>
       <pubDate>Wed, 03 Mar 2021 21:22:54 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/xface4-panel-not-display/</guid>
+      <guid>http://minorugh.github.io/posts/xface4-panel-not-display/</guid>
       <description>問題 デスクトップにパネルが表示されません。 解決方法 ${HOME}/.cache/sessions ディレクトリを削除し、ログインし直します。これで、初期状態でパネルが表示されます。 パネル</description>
     </item>
     
@@ -243,246 +243,246 @@
     
     <item>
       <title>EmacsのときにXIMを無効化する</title>
-      <link>http://minorugh.github.io/post/disable-xim-on-emacs/</link>
+      <link>http://minorugh.github.io/posts/disable-xim-on-emacs/</link>
       <pubDate>Wed, 09 Sep 2020 21:18:55 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/disable-xim-on-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/disable-xim-on-emacs/</guid>
       <description>emacs-mozcを使っているときは、紛らわしいのでfcitxをOFFにしておきたい…と、あれこれ悩んでいたのですが、「Emacs利用時に</description>
     </item>
     
     <item>
       <title>HUGOブログテーマをMainroadに変更</title>
-      <link>http://minorugh.github.io/post/change-hugo-theme-to-mainroad/</link>
+      <link>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</link>
       <pubDate>Wed, 15 Jul 2020 10:38:24 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/change-hugo-theme-to-mainroad/</guid>
+      <guid>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</guid>
       <description>Emacsライフの備忘録として使っていたブログを、俳句サイトのシステム管理ノートとしても使うためにテーマを変更しました。 Emacs関連のTi</description>
     </item>
     
     <item>
       <title>apt installを使わずにTeXLiveを導入する</title>
-      <link>http://minorugh.github.io/post/install-texlive-without-apt/</link>
+      <link>http://minorugh.github.io/posts/install-texlive-without-apt/</link>
       <pubDate>Mon, 10 Feb 2020 09:09:09 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/install-texlive-without-apt/</guid>
+      <guid>http://minorugh.github.io/posts/install-texlive-without-apt/</guid>
       <description>TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live</description>
     </item>
     
     <item>
       <title>Scratch bufferを付箋として使う</title>
-      <link>http://minorugh.github.io/post/scratch-for-sticky-note/</link>
+      <link>http://minorugh.github.io/posts/scratch-for-sticky-note/</link>
       <pubDate>Wed, 04 Sep 2019 17:03:29 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/scratch-for-sticky-note/</guid>
+      <guid>http://minorugh.github.io/posts/scratch-for-sticky-note/</guid>
       <description>Emacsのscratchバッファーを簡易メモとして使うために作られたパッケージはいくつかありますが、設定だけで実現できる簡単なものを紹介し</description>
     </item>
     
     <item>
       <title>mac⌘英かな.appをEmacs専用に使う</title>
-      <link>http://minorugh.github.io/post/eikana-app/</link>
+      <link>http://minorugh.github.io/posts/eikana-app/</link>
       <pubDate>Tue, 03 Sep 2019 14:56:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/eikana-app/</guid>
+      <guid>http://minorugh.github.io/posts/eikana-app/</guid>
       <description>macのkeyboard customizerとしては、 Karabiner-Element が有名ですが、Emacs専用として使うなら ⌘英かな.app が超簡単でおすすめです。 Download</description>
     </item>
     
     <item>
       <title>EmacsのFunction key設定を公開</title>
-      <link>http://minorugh.github.io/post/set-functoin-key-on-emacs/</link>
+      <link>http://minorugh.github.io/posts/set-functoin-key-on-emacs/</link>
       <pubDate>Sun, 01 Sep 2019 22:46:23 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/set-functoin-key-on-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/set-functoin-key-on-emacs/</guid>
       <description>あまり役に立つTipsではありませんが、自分の設定を公開します。みなさんの「私の場合は…」というのを教えていただけると嬉しいです。 F1：he</description>
     </item>
     
     <item>
       <title>Hide .DS_Store file from Emacs</title>
-      <link>http://minorugh.github.io/post/hide-ds_store-from-emacs/</link>
+      <link>http://minorugh.github.io/posts/hide-ds_store-from-emacs/</link>
       <pubDate>Thu, 08 Aug 2019 12:18:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/hide-ds_store-from-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/hide-ds_store-from-emacs/</guid>
       <description>.DS_StoreファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場</description>
     </item>
     
     <item>
       <title>view-modeを超えるhydra-pinkyの設定</title>
-      <link>http://minorugh.github.io/post/hydra-pinky/</link>
+      <link>http://minorugh.github.io/posts/hydra-pinky/</link>
       <pubDate>Thu, 01 Aug 2019 12:27:34 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/hydra-pinky/</guid>
+      <guid>http://minorugh.github.io/posts/hydra-pinky/</guid>
       <description>私のEmacs設定は、プログラマー masasamさんのブログ「 Solist Work Blog」から多くのことを吸収して日々成長しています。 そのブログの中にある</description>
     </item>
     
     <item>
       <title>neotreeを試してみる</title>
-      <link>http://minorugh.github.io/post/neotree/</link>
+      <link>http://minorugh.github.io/posts/neotree/</link>
       <pubDate>Sat, 27 Jul 2019 15:51:23 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/neotree/</guid>
+      <guid>http://minorugh.github.io/posts/neotree/</guid>
       <description>以下の機能を盛り込んで実用的なneotreeの設定を試してみました。 アイコン表示（use all-the-icons） 文字サイズの変更（縮小）</description>
     </item>
     
     <item>
       <title>swiper-region / swiper-isearch-region</title>
-      <link>http://minorugh.github.io/post/swiper-region/</link>
+      <link>http://minorugh.github.io/posts/swiper-region/</link>
       <pubDate>Thu, 11 Jul 2019 16:32:15 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/swiper-region/</guid>
+      <guid>http://minorugh.github.io/posts/swiper-region/</guid>
       <description>swiper/swiper-isearchをregion選択からも使えるようにするための設定。isearchではmigemoも使えるようにし</description>
     </item>
     
     <item>
       <title>Macにe2psをインストールする</title>
-      <link>http://minorugh.github.io/post/e2ps/</link>
+      <link>http://minorugh.github.io/posts/e2ps/</link>
       <pubDate>Thu, 04 Jul 2019 19:13:26 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/e2ps/</guid>
+      <guid>http://minorugh.github.io/posts/e2ps/</guid>
       <description>WtSeries : UNIXソフトからe2psをダウンロードして解凍します。 現在の最新バージョンは、e2ps-4.34 解凍フォルダー内のps-font.cを</description>
     </item>
     
     <item>
       <title>direx-project &#43; popwinで快適なディレクトリツリー環境を構築する</title>
-      <link>http://minorugh.github.io/post/direxjump-to-project-directory/</link>
+      <link>http://minorugh.github.io/posts/direxjump-to-project-directory/</link>
       <pubDate>Mon, 08 Apr 2019 19:31:31 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/direxjump-to-project-directory/</guid>
+      <guid>http://minorugh.github.io/posts/direxjump-to-project-directory/</guid>
       <description>Emacsでディレクトリツリーを表示させるパッケージにはいくつかの選択肢があります。neotreeが人気のようですが表示幅が自由にカスタマイ</description>
     </item>
     
     <item>
       <title>Emacs：複数のテーマを切り替えて使う</title>
-      <link>http://minorugh.github.io/post/cycle-custom-themes-emacs/</link>
+      <link>http://minorugh.github.io/posts/cycle-custom-themes-emacs/</link>
       <pubDate>Mon, 08 Apr 2019 09:56:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/cycle-custom-themes-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/cycle-custom-themes-emacs/</guid>
       <description>Emacsを快適に使うためにいろいろ自分好みのテーマを模索します。私の場合、deeper-blue misterioso material と変遷し、今は doom-dracula を使っています。 それぞ</description>
     </item>
     
     <item>
       <title>DashboardにQiitaの新着リスト（tag:emacs）を表示させる</title>
-      <link>http://minorugh.github.io/post/display-list-of-qiita-on-dashboard/</link>
+      <link>http://minorugh.github.io/posts/display-list-of-qiita-on-dashboard/</link>
       <pubDate>Tue, 02 Apr 2019 12:11:22 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/display-list-of-qiita-on-dashboard/</guid>
+      <guid>http://minorugh.github.io/posts/display-list-of-qiita-on-dashboard/</guid>
       <description>下記のTipsを参考にしてEmacsのDashboard画面にQiitaの新着一覧を表示させる事ができました。 Dashboardで起動画面を</description>
     </item>
     
     <item>
       <title>Emacsのウインドウ操作の履歴をUndo/Redoする：winner-mode</title>
-      <link>http://minorugh.github.io/post/buffer-undo-redo-with-winner-mode/</link>
+      <link>http://minorugh.github.io/posts/buffer-undo-redo-with-winner-mode/</link>
       <pubDate>Thu, 28 Mar 2019 16:34:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/buffer-undo-redo-with-winner-mode/</guid>
+      <guid>http://minorugh.github.io/posts/buffer-undo-redo-with-winner-mode/</guid>
       <description>emacsでいろいろ作業していると意図しない形で勝手にウインドウズが分割されたりします。設定して &amp;ldquo;C-g&amp;rdquo; で隠せるものもありますが、それも出来ないと</description>
     </item>
     
     <item>
       <title>Scratch bufferをKILLさせない：emacs-lock-mode</title>
-      <link>http://minorugh.github.io/post/dont-kill-scratch-bufffer/</link>
+      <link>http://minorugh.github.io/posts/dont-kill-scratch-bufffer/</link>
       <pubDate>Thu, 28 Mar 2019 16:12:24 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/dont-kill-scratch-bufffer/</guid>
+      <guid>http://minorugh.github.io/posts/dont-kill-scratch-bufffer/</guid>
       <description>わざわざscratch bufferをkillする人はいないと思いますが、&amp;ldquo;kill-other-windows&amp;rdquo; など</description>
     </item>
     
     <item>
       <title>Emacsからカレントディレクトリでターミナルアプリを開く</title>
-      <link>http://minorugh.github.io/post/open-terminal-in-current-directory-from-emacs/</link>
+      <link>http://minorugh.github.io/posts/open-terminal-in-current-directory-from-emacs/</link>
       <pubDate>Tue, 26 Mar 2019 10:32:42 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/open-terminal-in-current-directory-from-emacs/</guid>
+      <guid>http://minorugh.github.io/posts/open-terminal-in-current-directory-from-emacs/</guid>
       <description>私の場合は、Emacsからターミナル作業をするときは基本eshellを使うようにしています。ただ、ごくたまに別窓でターミナルアプリを立ち上げ</description>
     </item>
     
     <item>
       <title>HydraでEmacsのキーバインド問題を解消する</title>
-      <link>http://minorugh.github.io/post/emacs-key-binding-with-hydra/</link>
+      <link>http://minorugh.github.io/posts/emacs-key-binding-with-hydra/</link>
       <pubDate>Mon, 25 Mar 2019 16:37:37 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs-key-binding-with-hydra/</guid>
+      <guid>http://minorugh.github.io/posts/emacs-key-binding-with-hydra/</guid>
       <description>できるだけデフォルトを上書きしないようにと配慮しながらEmacsのキーバインドを考えるとなるとなかなか難しいですね。うまく割り当てできたとし</description>
     </item>
     
     <item>
       <title>Hydraで複数のmakeコマンドを自在に使う</title>
-      <link>http://minorugh.github.io/post/multiple-make-commands/</link>
+      <link>http://minorugh.github.io/posts/multiple-make-commands/</link>
       <pubDate>Mon, 04 Mar 2019 14:20:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/multiple-make-commands/</guid>
+      <guid>http://minorugh.github.io/posts/multiple-make-commands/</guid>
       <description>ホームページ管理のためにEmacsをワークデスクとして色んな作業をしています。その中で何度も繰り返し行う作業はMakeファイルに書いて限りな</description>
     </item>
     
     <item>
       <title>iPadでBootstrapのnavbarをcollapseさせる</title>
-      <link>http://minorugh.github.io/post/navbar-collapse-for-ipad/</link>
+      <link>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</link>
       <pubDate>Thu, 21 Feb 2019 10:59:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/navbar-collapse-for-ipad/</guid>
+      <guid>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</guid>
       <description>CSSフレームワークのBootstrapを使って、ナビゲーション（navbar）を導入する場合、Bootstrapのデフォルトだと、iPad</description>
     </item>
     
     <item>
       <title>Perlで未定義値かどうかを判定する方法</title>
-      <link>http://minorugh.github.io/post/use-of-uninitialized-value/</link>
+      <link>http://minorugh.github.io/posts/use-of-uninitialized-value/</link>
       <pubDate>Sun, 13 Jan 2019 18:36:50 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/use-of-uninitialized-value/</guid>
+      <guid>http://minorugh.github.io/posts/use-of-uninitialized-value/</guid>
       <description>機嫌よく動いていた自作のスクリプトに use warnings; を入れたら作業そのものは止まることなく終了するのだけれど、 Use of uninitialized value ... と叱られるようになった。 foreach my $line (@log){</description>
     </item>
     
     <item>
       <title>RSSフィードを取得してブログの更新情報を表示</title>
-      <link>http://minorugh.github.io/post/update-information-by-rss-feed/</link>
+      <link>http://minorugh.github.io/posts/update-information-by-rss-feed/</link>
       <pubDate>Thu, 20 Dec 2018 19:23:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/update-information-by-rss-feed/</guid>
+      <guid>http://minorugh.github.io/posts/update-information-by-rss-feed/</guid>
       <description>phpスクリプトに初挑戦した。 参考にした情報 ブログの更新情報をPHPで読み込んで表示する方法 記事更新後7日間はNew表示する 基本的には参考サ</description>
     </item>
     
     <item>
       <title>EmacsとChromeとのシームレスな連携</title>
-      <link>http://minorugh.github.io/post/emacs-chrome-together/</link>
+      <link>http://minorugh.github.io/posts/emacs-chrome-together/</link>
       <pubDate>Mon, 03 Dec 2018 22:38:54 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs-chrome-together/</guid>
+      <guid>http://minorugh.github.io/posts/emacs-chrome-together/</guid>
       <description>Emacsの設定にハマりだすとメールやインターネットプラウザなど全てのワークをEmacsで完結させよう…と考えるようになります。私もそんな一</description>
     </item>
     
     <item>
       <title>Formをhtmlに直接表示しないでcgiで別窓表示する</title>
-      <link>http://minorugh.github.io/post/multipurpose-formmail/</link>
+      <link>http://minorugh.github.io/posts/multipurpose-formmail/</link>
       <pubDate>Mon, 05 Nov 2018 17:09:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/multipurpose-formmail/</guid>
+      <guid>http://minorugh.github.io/posts/multipurpose-formmail/</guid>
       <description>&lt;p&gt;読者からのFeedbackを受け付けるためにホームページ上のコンテンツごとにメールフォームを貼っていた。
 SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃されることが多くなったので、各ページにフォームを貼り付けるのはやめてCGIで表示させるようにした。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>複数アカウトでtwittering-modeを使う </title>
-      <link>http://minorugh.github.io/post/multi-account-for-twimode/</link>
+      <link>http://minorugh.github.io/posts/multi-account-for-twimode/</link>
       <pubDate>Mon, 15 Oct 2018 14:19:10 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/multi-account-for-twimode/</guid>
+      <guid>http://minorugh.github.io/posts/multi-account-for-twimode/</guid>
       <description>&lt;p&gt;EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&amp;ldquo;な〜んだ(^o^)&amp;rdquo; という落ちでしょうね。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>makefile でのOS条件分岐</title>
-      <link>http://minorugh.github.io/post/ifeq-for-makefile/</link>
+      <link>http://minorugh.github.io/posts/ifeq-for-makefile/</link>
       <pubDate>Mon, 15 Oct 2018 13:13:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ifeq-for-makefile/</guid>
+      <guid>http://minorugh.github.io/posts/ifeq-for-makefile/</guid>
       <description>&lt;p&gt;自動化のためにmakefileを書いています。&lt;/p&gt;
 &lt;p&gt;私の場合、Linux端末とMacとの異なる環境で共通のmakefileを使いますので、条件分岐を勉強してみました。無手勝流ながら以下の設定でうまく作動してくれるようになりました。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>YaTeXからplatexを使えるようにする</title>
-      <link>http://minorugh.github.io/post/platex-from-yatex/</link>
+      <link>http://minorugh.github.io/posts/platex-from-yatex/</link>
       <pubDate>Sat, 29 Sep 2018 14:12:56 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/platex-from-yatex/</guid>
+      <guid>http://minorugh.github.io/posts/platex-from-yatex/</guid>
       <description>&lt;p&gt;MacのTex環境（BasicTex）を2017basicからを2018basiにバージョンアップさせようとしてつまずいたので備忘録を残しておきます。&lt;/p&gt;
 &lt;p&gt;今どきは、Pandocなどで手軽にmd2pdfとかするのが流行りのようですが、私の場合は俳句関係での利用がメインで縦書きやルビうち、書籍としての組版などもするので目的別に txt2tex.plを作成して、makefileでtexファイルを自動生成したあとYaTeXでPDFにするようにしています。&lt;/p&gt;
 &lt;p&gt;今回は、インストール済みの古いTex環境を全て削除したうえで新たにインストールしました。&lt;/p&gt;</description>
@@ -490,103 +490,103 @@ SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃さ�
     
     <item>
       <title>Scratchバッファの保存と復元</title>
-      <link>http://minorugh.github.io/post/unkillable-scratch/</link>
+      <link>http://minorugh.github.io/posts/unkillable-scratch/</link>
       <pubDate>Mon, 24 Sep 2018 17:11:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/unkillable-scratch/</guid>
+      <guid>http://minorugh.github.io/posts/unkillable-scratch/</guid>
       <description>&lt;p&gt;Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
 これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>タブを使わない究極のバッファー移動</title>
-      <link>http://minorugh.github.io/post/iflipb/</link>
+      <link>http://minorugh.github.io/posts/iflipb/</link>
       <pubDate>Mon, 24 Sep 2018 08:24:19 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iflipb/</guid>
+      <guid>http://minorugh.github.io/posts/iflipb/</guid>
       <description>&lt;p&gt;Emacsのバッファー移動は、tabbar /  ELscreen    などのタブ系を使っていましたが、diredなどの隠れていてほしいバッファーまで開いてしまうのが嫌でした。
 そんなときに、るびきちさんのこの記事を読んでiflipb.elを試してみましたのでレポートします。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Emacsの不要なバッファーを自動的にkillする</title>
-      <link>http://minorugh.github.io/post/tempbuf/</link>
+      <link>http://minorugh.github.io/posts/tempbuf/</link>
       <pubDate>Fri, 21 Sep 2018 18:58:53 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/tempbuf/</guid>
+      <guid>http://minorugh.github.io/posts/tempbuf/</guid>
       <description>&lt;p&gt;Emacsのbufferをtabで切り替えるのはあまり好きでないので switch-buffer の機能を使っているが、magitやdired関係の不要なバッファーが沢山増えていくと煩わしくなる。&lt;/p&gt;
 &lt;p&gt;手動で削除すれば済む話ではあるが、やっぱり自動化したい。MELPAでいろいろpackageを探したが適当なものがなく、ググっていたら下記の記事を見つけました。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Macの &#39;too many open file&#39; エラーを解消する方法</title>
-      <link>http://minorugh.github.io/post/too-many-open-file/</link>
+      <link>http://minorugh.github.io/posts/too-many-open-file/</link>
       <pubDate>Wed, 02 May 2018 13:58:42 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/too-many-open-file/</guid>
+      <guid>http://minorugh.github.io/posts/too-many-open-file/</guid>
       <description>MacでEmacsを起動しているときに &#39;too many open file&#39; と出て固まってしまうことがありました。 別環境のDebianで起動しているEmacsでは、そうし</description>
     </item>
     
     <item>
       <title>Hydraを使ったview-mode設定</title>
-      <link>http://minorugh.github.io/post/hydra-view-mode/</link>
+      <link>http://minorugh.github.io/posts/hydra-view-mode/</link>
       <pubDate>Mon, 30 Apr 2018 18:16:35 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/hydra-view-mode/</guid>
+      <guid>http://minorugh.github.io/posts/hydra-view-mode/</guid>
       <description>以前にご紹介した下記の記事を、hydra.elを使って更に使いやすく工夫してみた。 Emacsのview-modeでvimのコマンドを使えるよ</description>
     </item>
     
     <item>
       <title>ある文字で始まっている行を一度に複数削除する方法：Emacs</title>
-      <link>http://minorugh.github.io/post/delete-matching-lines/</link>
+      <link>http://minorugh.github.io/posts/delete-matching-lines/</link>
       <pubDate>Mon, 30 Apr 2018 16:14:28 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/delete-matching-lines/</guid>
+      <guid>http://minorugh.github.io/posts/delete-matching-lines/</guid>
       <description>バッファ(ファイル)の先頭にカーソルを移動し M-x delete-matching-lines でミニバッファーに正規表現入力を求められるので、下記のように入力してエンターすると消すことが</description>
     </item>
     
     <item>
       <title>Debianにemacs-26.1-rc1をInstallする</title>
-      <link>http://minorugh.github.io/post/emacs26.1-rc1-to-debian./</link>
+      <link>http://minorugh.github.io/posts/emacs26.1-rc1-to-debian./</link>
       <pubDate>Sat, 28 Apr 2018 16:18:57 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs26.1-rc1-to-debian./</guid>
+      <guid>http://minorugh.github.io/posts/emacs26.1-rc1-to-debian./</guid>
       <description>私の場合は、ThinkpadのWindows10にVirtualBoxをInstallし、Vbox上でEmacs on Debianを動かしていま</description>
     </item>
     
     <item>
       <title>無償キャンペーン未実施のPCでもWindows１０にアップグレードできた</title>
-      <link>http://minorugh.github.io/post/win10-upgrade/</link>
+      <link>http://minorugh.github.io/posts/win10-upgrade/</link>
       <pubDate>Tue, 13 Feb 2018 18:32:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/win10-upgrade/</guid>
+      <guid>http://minorugh.github.io/posts/win10-upgrade/</guid>
       <description>家族の個人使用のために、比較的程度の良い Thinkpad X230/X240 の中古ノートを２台買いました。 SSDに換装して快適に使えているのですが、OSは全てWindows</description>
     </item>
     
     <item>
       <title>WEBソース表示等での文字化け対策を.htaccessに書く</title>
-      <link>http://minorugh.github.io/post/write-encode-in-htaccess/</link>
+      <link>http://minorugh.github.io/posts/write-encode-in-htaccess/</link>
       <pubDate>Tue, 23 Jan 2018 20:51:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/write-encode-in-htaccess/</guid>
+      <guid>http://minorugh.github.io/posts/write-encode-in-htaccess/</guid>
       <description>はじめに WEB環境のファイルの文字コードは、基本的に全てUTF-8で統一している。 テキストファイル、Perl、cgi、Ruby、js、htm</description>
     </item>
     
     <item>
       <title>Debian９にHUGO最新バージョンをインストールする</title>
-      <link>http://minorugh.github.io/post/hugo-install-to-debian/</link>
+      <link>http://minorugh.github.io/posts/hugo-install-to-debian/</link>
       <pubDate>Tue, 23 Jan 2018 20:12:25 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/hugo-install-to-debian/</guid>
+      <guid>http://minorugh.github.io/posts/hugo-install-to-debian/</guid>
       <description>はじめに Emacs+HUGOをMac環境メインで使っているが、Windows10（ThinkPad）上のVboxにdebianを入れて予備環</description>
     </item>
     
     <item>
       <title>JavaScriptを使ってHugoサイト内に全文検索を取り付けてみた</title>
-      <link>http://minorugh.github.io/post/full-text-search-in-hugo/</link>
+      <link>http://minorugh.github.io/posts/full-text-search-in-hugo/</link>
       <pubDate>Mon, 15 Jan 2018 20:42:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/full-text-search-in-hugo/</guid>
+      <guid>http://minorugh.github.io/posts/full-text-search-in-hugo/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;素敵なTipsを見つけたので、静的サイトジェネレータHugoを使って生成したコンテンツに全文検索を取り付けてみました。
 クライアント側のJavaScriptを使って日本語のキーワードも検索可能です。
@@ -595,175 +595,175 @@ SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃さ�
     
     <item>
       <title>hydraをミニメニューとして使う</title>
-      <link>http://minorugh.github.io/post/minibuffer-menu-by-hydra/</link>
+      <link>http://minorugh.github.io/posts/minibuffer-menu-by-hydra/</link>
       <pubDate>Wed, 10 Jan 2018 20:36:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/minibuffer-menu-by-hydra/</guid>
+      <guid>http://minorugh.github.io/posts/minibuffer-menu-by-hydra/</guid>
       <description>&lt;p&gt;hydraは、関連するコマンドを複数定義して、 それらのコマンドを連続して簡単に呼び出せるようにするツールです。基本的にはsmartrepの機能と同じですが、パラメーターによっていろいろ応用できるようなので試してみました。メニュー内容をエコーエリアに表示させることもできるのでGUIとしても優れています。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Emacsのview-modeでvimのコマンドを使えるようにする</title>
-      <link>http://minorugh.github.io/post/vim-like-view-mode/</link>
+      <link>http://minorugh.github.io/posts/vim-like-view-mode/</link>
       <pubDate>Thu, 04 Jan 2018 19:09:15 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/vim-like-view-mode/</guid>
+      <guid>http://minorugh.github.io/posts/vim-like-view-mode/</guid>
       <description>&lt;p&gt;vimを少し触り始めて、Emacsのview-modeでも簡単な編集操作は可能にしたいと思うようになったので、
 viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集機能を実現させるべく試運転中です。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>easy-hugoでマルチブログライフを愉しむ</title>
-      <link>http://minorugh.github.io/post/easy-hugo-for-multi-blog/</link>
+      <link>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</link>
       <pubDate>Wed, 22 Nov 2017 17:12:36 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/easy-hugo-for-multi-blog/</guid>
+      <guid>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</guid>
       <description>&lt;p&gt;easy-hugo の作者 masasam さんが、我儘な私のリクエストに応えて数々のアップデートをしてくださいましたので、感謝の気持ちをこめて紹介させていただきます。
 easy-hugo は、package-install できますが、頻繁に更新されているので、&lt;a href=&#34;https://github.com/masasam/emacs-easy-hugo&#34;&gt;作者のページ&lt;/a&gt; で最新情報をチェックされるといいです。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>RubyでWeb上からファイルをダウンロードする：openメソッドのお勉強</title>
-      <link>http://minorugh.github.io/post/ruby-open-method/</link>
+      <link>http://minorugh.github.io/posts/ruby-open-method/</link>
       <pubDate>Sat, 18 Nov 2017 15:43:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ruby-open-method/</guid>
+      <guid>http://minorugh.github.io/posts/ruby-open-method/</guid>
       <description>&lt;p&gt;別サイトで運用しているLINEBLOGの記事をダウンロードし、そこから更新情報を抜き出して自分のホームページに表示したかったのでRubyのお勉強を兼ねて試してみた。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Makefile の Suspicious line XXX. Save anyway を抑制する</title>
-      <link>http://minorugh.github.io/post/makefile-error/</link>
+      <link>http://minorugh.github.io/posts/makefile-error/</link>
       <pubDate>Fri, 17 Nov 2017 15:22:25 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/makefile-error/</guid>
+      <guid>http://minorugh.github.io/posts/makefile-error/</guid>
       <description>&lt;p&gt;Emacsのmakefile-modeで行頭のtabを挿入するたびに &amp;ldquo;Suspicious line XXX. Save anyway?&amp;rdquo; というポップアップ・プロンプトが出る。
 この現象は、auto-save-buers との関係らしく、以下のおまじないを設定することででなくなった。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Emacsのスタート画面をイケメンにする</title>
-      <link>http://minorugh.github.io/post/dashboard/</link>
+      <link>http://minorugh.github.io/posts/dashboard/</link>
       <pubDate>Mon, 16 Oct 2017 15:09:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/dashboard/</guid>
+      <guid>http://minorugh.github.io/posts/dashboard/</guid>
       <description>&lt;p&gt;100分の1秒でもemacsの起動を早くしようと試行錯誤している一方、起動のたびに真黒なScratch画面と向きあっていると気分も暗くなってくる。せめて初期画面くらいは、ホットするようなものにしたい…ということで、dashbord.elを導入してみた。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>DebianにEmacs25.3をInstallする</title>
-      <link>http://minorugh.github.io/post/emacs25.3-to-debian/</link>
+      <link>http://minorugh.github.io/posts/emacs25.3-to-debian/</link>
       <pubDate>Mon, 25 Sep 2017 18:41:37 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs25.3-to-debian/</guid>
+      <guid>http://minorugh.github.io/posts/emacs25.3-to-debian/</guid>
       <description>私の場合は、ThinkpadのWindows10にVirtualBoxをInstallし、Vbox上でDebianを動かしています。 Inst</description>
     </item>
     
     <item>
       <title>macOS SierraでSIPを無効にする方法</title>
-      <link>http://minorugh.github.io/post/disable-sip-sierra/</link>
+      <link>http://minorugh.github.io/posts/disable-sip-sierra/</link>
       <pubDate>Sun, 24 Sep 2017 20:28:52 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/disable-sip-sierra/</guid>
+      <guid>http://minorugh.github.io/posts/disable-sip-sierra/</guid>
       <description>Sierraには、SIP（System Integrity Protecton）というセキュリティを強化機能が追加されていて、sudoを使ってもシステム用とされ</description>
     </item>
     
     <item>
       <title>SierraでIllustrator(CS3~6)のエラーを回避する方法</title>
-      <link>http://minorugh.github.io/post/illustrator-error-on-sierra/</link>
+      <link>http://minorugh.github.io/posts/illustrator-error-on-sierra/</link>
       <pubDate>Sat, 23 Sep 2017 22:33:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/illustrator-error-on-sierra/</guid>
+      <guid>http://minorugh.github.io/posts/illustrator-error-on-sierra/</guid>
       <description>macOSをSierraにバージョンアップすると、せっかく構築した開発環境にいろいろ障害が出そうなので、ずっとMarvericsで頑張ってい</description>
     </item>
     
     <item>
       <title>Perl:文字列前後のスペース＆タブを削除</title>
-      <link>http://minorugh.github.io/post/perl-delete-tab/</link>
+      <link>http://minorugh.github.io/posts/perl-delete-tab/</link>
       <pubDate>Sat, 23 Sep 2017 22:07:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/perl-delete-tab/</guid>
+      <guid>http://minorugh.github.io/posts/perl-delete-tab/</guid>
       <description>運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが</description>
     </item>
     
     <item>
       <title>UpFtpをMacとLinuxとで共用する方法</title>
-      <link>http://minorugh.github.io/post/upftp-between-mac-linux/</link>
+      <link>http://minorugh.github.io/posts/upftp-between-mac-linux/</link>
       <pubDate>Mon, 17 Jul 2017 17:19:35 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/upftp-between-mac-linux/</guid>
+      <guid>http://minorugh.github.io/posts/upftp-between-mac-linux/</guid>
       <description>UpFtpと言うのは、結城浩さんの作られたMakeWebと併せて使うためのFTP自動化ツールのことです。 Makeweb:テキストをXHTML</description>
     </item>
     
     <item>
       <title>open-junk-file&#43;howmでサンプルコードテスト環境を構築</title>
-      <link>http://minorugh.github.io/post/open-junk-file&#43;howm/</link>
+      <link>http://minorugh.github.io/posts/open-junk-file&#43;howm/</link>
       <pubDate>Mon, 17 Jul 2017 16:35:47 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/open-junk-file&#43;howm/</guid>
+      <guid>http://minorugh.github.io/posts/open-junk-file&#43;howm/</guid>
       <description>ぼくはプログラマーではないけど、作業の自動化などを図るためにときどきパッチワークコードを試すことがある。 この目的のために多くの人は、open</description>
     </item>
     
     <item>
       <title>whitespace-modeでjaspace風に表示させる設定</title>
-      <link>http://minorugh.github.io/post/whitespace-like-jaspace/</link>
+      <link>http://minorugh.github.io/posts/whitespace-like-jaspace/</link>
       <pubDate>Mon, 26 Jun 2017 22:50:39 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/whitespace-like-jaspace/</guid>
+      <guid>http://minorugh.github.io/posts/whitespace-like-jaspace/</guid>
       <description>Emacs24以降は、内包されたWhitespaceで全角スペースなどを明示的に表示できることは知っていたけれど、長い間使い馴染んだjasp</description>
     </item>
     
     <item>
       <title>メモ機能に特化した超シンプルなhowm&#43;Dropboxの設定</title>
-      <link>http://minorugh.github.io/post/howm&#43;dropbox/</link>
+      <link>http://minorugh.github.io/posts/howm&#43;dropbox/</link>
       <pubDate>Fri, 09 Jun 2017 20:40:03 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/howm&#43;dropbox/</guid>
+      <guid>http://minorugh.github.io/posts/howm&#43;dropbox/</guid>
       <description>メモ機能に特化したhowmの設定を紹介します。 GTDとしては使わないのでメニュー画面は使いません。 メニュー画面は使いませんが検索などの基本機</description>
     </item>
     
     <item>
       <title>mozc-tempを使ったモードレス日本語入力が快適</title>
-      <link>http://minorugh.github.io/post/mozc-temp/</link>
+      <link>http://minorugh.github.io/posts/mozc-temp/</link>
       <pubDate>Thu, 25 May 2017 19:48:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/mozc-temp/</guid>
+      <guid>http://minorugh.github.io/posts/mozc-temp/</guid>
       <description>モードレスに魅せられて、ac-mozcを導入して使っていたが、新しいモードレスのコードで、mozc-tempなるものがあることを知った。早速</description>
     </item>
     
     <item>
       <title>iterm2とvimのカラーテーマをhybridにする</title>
-      <link>http://minorugh.github.io/post/iterm2-color-theme/</link>
+      <link>http://minorugh.github.io/posts/iterm2-color-theme/</link>
       <pubDate>Wed, 17 May 2017 23:43:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iterm2-color-theme/</guid>
+      <guid>http://minorugh.github.io/posts/iterm2-color-theme/</guid>
       <description>iterm Link Text これを保存して、 iTerm -&amp;gt; Preferences... -&amp;gt; Profiles -&amp;gt;Colors -&amp;gt; Load Presets... -&amp;gt; Import... で読み込む。 vim Hybrid iTerm Colors: https://github.com/w0ng/vim-hybrid これを保存して、下記に置く ~/.vim/colors/hybrid.vim</description>
     </item>
     
     <item>
       <title>mozc_emacs_helper on macOS Sierra</title>
-      <link>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</link>
+      <link>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</link>
       <pubDate>Wed, 17 May 2017 21:15:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/mozc_emacs_helper-on-sierra/</guid>
+      <guid>http://minorugh.github.io/posts/mozc_emacs_helper-on-sierra/</guid>
       <description>macOS Sierra をクリーンインストールしたので mozc_emacs_helper を使えるようにした。google日本語入力と連携できるようにビルドできるという以下のサイトの Tips を参考にし</description>
     </item>
     
     <item>
       <title>livedown：markdownリアルタイムビューアーの導入</title>
-      <link>http://minorugh.github.io/post/livedown/</link>
+      <link>http://minorugh.github.io/posts/livedown/</link>
       <pubDate>Sat, 25 Feb 2017 22:27:27 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/livedown/</guid>
+      <guid>http://minorugh.github.io/posts/livedown/</guid>
       <description>EmacsのMarkdown-modeビューアーは、multimarkdownが定番のようですが、プレビュー機能は専用エディタほどではありま</description>
     </item>
     
     <item>
       <title>PDFJモジュールをサーバーに置いてPerlでPDFを自動生成させる</title>
-      <link>http://minorugh.github.io/post/use-pdfj-in-server/</link>
+      <link>http://minorugh.github.io/posts/use-pdfj-in-server/</link>
       <pubDate>Sat, 25 Feb 2017 21:52:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/use-pdfj-in-server/</guid>
+      <guid>http://minorugh.github.io/posts/use-pdfj-in-server/</guid>
       <description>目的 全自動で稼働させているインターネット句会の中で全員の投句が済んだあと、ランダムに並べ替えて清記表を作成する作業工程がある。 参加者はそれを</description>
     </item>
     

@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 30 Dec 2021 12:03:29 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iframeの高さを取得し自動調整する</title>
-      <link>http://minorugh.github.io/post/auto-height-of-iframe/</link>
+      <link>http://minorugh.github.io/posts/auto-height-of-iframe/</link>
       <pubDate>Thu, 30 Dec 2021 12:03:29 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/auto-height-of-iframe/</guid>
+      <guid>http://minorugh.github.io/posts/auto-height-of-iframe/</guid>
       <description>レスポンシブ Webデザインでは、iframeの高さが PCとスマホ・タブレットで結構変わってしまうことも多くて事前に高さを決め打ちで指定できま</description>
     </item>
     

@@ -9,37 +9,37 @@
     <lastBuildDate>Thu, 18 Nov 2021 08:41:01 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/elisp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pangu-spacing.el : 全角と半角の間に自動でスペースを入れる</title>
-      <link>http://minorugh.github.io/post/pangu-spacing/</link>
+      <link>http://minorugh.github.io/posts/pangu-spacing/</link>
       <pubDate>Thu, 18 Nov 2021 08:41:01 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/pangu-spacing/</guid>
+      <guid>http://minorugh.github.io/posts/pangu-spacing/</guid>
       <description>pangu-spacing.el : 全角と半角の間に自動でスペースを入れる新実装 上記の Tipsを参考にして、markdown-modeに導入してみた。 日本語においては、いわ</description>
     </item>
     
     <item>
       <title>ac-mozc : モードレス日本語入力を試してみた</title>
-      <link>http://minorugh.github.io/post/ac-mozc/</link>
+      <link>http://minorugh.github.io/posts/ac-mozc/</link>
       <pubDate>Sat, 13 Nov 2021 20:20:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ac-mozc/</guid>
+      <guid>http://minorugh.github.io/posts/ac-mozc/</guid>
       <description>随分前に一度試してみたが、mozc.elと併用する時に若干変換ルールに違いがあって使いにくく、そのうち使わなくなっていた。 その後、elisp</description>
     </item>
     
     <item>
       <title>Emacs : Open Last Closed Buffer</title>
-      <link>http://minorugh.github.io/post/open-last-closed-buffer/</link>
+      <link>http://minorugh.github.io/posts/open-last-closed-buffer/</link>
       <pubDate>Fri, 17 Sep 2021 14:24:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/open-last-closed-buffer/</guid>
+      <guid>http://minorugh.github.io/posts/open-last-closed-buffer/</guid>
       <description>darkroom-modeを使うときは、Syntax Highlightが邪魔なので、どのモードのファイルであっても強制的に text-mode</description>
     </item>
     
     <item>
       <title>ある文字で始まっている行を一度に複数削除する方法：Emacs</title>
-      <link>http://minorugh.github.io/post/delete-matching-lines/</link>
+      <link>http://minorugh.github.io/posts/delete-matching-lines/</link>
       <pubDate>Mon, 30 Apr 2018 16:14:28 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/delete-matching-lines/</guid>
+      <guid>http://minorugh.github.io/posts/delete-matching-lines/</guid>
       <description>バッファ(ファイル)の先頭にカーソルを移動し M-x delete-matching-lines でミニバッファーに正規表現入力を求められるので、下記のように入力してエンターすると消すことが</description>
     </item>
     

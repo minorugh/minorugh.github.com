@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 30 Dec 2021 12:03:29 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iframeの高さを取得し自動調整する</title>
-      <link>http://minorugh.github.io/post/auto-height-of-iframe/</link>
+      <link>http://minorugh.github.io/posts/auto-height-of-iframe/</link>
       <pubDate>Thu, 30 Dec 2021 12:03:29 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/auto-height-of-iframe/</guid>
+      <guid>http://minorugh.github.io/posts/auto-height-of-iframe/</guid>
       <description>レスポンシブ Webデザインでは、iframeの高さが PCとスマホ・タブレットで結構変わってしまうことも多くて事前に高さを決め打ちで指定できま</description>
     </item>
     
     <item>
       <title>iframeに異なるドメイン（クロスドメイン）のコンテンツを読み込んで高さを自動調節する方法</title>
-      <link>http://minorugh.github.io/post/iframe/</link>
+      <link>http://minorugh.github.io/posts/iframe/</link>
       <pubDate>Fri, 10 Sep 2021 14:11:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iframe/</guid>
+      <guid>http://minorugh.github.io/posts/iframe/</guid>
       <description>wordpressでサイトを構築したときに掲示板をつけることになりました。 bbpressをはじめ何種類かのプラグインも試しましたが、不要な機</description>
     </item>
     

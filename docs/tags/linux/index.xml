@@ -9,64 +9,64 @@
     <lastBuildDate>Wed, 26 Jan 2022 10:29:22 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SlackAppを最小化状態で自動起動する for Linux</title>
-      <link>http://minorugh.github.io/post/slack-in-minimized/</link>
+      <link>http://minorugh.github.io/posts/slack-in-minimized/</link>
       <pubDate>Wed, 26 Jan 2022 10:29:22 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/slack-in-minimized/</guid>
+      <guid>http://minorugh.github.io/posts/slack-in-minimized/</guid>
       <description>元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac</description>
     </item>
     
     <item>
       <title>apt installを使わずにTeXLiveを導入する</title>
-      <link>http://minorugh.github.io/post/install-texlive-without-apt/</link>
+      <link>http://minorugh.github.io/posts/install-texlive-without-apt/</link>
       <pubDate>Mon, 10 Feb 2020 09:09:09 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/install-texlive-without-apt/</guid>
+      <guid>http://minorugh.github.io/posts/install-texlive-without-apt/</guid>
       <description>TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live</description>
     </item>
     
     <item>
       <title>Macにe2psをインストールする</title>
-      <link>http://minorugh.github.io/post/e2ps/</link>
+      <link>http://minorugh.github.io/posts/e2ps/</link>
       <pubDate>Thu, 04 Jul 2019 19:13:26 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/e2ps/</guid>
+      <guid>http://minorugh.github.io/posts/e2ps/</guid>
       <description>WtSeries : UNIXソフトからe2psをダウンロードして解凍します。 現在の最新バージョンは、e2ps-4.34 解凍フォルダー内のps-font.cを</description>
     </item>
     
     <item>
       <title>Debianにemacs-26.1-rc1をInstallする</title>
-      <link>http://minorugh.github.io/post/emacs26.1-rc1-to-debian./</link>
+      <link>http://minorugh.github.io/posts/emacs26.1-rc1-to-debian./</link>
       <pubDate>Sat, 28 Apr 2018 16:18:57 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs26.1-rc1-to-debian./</guid>
+      <guid>http://minorugh.github.io/posts/emacs26.1-rc1-to-debian./</guid>
       <description>私の場合は、ThinkpadのWindows10にVirtualBoxをInstallし、Vbox上でEmacs on Debianを動かしていま</description>
     </item>
     
     <item>
       <title>Debian９にHUGO最新バージョンをインストールする</title>
-      <link>http://minorugh.github.io/post/hugo-install-to-debian/</link>
+      <link>http://minorugh.github.io/posts/hugo-install-to-debian/</link>
       <pubDate>Tue, 23 Jan 2018 20:12:25 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/hugo-install-to-debian/</guid>
+      <guid>http://minorugh.github.io/posts/hugo-install-to-debian/</guid>
       <description>はじめに Emacs+HUGOをMac環境メインで使っているが、Windows10（ThinkPad）上のVboxにdebianを入れて予備環</description>
     </item>
     
     <item>
       <title>DebianにEmacs25.3をInstallする</title>
-      <link>http://minorugh.github.io/post/emacs25.3-to-debian/</link>
+      <link>http://minorugh.github.io/posts/emacs25.3-to-debian/</link>
       <pubDate>Mon, 25 Sep 2017 18:41:37 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/emacs25.3-to-debian/</guid>
+      <guid>http://minorugh.github.io/posts/emacs25.3-to-debian/</guid>
       <description>私の場合は、ThinkpadのWindows10にVirtualBoxをInstallし、Vbox上でDebianを動かしています。 Inst</description>
     </item>
     
     <item>
       <title>UpFtpをMacとLinuxとで共用する方法</title>
-      <link>http://minorugh.github.io/post/upftp-between-mac-linux/</link>
+      <link>http://minorugh.github.io/posts/upftp-between-mac-linux/</link>
       <pubDate>Mon, 17 Jul 2017 17:19:35 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/upftp-between-mac-linux/</guid>
+      <guid>http://minorugh.github.io/posts/upftp-between-mac-linux/</guid>
       <description>UpFtpと言うのは、結城浩さんの作られたMakeWebと併せて使うためのFTP自動化ツールのことです。 Makeweb:テキストをXHTML</description>
     </item>
     

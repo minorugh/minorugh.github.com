@@ -9,19 +9,19 @@
     <lastBuildDate>Mon, 23 Aug 2021 08:21:40 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian 10(buster) を 11(bullseye)へ更新</title>
-      <link>http://minorugh.github.io/post/debian-update-10-to-11/</link>
+      <link>http://minorugh.github.io/posts/debian-update-10-to-11/</link>
       <pubDate>Mon, 23 Aug 2021 08:21:40 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/debian-update-10-to-11/</guid>
+      <guid>http://minorugh.github.io/posts/debian-update-10-to-11/</guid>
       <description>Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま</description>
     </item>
     
     <item>
       <title>Xfce4のパネルが突然表示されなくなった時の対処法</title>
-      <link>http://minorugh.github.io/post/xface4-panel-not-display/</link>
+      <link>http://minorugh.github.io/posts/xface4-panel-not-display/</link>
       <pubDate>Wed, 03 Mar 2021 21:22:54 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/xface4-panel-not-display/</guid>
+      <guid>http://minorugh.github.io/posts/xface4-panel-not-display/</guid>
       <description>問題 デスクトップにパネルが表示されません。 解決方法 ${HOME}/.cache/sessions ディレクトリを削除し、ログインし直します。これで、初期状態でパネルが表示されます。 パネル</description>
     </item>
     

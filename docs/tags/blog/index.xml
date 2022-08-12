@@ -9,19 +9,19 @@
     <lastBuildDate>Wed, 15 Jul 2020 10:38:24 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HUGOブログテーマをMainroadに変更</title>
-      <link>http://minorugh.github.io/post/change-hugo-theme-to-mainroad/</link>
+      <link>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</link>
       <pubDate>Wed, 15 Jul 2020 10:38:24 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/change-hugo-theme-to-mainroad/</guid>
+      <guid>http://minorugh.github.io/posts/change-hugo-theme-to-mainroad/</guid>
       <description>Emacsライフの備忘録として使っていたブログを、俳句サイトのシステム管理ノートとしても使うためにテーマを変更しました。 Emacs関連のTi</description>
     </item>
     
     <item>
       <title>easy-hugoでマルチブログライフを愉しむ</title>
-      <link>http://minorugh.github.io/post/easy-hugo-for-multi-blog/</link>
+      <link>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</link>
       <pubDate>Wed, 22 Nov 2017 17:12:36 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/easy-hugo-for-multi-blog/</guid>
+      <guid>http://minorugh.github.io/posts/easy-hugo-for-multi-blog/</guid>
       <description>&lt;p&gt;easy-hugo の作者 masasam さんが、我儘な私のリクエストに応えて数々のアップデートをしてくださいましたので、感謝の気持ちをこめて紹介させていただきます。
 easy-hugo は、package-install できますが、頻繁に更新されているので、&lt;a href=&#34;https://github.com/masasam/emacs-easy-hugo&#34;&gt;作者のページ&lt;/a&gt; で最新情報をチェックされるといいです。&lt;/p&gt;</description>
     </item>

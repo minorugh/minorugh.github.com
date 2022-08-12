@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Emacsの設定にハマりだすとメールやインターネットプラウザなど全てのワークをEmacsで完結させよう…と考えるようになります。私もそんな一" />
+<meta name="keywords" content="blog,developer,personal, chrome" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://minorugh.github.io/posts/emacs-chrome-together/" />
+
+
+    <title>
+        
+            EmacsとChromeとのシームレスな連携 :: ChangeLog 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/amazon.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/adsense.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="EmacsとChromeとのシームレスな連携">
+<meta itemprop="description" content="Emacsの設定にハマりだすとメールやインターネットプラウザなど全てのワークをEmacsで完結させよう…と考えるようになります。私もそんな一">
+<meta itemprop="datePublished" content="2018-12-03T22:38:54+09:00" />
+<meta itemprop="dateModified" content="2018-12-03T22:38:54+09:00" />
+<meta itemprop="wordCount" content="3349">
+
+
+
+<meta itemprop="keywords" content="chrome," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="EmacsとChromeとのシームレスな連携"/>
+<meta name="twitter:description" content="Emacsの設定にハマりだすとメールやインターネットプラウザなど全てのワークをEmacsで完結させよう…と考えるようになります。私もそんな一"/>
+
+
+
+
+
+    <meta property="article:section" content="emacs" />
+
+
+
+    <meta property="article:published_time" content="2018-12-03 22:38:54 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+	<body>
+	  
+
+      <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/minorugh</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/profile/">Profile</a></li><li><a href="/projects/">Projects</a></li><li><a href="/posts/">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        7 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="http://minorugh.github.io/posts/emacs-chrome-together/">EmacsとChromeとのシームレスな連携</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>Emacsの設定にハマりだすとメールやインターネットプラウザなど全てのワークをEmacsで完結させよう…と考えるようになります。私もそんな一人でした。あれこれと設定を試すプロセスもまた楽しいからです。でもEmacsつながりでご縁ができたあるプログラマーの方のブログ <a href="https://solist.work/blog/">Solist Work Blog</a> を読んで少しずつ考え方が変わってきました。</p>
+<p>気付かされたことは、全てをEmacsで扱うために窮屈な使い方をするより、作業デスクとしてのEmacsと使い慣れたシステムやアプリとが、シームレスな感覚で連携できることのほうが遥かに意義があるということでした。まだまだ試行錯誤中で十分にまとまった記事にはなっていませんが備忘録として公開します。</p>
+<h2 id="外部モニターを併用する">外部モニターを併用する</h2>
+<p>これは必須ではないと思いますが実際に使ってみると実に快適です。私の場合は、メインマシンMacbook Pro に 24インチの外部モニターを接続しています。解像度とかにこだわらなければ
+<a href="https://www.google.co.jp/search?q=%E5%A4%96%E9%83%A8%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC+%EF%BC%92%EF%BC%94%E3%82%A4%E3%83%B3%E3%83%81&amp;source=univ&amp;tbm=shop&amp;tbo=u&amp;sa=X&amp;ved=0ahUKEwi05fi8oYXfAhWCQN4KHVjVAlYQsxgILA&amp;biw=1920&amp;bih=1018">１~２万円で十分実用できるモニター</a> が購入できます。正面にMacbookのEmacs画面を見ながら右サイドの外部ディスプレーでChromeを開いている…というのが定番のスタイルです。</p>
+<p><img src="https://c1.staticflickr.com/5/4909/45255050955_fea3e33025_b.jpg" alt="emacs-chrome"></p>
+<p>Macの場合、２画面のデスクトップを自在に切り替えできます。私の場合 ctrl+1 &lt;-&gt; ctrl+2 で切り替えできるように設定して、A画面でEmacs、B画面でiTermというような使い方ができます。外部ディスプレーの方は、ほぼChrome専用という使い方ですが、<a href="https://folivora.ai/">BetterTouchTool</a> というアプリを使えば表示画面の移動などが自在にできるので便利です。</p>
+<h2 id="emacsとchromeとのシームレスな連携">EmacsとChromeとのシームレスな連携</h2>
+<p>Emacsでブログの文章を書いたり、プログラミングを試行したりしているとき、作業の手を止めることなく検索できたり必要な資料の載っているWEBページを一発で閲覧できるとすごく便利です。一方、Chrome（プラウザ）の textarea に長文の入力が必要なときは、Emacsで入力できるほうがストレスが少ないです。以下はそのための設定です。</p>
+<h3 id="i-classfa-fa-searchi-色々web検索するための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> 色々WEB検索するための設定</h3>
+<p>Melpaから <a href="https://github.com/tomoya/search-web.el">search-web</a> というPackageをインストールします。このパッケージは、<a href="URL">google-this</a>と同じコンセプトで、regionやカーソルのある部分の単語など空気を読んで検索してくれます。</p>
+<p>各検索サイトがどのような引数で修理しているかさえ解れば自由にカスタマイズして応用できます。WEBページからkeywordを入力して検索するとその結果がURLボックスに表示されます。表示されたURLから引数を分析すればいいのです。私の場合、俳句でよく使う 古語検索/類語検索/季語検索などを登録しています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package search-web)
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;weblio&#34;</span> <span style="color:#e6db74">&#34;http://weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;kobun&#34;</span> <span style="color:#e6db74">&#34;http://kobun.weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;ruigo&#34;</span> <span style="color:#e6db74">&#34;http://thesaurus.weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;kigo&#34;</span> <span style="color:#e6db74">&#34;http://www.mysai.net/cgi-bin/kigo_search.cgi?txtKigo=%s&amp;rdoSelect=1&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;github&#34;</span> <span style="color:#e6db74">&#34;https://github.com/search?utf8=✓&amp;q=%s&amp;ref=simplesearch&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;qitta&#34;</span> <span style="color:#e6db74">&#34;https://qiita.com/search?q=%s&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#e6db74">&#34;https://postcode.goo.ne.jp/search/q/%s/&#34;</span> <span style="color:#66d9ef">nil</span>))
+(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;earth&#34;</span> <span style="color:#e6db74">&#34;https://earth.google.com/web/search/%s/&#34;</span> <span style="color:#66d9ef">nil</span>))
+
+(bind-key
+ <span style="color:#e6db74">&#34;s-s&#34;</span>
+ (defhydra hydra-search-web (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
+   <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">[Search]  _a_:Amazon  _g_:Google  _m_:Maps  _e_:Earth  _h_:GitHub  _q_:Qitta  _w_:Weblio  _p_:Post  _b_:古文  _r_:類語&#34;</span>
+  (<span style="color:#e6db74">&#34;a&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;amazon jp&#34;</span>))
+  (<span style="color:#e6db74">&#34;e&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;earth&#34;</span>))
+  (<span style="color:#e6db74">&#34;g&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;google&#34;</span>))
+  (<span style="color:#e6db74">&#34;m&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;google maps&#34;</span>))
+  (<span style="color:#e6db74">&#34;h&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;github&#34;</span>))
+  (<span style="color:#e6db74">&#34;q&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;qitta&#34;</span>))
+  (<span style="color:#e6db74">&#34;w&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;weblio&#34;</span>))
+  (<span style="color:#e6db74">&#34;p&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;post&#34;</span>))
+  (<span style="color:#e6db74">&#34;k&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;kigo&#34;</span>))
+  (<span style="color:#e6db74">&#34;b&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;kobun&#34;</span>))
+  (<span style="color:#e6db74">&#34;r&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;ruigo&#34;</span>))))
+</code></pre></div><h3 id="i-classfa-fa-bookmark-oi-お気に入りのページを開いたりアプリを起動させたりするための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> お気に入りのページを開いたりアプリを起動させたりするための設定</h3>
+<p>Melpaにあるpackage <a href="https://github.com/abo-abo/hydra">hydra</a> を使うことでお好みのミニバッファーメニューを構築できます。主にEmacsの編集をしているときに必要となるサイトを設定しておくと便利です。私の場合、Emacsから起動できたら便利かなと思うApplicationもいくつか設定しています。</p>
+<p><img src="https://c1.staticflickr.com/5/4915/44353090030_e646922131_b.jpg" alt="Alt Text"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(key-chord-define-global
+ <span style="color:#e6db74">&#34;kl&#34;</span>
+ (defhydra hydra-browse (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
+   <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74"> ^Shop^           ^SNS^           ^Repos^          ^GH^           ^Favorite^      ^Others^        ^Applications^
+</span><span style="color:#e6db74"> ^^^^^^------------------------------------------------------------------------------------------------
+</span><span style="color:#e6db74"> _a_: Amazon      _t_: Twitter    _g_: minorugh    _h_: HOME      _j_: Jorudan    _D_: Dropbox    _c_: Calendar
+</span><span style="color:#e6db74"> _r_: Rakuten     _u_: Youtube    _0_: my gist     _d_: d.kukai   _n_: News       _x_: Xserver    _l_: ForkLift
+</span><span style="color:#e6db74"> _y_: Yodobashi   _f_: Flickr     _1_: masasam     _m_: m.kukai   _w_: Weather    _q_: Qiita      _@_: AirMail
+</span><span style="color:#e6db74"> _k_: Kakaku      _e_: Evernote   _2_: gitbucket   _b_: BBS       _s_: SanyoBas   _p_: Pocket     _i_: iTerm
+</span><span style="color:#e6db74">&#34;</span>
+   (<span style="color:#e6db74">&#34;a&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.amazon.co.jp/&#34;</span>))
+   (<span style="color:#e6db74">&#34;r&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.rakuten.co.jp/&#34;</span>))
+   (<span style="color:#e6db74">&#34;y&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.yodobashi.com/&#34;</span>))
+   (<span style="color:#e6db74">&#34;k&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://kakaku.com/&#34;</span>))
+   (<span style="color:#e6db74">&#34;t&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://twitter.com&#34;</span>))
+   (<span style="color:#e6db74">&#34;u&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.youtube.com/channel/UCnwoipb9aTyORVKHeTw159A/videos&#34;</span>))
+   (<span style="color:#e6db74">&#34;f&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.flickr.com/photos/minorugh/&#34;</span>))
+   (<span style="color:#e6db74">&#34;e&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.evernote.com/client/web#?an=true&amp;n=02ab918a-18a7-472b-a166-835a922d3fad&amp;s=s278&amp;&#34;</span>))
+   (<span style="color:#e6db74">&#34;g&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://github.com/minorugh/emacs.d&#34;</span>))
+   (<span style="color:#e6db74">&#34;0&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://gist.github.com/minorugh&#34;</span>))
+   (<span style="color:#e6db74">&#34;1&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://github.com/masasam/dotfiles/tree/master/.emacs.d&#34;</span>))
+   (<span style="color:#e6db74">&#34;2&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://localhost:8080/minoru&#34;</span>))
+   (<span style="color:#e6db74">&#34;h&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/&#34;</span>))
+   (<span style="color:#e6db74">&#34;d&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/d_kukai/&#34;</span>))
+   (<span style="color:#e6db74">&#34;m&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/m_kukai/&#34;</span>))
+   (<span style="color:#e6db74">&#34;b&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/danwa/&#34;</span>))
+   (<span style="color:#e6db74">&#34;B&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://app.box.com/folder/0&#34;</span>))
+   (<span style="color:#e6db74">&#34;j&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.jorudan.co.jp/&#34;</span>))
+   (<span style="color:#e6db74">&#34;n&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://news.yahoo.co.jp/&#34;</span>))
+   (<span style="color:#e6db74">&#34;w&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://tenki.jp/week/6/31/&#34;</span>))
+   (<span style="color:#e6db74">&#34;s&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://www.sanyo-bus.co.jp/pdf/180913.pdf&#34;</span>))
+   (<span style="color:#e6db74">&#34;x&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.xserver.ne.jp/login_server.php&#34;</span>))
+   (<span style="color:#e6db74">&#34;D&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.dropbox.com/home/emacs.d&#34;</span>))
+   (<span style="color:#e6db74">&#34;q&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://qiita.com/minoruGH&#34;</span>))
+   (<span style="color:#e6db74">&#34;v&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://drive.google.com/drive/u/0/my-drive&#34;</span>))
+   (<span style="color:#e6db74">&#34;P&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://photos.google.com/?pageId=none&#34;</span>))
+   (<span style="color:#e6db74">&#34;p&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://getpocket.com/a/queue/list/&#34;</span>))
+   (<span style="color:#e6db74">&#34;.&#34;</span> hydra-dired/body)
+   (<span style="color:#e6db74">&#34;/&#34;</span> hydra-works/body)
+   (<span style="color:#e6db74">&#34;c&#34;</span> my/calendar-app)
+   (<span style="color:#e6db74">&#34;l&#34;</span> my/forklift-app)
+   (<span style="color:#e6db74">&#34;@&#34;</span> my/amail-app)
+   (<span style="color:#e6db74">&#34;i&#34;</span> my/iterm-app)))
+
+<span style="color:#75715e">;; Launch for Mac applications</span>
+(defun my/calendar-app ()
+  <span style="color:#e6db74">&#34;Launch for calendar.app.&#34;</span>
+  (interactive)
+  (shell-command <span style="color:#e6db74">&#34;open -a calendar.app&#34;</span>))
+(defun my/forklift-app ()
+  <span style="color:#e6db74">&#34;Launch for forklift.app.&#34;</span>
+  (interactive)
+  (shell-command <span style="color:#e6db74">&#34;open -a forklift.app&#34;</span>))
+(defun my/amail-app ()
+  <span style="color:#e6db74">&#34;Launch for airmail3.app.&#34;</span>
+  (interactive)
+  (shell-command <span style="color:#e6db74">&#34;open -a &#39;airmail 3.app&#39;&#34;</span>))
+(defun my/iterm-app ()
+  <span style="color:#e6db74">&#34;Launch for iterm.app.&#34;</span>
+  (interactive)
+  (shell-command <span style="color:#e6db74">&#34;open -a iterm.app&#34;</span>))
+</code></pre></div><h3 id="i-classfa-fa-editi-chromeのテキストエリアをemacsでリアルタイム編集するための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> ChromeのテキストエリアをEmacsでリアルタイム編集するための設定</h3>
+<p>Google Chromeに拡張機能
+<a href="https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc">Atomic Chrome</a>
+をインストールします。つづいて、EmacsにMelpaから<a href="https://github.com/alpha22jp/atomic-chrome">atmic-chrome.el</a>をパッケージインストールしてinit.elに下記の設定を追加します。私の場合、markdownでも書けるように設定しています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; atomic-chrome</span>
+(atomic-chrome-start-server)
+(setq atomic-chrome-default-major-mode <span style="color:#e6db74">&#39;markdown-mode</span>)
+</code></pre></div><p><img src="https://c1.staticflickr.com/5/4823/31230493847_0856377333_b.jpg" alt="Alt Text"></p>
+<h2 id="chromeからemacsへ色々captureする">ChromeからEmacsへ色々Captureする</h2>
+<p>Chromeに拡張機能 <a href="https://chrome.google.com/webstore/detail/org-capture/kkkjlfejijcjgjllecmnejhogpbcigdc">Org Capture</a>
+をインストールします。導入の詳細は
+<a href="https://github.com/sprig/org-capture-extension">このページ</a> を見よ…とのことで、いろいろ設定が必要なように書かれているのですが、私の場合はMac側の設定は何もしない状態でも動きました。</p>
+<p>また、org-capture-templates の設定例も書かれていましたがうまく動かなところもあってので少し変えました。WEBページを開いた状態でChromeの拡張機能のアイコンをクリックするとorg-captureの入力画面が起動しWEBページの情報が自動的にCaptureされます。</p>
+<h3 id="i-classfa-fa-copyi-region選択してcaptureする"><!-- raw HTML omitted --><!-- raw HTML omitted --> region選択してCaptureする</h3>
+<p>WEBページの必要なCODEの箇所などをregion選択してCaptureアイコンをクリックすると capture-template の &ldquo;p&rdquo; の設定に従って反応します。下記の画像ではTitleを入力するためにミニバッファーが入力待ちになっています。</p>
+<p><img src="https://c1.staticflickr.com/5/4854/45258811415_99060f8ae9_b.jpg" alt="Alt Text"></p>
+<h3 id="i-classfa-fa-linki-何も選択しないでcaptureするbookmarkするだけ"><!-- raw HTML omitted --><!-- raw HTML omitted --> 何も選択しないでCaptureする（bookmarkするだけ）</h3>
+<p>region選択なしでChromeのCaptureアイコンをクリックした場合は、&ldquo;L&rdquo; の設定に従って反応します。</p>
+<p><img src="https://c1.staticflickr.com/5/4911/44354397670_5d66b85f8c_b.jpg" alt="Alt Text"></p>
+<p>Captureされたリンクにカーソルを置いて、&ldquo;C-c o&rdquo; でプラウザを開くことができます。</p>
+<p>org-modeの設定は、『<a href="https://solist.work/blog/posts/information-organizize-method/">効率よくプログラミングを覚えるためにしていること</a> 』の記事で紹介されているものをベースにして、orgファイルを閲覧するためのミニバッファーメニューを <a href="https://github.com/abo-abo/hydra">hydra</a>で設定しました。viewモードで開くほうがキー操作が楽ですし、Tabキーでの折り畳み操作に便利なようにカーソルをバッファーの先頭行へ移動させています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package org)
+(setq org-log-done <span style="color:#e6db74">&#39;time</span>)
+(setq org-use-speed-commands <span style="color:#66d9ef">t</span>)
+(setq org-src-fontify-natively <span style="color:#66d9ef">t</span>)
+(setq org-agenda-files <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/Dropbox/org/&#34;</span>))
+(setq calendar-holidays <span style="color:#66d9ef">nil</span>)
+
+(bind-key <span style="color:#e6db74">&#34;C-c a&#34;</span> <span style="color:#e6db74">&#39;org-agenda</span>)
+(bind-key <span style="color:#e6db74">&#34;C-c c&#34;</span> <span style="color:#e6db74">&#39;org-capture</span>)
+(bind-key <span style="color:#e6db74">&#34;C-c o&#34;</span> <span style="color:#e6db74">&#39;org-open-at-point</span>) <span style="color:#75715e">;; Open link</span>
+
+(setq org-capture-templates
+      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#34;Code capture with Chrome&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/code.org&#34;</span> <span style="color:#e6db74">&#34;Code&#34;</span>)
+	 <span style="color:#e6db74">&#34;* %^{Title} \nSOURCE: %:link\nCAPTURED: %U\n\n #+BEGIN_QUOTE emacs-lisp\n%i\n#+END_QUOTE\n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+	(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#e6db74">&#34;Link capture with Chrome&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/links.org&#34;</span> <span style="color:#e6db74">&#34;Links&#34;</span>)
+         <span style="color:#e6db74">&#34;* [[%:link][%:description]] \nCAPTURED: %U\nREMARKS: %?&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+	(<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#e6db74">&#34;Memo&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span> <span style="color:#e6db74">&#34;Memo&#34;</span>)
+	 <span style="color:#e6db74">&#34;* %? %U&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+	(<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#34;Remember&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span> <span style="color:#e6db74">&#34;Remember&#34;</span>)
+	 <span style="color:#e6db74">&#34;* %? %i&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+	(<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#34;Task&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#e6db74">&#34;Task&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO %? \n   SCHEDULED: %^t \n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+	(<span style="color:#e6db74">&#34;f&#34;</span> <span style="color:#e6db74">&#34;Future Task&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/task_future.org&#34;</span> <span style="color:#e6db74">&#34;Future&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO %? \n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)))
+
+(setq org-refile-targets
+      (quote ((<span style="color:#e6db74">&#34;~/Dropbox/org/archives.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
+	      (<span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
+	      (<span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
+	      (<span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>))))
+
+
+<span style="color:#75715e">;; Open GTD files with hydra</span>
+(bind-key
+ <span style="color:#e6db74">&#34;C-;&#34;</span>
+ (defhydra hydra-gtd (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
+   <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">[GTD] _a_:Archives  _m_:Memo  _c_:Code  _l_:Links  _r_:Remember  _t_:Task  _f_:Future_Task&#34;</span>
+  (<span style="color:#e6db74">&#34;a&#34;</span> my/archives-org)
+  (<span style="color:#e6db74">&#34;m&#34;</span> my/memo-org)
+  (<span style="color:#e6db74">&#34;c&#34;</span> my/code-org)
+  (<span style="color:#e6db74">&#34;l&#34;</span> my/links-org)
+  (<span style="color:#e6db74">&#34;r&#34;</span> my/remember-org)
+  (<span style="color:#e6db74">&#34;t&#34;</span> my/task-org)
+  (<span style="color:#e6db74">&#34;f&#34;</span> my/future-org)
+  (<span style="color:#e6db74">&#34;.&#34;</span> hydra-dired/body)
+  (<span style="color:#e6db74">&#34;,&#34;</span> hydra-browse/body)
+  (<span style="color:#e6db74">&#34;q&#34;</span> keyboard-quit)))
+
+<span style="color:#75715e">;; Open GTD files in view-mode</span>
+(defun my/archives-org ()
+  <span style="color:#e6db74">&#34;Open archives.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/archives.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/code-org ()
+  <span style="color:#e6db74">&#34;Open code.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/code.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/links-org ()
+  <span style="color:#e6db74">&#34;Open links.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/links.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/remember-org ()
+  <span style="color:#e6db74">&#34;Open remember.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/memo-org ()
+  <span style="color:#e6db74">&#34;Open memo.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/future-org ()
+  <span style="color:#e6db74">&#34;Open task_futurear.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/task_future.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+(defun my/task-org ()
+  <span style="color:#e6db74">&#34;Open archives.org.&#34;</span>
+  (interactive)
+  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span>)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+</code></pre></div><h3 id="i-classfa-fa-bookmark-oi-ブックマークの管理について考えてみる"><!-- raw HTML omitted --><!-- raw HTML omitted --> ブックマークの管理について考えてみる</h3>
+<p>『<a href="https://solist.work/blog/posts/chrome/">Chromeのブックマークの整理法</a>』
+の記事がとても参考になりました。私の場合、次のような棲み分けをしています。</p>
+<ul>
+<li>Chromeから頻繁にアクセスするWEBページ
+ <!-- raw HTML omitted --><!-- raw HTML omitted --> ブックマークバーに入れる（アイコンのみにするとたくさん入れられる）</li>
+<li>あとでもう一度見たい…というような個別の記事
+ <!-- raw HTML omitted --><!-- raw HTML omitted --> Pocketに入れる（ゴミ屋敷にならないように時々掃除する）</li>
+<li>Emacsでの作業に関連があって情報資源として残しておきたいもの
+ <!-- raw HTML omitted --><!-- raw HTML omitted --> org-captureする（これも時々棚卸し）</li>
+</ul>
+<p>ChromeのブックマークバーやPocketに保存したものはスマホにも自動的に同期されます。org-caputerしたものは <a href="https://play.google.com/store/apps/details?id=com.orgzly&amp;hl=ja">Orgzly</a> をインストールしてDropboxで同期しておけばスマホで見ることができます。GitHubもスマホアプリで閲覧できます。このようにスマホから自宅Workのチラ見ができようにしておくことはとても重要です。パソコンと睨めっこしていて思考が行き詰まったとき、バスや電車での移動中にリラックスしてスマホでチラ見ているとふと柔軟な発想が授かる…という経験を何度もしています。きちんとしたコンセプトのもとにブックマークを整理しておいて、いつでもどんな場所からでもすぐに見つけられるようにしておくというのはとても大事なことだと思います。</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/tags/chrome/">chrome</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://minorugh.github.io/categories/emacs/">emacs</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        3349 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2018年12月03日 22:38
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;caption=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;canonicalUrl=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;body=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f&amp;media=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f;description=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f&amp;title=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;summary=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;source=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f&amp;resubmit=true&amp;title=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f;title=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba%20http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f&amp;t=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Emacs%e3%81%a8Chrome%e3%81%a8%e3%81%ae%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%aa%e9%80%a3%e6%90%ba&amp;url=http%3a%2f%2fminorugh.github.io%2fposts%2femacs-chrome-together%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="http://minorugh.github.io/posts/update-information-by-rss-feed/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">RSSフィードを取得してブログの更新情報を表示</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="http://minorugh.github.io/posts/multipurpose-formmail/">
+                    <span class="button__text">Formをhtmlに直接表示しないでcgiで別窓表示する</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="http://minorugh.github.io/"></a></span>
+            <span></span>
+            <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

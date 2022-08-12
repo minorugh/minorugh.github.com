@@ -9,228 +9,228 @@
     <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>
-      <link>http://minorugh.github.io/post/windows11-upgrade/</link>
+      <link>http://minorugh.github.io/posts/windows11-upgrade/</link>
       <pubDate>Mon, 31 Jan 2022 19:20:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/windows11-upgrade/</guid>
+      <guid>http://minorugh.github.io/posts/windows11-upgrade/</guid>
       <description>Windows11を導入するためには３つの条件が必須になっています。 １． CPU ※ Intelの Coreシリーズは第8世代以降（Core i3/i5/</description>
     </item>
     
     <item>
       <title>SlackAppを最小化状態で自動起動する for Linux</title>
-      <link>http://minorugh.github.io/post/slack-in-minimized/</link>
+      <link>http://minorugh.github.io/posts/slack-in-minimized/</link>
       <pubDate>Wed, 26 Jan 2022 10:29:22 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/slack-in-minimized/</guid>
+      <guid>http://minorugh.github.io/posts/slack-in-minimized/</guid>
       <description>元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac</description>
     </item>
     
     <item>
       <title>Sylpheedをログイン時に最小化起動させる</title>
-      <link>http://minorugh.github.io/post/minimize-startup-sylpheed/</link>
+      <link>http://minorugh.github.io/posts/minimize-startup-sylpheed/</link>
       <pubDate>Wed, 26 Jan 2022 10:19:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/minimize-startup-sylpheed/</guid>
+      <guid>http://minorugh.github.io/posts/minimize-startup-sylpheed/</guid>
       <description>元ネタは下記 Sylpheedをログイン時に最小化起動する方法 Devil&amp;rsquo;s Pieのインストール sudo apt install devilspie 設定ファイルの作成 ~/.devilspie/に設定</description>
     </item>
     
     <item>
       <title>GUIの起動時にパスフレーズを自動入力して ssh-add を実行させる</title>
-      <link>http://minorugh.github.io/post/autostartssh/</link>
+      <link>http://minorugh.github.io/posts/autostartssh/</link>
       <pubDate>Sun, 23 Jan 2022 12:10:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/autostartssh/</guid>
+      <guid>http://minorugh.github.io/posts/autostartssh/</guid>
       <description>Emacsを作業テーブルとして常用的に SSHを使うので、ログイン時にパスフレーズを自動入力させて ssh-addを実行させるように環境構築した</description>
     </item>
     
     <item>
       <title>iframeの高さを取得し自動調整する</title>
-      <link>http://minorugh.github.io/post/auto-height-of-iframe/</link>
+      <link>http://minorugh.github.io/posts/auto-height-of-iframe/</link>
       <pubDate>Thu, 30 Dec 2021 12:03:29 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/auto-height-of-iframe/</guid>
+      <guid>http://minorugh.github.io/posts/auto-height-of-iframe/</guid>
       <description>レスポンシブ Webデザインでは、iframeの高さが PCとスマホ・タブレットで結構変わってしまうことも多くて事前に高さを決め打ちで指定できま</description>
     </item>
     
     <item>
       <title>Linuxbrewで Github CLI（gh）を install</title>
-      <link>http://minorugh.github.io/post/github-cli/</link>
+      <link>http://minorugh.github.io/posts/github-cli/</link>
       <pubDate>Thu, 25 Nov 2021 12:01:10 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/github-cli/</guid>
+      <guid>http://minorugh.github.io/posts/github-cli/</guid>
       <description>先の Linuxbrewさえうまくインストールできれば、brewで ghを installするのは実に簡単。 install % brew install gh とするだけ。 コマンドラインで</description>
     </item>
     
     <item>
       <title>Debian11 (bullseye)に Linuxbrewを install</title>
-      <link>http://minorugh.github.io/post/linuxbrew/</link>
+      <link>http://minorugh.github.io/posts/linuxbrew/</link>
       <pubDate>Thu, 25 Nov 2021 10:16:28 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/linuxbrew/</guid>
+      <guid>http://minorugh.github.io/posts/linuxbrew/</guid>
       <description>GitHub CLIツール ghをインストールするのに brewの方が簡単だったので Debianに Linuxbrewをインストールすることにした。 Mac時代</description>
     </item>
     
     <item>
       <title>Debian でコンソール画面の解像度を変更する</title>
-      <link>http://minorugh.github.io/post/debian-consol/</link>
+      <link>http://minorugh.github.io/posts/debian-consol/</link>
       <pubDate>Sun, 26 Sep 2021 07:24:50 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/debian-consol/</guid>
+      <guid>http://minorugh.github.io/posts/debian-consol/</guid>
       <description>高解像度の pcで Debianを使うと GRUBの起動画面がとても小さくて見にくいので解像度を 800x600に変更した。 # /etc/default/grub # コメントアウトを外</description>
     </item>
     
     <item>
       <title>iframeに異なるドメイン（クロスドメイン）のコンテンツを読み込んで高さを自動調節する方法</title>
-      <link>http://minorugh.github.io/post/iframe/</link>
+      <link>http://minorugh.github.io/posts/iframe/</link>
       <pubDate>Fri, 10 Sep 2021 14:11:41 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iframe/</guid>
+      <guid>http://minorugh.github.io/posts/iframe/</guid>
       <description>wordpressでサイトを構築したときに掲示板をつけることになりました。 bbpressをはじめ何種類かのプラグインも試しましたが、不要な機</description>
     </item>
     
     <item>
       <title>apt installを使わずにTeXLiveを導入する</title>
-      <link>http://minorugh.github.io/post/install-texlive-without-apt/</link>
+      <link>http://minorugh.github.io/posts/install-texlive-without-apt/</link>
       <pubDate>Mon, 10 Feb 2020 09:09:09 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/install-texlive-without-apt/</guid>
+      <guid>http://minorugh.github.io/posts/install-texlive-without-apt/</guid>
       <description>TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live</description>
     </item>
     
     <item>
       <title>Macにe2psをインストールする</title>
-      <link>http://minorugh.github.io/post/e2ps/</link>
+      <link>http://minorugh.github.io/posts/e2ps/</link>
       <pubDate>Thu, 04 Jul 2019 19:13:26 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/e2ps/</guid>
+      <guid>http://minorugh.github.io/posts/e2ps/</guid>
       <description>WtSeries : UNIXソフトからe2psをダウンロードして解凍します。 現在の最新バージョンは、e2ps-4.34 解凍フォルダー内のps-font.cを</description>
     </item>
     
     <item>
       <title>iPadでBootstrapのnavbarをcollapseさせる</title>
-      <link>http://minorugh.github.io/post/navbar-collapse-for-ipad/</link>
+      <link>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</link>
       <pubDate>Thu, 21 Feb 2019 10:59:02 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/navbar-collapse-for-ipad/</guid>
+      <guid>http://minorugh.github.io/posts/navbar-collapse-for-ipad/</guid>
       <description>CSSフレームワークのBootstrapを使って、ナビゲーション（navbar）を導入する場合、Bootstrapのデフォルトだと、iPad</description>
     </item>
     
     <item>
       <title>Perlで未定義値かどうかを判定する方法</title>
-      <link>http://minorugh.github.io/post/use-of-uninitialized-value/</link>
+      <link>http://minorugh.github.io/posts/use-of-uninitialized-value/</link>
       <pubDate>Sun, 13 Jan 2019 18:36:50 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/use-of-uninitialized-value/</guid>
+      <guid>http://minorugh.github.io/posts/use-of-uninitialized-value/</guid>
       <description>機嫌よく動いていた自作のスクリプトに use warnings; を入れたら作業そのものは止まることなく終了するのだけれど、 Use of uninitialized value ... と叱られるようになった。 foreach my $line (@log){</description>
     </item>
     
     <item>
       <title>RSSフィードを取得してブログの更新情報を表示</title>
-      <link>http://minorugh.github.io/post/update-information-by-rss-feed/</link>
+      <link>http://minorugh.github.io/posts/update-information-by-rss-feed/</link>
       <pubDate>Thu, 20 Dec 2018 19:23:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/update-information-by-rss-feed/</guid>
+      <guid>http://minorugh.github.io/posts/update-information-by-rss-feed/</guid>
       <description>phpスクリプトに初挑戦した。 参考にした情報 ブログの更新情報をPHPで読み込んで表示する方法 記事更新後7日間はNew表示する 基本的には参考サ</description>
     </item>
     
     <item>
       <title>Formをhtmlに直接表示しないでcgiで別窓表示する</title>
-      <link>http://minorugh.github.io/post/multipurpose-formmail/</link>
+      <link>http://minorugh.github.io/posts/multipurpose-formmail/</link>
       <pubDate>Mon, 05 Nov 2018 17:09:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/multipurpose-formmail/</guid>
+      <guid>http://minorugh.github.io/posts/multipurpose-formmail/</guid>
       <description>&lt;p&gt;読者からのFeedbackを受け付けるためにホームページ上のコンテンツごとにメールフォームを貼っていた。
 SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃されることが多くなったので、各ページにフォームを貼り付けるのはやめてCGIで表示させるようにした。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>makefile でのOS条件分岐</title>
-      <link>http://minorugh.github.io/post/ifeq-for-makefile/</link>
+      <link>http://minorugh.github.io/posts/ifeq-for-makefile/</link>
       <pubDate>Mon, 15 Oct 2018 13:13:43 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ifeq-for-makefile/</guid>
+      <guid>http://minorugh.github.io/posts/ifeq-for-makefile/</guid>
       <description>&lt;p&gt;自動化のためにmakefileを書いています。&lt;/p&gt;
 &lt;p&gt;私の場合、Linux端末とMacとの異なる環境で共通のmakefileを使いますので、条件分岐を勉強してみました。無手勝流ながら以下の設定でうまく作動してくれるようになりました。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>無償キャンペーン未実施のPCでもWindows１０にアップグレードできた</title>
-      <link>http://minorugh.github.io/post/win10-upgrade/</link>
+      <link>http://minorugh.github.io/posts/win10-upgrade/</link>
       <pubDate>Tue, 13 Feb 2018 18:32:06 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/win10-upgrade/</guid>
+      <guid>http://minorugh.github.io/posts/win10-upgrade/</guid>
       <description>家族の個人使用のために、比較的程度の良い Thinkpad X230/X240 の中古ノートを２台買いました。 SSDに換装して快適に使えているのですが、OSは全てWindows</description>
     </item>
     
     <item>
       <title>WEBソース表示等での文字化け対策を.htaccessに書く</title>
-      <link>http://minorugh.github.io/post/write-encode-in-htaccess/</link>
+      <link>http://minorugh.github.io/posts/write-encode-in-htaccess/</link>
       <pubDate>Tue, 23 Jan 2018 20:51:12 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/write-encode-in-htaccess/</guid>
+      <guid>http://minorugh.github.io/posts/write-encode-in-htaccess/</guid>
       <description>はじめに WEB環境のファイルの文字コードは、基本的に全てUTF-8で統一している。 テキストファイル、Perl、cgi、Ruby、js、htm</description>
     </item>
     
     <item>
       <title>RubyでWeb上からファイルをダウンロードする：openメソッドのお勉強</title>
-      <link>http://minorugh.github.io/post/ruby-open-method/</link>
+      <link>http://minorugh.github.io/posts/ruby-open-method/</link>
       <pubDate>Sat, 18 Nov 2017 15:43:44 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/ruby-open-method/</guid>
+      <guid>http://minorugh.github.io/posts/ruby-open-method/</guid>
       <description>&lt;p&gt;別サイトで運用しているLINEBLOGの記事をダウンロードし、そこから更新情報を抜き出して自分のホームページに表示したかったのでRubyのお勉強を兼ねて試してみた。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>macOS SierraでSIPを無効にする方法</title>
-      <link>http://minorugh.github.io/post/disable-sip-sierra/</link>
+      <link>http://minorugh.github.io/posts/disable-sip-sierra/</link>
       <pubDate>Sun, 24 Sep 2017 20:28:52 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/disable-sip-sierra/</guid>
+      <guid>http://minorugh.github.io/posts/disable-sip-sierra/</guid>
       <description>Sierraには、SIP（System Integrity Protecton）というセキュリティを強化機能が追加されていて、sudoを使ってもシステム用とされ</description>
     </item>
     
     <item>
       <title>SierraでIllustrator(CS3~6)のエラーを回避する方法</title>
-      <link>http://minorugh.github.io/post/illustrator-error-on-sierra/</link>
+      <link>http://minorugh.github.io/posts/illustrator-error-on-sierra/</link>
       <pubDate>Sat, 23 Sep 2017 22:33:33 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/illustrator-error-on-sierra/</guid>
+      <guid>http://minorugh.github.io/posts/illustrator-error-on-sierra/</guid>
       <description>macOSをSierraにバージョンアップすると、せっかく構築した開発環境にいろいろ障害が出そうなので、ずっとMarvericsで頑張ってい</description>
     </item>
     
     <item>
       <title>Perl:文字列前後のスペース＆タブを削除</title>
-      <link>http://minorugh.github.io/post/perl-delete-tab/</link>
+      <link>http://minorugh.github.io/posts/perl-delete-tab/</link>
       <pubDate>Sat, 23 Sep 2017 22:07:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/perl-delete-tab/</guid>
+      <guid>http://minorugh.github.io/posts/perl-delete-tab/</guid>
       <description>運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが</description>
     </item>
     
     <item>
       <title>UpFtpをMacとLinuxとで共用する方法</title>
-      <link>http://minorugh.github.io/post/upftp-between-mac-linux/</link>
+      <link>http://minorugh.github.io/posts/upftp-between-mac-linux/</link>
       <pubDate>Mon, 17 Jul 2017 17:19:35 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/upftp-between-mac-linux/</guid>
+      <guid>http://minorugh.github.io/posts/upftp-between-mac-linux/</guid>
       <description>UpFtpと言うのは、結城浩さんの作られたMakeWebと併せて使うためのFTP自動化ツールのことです。 Makeweb:テキストをXHTML</description>
     </item>
     
     <item>
       <title>iterm2とvimのカラーテーマをhybridにする</title>
-      <link>http://minorugh.github.io/post/iterm2-color-theme/</link>
+      <link>http://minorugh.github.io/posts/iterm2-color-theme/</link>
       <pubDate>Wed, 17 May 2017 23:43:18 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/iterm2-color-theme/</guid>
+      <guid>http://minorugh.github.io/posts/iterm2-color-theme/</guid>
       <description>iterm Link Text これを保存して、 iTerm -&amp;gt; Preferences... -&amp;gt; Profiles -&amp;gt;Colors -&amp;gt; Load Presets... -&amp;gt; Import... で読み込む。 vim Hybrid iTerm Colors: https://github.com/w0ng/vim-hybrid これを保存して、下記に置く ~/.vim/colors/hybrid.vim</description>
     </item>
     
     <item>
       <title>PDFJモジュールをサーバーに置いてPerlでPDFを自動生成させる</title>
-      <link>http://minorugh.github.io/post/use-pdfj-in-server/</link>
+      <link>http://minorugh.github.io/posts/use-pdfj-in-server/</link>
       <pubDate>Sat, 25 Feb 2017 21:52:14 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/use-pdfj-in-server/</guid>
+      <guid>http://minorugh.github.io/posts/use-pdfj-in-server/</guid>
       <description>目的 全自動で稼働させているインターネット句会の中で全員の投句が済んだあと、ランダムに並べ替えて清記表を作成する作業工程がある。 参加者はそれを</description>
     </item>
     

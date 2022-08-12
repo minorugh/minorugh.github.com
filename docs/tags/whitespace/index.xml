@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 26 Jun 2017 22:50:39 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/whitespace/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>whitespace-modeでjaspace風に表示させる設定</title>
-      <link>http://minorugh.github.io/post/whitespace-like-jaspace/</link>
+      <link>http://minorugh.github.io/posts/whitespace-like-jaspace/</link>
       <pubDate>Mon, 26 Jun 2017 22:50:39 +0900</pubDate>
       
-      <guid>http://minorugh.github.io/post/whitespace-like-jaspace/</guid>
+      <guid>http://minorugh.github.io/posts/whitespace-like-jaspace/</guid>
       <description>Emacs24以降は、内包されたWhitespaceで全角スペースなどを明示的に表示できることは知っていたけれど、長い間使い馴染んだjasp</description>
     </item>
     
