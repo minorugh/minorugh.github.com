@@ -18,7 +18,7 @@ title = "Sylpheedをログイン時に最小化起動させる"
 ## 設定ファイルの作成
 ~/.devilspie/に設定ファイル sylpheed.dsを以下の内容で作成する。　ファイル名は拡張子が.dsならアプリケーション名でなくてもいいようだ。
 
-```conf
+```sh
  (if
  (is (application_name) "sylpheed")
  (begin (minimize))

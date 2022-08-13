@@ -163,11 +163,11 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> sudo apt install devilspie
 </code></pre></div><h2 id="設定ファイルの作成">設定ファイルの作成</h2>
 <p>~/.devilspie/に設定ファイル sylpheed.dsを以下の内容で作成する。　ファイル名は拡張子が.dsならアプリケーション名でなくてもいいようだ。</p>
-<pre><code class="language-conf" data-lang="conf"> (if
- (is (application_name) &quot;sylpheed&quot;)
- (begin (minimize))
- )
-</code></pre><h2 id="devils-pie起動終了スクリプトの作成">Devil&rsquo;s Pie起動＆終了スクリプトの作成</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span>
+ <span style="color:#f92672">(</span>is <span style="color:#f92672">(</span>application_name<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;sylpheed&#34;</span><span style="color:#f92672">)</span>
+ <span style="color:#f92672">(</span>begin <span style="color:#f92672">(</span>minimize<span style="color:#f92672">))</span>
+ <span style="color:#f92672">)</span>
+</code></pre></div><h2 id="devils-pie起動終了スクリプトの作成">Devil&rsquo;s Pie起動＆終了スクリプトの作成</h2>
 <p>/usr/local/bin/あたりにシェルスクリプト minimize_sylpheed.shを以下の内容で作成する。　ファイル名は任意、実行権限を忘れずに付与しておくこと。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> <span style="color:#75715e">#!/bin/bash</span>
  devilspie &amp;
