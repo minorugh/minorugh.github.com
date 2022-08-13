@@ -1,7 +1,7 @@
 baseURL = "http://minorugh.github.io/"
 languageCode = "ja-jp"
 HasCJKLanguage = true
-title = "ChangeLog"
+title = "四時随順"
 theme = "hello-friend-ng"
 paginate       = 20
 publishDir     = "docs"
@@ -10,7 +10,7 @@ publishDir     = "docs"
 [params]
     author = "minoru"
     info = "Emacs を使って 趣味の俳句ホームページの管理をしている人"
-    description = "みのるの個人サイト"
+    description = "みのるのChangeLog"
     keywords = "blog,developer,personal"
 
     # for hello-frint-ng
@@ -26,7 +26,7 @@ publishDir     = "docs"
     disableReadOtherPosts = false
     enableSharingButtons  = true
 
-    homeSubtitle = "みのるの個人サイト"
+    homeSubtitle = "minoruGH ChangeLog"
 
     enableGitInfo = false
 
