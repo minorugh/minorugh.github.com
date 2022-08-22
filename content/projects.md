@@ -3,7 +3,7 @@ title = "Projects"
 draft = false
 +++
 
-## [Emacs Configuration](https://minorugh.github.io/emacs.d/config.html)
+## [Emacs Configuration](https://minorugh.github.io/.emacs.d/)
 Emacs の設定についてのドキュメント
 
 ## [Dotfiles](https://github.com/minorugh/dotfiles)
