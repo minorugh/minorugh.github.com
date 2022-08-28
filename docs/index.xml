@@ -242,6 +242,24 @@
     </item>
     
     <item>
+      <title>Privacy Policy</title>
+      <link>http://minorugh.github.io/privacy_policy/</link>
+      <pubDate>Sun, 20 Dec 2020 11:59:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/privacy_policy/</guid>
+      <description>アクセス情報の収集 当サイトでは Google Analytics によるアクセス情報の収集を行っています。 Google Analytics ではデータの収集のためにお使いのウェブブラウザから Google にアクセス</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://minorugh.github.io/projects/</link>
+      <pubDate>Sun, 20 Dec 2020 11:59:00 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/projects/</guid>
+      <description>Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesによるバックアップ不要な開発環境 UpSFTP SFTPでホームページを更新するためのPerlスクリプ</description>
+    </item>
+    
+    <item>
       <title>EmacsのときにXIMを無効化する</title>
       <link>http://minorugh.github.io/posts/disable-xim-on-emacs/</link>
       <pubDate>Wed, 09 Sep 2020 21:18:55 +0900</pubDate>
@@ -765,24 +783,6 @@ easy-hugo は、package-install できますが、頻繁に更新されている
       
       <guid>http://minorugh.github.io/posts/use-pdfj-in-server/</guid>
       <description>目的 全自動で稼働させているインターネット句会の中で全員の投句が済んだあと、ランダムに並べ替えて清記表を作成する作業工程がある。 参加者はそれを</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>http://minorugh.github.io/privacy_policy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://minorugh.github.io/privacy_policy/</guid>
-      <description>アクセス情報の収集 当サイトでは Google Analytics によるアクセス情報の収集を行っています。 Google Analytics ではデータの収集のためにお使いのウェブブラウザから Google にアクセス</description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>http://minorugh.github.io/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://minorugh.github.io/projects/</guid>
-      <description>Emacs Configuration Emacs の設定についてのドキュメント Dotfiles Dotfilesによるバックアップ不要な開発環境 UpSFTP SFTPでホームページを更新するためのPerlスクリプ</description>
     </item>
     
   </channel>

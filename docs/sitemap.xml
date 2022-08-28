@@ -313,6 +313,16 @@
   </url>
   
   <url>
+    <loc>http://minorugh.github.io/privacy_policy/</loc>
+    <lastmod>2020-12-20T11:59:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://minorugh.github.io/projects/</loc>
+    <lastmod>2020-12-20T11:59:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://minorugh.github.io/posts/disable-xim-on-emacs/</loc>
     <lastmod>2020-09-09T21:18:55+09:00</lastmod>
   </url>
@@ -720,14 +730,6 @@
   <url>
     <loc>http://minorugh.github.io/posts/use-pdfj-in-server/</loc>
     <lastmod>2017-02-25T21:52:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/privacy_policy/</loc>
-  </url>
-  
-  <url>
-    <loc>http://minorugh.github.io/projects/</loc>
   </url>
   
 </urlset>
