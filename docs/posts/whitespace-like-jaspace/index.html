@@ -160,28 +160,28 @@
 <ul>
 <li><a href="http://piyolian.blogspot.jp/2011/12/emacs-whitespace-like-jaspace.html">参考にしたTips</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#a6e22e">use-package</span> whitespace
-  <span style="color:#e6db74">:diminish</span> global-whitespace-mode
-  <span style="color:#e6db74">:config</span>
-  (<span style="color:#66d9ef">setq</span> whitespace-style
-    <span style="color:#f92672">&#39;</span>(face
-      tabs spaces newline space-mark tab-mark newline-mark))
-  (<span style="color:#66d9ef">let</span> ((dark (<span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#39;dark</span> (frame-parameter <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;background-mode</span>))))
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-space</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;pink4&#34;</span> <span style="color:#e6db74">&#34;azure3&#34;</span>)
-    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>)
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-tab</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;gray20&#34;</span> <span style="color:#e6db74">&#34;gray80&#34;</span>)
-    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>
-    		<span style="color:#e6db74">:strike-through</span> <span style="color:#66d9ef">t</span>)
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-newline</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;darkcyan&#34;</span> <span style="color:#e6db74">&#34;darkseagreen&#34;</span>)))
-  (<span style="color:#66d9ef">setq</span> whitespace-space-regexp <span style="color:#e6db74">&#34;\\(　+\\)&#34;</span>)
-  (<span style="color:#66d9ef">setq</span> whitespace-display-mappings
-        <span style="color:#f92672">&#39;</span>((space-mark   ?　    [?<span style="color:#960050;background-color:#1e0010">□</span>]    [?＿]) <span style="color:#75715e">; full-width space - square</span>
-          (newline-mark ?\n    [?\xAB ?\n])))   <span style="color:#75715e">; eol - right quote mark</span>
-  (<span style="color:#66d9ef">setq</span> whitespace-global-modes <span style="color:#f92672">&#39;</span>(<span style="color:#a6e22e">not</span> dired-mode tar-mode))
-  (global-whitespace-mode <span style="color:#ae81ff">1</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#000">use-package</span> <span style="color:#000">whitespace</span>
+  <span style="color:#c41a16">:diminish</span> <span style="color:#000">global-whitespace-mode</span>
+  <span style="color:#c41a16">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">whitespace-style</span>
+    <span style="color:#000">&#39;</span>(<span style="color:#000">face</span>
+      <span style="color:#000">tabs</span> <span style="color:#000">spaces</span> <span style="color:#000">newline</span> <span style="color:#000">space-mark</span> <span style="color:#000">tab-mark</span> <span style="color:#000">newline-mark</span>))
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">dark</span> (<span style="color:#000">eq</span> <span style="color:#c41a16">&#39;dark</span> (<span style="color:#000">frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;background-mode</span>))))
+    (<span style="color:#000">set-face-attribute</span> <span style="color:#c41a16">&#39;whitespace-space</span> <span style="color:#000">nil</span>
+    		<span style="color:#c41a16">:foreground</span> (<span style="color:#a90d91">if</span> <span style="color:#000">dark</span> <span style="color:#c41a16">&#34;pink4&#34;</span> <span style="color:#c41a16">&#34;azure3&#34;</span>)
+    		<span style="color:#c41a16">:background</span> <span style="color:#c41a16">&#39;unspecified</span>)
+    (<span style="color:#000">set-face-attribute</span> <span style="color:#c41a16">&#39;whitespace-tab</span> <span style="color:#000">nil</span>
+    		<span style="color:#c41a16">:foreground</span> (<span style="color:#a90d91">if</span> <span style="color:#000">dark</span> <span style="color:#c41a16">&#34;gray20&#34;</span> <span style="color:#c41a16">&#34;gray80&#34;</span>)
+    		<span style="color:#c41a16">:background</span> <span style="color:#c41a16">&#39;unspecified</span>
+    		<span style="color:#c41a16">:strike-through</span> <span style="color:#000">t</span>)
+    (<span style="color:#000">set-face-attribute</span> <span style="color:#c41a16">&#39;whitespace-newline</span> <span style="color:#000">nil</span>
+    		<span style="color:#c41a16">:foreground</span> (<span style="color:#a90d91">if</span> <span style="color:#000">dark</span> <span style="color:#c41a16">&#34;darkcyan&#34;</span> <span style="color:#c41a16">&#34;darkseagreen&#34;</span>)))
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">whitespace-space-regexp</span> <span style="color:#c41a16">&#34;\\(　+\\)&#34;</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">whitespace-display-mappings</span>
+        <span style="color:#000">&#39;</span>((<span style="color:#000">space-mark</span>   <span style="color:#000">?</span>　    <span style="color:#000">[?</span><span style="color:#000">□</span><span style="color:#000">]</span>    <span style="color:#000">[?＿]</span>) <span style="color:#177500">; full-width space - square</span>
+          (<span style="color:#000">newline-mark</span> <span style="color:#000">?\n</span>    <span style="color:#000">[?\xAB</span> <span style="color:#000">?\n]</span>)))   <span style="color:#177500">; eol - right quote mark</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">whitespace-global-modes</span> <span style="color:#000">&#39;</span>(<span style="color:#000">not</span> <span style="color:#000">dired-mode</span> <span style="color:#000">tar-mode</span>))
+  (<span style="color:#000">global-whitespace-mode</span> <span style="color:#1c01ce">1</span>))
 
 
 </code></pre></div>

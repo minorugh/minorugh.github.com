@@ -160,18 +160,18 @@
 <p>わかりやすく解説してあるページを見つけたので &raquo;&gt; <a href="http://uxmilk.jp/22830">http://uxmilk.jp/22830</a></p>
 <p>まずは、サンプル通りにコードを書いてquickrun</p>
 <h2 id="openメソッドのサンプル">openメソッドのサンプル</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;open-uri&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://lineblog.me/minorugh&#39;</span>
-open(url) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
-  puts file<span style="color:#f92672">.</span>read
-<span style="color:#66d9ef">end</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;open-uri&#39;</span>
+<span style="color:#000">url</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;https://lineblog.me/minorugh&#39;</span>
+<span style="color:#a90d91">open</span>(<span style="color:#000">url</span>) <span style="color:#a90d91">do</span> <span style="color:#000">|</span><span style="color:#000">file</span><span style="color:#000">|</span>
+  <span style="color:#a90d91">puts</span> <span style="color:#000">file</span><span style="color:#000">.</span><span style="color:#000">read</span>
+<span style="color:#a90d91">end</span>
 </code></pre></div><ul>
 <li>ブロック構文を使わないというサンプルも試してみる</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;open-uri&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://lineblog.me/minorugh&#39;</span>
-file<span style="color:#f92672">=</span>open(url) 
-  puts file<span style="color:#f92672">.</span>read
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;open-uri&#39;</span>
+<span style="color:#000">url</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;https://lineblog.me/minorugh&#39;</span>
+<span style="color:#000">file</span><span style="color:#000">=</span><span style="color:#a90d91">open</span>(<span style="color:#000">url</span>) 
+  <span style="color:#a90d91">puts</span> <span style="color:#000">file</span><span style="color:#000">.</span><span style="color:#000">read</span>
 </code></pre></div><ul>
 <li>なるほどね</li>
 </ul>
@@ -185,10 +185,10 @@ file<span style="color:#f92672">=</span>open(url)
 <li>puts file.meta</li>
 <li>puts file.status</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;open-uri&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://lineblog.me/minorugh&#39;</span>
-file <span style="color:#f92672">=</span> open(url)
-puts file<span style="color:#f92672">.</span>last_modified
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;open-uri&#39;</span>
+<span style="color:#000">url</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;https://lineblog.me/minorugh&#39;</span>
+<span style="color:#000">file</span> <span style="color:#000">=</span> <span style="color:#a90d91">open</span>(<span style="color:#000">url</span>)
+<span style="color:#a90d91">puts</span> <span style="color:#000">file</span><span style="color:#000">.</span><span style="color:#000">last_modified</span>
 </code></pre></div><ul>
 <li>ほかはみな確認できたのに、last_modifiedは、なぜかうまくいかなかった</li>
 </ul>
@@ -196,35 +196,35 @@ puts file<span style="color:#f92672">.</span>last_modified
 <ul>
 <li>ファイルの読み込みはできているので、これを保存することにした</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;open-uri&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://lineblog.me/minorugh&#39;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;open-uri&#39;</span>
+<span style="color:#000">url</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;https://lineblog.me/minorugh&#39;</span>
 
-open(url) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
- open(<span style="color:#e6db74">&#34;lineblog.html&#34;</span>, <span style="color:#e6db74">&#34;w+b&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>out<span style="color:#f92672">|</span>
- out<span style="color:#f92672">.</span>write(file<span style="color:#f92672">.</span>read)  
- <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
+<span style="color:#a90d91">open</span>(<span style="color:#000">url</span>) <span style="color:#a90d91">do</span> <span style="color:#000">|</span><span style="color:#000">file</span><span style="color:#000">|</span>
+ <span style="color:#a90d91">open</span>(<span style="color:#c41a16">&#34;lineblog.html&#34;</span>, <span style="color:#c41a16">&#34;w+b&#34;</span>) <span style="color:#a90d91">do</span> <span style="color:#000">|</span><span style="color:#000">out</span><span style="color:#000">|</span>
+ <span style="color:#000">out</span><span style="color:#000">.</span><span style="color:#000">write</span>(<span style="color:#000">file</span><span style="color:#000">.</span><span style="color:#000">read</span>)  
+ <span style="color:#a90d91">end</span>
+<span style="color:#a90d91">end</span>
 </code></pre></div><ul>
 <li>せっかくお勉強したのでもう少し簡潔にしてみる</li>
 <li>LINEBLOG側のサーバーのトラブルに備えて、念のためbackupも取るようにした</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">## getfile.rb</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#177500">## getfile.rb</span>
 
-require <span style="color:#e6db74">&#39;open-uri&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://lineblog.me/minorugh&#39;</span>
+<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;open-uri&#39;</span>
+<span style="color:#000">url</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;https://lineblog.me/minorugh&#39;</span>
 
-file <span style="color:#f92672">=</span> open(url)
-open(<span style="color:#e6db74">&#34;lineblog.html&#34;</span>, <span style="color:#e6db74">&#34;w+b&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>out<span style="color:#f92672">|</span>
-out<span style="color:#f92672">.</span>write(file<span style="color:#f92672">.</span>read)
-<span style="color:#66d9ef">end</span>
+<span style="color:#000">file</span> <span style="color:#000">=</span> <span style="color:#a90d91">open</span>(<span style="color:#000">url</span>)
+<span style="color:#a90d91">open</span>(<span style="color:#c41a16">&#34;lineblog.html&#34;</span>, <span style="color:#c41a16">&#34;w+b&#34;</span>) <span style="color:#a90d91">do</span> <span style="color:#000">|</span><span style="color:#000">out</span><span style="color:#000">|</span>
+<span style="color:#000">out</span><span style="color:#000">.</span><span style="color:#000">write</span>(<span style="color:#000">file</span><span style="color:#000">.</span><span style="color:#000">read</span>)
+<span style="color:#a90d91">end</span>
 
-<span style="color:#75715e"># backup</span>
-require <span style="color:#e6db74">&#34;date&#34;</span>
-d <span style="color:#f92672">=</span> <span style="color:#66d9ef">Date</span><span style="color:#f92672">.</span>today
-str <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;backup/%Y%m%d_lineblog.html&#34;</span>)
+<span style="color:#177500"># backup</span>
+<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#34;date&#34;</span>
+<span style="color:#000">d</span> <span style="color:#000">=</span> <span style="color:#000">Date</span><span style="color:#000">.</span><span style="color:#000">today</span>
+<span style="color:#000">str</span> <span style="color:#000">=</span> <span style="color:#000">d</span><span style="color:#000">.</span><span style="color:#000">strftime</span>(<span style="color:#c41a16">&#34;backup/%Y%m%d_lineblog.html&#34;</span>)
 
-require <span style="color:#e6db74">&#34;fileutils&#34;</span>
-<span style="color:#66d9ef">FileUtils</span><span style="color:#f92672">.</span>cp(<span style="color:#e6db74">&#34;lineblog.html&#34;</span>, str)    <span style="color:#75715e"># コピー</span>
+<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#34;fileutils&#34;</span>
+<span style="color:#000">FileUtils</span><span style="color:#000">.</span><span style="color:#000">cp</span>(<span style="color:#c41a16">&#34;lineblog.html&#34;</span>, <span style="color:#000">str</span>)    <span style="color:#177500"># コピー</span>
 </code></pre></div><h2 id="更新情報に反映させる">更新情報に反映させる</h2>
 <ul>
 <li>ダウンロードしたlineblog.htmlを自分のWEBサーバーにアップロードする</li>
@@ -233,13 +233,13 @@ require <span style="color:#e6db74">&#34;fileutils&#34;</span>
 <li>つまりWEBから取得したファイルは更新情報の判定フラッグとして使うだけ、表示用には使わない</li>
 <li>ファイルのダウンロードからサーバーへのアップロードするまでの作業は、makefileで自動化している</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">## maikefile
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">a.out</span><span style="color:#f92672">:</span>getfile upftp
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#177500">## maikefile
+</span><span style="color:#177500"></span>
+<span style="color:#000">a.out</span><span style="color:#000">:</span><span style="color:#000">getfile</span> <span style="color:#000">upftp</span>
 
-<span style="color:#a6e22e">getfile</span><span style="color:#f92672">:</span>
+<span style="color:#000">getfile</span><span style="color:#000">:</span>
 	ruby getfile.rb
-<span style="color:#a6e22e">upftp</span><span style="color:#f92672">:</span>
+<span style="color:#000">upftp</span><span style="color:#000">:</span>
 	perl ~/Dropbox/Web/GH/upftp/upftp.pl
 </code></pre></div><h2 id="参考サイト">参考サイト</h2>
 <p><a href="http://uxmilk.jp/22830">RubyでWeb上からファイルをダウンロードする：open-uri</a></p>

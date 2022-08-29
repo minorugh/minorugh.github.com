@@ -158,50 +158,50 @@
         <p><a href="http://wtpage.info/wtseries/unix.html">WtSeries : UNIXソフト</a>からe2psをダウンロードして解凍します。
 現在の最新バージョンは、e2ps-4.34</p>
 <p>解凍フォルダー内のps-font.cをエディタで開き、14~53行の行末にバックスラッシュを追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>gsFonts <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Times-Roman\
-</span><span style="color:#e6db74">Times-Italic\
-</span><span style="color:#e6db74">Times-Bold\
-</span><span style="color:#e6db74">Times-BoldItalic\
-</span><span style="color:#e6db74">Helvetica\
-</span><span style="color:#e6db74">Helvetica-Oblique\
-</span><span style="color:#e6db74">Helvetica-Bold\
-</span><span style="color:#e6db74">Helvetica-BoldOblique\
-</span><span style="color:#e6db74">Courier\
-</span><span style="color:#e6db74">Courier-Oblique\
-</span><span style="color:#e6db74">Courier-Bold\
-</span><span style="color:#e6db74">Courier-BoldOblique\
-</span><span style="color:#e6db74">Symbol\
-</span><span style="color:#e6db74">AvantGarde-Book\
-</span><span style="color:#e6db74">AvantGarde_BookOblique\
-</span><span style="color:#e6db74">AvantGarde_Demi\
-</span><span style="color:#e6db74">AvantGarde_DemiOblique\
-</span><span style="color:#e6db74">Bookman-Light\
-</span><span style="color:#e6db74">Bookman-LightItalic\
-</span><span style="color:#e6db74">Bookman-Demi\
-</span><span style="color:#e6db74">Bookman-DemiItalic\
-</span><span style="color:#e6db74">Helvetica-Narrow\
-</span><span style="color:#e6db74">Helvetica-Narrow-Oblique\
-</span><span style="color:#e6db74">Helvetica-Narrow-Bold\
-</span><span style="color:#e6db74">Helvetica-Narrow-BoldObliqeu\
-</span><span style="color:#e6db74">NewCenturySchlbl-Roman\
-</span><span style="color:#e6db74">NewCenturySchlbl-Italic\
-</span><span style="color:#e6db74">NewCenturySchlbl-Bold\
-</span><span style="color:#e6db74">NewCenturySchlbl-BoldItalic\
-</span><span style="color:#e6db74">Palatino-Roman\
-</span><span style="color:#e6db74">Palatino-Italic\
-</span><span style="color:#e6db74">Palatino-Bold\
-</span><span style="color:#e6db74">Palatino-BoldItalic\
-</span><span style="color:#e6db74">Zapfchancery-MediumItalic\
-</span><span style="color:#e6db74">ZapfDingbats\
-</span><span style="color:#e6db74">Ryumin-Light.Hiragana\
-</span><span style="color:#e6db74">Ryumin-Light.Katakana\
-</span><span style="color:#e6db74">Gothic-Meduim.Hiragana\
-</span><span style="color:#e6db74">Gothic-Medium.Katakana\
-</span><span style="color:#e6db74">&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#a90d91">char</span> <span style="color:#000">*</span><span style="color:#000">gsFonts</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Times-Roman\
+</span><span style="color:#c41a16">Times-Italic\
+</span><span style="color:#c41a16">Times-Bold\
+</span><span style="color:#c41a16">Times-BoldItalic\
+</span><span style="color:#c41a16">Helvetica\
+</span><span style="color:#c41a16">Helvetica-Oblique\
+</span><span style="color:#c41a16">Helvetica-Bold\
+</span><span style="color:#c41a16">Helvetica-BoldOblique\
+</span><span style="color:#c41a16">Courier\
+</span><span style="color:#c41a16">Courier-Oblique\
+</span><span style="color:#c41a16">Courier-Bold\
+</span><span style="color:#c41a16">Courier-BoldOblique\
+</span><span style="color:#c41a16">Symbol\
+</span><span style="color:#c41a16">AvantGarde-Book\
+</span><span style="color:#c41a16">AvantGarde_BookOblique\
+</span><span style="color:#c41a16">AvantGarde_Demi\
+</span><span style="color:#c41a16">AvantGarde_DemiOblique\
+</span><span style="color:#c41a16">Bookman-Light\
+</span><span style="color:#c41a16">Bookman-LightItalic\
+</span><span style="color:#c41a16">Bookman-Demi\
+</span><span style="color:#c41a16">Bookman-DemiItalic\
+</span><span style="color:#c41a16">Helvetica-Narrow\
+</span><span style="color:#c41a16">Helvetica-Narrow-Oblique\
+</span><span style="color:#c41a16">Helvetica-Narrow-Bold\
+</span><span style="color:#c41a16">Helvetica-Narrow-BoldObliqeu\
+</span><span style="color:#c41a16">NewCenturySchlbl-Roman\
+</span><span style="color:#c41a16">NewCenturySchlbl-Italic\
+</span><span style="color:#c41a16">NewCenturySchlbl-Bold\
+</span><span style="color:#c41a16">NewCenturySchlbl-BoldItalic\
+</span><span style="color:#c41a16">Palatino-Roman\
+</span><span style="color:#c41a16">Palatino-Italic\
+</span><span style="color:#c41a16">Palatino-Bold\
+</span><span style="color:#c41a16">Palatino-BoldItalic\
+</span><span style="color:#c41a16">Zapfchancery-MediumItalic\
+</span><span style="color:#c41a16">ZapfDingbats\
+</span><span style="color:#c41a16">Ryumin-Light.Hiragana\
+</span><span style="color:#c41a16">Ryumin-Light.Katakana\
+</span><span style="color:#c41a16">Gothic-Meduim.Hiragana\
+</span><span style="color:#c41a16">Gothic-Medium.Katakana\
+</span><span style="color:#c41a16">&#34;</span>;
 </code></pre></div><p>terminalで解凍フォルダー内に移動します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd e2ps-4.34
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a90d91">cd</span> e2ps-4.34
 </code></pre></div><p>続いて以下のようにmakeします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make
 sudo make install
 </code></pre></div><p>/usr/local/bin に e2ps と e2lpr がインストールされていたら成功です。</p>
 

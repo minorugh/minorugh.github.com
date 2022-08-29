@@ -165,15 +165,15 @@
 <p><code>pangu-spacing.el</code>のコードを見るとデフォルトでは、正規表現で [a-zA-Z0-9] なっているので半角数字の場合にも同様に処理されてしまう。
 数字にも半角スペースが有効になると、[2021 年 11 月 16 日] という感じになるので、日付表示のケースでは面白くない。
 そこで、正規表現の記述を [a-zA-Z] に変更して半角数字は対象外としアルファベットのみが pangu-spacingの対象となるようにしている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf pangu-spacing
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook ((markdown-mode-hook text-mode-hook) <span style="color:#f92672">.</span> pangu-spacing-mode)
-  :config
-  (setq pangu-spacing-real-insert-separtor <span style="color:#66d9ef">t</span>)
-  (setq pangu-spacing-include-regexp
-		(rx (or (and (or (group-n <span style="color:#ae81ff">3</span> (any <span style="color:#e6db74">&#34;。，！？；：「」（）、&#34;</span>))
-						 (group-n <span style="color:#ae81ff">1</span> (or (category japanese))))))
-			(group-n <span style="color:#ae81ff">2</span> (in <span style="color:#e6db74">&#34;a-zA-Z&#34;</span>)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">pangu-spacing</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">markdown-mode-hook</span> <span style="color:#000">text-mode-hook</span>) <span style="color:#000">.</span> <span style="color:#000">pangu-spacing-mode</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">pangu-spacing-real-insert-separtor</span> <span style="color:#000">t</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">pangu-spacing-include-regexp</span>
+		(<span style="color:#a90d91">rx</span> (<span style="color:#a90d91">or</span> (<span style="color:#a90d91">and</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">group-n</span> <span style="color:#1c01ce">3</span> (<span style="color:#000">any</span> <span style="color:#c41a16">&#34;。，！？；：「」（）、&#34;</span>))
+						 (<span style="color:#000">group-n</span> <span style="color:#1c01ce">1</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">category</span> <span style="color:#000">japanese</span>))))))
+			(<span style="color:#000">group-n</span> <span style="color:#1c01ce">2</span> (<span style="color:#000">in</span> <span style="color:#c41a16">&#34;a-zA-Z&#34;</span>)))))
 </code></pre></div><p>上記の例では、markdown-mode と text-modeに導入している。</p>
 
       </div>

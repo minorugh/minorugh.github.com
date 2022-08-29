@@ -165,16 +165,16 @@
 <h2 id="macの上限値を調べる">Macの上限値を調べる</h2>
 <p>ターミナルでコマンドを打って現在の上限数を確認。
 私の場合は、以下の表示でした。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl limit
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl limit
     cpu         unlimited      unlimited
     filesize    unlimited      unlimited
     data        unlimited      unlimited
-    stack       <span style="color:#ae81ff">8388608</span>        <span style="color:#ae81ff">67104768</span>
-    core        <span style="color:#ae81ff">0</span>              unlimited
+    stack       <span style="color:#1c01ce">8388608</span>        <span style="color:#1c01ce">67104768</span>
+    core        <span style="color:#1c01ce">0</span>              unlimited
     rss         unlimited      unlimited
     memlock     unlimited      unlimited
-    maxproc     <span style="color:#ae81ff">1418</span>           <span style="color:#ae81ff">2128</span>
-    maxfiles    <span style="color:#ae81ff">256</span>            unlimited
+    maxproc     <span style="color:#1c01ce">1418</span>           <span style="color:#1c01ce">2128</span>
+    maxfiles    <span style="color:#1c01ce">256</span>            unlimited
 </code></pre></div><p>maxfilesが 256 になっているのが確認できました。</p>
 <h2 id="設定ファイルを作る">設定ファイルを作る</h2>
 <p><code>/Library/LaunchDaemons/limit.maxfiles.plist</code> に設定ファイルを作成する。</p>
@@ -182,28 +182,28 @@
 <pre><code>$sudo vi /Library/LaunchDaemons/limit.maxfiles.plist
 </code></pre><p>vi が開かれたら以下のようにペーストします。</p>
 <h5 id="limitmaxfilesplist">limit.maxfiles.plist</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&lt;</span>?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#e6db74">?&gt;</span>  
-<span style="color:#f92672">&lt;!</span><span style="color:#66d9ef">DOCTYPE</span> plist <span style="color:#66d9ef">PUBLIC</span> <span style="color:#e6db74">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#e6db74">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;</span>plist version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>  
-  <span style="color:#f92672">&lt;</span>dict<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">Label</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;string&gt;limit.maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ProgramArguments</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;array&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;launchctl&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>limit<span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">524288</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;524288&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/array&gt;
-</span><span style="color:#e6db74">    &lt;key&gt;RunAtLoad&lt;/</span>key<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">true</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ServiceIPC</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;false/</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/dict&gt;
-</span><span style="color:#e6db74">&lt;/</span>plist<span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#000">&lt;</span>?<span style="color:#000">xml</span> <span style="color:#000">version</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;1.0&#34;</span> <span style="color:#000">encoding</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;UTF-8&#34;</span><span style="color:#2300ce">?&gt;</span>  
+<span style="color:#000">&lt;!</span><span style="color:#000">DOCTYPE</span> <span style="color:#000">plist</span> <span style="color:#000">PUBLIC</span> <span style="color:#c41a16">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#c41a16">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span><span style="color:#000">&gt;</span>
+<span style="color:#000">&lt;</span><span style="color:#000">plist</span> <span style="color:#000">version</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;1.0&#34;</span><span style="color:#000">&gt;</span>  
+  <span style="color:#000">&lt;</span><span style="color:#000">dict</span><span style="color:#000">&gt;</span>
+    <span style="color:#000">&lt;</span><span style="color:#000">key</span><span style="color:#000">&gt;</span><span style="color:#000">Label</span><span style="color:#000">&lt;</span><span style="color:#c41a16">/key&gt;
+</span><span style="color:#c41a16">    &lt;string&gt;limit.maxfiles&lt;/s</span><span style="color:#000">tring</span><span style="color:#000">&gt;</span>
+    <span style="color:#000">&lt;</span><span style="color:#000">key</span><span style="color:#000">&gt;</span><span style="color:#000">ProgramArguments</span><span style="color:#000">&lt;</span><span style="color:#c41a16">/key&gt;
+</span><span style="color:#c41a16">    &lt;array&gt;
+</span><span style="color:#c41a16">      &lt;string&gt;launchctl&lt;/s</span><span style="color:#000">tring</span><span style="color:#000">&gt;</span>
+      <span style="color:#000">&lt;</span><span style="color:#000">string</span><span style="color:#000">&gt;</span><span style="color:#000">limit</span><span style="color:#000">&lt;</span><span style="color:#c41a16">/string&gt;
+</span><span style="color:#c41a16">      &lt;string&gt;maxfiles&lt;/s</span><span style="color:#000">tring</span><span style="color:#000">&gt;</span>
+      <span style="color:#000">&lt;</span><span style="color:#000">string</span><span style="color:#000">&gt;</span><span style="color:#1c01ce">524288</span><span style="color:#000">&lt;</span><span style="color:#c41a16">/string&gt;
+</span><span style="color:#c41a16">      &lt;string&gt;524288&lt;/s</span><span style="color:#000">tring</span><span style="color:#000">&gt;</span>
+    <span style="color:#000">&lt;</span><span style="color:#c41a16">/array&gt;
+</span><span style="color:#c41a16">    &lt;key&gt;RunAtLoad&lt;/</span><span style="color:#000">key</span><span style="color:#000">&gt;</span>
+    <span style="color:#000">&lt;</span><span style="color:#a90d91">true</span><span style="color:#000">/&gt;</span>
+    <span style="color:#000">&lt;</span><span style="color:#000">key</span><span style="color:#000">&gt;</span><span style="color:#000">ServiceIPC</span><span style="color:#000">&lt;</span><span style="color:#c41a16">/key&gt;
+</span><span style="color:#c41a16">    &lt;false/</span><span style="color:#000">&gt;</span>
+  <span style="color:#000">&lt;</span><span style="color:#c41a16">/dict&gt;
+</span><span style="color:#c41a16">&lt;/</span><span style="color:#000">plist</span><span style="color:#000">&gt;</span>
 </code></pre></div><h2 id="plistファイルを読み込んで適用させる">plistファイルを読み込んで適用させる。</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
 </code></pre></div><h2 id="適用されたことを確認する">適用されたことを確認する</h2>
 <pre><code>$ sudo launchctl limit
     cpu         unlimited      unlimited

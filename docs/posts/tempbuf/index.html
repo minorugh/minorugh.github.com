@@ -165,28 +165,28 @@
 <li><a href="https://www.shigemk2.com/entry/20120908/1347090453">不要なバッファを自動的にkillしてくれる</a></li>
 </ul>
 <p>早速設定して使ってみたところ実に快適！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; automatically kill unnecessary buffers</span>
-(<span style="color:#a6e22e">use-package</span> tempbuf)
-(add-hook <span style="color:#e6db74">&#39;dired-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
-(add-hook <span style="color:#e6db74">&#39;magit-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;; automatically kill unnecessary buffers</span>
+(<span style="color:#000">use-package</span> <span style="color:#000">tempbuf</span>)
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;dired-mode-hook</span> <span style="color:#c41a16">&#39;turn-on-tempbuf-mode</span>)
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;magit-mode-hook</span> <span style="color:#c41a16">&#39;turn-on-tempbuf-mode</span>)
 </code></pre></div><ul>
 <li><a href="https://www.emacswiki.org/emacs/tempbuf.el">tempbuf.el はここから落としてきました。</a></li>
 </ul>
 <h2 id="参考">参考</h2>
 <p>switch-buffer機能は、ivy-switch-buffer と iflipb とを併用しています。</p>
 <p>前者は、Helm-mini の代わりに使います。後者はキー操作によって開いているバッファーを切り替えたいときに使います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(ivy-mode <span style="color:#ae81ff">1</span>)
-(setq ivy-use-virtual-buffers <span style="color:#66d9ef">t</span>)
-(setq enable-recursive-minibuffers <span style="color:#66d9ef">t</span>)
-(bind-key <span style="color:#e6db74">&#34;M-:&#34;</span> <span style="color:#e6db74">&#39;ivy-switch-buffer</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">ivy-mode</span> <span style="color:#1c01ce">1</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">ivy-use-virtual-buffers</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">enable-recursive-minibuffers</span> <span style="color:#000">t</span>)
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;M-:&#34;</span> <span style="color:#c41a16">&#39;ivy-switch-buffer</span>)
 </code></pre></div><p>iflipb.el の機能は、Emacs標準の <code>M-x switch-to-next-buffer</code> とは全く別物で優れものです。詳細はるびきちさんの記事が参考になるでしょう。</p>
 <ul>
 <li><a href="http://emacs.rubikitch.com/iflipb/">詳説！Alt+Tab感覚で賢くバッファをワンタッチで切り替える</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; iflipb</span>
-(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span>))
-(bind-key <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-next-buffer</span>)
-(bind-key <span style="color:#e6db74">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-previous-buffer</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; iflipb</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">iflipb-ignore-buffers</span> (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;^[*]&#34;</span> <span style="color:#c41a16">&#34;^magit&#34;</span>))
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#c41a16">&#39;iflipb-next-buffer</span>)
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#c41a16">&#39;iflipb-previous-buffer</span>)
 </code></pre></div><p>私は org-modeを使わないので <code>C-&lt;right&gt;</code> <code>C-&lt;left&gt;</code> に key bind してますが、そこはお好みで設定してください。</p>
       </div>
     </article>

@@ -159,32 +159,32 @@
 <p>あやまってscratch killしたら新しいscratchを自動再生してくれるとか、kill出来ないようにする…というTipsも多いのですが、そんな回りくどいことをしなくてEmacsの標準機能だけて簡単に対応できることがわかりました。</p>
 <h2 id="emacs-lock-mode-を使う">emacs-lock-mode を使う##</h2>
 <p>パッケージも何もいりません。下記を設定してみてください。私は <code>*Messages*</code> も一緒に設定しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Set buffer that can not be killed.</span>
-(with-current-buffer <span style="color:#e6db74">&#34;*scratch*&#34;</span>
-  (emacs-lock-mode <span style="color:#e6db74">&#39;kill</span>))
-(with-current-buffer <span style="color:#e6db74">&#34;*Messages*&#34;</span>
-  (emacs-lock-mode <span style="color:#e6db74">&#39;kill</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Set buffer that can not be killed.</span>
+(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
+  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
+(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*Messages*&#34;</span>
+  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
 </code></pre></div><p>この選定を有効にしたあとscratchをkill bufferしようとすると、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">Buffer <span style="color:#e6db74">&#34;*scratch*&#34;</span> is locked and cannot be killed
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#000">Buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span> <span style="color:#000">is</span> <span style="color:#000">locked</span> <span style="color:#a90d91">and</span> <span style="color:#000">cannot</span> <span style="color:#000">be</span> <span style="color:#000">killed</span>
 </code></pre></div><p>と叱られます。つまりkillされないようにロックが掛けられるのです。
 <code>emacs-lock-mode</code> というのはもともとemacsの内蔵コマンドにあるのです。</p>
 <h2 id="scratchを自動保存する">Scratchを自動保存する</h2>
 <p>私もそうなのですが、ちょこっとした付箋的なメモをするためにscratchを使うという人も多いと思います。そんな人には、Emacsを再起動させても終了前のscratchが復帰してほしい…というニーズがあります。こうした目的のためのパッケージも何種類かありますが、私は、auto-seve-buffers-enhanced.el の機能を流用しています。このパッケージを使っているEmacserは多いと思うので、わざわざ専用のパッケージを使わずともscratchの保存再生が可能になります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package auto-save-buffers-enhanced)
-<span style="color:#75715e">;; Suppress Wrote&#39;s message</span>
-(setq auto-save-buffers-enhanced-quiet-save-p <span style="color:#66d9ef">t</span>)
-<span style="color:#75715e">;; Scratch buffer is also saved automatically</span>
-(setq auto-save-buffers-enhanced-save-scratch-buffer-to-file-p <span style="color:#66d9ef">t</span>)
-(setq auto-save-buffers-enhanced-file-related-with-scratch-buffer <span style="color:#e6db74">&#34;~/Dropbox/etc/emacs/scratch&#34;</span>)
-(auto-save-buffers-enhanced <span style="color:#66d9ef">t</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">use-package</span> <span style="color:#000">auto-save-buffers-enhanced</span>)
+<span style="color:#177500">;; Suppress Wrote&#39;s message</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-quiet-save-p</span> <span style="color:#000">t</span>)
+<span style="color:#177500">;; Scratch buffer is also saved automatically</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-save-scratch-buffer-to-file-p</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-file-related-with-scratch-buffer</span> <span style="color:#c41a16">&#34;~/Dropbox/etc/emacs/scratch&#34;</span>)
+(<span style="color:#000">auto-save-buffers-enhanced</span> <span style="color:#000">t</span>)
 </code></pre></div><h2 id="scratchを瞬時にpopup表示させる">scratchを瞬時にpopup表示させる</h2>
 <p><code>scratch-pop</code> という便利なパッケージもあるのですが、私にとって余り必要と思わない機能もついているのでシンプルに設定を書いてみました。</p>
 <p>popwinを導入した上で下記をinitファイルに書き、適当なキーバインドを設定すると一発でscratch bufferがpopupし、&ldquo;C-g&rdquo; で隠れてくれます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my:pop-scratch ()
-  <span style="color:#e6db74">&#34;Popup the scratch buffer.&#34;</span>
-  (interactive)
-  (setq popwin:special-display-config <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;*scratch*&#34;</span>)))
-  (display-buffer <span style="color:#e6db74">&#34;*scratch*&#34;</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:pop-scratch</span> ()
+  <span style="color:#c41a16">&#34;Popup the scratch buffer.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">popwin:special-display-config</span> <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;*scratch*&#34;</span>)))
+  (<span style="color:#000">display-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>))
 </code></pre></div><h2 id="どんな使い方をしているか">どんな使い方をしているか</h2>
 <p>簡単なelispの評価にscratchを使うのは当然ですが、私の場合、なにか調べたいキーワードをscratchにちょこっと書いてsearch-webで即検索…というような使い方を良くします。参考に私のhydra-search-webの設定にリンクを張っておきます。</p>
 <ul>

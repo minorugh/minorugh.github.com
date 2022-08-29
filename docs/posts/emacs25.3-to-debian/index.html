@@ -161,10 +161,10 @@
 <li>apt-getでインストールできるのは、Emacs25.1までなので、dawnloadしたsourceを直接コンパイルしてインストールします。</li>
 <li>幸い、もともとEmacs25.2がInstallしたあったので、すんなり成功しました。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget http://public.p-knowledge.co.jp/gnu-mirror/emacs/emacs-25.3.tar.xz 
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget http://public.p-knowledge.co.jp/gnu-mirror/emacs/emacs-25.3.tar.xz 
 $ unar emacs-25.3.tar.xz
-$ cd emacs-25.3
-$ ./configure --with-x-toolkit<span style="color:#f92672">=</span>gtk3 --with-sound<span style="color:#f92672">=</span>no --with-x --with-xwidgets
+$ <span style="color:#a90d91">cd</span> emacs-25.3
+$ ./configure --with-x-toolkit<span style="color:#000">=</span>gtk3 --with-sound<span style="color:#000">=</span>no --with-x --with-xwidgets
 $ make
 $ sudo make install
 $ sudo reboot 

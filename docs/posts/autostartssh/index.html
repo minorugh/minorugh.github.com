@@ -163,24 +163,24 @@
 </ol>
 <h2 id="autologinsh">autologin.sh</h2>
 <p>expectを利用した標準的なスクリプトです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/usr/bin/expect
-</span><span style="color:#75715e"></span><span style="color:#75715e"># Run ssh-add with passphrase auto input at GUI startup</span>
-<span style="color:#75715e"># Look ${PWD}/.config/autostart/autologin.desktop</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#633820">#!/usr/bin/expect
+</span><span style="color:#633820"></span><span style="color:#177500"># Run ssh-add with passphrase auto input at GUI startup</span>
+<span style="color:#177500"># Look ${PWD}/.config/autostart/autologin.desktop</span>
 
-<span style="color:#75715e"># Include Password</span>
-source ~/Dropbox/backup/zsh/env.sh
+<span style="color:#177500"># Include Password</span>
+<span style="color:#a90d91">source</span> ~/Dropbox/backup/zsh/env.sh
 
 spawn ssh-add /home/minoru/.ssh/id_rsa
-expect <span style="color:#e6db74">&#34;Enter passphrase for /home/minoru/.ssh/id_rsa:&#34;</span>
-send <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PW<span style="color:#e6db74">}</span><span style="color:#e6db74">\n&#34;</span>;
+expect <span style="color:#c41a16">&#34;Enter passphrase for /home/minoru/.ssh/id_rsa:&#34;</span>
+send <span style="color:#c41a16">&#34;</span><span style="color:#c41a16">${</span><span style="color:#000">PW</span><span style="color:#c41a16">}</span><span style="color:#c41a16">\n&#34;</span>;
 interact
 </code></pre></div><p>autologin.sh はどこに配置してもよいのですが、私の場合は、ホームデレクトリに置きました。</p>
 <p>作成後、動作権限の付与を忘れないように。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ chmod <span style="color:#ae81ff">600</span> autologin.sh
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ chmod <span style="color:#1c01ce">600</span> autologin.sh
 </code></pre></div><p>スクリプトは GitHubで公開しているので passphraseは直接書かないで別ファイルとしてインクルードしている。</p>
 <p>include するファイルは下記のような内容である。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">## Password file to include in ~/.autologin.sh</span>
-set PW <span style="color:#e6db74">&#34;&lt;your passphrase&gt;&#34;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#177500">## Password file to include in ~/.autologin.sh</span>
+<span style="color:#a90d91">set</span> PW <span style="color:#c41a16">&#34;&lt;your passphrase&gt;&#34;</span>
 </code></pre></div><p><code>your passphrase</code> には、秘密鍵 id_rsa の作成時に設定したパスワードを書きます。パスワードは長いほど解読されにくくて安全なのですが、長すぎると暗号化や復号処理に過大な負荷がかかります。私の場合は安全を考えて４０桁にしましたが今の所無理なく機能しているようです。</p>
 <h2 id="autostartdesktop">autostart.desktop</h2>
 <p>GUIログイン時に autologin.shが自動起動されるように設定します。</p>

@@ -161,13 +161,13 @@
         <p>Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
 これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。</p>
 <h2 id="unkillable-scratch">unkillable-scratch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; unkillable-scratch</span>
-(<span style="color:#66d9ef">setq</span> unkillable-buffers <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;^\\*scratch*\\*$&#34;</span> <span style="color:#e6db74">&#34;^\\*dashboard\\*$&#34;</span>))
-(unkillable-scratch <span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;; unkillable-scratch</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">unkillable-buffers</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;^\\*scratch*\\*$&#34;</span> <span style="color:#c41a16">&#34;^\\*dashboard\\*$&#34;</span>))
+(<span style="color:#000">unkillable-scratch</span> <span style="color:#1c01ce">1</span>)
 </code></pre></div><p>scratchバッファをkillさせないためのものですが、正規表現マッチを追加することで自由にカスタマイズできます。私の場合は、dashboardも消さないように追記しています。</p>
 <h2 id="persist-scratch">persist-scratch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Persist and save/restore *scratch* buffer</span>
-(persistent-scratch-setup-default)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;; Persist and save/restore *scratch* buffer</span>
+(<span style="color:#000">persistent-scratch-setup-default</span>)
 </code></pre></div><p>scratchバッファの内容を保存して再起動時に復元させるものです。保存データーはデフォルトで<code>~/.emacs.d/.scratch</code>に保存されます。</p>
       </div>
     </article>

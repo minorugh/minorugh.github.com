@@ -161,19 +161,19 @@
       <div class="post-content">
         <p>自動化のためにmakefileを書いています。</p>
 <p>私の場合、Linux端末とMacとの異なる環境で共通のmakefileを使いますので、条件分岐を勉強してみました。無手勝流ながら以下の設定でうまく作動してくれるようになりました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># maikefile</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#177500"># maikefile</span>
 
-ifeq <span style="color:#f92672">(</span><span style="color:#66d9ef">$(</span>shell uname<span style="color:#66d9ef">)</span>,Linux<span style="color:#f92672">)</span>
+ifeq <span style="color:#000">(</span><span style="color:#a90d91">$(</span>shell uname<span style="color:#a90d91">)</span>,Linux<span style="color:#000">)</span>
 .txt.html:
-	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; $@
-	chromium $@
-<span style="color:#66d9ef">else</span>
+	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; <span style="color:#000">$@</span>
+	chromium <span style="color:#000">$@</span>
+<span style="color:#a90d91">else</span>
 .txt.html:
-	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; $@
-	open -a <span style="color:#e6db74">&#34;Google Chrome&#34;</span> $@
+	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; <span style="color:#000">$@</span>
+	open -a <span style="color:#c41a16">&#34;Google Chrome&#34;</span> <span style="color:#000">$@</span>
 endif
 </code></pre></div><h4 id="ifeq-を使う">ifeq を使う</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ifeq  <span style="color:#f92672">(</span><span style="color:#66d9ef">$(</span>shell uname<span style="color:#66d9ef">)</span>,Linux<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ifeq  <span style="color:#000">(</span><span style="color:#a90d91">$(</span>shell uname<span style="color:#a90d91">)</span>,Linux<span style="color:#000">)</span>
 </code></pre></div><p>というところが条件判断の部分です。</p>
 <p>何をしているかというと、<a href="https://www.hyuki.com/makeweb/">結城浩さんのMakewebというPerlスクリプト</a> を使って、TEXTフォーマットのファイルをHTMLフォーマットに書き出しています。この部分はLinuxもMacも共通です。</p>
 <p>つづいて、書き出された当該ファイルを自動的に Chromeで開くという簡単なコマンドなのですが、LinuxとMacとでは命令の標記が異なるので分岐させて各々のコマンドを書いています。</p>
@@ -181,7 +181,7 @@ endif
 <p>unameは、Linuxコマンドなので、windowsでは使えないですが、Linux/Mac の判別には便利です。</p>
 <p>ターミナルで <code>uname</code> コマンドを打つことで、OSの情報を得ることができます。</p>
 <p>上記の例では、Linux かどうかを判断させてLinuxのコマンドを書き、elseでMac のコマンドを実行させていますが、逆にしたい場合は以下のように書きます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ifeq  <span style="color:#f92672">(</span><span style="color:#66d9ef">$(</span>shell uname<span style="color:#66d9ef">)</span>,Darwin<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ifeq  <span style="color:#000">(</span><span style="color:#a90d91">$(</span>shell uname<span style="color:#a90d91">)</span>,Darwin<span style="color:#000">)</span>
 </code></pre></div>
       </div>
     </article>

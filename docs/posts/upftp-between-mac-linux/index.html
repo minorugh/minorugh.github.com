@@ -162,13 +162,13 @@
 </ul>
 <p>これらのツールを使えば、MakeWeb記法(Markdown記法のような書式)で書いた、index.txtをMakeWebでコンパイルしてindex.htmlを生成させ、UpFtpでサーバーに送って更新する…という手順を下記のように makefileに書き、<code>make -k</code> するだけで自動処理されます。</p>
 <h3 id="makefile">makefile</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">target <span style="color:#f92672">=</span> index.html
-<span style="color:#a6e22e">a.out</span><span style="color:#f92672">:</span>all
-<span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>target<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#000">target</span> <span style="color:#000">=</span> index.html
+<span style="color:#000">a.out</span><span style="color:#000">:</span><span style="color:#000">all</span>
+<span style="color:#000">all</span><span style="color:#000">:</span> <span style="color:#a90d91">$(</span><span style="color:#000">target</span><span style="color:#a90d91">)</span>
 
-<span style="color:#a6e22e">.SUFFIXES</span><span style="color:#f92672">:</span> .txt .html
-<span style="color:#a6e22e">.txt.html</span><span style="color:#f92672">:</span>
-	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; $@ <span style="color:#75715e"># index.txt to index.html</span>
+<span style="color:#000">.SUFFIXES</span><span style="color:#000">:</span> .<span style="color:#000">txt</span> .<span style="color:#000">html</span>
+<span style="color:#000">.txt.html</span><span style="color:#000">:</span>
+	perl ~/Dropbox/Web/GH/mw/makeweb.pl $&lt; <span style="color:#000">$@</span> <span style="color:#177500"># index.txt to index.html</span>
 	perl ~/Dropbox/Web/GH/upftp/upftp.pl 
 </code></pre></div><h2 id="異なる環境でデータを共有するのはdropboxが便利">異なる環境でデータを共有するのはDropboxが便利</h2>
 <p>Dropboxは、Windows/Linux/macOSとマルチ環境で使えるので、WEB構築の元データを複数端末で共有するのには一番適している。同期速度などの点でも他のクラウドと比較して一番早い。</p>
@@ -179,32 +179,32 @@
 <li>Mac <code>/Users/minoru/Dropbox</code></li>
 </ul>
 <p>Makefileの場合は、~/Dropboxと書くことで認識してくれるので容易に共用設定が書けるが、UpFtpの設定ファイルの場合は、以下のようにフルパスを書く必要があるので工夫が必要となる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># Local root directory (in fullpath)</span>
-<span style="color:#66d9ef">my</span> $localrootdir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-<span style="color:#75715e"># File list (in fullpath)</span>
-<span style="color:#66d9ef">my</span> $filelist <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#177500"># Local root directory (in fullpath)</span>
+<span style="color:#a90d91">my</span> <span style="color:#000">$localrootdir</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;&#34;</span>;
+<span style="color:#177500"># File list (in fullpath)</span>
+<span style="color:#a90d91">my</span> <span style="color:#000">$filelist</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;&#34;</span>;
 </code></pre></div><h2 id="ユーザフォルダーを変数で取得">ユーザフォルダーを変数で取得</h2>
 <p>フルパスを直書きするとマルチ環境で共用できないので、変数を取得してそれを共通で使えるようにします。</p>
 <h3 id="maclinuxの場合">Mac/Linuxの場合</h3>
 <p>MacもLinuxも同じUNIXなので以下の方法でユーザーフォルダのPATHを取得できる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$home <span style="color:#f92672">=</span> $ENV{<span style="color:#e6db74">&#34;HOME&#34;</span>}
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#000">$home</span> <span style="color:#000">=</span> <span style="color:#000">$ENV</span>{<span style="color:#c41a16">&#34;HOME&#34;</span>}
 </code></pre></div><p><!-- raw HTML omitted --></p>
 <h3 id="windowsの場合">Windowsの場合</h3>
 <p>試してないので自信ないのですが、以下の方法でユーザフォルダーのPATHを取得出来る。（らしい）</p>
 <pre><code>$home = %USERPROFILE%
 </code></pre><h2 id="maclinux共用の設定">Mac/Linux共用の設定</h2>
 <p>私の場合は、以下のように書くことでうまく動いている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># Get HOME directory from environment variables</span>
-<span style="color:#66d9ef">my</span> $home <span style="color:#f92672">=</span> $ENV{<span style="color:#e6db74">&#34;HOME&#34;</span>};
-<span style="color:#75715e"># Local root directory (in fullpath)</span>
-<span style="color:#66d9ef">my</span> $localrootdir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$home/Dropbox/Web/GH&#34;</span>;
-<span style="color:#75715e"># File list (in fullpath)</span>
-<span style="color:#66d9ef">my</span> $filelist <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$home/Dropbox/Web/GH/upftp/filelist.txt&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#177500"># Get HOME directory from environment variables</span>
+<span style="color:#a90d91">my</span> <span style="color:#000">$home</span> <span style="color:#000">=</span> <span style="color:#000">$ENV</span>{<span style="color:#c41a16">&#34;HOME&#34;</span>};
+<span style="color:#177500"># Local root directory (in fullpath)</span>
+<span style="color:#a90d91">my</span> <span style="color:#000">$localrootdir</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;$home/Dropbox/Web/GH&#34;</span>;
+<span style="color:#177500"># File list (in fullpath)</span>
+<span style="color:#a90d91">my</span> <span style="color:#000">$filelist</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;$home/Dropbox/Web/GH/upftp/filelist.txt&#34;</span>;
 </code></pre></div><h2 id="windowsmaclinux共用の設定">Windows/Mac(Linux)共用の設定</h2>
 <p>ここからは確認できていないので無責任になるけれども、OSを判別する特殊変数を使って分岐させる必要がある。</p>
 <p>$^O</p>
 <p>がその特殊変数です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$^O\n&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#a90d91">print</span> <span style="color:#c41a16">&#34;$^O\n&#34;</span>;
 </code></pre></div><p>と書いたプログラムをそれぞれのOS環境で実行すると下記のようになるはずなので、これを使って条件分岐して$homeを定義すればいいと思います。</p>
 <ul>
 <li>Windows XPの場合「MSWin32」</li>

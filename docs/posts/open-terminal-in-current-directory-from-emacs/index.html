@@ -158,12 +158,12 @@
         <p>私の場合は、Emacsからターミナル作業をするときは基本eshellを使うようにしています。ただ、ごくたまに別窓でターミナルアプリを立ち上げてemacsと併行して作業したいときがありますので以下のように設定しています。</p>
 <p>当然ながらコマンドラインでアプリが起動できるようにbashなりzshなりで設定しておくことが前提です。</p>
 <h2 id="macのitermappを起動させる設定">macのiterm.appを起動させる設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Launch iterm.app with Current buffer</span>
-(defun my:iterm-app ()
-  <span style="color:#e6db74">&#34;Open iterm.app with current dir.&#34;</span>
-  (interactive)
-  (let ((dir default-directory))
-    (shell-command (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;open -a iterm.app &#34;</span> dir))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Launch iterm.app with Current buffer</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:iterm-app</span> ()
+  <span style="color:#c41a16">&#34;Open iterm.app with current dir.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">dir</span> <span style="color:#000">default-directory</span>))
+    (<span style="color:#000">shell-command</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;open -a iterm.app &#34;</span> <span style="color:#000">dir</span>))))
 </code></pre></div>
       </div>
     </article>

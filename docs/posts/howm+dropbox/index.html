@@ -164,37 +164,37 @@
 <li>メモは、markdown-mode で書きます。理由は後述します。</li>
 </ul>
 <h2 id="howm-memoの設定">howm-memoの設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;*************************************************************************</span>
-<span style="color:#75715e">;; howm-memo.el                       last updated: 2017/06/09</span>
-<span style="color:#75715e">;*************************************************************************</span>
-<span style="color:#75715e">;; M-x package-install howm</span>
-<span style="color:#75715e">;; (use-package key-chord)</span>
-<span style="color:#75715e">;; (use-package use-package-chords</span>
-<span style="color:#75715e">;;   :config (key-chord-mode 1))</span>
-<span style="color:#75715e">;;-----------------------------------------------------------------------</span>
-(<span style="color:#a6e22e">use-package</span> howm
-  <span style="color:#e6db74">:init</span>
-  (<span style="color:#66d9ef">setq</span> howm-view-title-header <span style="color:#e6db74">&#34;#&#34;</span>
-        howm-directory <span style="color:#e6db74">&#34;~/Dropbox/howm&#34;</span>
-        howm-file-name-format <span style="color:#e6db74">&#34;%Y/%m/%Y-%m%d-%H%M.md&#34;</span>
-  <span style="color:#e6db74">:config</span>
-  (<span style="color:#66d9ef">setq</span> howm-view-split-horizontally <span style="color:#66d9ef">t</span>      <span style="color:#75715e">;; 一覧バッファと内容バッファを横に並べる</span>
-        howm-view-summary-persistent <span style="color:#66d9ef">nil</span>    <span style="color:#75715e">;; RET でファイルを開く際一覧バッファを消す</span>
-  <span style="color:#e6db74">:chords</span> ((<span style="color:#e6db74">&#34;,,&#34;</span> <span style="color:#f92672">.</span> howm-create)             <span style="color:#75715e">;; メモを書く</span>
-           (<span style="color:#e6db74">&#34;@@&#34;</span> <span style="color:#f92672">.</span> howm-list-all)))         <span style="color:#75715e">;; メモ一覧を開く</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;*************************************************************************</span>
+<span style="color:#177500">;; howm-memo.el                       last updated: 2017/06/09</span>
+<span style="color:#177500">;*************************************************************************</span>
+<span style="color:#177500">;; M-x package-install howm</span>
+<span style="color:#177500">;; (use-package key-chord)</span>
+<span style="color:#177500">;; (use-package use-package-chords</span>
+<span style="color:#177500">;;   :config (key-chord-mode 1))</span>
+<span style="color:#177500">;;-----------------------------------------------------------------------</span>
+(<span style="color:#000">use-package</span> <span style="color:#000">howm</span>
+  <span style="color:#c41a16">:init</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-title-header</span> <span style="color:#c41a16">&#34;#&#34;</span>
+        <span style="color:#000">howm-directory</span> <span style="color:#c41a16">&#34;~/Dropbox/howm&#34;</span>
+        <span style="color:#000">howm-file-name-format</span> <span style="color:#c41a16">&#34;%Y/%m/%Y-%m%d-%H%M.md&#34;</span>
+  <span style="color:#c41a16">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-split-horizontally</span> <span style="color:#000">t</span>      <span style="color:#177500">;; 一覧バッファと内容バッファを横に並べる</span>
+        <span style="color:#000">howm-view-summary-persistent</span> <span style="color:#000">nil</span>    <span style="color:#177500">;; RET でファイルを開く際一覧バッファを消す</span>
+  <span style="color:#c41a16">:chords</span> ((<span style="color:#c41a16">&#34;,,&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-create</span>)             <span style="color:#177500">;; メモを書く</span>
+           (<span style="color:#c41a16">&#34;@@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-list-all</span>)))         <span style="color:#177500">;; メモ一覧を開く</span>
 
-<span style="color:#75715e">;; 空になったファイルを尋ねずに自動削除：howm以外でも有効</span>
-(defun my:delete-file-if-no-contents ()
-  (when (and (buffer-file-name (current-buffer))
-             (<span style="color:#a6e22e">=</span> (point-min) (point-max)))
-    (<span style="color:#a6e22e">delete-file</span>
-     (buffer-file-name (current-buffer)))))
-(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">not</span> (memq <span style="color:#e6db74">&#39;my:delete-file-if-no-contents</span> after-save-hook))
-    (<span style="color:#66d9ef">setq</span> after-save-hook
-          (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;my:delete-file-if-no-contents</span> after-save-hook)))
+<span style="color:#177500">;; 空になったファイルを尋ねずに自動削除：howm以外でも有効</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
+  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
+             (<span style="color:#000">=</span> (<span style="color:#000">point-min</span>) (<span style="color:#000">point-max</span>)))
+    (<span style="color:#000">delete-file</span>
+     (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
+(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
+    (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
+          (<span style="color:#3f6e75">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
 
-<span style="color:#75715e">;***********************************************************************</span>
-<span style="color:#75715e">; end of file</span>
+<span style="color:#177500">;***********************************************************************</span>
+<span style="color:#177500">; end of file</span>
 
 </code></pre></div>
       </div>

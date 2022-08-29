@@ -164,42 +164,42 @@ auto-save-buffers-enhanced で自動保存しているので、回りくどい�
 <li><a href="https://getpocket.com/read/1325332326">Emacs: Open Last Closed File</a></li>
 </ul>
 <p>原案では、多機能で長いコードになっていましたが、私には必要のない部分は削って dietしました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Open last closed file</span>
-(defvar my:recently-closed-buffers <span style="color:#66d9ef">nil</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Open last closed file</span>
+(<span style="color:#a90d91">defvar</span> <span style="color:#000">my:recently-closed-buffers</span> <span style="color:#000">nil</span>)
 
-(defun my:close-current-buffer ()
-  <span style="color:#e6db74">&#34;Close the current buffer.&#34;</span>
-  (interactive)
-  (setq my:recently-closed-buffers
-		(<span style="color:#a6e22e">cons</span> (<span style="color:#a6e22e">cons</span> (<span style="color:#a6e22e">buffer-name</span>) (<span style="color:#a6e22e">buffer-file-name</span>)) my:recently-closed-buffers))
-  (<span style="color:#a6e22e">kill-buffer</span> (<span style="color:#a6e22e">current-buffer</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:close-current-buffer</span> ()
+  <span style="color:#c41a16">&#34;Close the current buffer.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">my:recently-closed-buffers</span>
+		(<span style="color:#000">cons</span> (<span style="color:#000">cons</span> (<span style="color:#000">buffer-name</span>) (<span style="color:#000">buffer-file-name</span>)) <span style="color:#000">my:recently-closed-buffers</span>))
+  (<span style="color:#000">kill-buffer</span> (<span style="color:#000">current-buffer</span>)))
 
-(defun my:open-last-closed ()
-  <span style="color:#e6db74">&#34;Open the last closed file.&#34;</span>
-  (interactive)
-  (find-file (<span style="color:#a6e22e">cdr</span> (pop my:recently-closed-buffers))))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:open-last-closed</span> ()
+  <span style="color:#c41a16">&#34;Open the last closed file.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">find-file</span> (<span style="color:#000">cdr</span> (<span style="color:#a90d91">pop</span> <span style="color:#000">my:recently-closed-buffers</span>))))
 </code></pre></div><p>ようは、<code>kill-buffer</code> の代りに <code>my:close-current-buffer</code> を使い、再読込したいときに <code>my:open-last-closed</code> すればよいことになる。</p>
 <p>darkroom-modeの in/out 設定は以下のようになった。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf darkroom
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind (<span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#f92672">.</span> my:darkroom-in)
-  :config
-  (bind-key <span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#e6db74">&#39;my:darkroom-out</span> darkroom-mode-map)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">darkroom</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-in</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#c41a16">&#39;my:darkroom-out</span> <span style="color:#000">darkroom-mode-map</span>)
 
-  (defun my:darkroom-in ()
-	(interactive)
-	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
-	(setq line-spacing <span style="color:#ae81ff">0.4</span>)
-	(darkroom-tentative-mode <span style="color:#ae81ff">1</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-in</span> ()
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#a90d91">setq</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">1</span>))
 
 
-  (defun my:darkroom-out ()
-	(interactive)
-	(darkroom-tentative-mode <span style="color:#ae81ff">0</span>)
-	(setq line-spacing <span style="color:#ae81ff">0.1</span>)
-	(display-line-numbers-mode <span style="color:#ae81ff">1</span>)
-	(my:close-current-buffer)
-	(my:open-last-closed)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-out</span> ()
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#a90d91">setq</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.1</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">my:close-current-buffer</span>)
+	(<span style="color:#000">my:open-last-closed</span>)))
 </code></pre></div><p>つまり、darkroom-outのとき、一度 bufferを閉じて（kill-buffer）、再度読み込むという処理をしているわけである。</p>
 
       </div>

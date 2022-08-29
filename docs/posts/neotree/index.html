@@ -164,38 +164,38 @@
 </ol>
 <p><img src="https://live.staticflickr.com/65535/48385436792_f843793b6e_b.jpg" alt="NeoTree"></p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package neotree
-  :commands (neo-smart-open neo-create-file-auto-open)
-  :init
-  (setq-default neo-keymap-style <span style="color:#e6db74">&#39;concise</span>)
-  :config
-  (setq neo-smart-open <span style="color:#66d9ef">t</span>)
-  (setq neo-create-file-auto-open <span style="color:#66d9ef">t</span>)
-  (setq neo-theme (if (display-graphic-p) <span style="color:#e6db74">&#39;icons</span> <span style="color:#e6db74">&#39;arrow</span>))
-  (bind-key [f8] <span style="color:#e6db74">&#39;neotree-projectile-toggle</span>)
-  (bind-key <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;neotree-hidden-file-toggle</span> neotree-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;neotree-select-up-node</span> neotree-mode-map))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">use-package</span> <span style="color:#000">neotree</span>
+  <span style="color:#a90d91">:commands</span> (<span style="color:#000">neo-smart-open</span> <span style="color:#000">neo-create-file-auto-open</span>)
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">setq-default</span> <span style="color:#000">neo-keymap-style</span> <span style="color:#c41a16">&#39;concise</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">neo-smart-open</span> <span style="color:#000">t</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">t</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">neo-theme</span> (<span style="color:#a90d91">if</span> (<span style="color:#000">display-graphic-p</span>) <span style="color:#c41a16">&#39;icons</span> <span style="color:#c41a16">&#39;arrow</span>))
+  (<span style="color:#000">bind-key</span> [<span style="color:#000">f8</span>] <span style="color:#c41a16">&#39;neotree-projectile-toggle</span>)
+  (<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#c41a16">&#39;neotree-hidden-file-toggle</span> <span style="color:#000">neotree-mode-map</span>)
+  (<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#c41a16">&#39;neotree-select-up-node</span> <span style="color:#000">neotree-mode-map</span>))
 
 
-<span style="color:#75715e">;; Change neotree&#39;s font size</span>
-<span style="color:#75715e">;; from https://github.com/jaypei/emacs-neotree/issues/218(setq-default neo-show-hidden-files t)</span>
-(defun neotree-text-scale ()
-  <span style="color:#e6db74">&#34;Text scale for neotree.&#34;</span>
-  (interactive)
-  (text-scale-adjust <span style="color:#ae81ff">0</span>)
-  (text-scale-decrease <span style="color:#ae81ff">1</span>)
-  (<span style="color:#a6e22e">message</span> <span style="color:#66d9ef">nil</span>))
-(add-hook <span style="color:#e6db74">&#39;neo-after-create-hook</span>
-	  (lambda (_)
-	    (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;neotree-text-scale</span>)))
+<span style="color:#177500">;; Change neotree&#39;s font size</span>
+<span style="color:#177500">;; from https://github.com/jaypei/emacs-neotree/issues/218(setq-default neo-show-hidden-files t)</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-text-scale</span> ()
+  <span style="color:#c41a16">&#34;Text scale for neotree.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">text-scale-adjust</span> <span style="color:#1c01ce">0</span>)
+  (<span style="color:#000">text-scale-decrease</span> <span style="color:#1c01ce">1</span>)
+  (<span style="color:#000">message</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;neo-after-create-hook</span>
+	  (<span style="color:#a90d91">lambda</span> (<span style="color:#000">_</span>)
+	    (<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;neotree-text-scale</span>)))
 
 
-<span style="color:#75715e">;; Hide neotree window after open file</span>
-<span style="color:#75715e">;; from https://github.com/jaypei/emacs-neotree/issues/77</span>
-(add-hook <span style="color:#e6db74">&#39;neo-enter-hook</span>
-          (lambda (type &amp; rest)
-           (if (<span style="color:#a6e22e">equal</span> type <span style="color:#e6db74">&#39;file</span>)
-               (neotree-hide))))
+<span style="color:#177500">;; Hide neotree window after open file</span>
+<span style="color:#177500">;; from https://github.com/jaypei/emacs-neotree/issues/77</span>
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;neo-enter-hook</span>
+          (<span style="color:#a90d91">lambda</span> (<span style="color:#000">type</span> <span style="color:#000">&amp;</span> <span style="color:#000">rest</span>)
+           (<span style="color:#a90d91">if</span> (<span style="color:#000">equal</span> <span style="color:#000">type</span> <span style="color:#c41a16">&#39;file</span>)
+               (<span style="color:#000">neotree-hide</span>))))
 
 </code></pre></div>
       </div>

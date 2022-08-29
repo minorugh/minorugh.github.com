@@ -160,19 +160,19 @@
 <p>Linux環境でダウンロードして解凍するというプロセスによってそうなるのかどうかは解明できていませんが、これを LFに変えてやることで問題なくスクリプトが動作しました。</p>
 <p>いつも何も考えずにアップレードして「あれ！」となるのでしっかり備忘録に記しておこうと考えた次第。そういえば、Mac環境のときもそうだった気がする。UNIX系の症状かも知れないのでもう少しググって調べてみよう…</p>
 <p>たくさんファイルがある時は、いちいち Terminalを開くのは面倒なので Emacsでやっている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (defun convert-encode-to-utf8 ()
-	<span style="color:#e6db74">&#34;Convert character code of the file to utf-8.&#34;</span>
-	(interactive)
-	(let ((file (<span style="color:#a6e22e">buffer-file-name</span>)))
-	  (if (not (use-region-p))
-		  (compile (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;nkf -w -Lu --overwrite &#34;</span> file)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (<span style="color:#a90d91">defun</span> <span style="color:#000">convert-encode-to-utf8</span> ()
+	<span style="color:#c41a16">&#34;Convert character code of the file to utf-8.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">buffer-file-name</span>)))
+	  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+		  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;nkf -w -Lu --overwrite &#34;</span> <span style="color:#000">file</span>)))))
 
-  (defun convert-encode-to-sjis ()
-	<span style="color:#e6db74">&#34;Convert character code of the file to utf-8.&#34;</span>
-	(interactive)
-	(let ((file (<span style="color:#a6e22e">buffer-file-name</span>)))
-	  (if (not (use-region-p))
-		  (compile (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;nkf -s -Lu --overwrite &#34;</span> file)))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">convert-encode-to-sjis</span> ()
+	<span style="color:#c41a16">&#34;Convert character code of the file to utf-8.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">buffer-file-name</span>)))
+	  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+		  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;nkf -s -Lu --overwrite &#34;</span> <span style="color:#000">file</span>)))))
 </code></pre></div>
       </div>
     </article>

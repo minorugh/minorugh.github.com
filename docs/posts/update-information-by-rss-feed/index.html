@@ -164,43 +164,43 @@
 <p>基本的には参考サイトのSampleどおり。ブログ記事更新後１週間はNew表示させるようにModifyしてみました。</p>
 <p>投稿日の表示には、date(&ldquo;Y.n.j&rdquo;, strtotime($entry-&gt;pubDate)) を使いました。n：1~12 / j：1~31 表示になることも初めて知りました。
 ただ１週間を判定するための比較演算式ではうまく機能しませんでしたので、そこだけは、date(&ldquo;Y/m/d&rdquo;) に変更しました。m：01~12 / d：01~31</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y/m/d&#34;</span>, <span style="color:#a6e22e">strtotime</span>($entry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pubDate</span>)) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#39;Y/m/d&#39;</span>, <span style="color:#a6e22e">strtotime</span>(<span style="color:#e6db74">&#39;- 7 day&#39;</span>))) {<span style="color:#a6e22e">…</span>} <span style="color:#66d9ef">else</span> {<span style="color:#a6e22e">…</span>}
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a90d91">if</span> (<span style="color:#000">date</span>(<span style="color:#c41a16">&#34;Y/m/d&#34;</span>, <span style="color:#000">strtotime</span>(<span style="color:#000">$entry</span><span style="color:#000">-&gt;</span><span style="color:#836c28">pubDate</span>)) <span style="color:#000">&gt;=</span> <span style="color:#000">date</span>(<span style="color:#c41a16">&#39;Y/m/d&#39;</span>, <span style="color:#000">strtotime</span>(<span style="color:#c41a16">&#39;- 7 day&#39;</span>))) {<span style="color:#000">…</span>} <span style="color:#a90d91">else</span> {<span style="color:#000">…</span>}
 </code></pre></div><h2 id="完成したスクリプト">完成したスクリプト</h2>
 <p>まだまだ素人臭いスクリプトで恥ずかしいけど出来上がったのは以下の通り。一応目的どおりには動きます。</p>
 <h5 id="rss-update-infophp">rss-update-info.php</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000">&lt;?</span><span style="color:#000">php</span>
 
-$rssdata <span style="color:#f92672">=</span> <span style="color:#a6e22e">simplexml_load_file</span>(<span style="color:#e6db74">&#34;https://blog.wegh.net/index.xml&#34;</span>);
+<span style="color:#000">$rssdata</span> <span style="color:#000">=</span> <span style="color:#000">simplexml_load_file</span>(<span style="color:#c41a16">&#34;https://blog.wegh.net/index.xml&#34;</span>);
 
-<span style="color:#75715e">// 読み込み件数を決定する
-</span><span style="color:#75715e"></span>$num_of_data <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#177500">// 読み込み件数を決定する
+</span><span style="color:#177500"></span><span style="color:#000">$num_of_data</span> <span style="color:#000">=</span> <span style="color:#1c01ce">5</span>;
 
-<span style="color:#75715e">//出力内容の初期化
-</span><span style="color:#75715e"></span>$outdata <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+<span style="color:#177500">//出力内容の初期化
+</span><span style="color:#177500"></span><span style="color:#000">$outdata</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;&#34;</span>;
 
-<span style="color:#75715e">//設定した読み込み件数分だけ取得を繰り返す
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> ($i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; $i<span style="color:#f92672">&lt;</span>$num_of_data; $i<span style="color:#f92672">++</span>){
-    $entry <span style="color:#f92672">=</span> $rssdata<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">channel</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">item</span>[$i]; <span style="color:#75715e">//記事1個取得
-</span><span style="color:#75715e"></span>    $date <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y.n.j&#34;</span>, <span style="color:#a6e22e">strtotime</span>($entry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pubDate</span>));
-    $title <span style="color:#f92672">=</span> $entry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span>; <span style="color:#75715e">//タイトル取得
-</span><span style="color:#75715e"></span>    $link <span style="color:#f92672">=</span> $entry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">link</span>; <span style="color:#75715e">//リンクURL取得
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//出力内容（リンクとタイトル）を生成する
-</span><span style="color:#75715e"></span>    $outdata <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;span style=&#34;line-height:1.5;font-size:110%;&#34;&gt;&lt;a
-</span><span style="color:#e6db74">target=&#34;_blank&#34; style=&#34;color:#24890d;text-decoration:none;&#34; href=&#34;&#39;</span> <span style="color:#f92672">.</span> $link <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> $title <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39; &#39;</span>;
-    <span style="color:#75715e">//出力内容に投稿日を加える（7日間はNew表示）
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#34;Y/m/d&#34;</span>, <span style="color:#a6e22e">strtotime</span>($entry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pubDate</span>)) <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#39;Y/m/d&#39;</span>, <span style="color:#a6e22e">strtotime</span>(<span style="color:#e6db74">&#39;- 7 day&#39;</span>)))
+<span style="color:#177500">//設定した読み込み件数分だけ取得を繰り返す
+</span><span style="color:#177500"></span><span style="color:#a90d91">for</span> (<span style="color:#000">$i</span><span style="color:#000">=</span><span style="color:#1c01ce">0</span>; <span style="color:#000">$i</span><span style="color:#000">&lt;</span><span style="color:#000">$num_of_data</span>; <span style="color:#000">$i</span><span style="color:#000">++</span>){
+    <span style="color:#000">$entry</span> <span style="color:#000">=</span> <span style="color:#000">$rssdata</span><span style="color:#000">-&gt;</span><span style="color:#836c28">channel</span><span style="color:#000">-&gt;</span><span style="color:#836c28">item</span>[<span style="color:#000">$i</span>]; <span style="color:#177500">//記事1個取得
+</span><span style="color:#177500"></span>    <span style="color:#000">$date</span> <span style="color:#000">=</span> <span style="color:#000">date</span>(<span style="color:#c41a16">&#34;Y.n.j&#34;</span>, <span style="color:#000">strtotime</span>(<span style="color:#000">$entry</span><span style="color:#000">-&gt;</span><span style="color:#836c28">pubDate</span>));
+    <span style="color:#000">$title</span> <span style="color:#000">=</span> <span style="color:#000">$entry</span><span style="color:#000">-&gt;</span><span style="color:#836c28">title</span>; <span style="color:#177500">//タイトル取得
+</span><span style="color:#177500"></span>    <span style="color:#000">$link</span> <span style="color:#000">=</span> <span style="color:#000">$entry</span><span style="color:#000">-&gt;</span><span style="color:#836c28">link</span>; <span style="color:#177500">//リンクURL取得
+</span><span style="color:#177500"></span>
+    <span style="color:#177500">//出力内容（リンクとタイトル）を生成する
+</span><span style="color:#177500"></span>    <span style="color:#000">$outdata</span> <span style="color:#000">.=</span> <span style="color:#c41a16">&#39;&lt;span style=&#34;line-height:1.5;font-size:110%;&#34;&gt;&lt;a
+</span><span style="color:#c41a16">target=&#34;_blank&#34; style=&#34;color:#24890d;text-decoration:none;&#34; href=&#34;&#39;</span> <span style="color:#000">.</span> <span style="color:#000">$link</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;&#34;&gt;&#39;</span> <span style="color:#000">.</span> <span style="color:#000">$title</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39; &#39;</span>;
+    <span style="color:#177500">//出力内容に投稿日を加える（7日間はNew表示）
+</span><span style="color:#177500"></span>    <span style="color:#a90d91">if</span> (<span style="color:#000">date</span>(<span style="color:#c41a16">&#34;Y/m/d&#34;</span>, <span style="color:#000">strtotime</span>(<span style="color:#000">$entry</span><span style="color:#000">-&gt;</span><span style="color:#836c28">pubDate</span>)) <span style="color:#000">&gt;=</span> <span style="color:#000">date</span>(<span style="color:#c41a16">&#39;Y/m/d&#39;</span>, <span style="color:#000">strtotime</span>(<span style="color:#c41a16">&#39;- 7 day&#39;</span>)))
     {
-        $outdata <span style="color:#f92672">.=</span> $date <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/a&gt; &lt;img src=&#34;./images/new.gif&#34;&gt;&lt;/span&gt;&lt;br&gt;&#39;</span>;
-    } <span style="color:#66d9ef">else</span> {
-        $outdata <span style="color:#f92672">.=</span> $date <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&#39;</span>;
+        <span style="color:#000">$outdata</span> <span style="color:#000">.=</span> <span style="color:#000">$date</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;&lt;/a&gt; &lt;img src=&#34;./images/new.gif&#34;&gt;&lt;/span&gt;&lt;br&gt;&#39;</span>;
+    } <span style="color:#a90d91">else</span> {
+        <span style="color:#000">$outdata</span> <span style="color:#000">.=</span> <span style="color:#000">$date</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&#39;</span>;
     }
 }
 
-<span style="color:#75715e">//実行結果を出力する
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;p&gt;&#39;</span> <span style="color:#f92672">.</span> $outdata <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/p&gt;&#39;</span>;
+<span style="color:#177500">//実行結果を出力する
+</span><span style="color:#177500"></span><span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#39;&lt;p&gt;&#39;</span> <span style="color:#000">.</span> <span style="color:#000">$outdata</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;&lt;/p&gt;&#39;</span>;
 
-<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+<span style="color:#633820">?&gt;</span><span style="color:#000">
 </span></code></pre></div><h2 id="screenshots">Screenshots</h2>
 <p>ホームページに表示させたスクリーンショット（Gospel-Haiku Blog の部分）</p>
 <p><img src="https://c1.staticflickr.com/5/4813/46393542371_325785568f_b.jpg" alt="Alt Text"></p>

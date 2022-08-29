@@ -165,23 +165,23 @@
 <li><a href="https://blog.shibayu36.org/entry/2013/02/12/191459">https://blog.shibayu36.org/entry/2013/02/12/191459</a></li>
 </ul>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; direx</span>
-(use-package direx)
-(setq direx:leaf-icon <span style="color:#e6db74">&#34;  &#34;</span> direx:open-icon <span style="color:#e6db74">&#34;📂&#34;</span> direx:closed-icon <span style="color:#e6db74">&#34;📁&#34;</span>)
-(push <span style="color:#f92672">&#39;</span>(direx:direx-mode :position left :width <span style="color:#ae81ff">35</span> :dedicated <span style="color:#66d9ef">t</span>)
-      popwin:special-display-config)
-<span style="color:#75715e">;; use direx-project.el</span>
-<span style="color:#75715e">;; https://blog.shibayu36.org/entry/2013/02/12/191459</span>
-(bind-key
- [f11]
- (defun direx:jump-to-project-directory ()
-   <span style="color:#e6db74">&#34;If in project, launch direx-project otherwise start direx.&#34;</span>
-  (interactive)
-  (let ((result (ignore-errors
-                  (direx-project:jump-to-project-root-other-window)
-                  <span style="color:#66d9ef">t</span>)))
-    (unless result
-      (direx:jump-to-directory-other-window)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; direx</span>
+(<span style="color:#a90d91">use-package</span> <span style="color:#000">direx</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">direx:leaf-icon</span> <span style="color:#c41a16">&#34;  &#34;</span> <span style="color:#000">direx:open-icon</span> <span style="color:#c41a16">&#34;📂&#34;</span> <span style="color:#000">direx:closed-icon</span> <span style="color:#c41a16">&#34;📁&#34;</span>)
+(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">direx:direx-mode</span> <span style="color:#a90d91">:position</span> <span style="color:#000">left</span> <span style="color:#a90d91">:width</span> <span style="color:#1c01ce">35</span> <span style="color:#a90d91">:dedicated</span> <span style="color:#000">t</span>)
+      <span style="color:#000">popwin:special-display-config</span>)
+<span style="color:#177500">;; use direx-project.el</span>
+<span style="color:#177500">;; https://blog.shibayu36.org/entry/2013/02/12/191459</span>
+(<span style="color:#000">bind-key</span>
+ [<span style="color:#000">f11</span>]
+ (<span style="color:#a90d91">defun</span> <span style="color:#000">direx:jump-to-project-directory</span> ()
+   <span style="color:#c41a16">&#34;If in project, launch direx-project otherwise start direx.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">result</span> (<span style="color:#a90d91">ignore-errors</span>
+                  (<span style="color:#000">direx-project:jump-to-project-root-other-window</span>)
+                  <span style="color:#000">t</span>)))
+    (<span style="color:#a90d91">unless</span> <span style="color:#000">result</span>
+      (<span style="color:#000">direx:jump-to-directory-other-window</span>)))))
 </code></pre></div>
       </div>
     </article>

@@ -164,10 +164,10 @@
 <li>apt-getでのパッケージインストールはまだ出来ないのでソースをダウンロードしてビルドします。</li>
 <li>ソースがすぐに見つからず探すのに苦労したがようやく下記にありました。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget https://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1-rc1.tar.xz
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget https://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1-rc1.tar.xz
 $ unar emacs-26.1-rc1.tar.xz
-$ cd emacs-26.1
-$ ./configure --with-x-toolkit<span style="color:#f92672">=</span>gtk3 --with-sound<span style="color:#f92672">=</span>no --with-x
+$ <span style="color:#a90d91">cd</span> emacs-26.1
+$ ./configure --with-x-toolkit<span style="color:#000">=</span>gtk3 --with-sound<span style="color:#000">=</span>no --with-x
 $ make
 $ sudo make install
 $ sudo reboot 

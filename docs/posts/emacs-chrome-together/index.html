@@ -167,104 +167,104 @@
 <h3 id="i-classfa-fa-searchi-色々web検索するための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> 色々WEB検索するための設定</h3>
 <p>Melpaから <a href="https://github.com/tomoya/search-web.el">search-web</a> というPackageをインストールします。このパッケージは、<a href="URL">google-this</a>と同じコンセプトで、regionやカーソルのある部分の単語など空気を読んで検索してくれます。</p>
 <p>各検索サイトがどのような引数で修理しているかさえ解れば自由にカスタマイズして応用できます。WEBページからkeywordを入力して検索するとその結果がURLボックスに表示されます。表示されたURLから引数を分析すればいいのです。私の場合、俳句でよく使う 古語検索/類語検索/季語検索などを登録しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package search-web)
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;weblio&#34;</span> <span style="color:#e6db74">&#34;http://weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;kobun&#34;</span> <span style="color:#e6db74">&#34;http://kobun.weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;ruigo&#34;</span> <span style="color:#e6db74">&#34;http://thesaurus.weblio.jp/content/%s&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;kigo&#34;</span> <span style="color:#e6db74">&#34;http://www.mysai.net/cgi-bin/kigo_search.cgi?txtKigo=%s&amp;rdoSelect=1&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;github&#34;</span> <span style="color:#e6db74">&#34;https://github.com/search?utf8=✓&amp;q=%s&amp;ref=simplesearch&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;qitta&#34;</span> <span style="color:#e6db74">&#34;https://qiita.com/search?q=%s&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#e6db74">&#34;https://postcode.goo.ne.jp/search/q/%s/&#34;</span> <span style="color:#66d9ef">nil</span>))
-(add-to-list <span style="color:#e6db74">&#39;search-web-engines</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;earth&#34;</span> <span style="color:#e6db74">&#34;https://earth.google.com/web/search/%s/&#34;</span> <span style="color:#66d9ef">nil</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">use-package</span> <span style="color:#000">search-web</span>)
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;weblio&#34;</span> <span style="color:#c41a16">&#34;http://weblio.jp/content/%s&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;kobun&#34;</span> <span style="color:#c41a16">&#34;http://kobun.weblio.jp/content/%s&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;ruigo&#34;</span> <span style="color:#c41a16">&#34;http://thesaurus.weblio.jp/content/%s&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;kigo&#34;</span> <span style="color:#c41a16">&#34;http://www.mysai.net/cgi-bin/kigo_search.cgi?txtKigo=%s&amp;rdoSelect=1&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;github&#34;</span> <span style="color:#c41a16">&#34;https://github.com/search?utf8=✓&amp;q=%s&amp;ref=simplesearch&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;qitta&#34;</span> <span style="color:#c41a16">&#34;https://qiita.com/search?q=%s&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;post&#34;</span> <span style="color:#c41a16">&#34;https://postcode.goo.ne.jp/search/q/%s/&#34;</span> <span style="color:#000">nil</span>))
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;search-web-engines</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;earth&#34;</span> <span style="color:#c41a16">&#34;https://earth.google.com/web/search/%s/&#34;</span> <span style="color:#000">nil</span>))
 
-(bind-key
- <span style="color:#e6db74">&#34;s-s&#34;</span>
- (defhydra hydra-search-web (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
-   <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">[Search]  _a_:Amazon  _g_:Google  _m_:Maps  _e_:Earth  _h_:GitHub  _q_:Qitta  _w_:Weblio  _p_:Post  _b_:古文  _r_:類語&#34;</span>
-  (<span style="color:#e6db74">&#34;a&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;amazon jp&#34;</span>))
-  (<span style="color:#e6db74">&#34;e&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;earth&#34;</span>))
-  (<span style="color:#e6db74">&#34;g&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;google&#34;</span>))
-  (<span style="color:#e6db74">&#34;m&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;google maps&#34;</span>))
-  (<span style="color:#e6db74">&#34;h&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;github&#34;</span>))
-  (<span style="color:#e6db74">&#34;q&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;qitta&#34;</span>))
-  (<span style="color:#e6db74">&#34;w&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;weblio&#34;</span>))
-  (<span style="color:#e6db74">&#34;p&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;post&#34;</span>))
-  (<span style="color:#e6db74">&#34;k&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;kigo&#34;</span>))
-  (<span style="color:#e6db74">&#34;b&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;kobun&#34;</span>))
-  (<span style="color:#e6db74">&#34;r&#34;</span> (search-web-dwim <span style="color:#e6db74">&#34;ruigo&#34;</span>))))
+(<span style="color:#000">bind-key</span>
+ <span style="color:#c41a16">&#34;s-s&#34;</span>
+ (<span style="color:#000">defhydra</span> <span style="color:#000">hydra-search-web</span> (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">[Search]  _a_:Amazon  _g_:Google  _m_:Maps  _e_:Earth  _h_:GitHub  _q_:Qitta  _w_:Weblio  _p_:Post  _b_:古文  _r_:類語&#34;</span>
+  (<span style="color:#c41a16">&#34;a&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;amazon jp&#34;</span>))
+  (<span style="color:#c41a16">&#34;e&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;earth&#34;</span>))
+  (<span style="color:#c41a16">&#34;g&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;google&#34;</span>))
+  (<span style="color:#c41a16">&#34;m&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;google maps&#34;</span>))
+  (<span style="color:#c41a16">&#34;h&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;github&#34;</span>))
+  (<span style="color:#c41a16">&#34;q&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;qitta&#34;</span>))
+  (<span style="color:#c41a16">&#34;w&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;weblio&#34;</span>))
+  (<span style="color:#c41a16">&#34;p&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;post&#34;</span>))
+  (<span style="color:#c41a16">&#34;k&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;kigo&#34;</span>))
+  (<span style="color:#c41a16">&#34;b&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;kobun&#34;</span>))
+  (<span style="color:#c41a16">&#34;r&#34;</span> (<span style="color:#000">search-web-dwim</span> <span style="color:#c41a16">&#34;ruigo&#34;</span>))))
 </code></pre></div><h3 id="i-classfa-fa-bookmark-oi-お気に入りのページを開いたりアプリを起動させたりするための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> お気に入りのページを開いたりアプリを起動させたりするための設定</h3>
 <p>Melpaにあるpackage <a href="https://github.com/abo-abo/hydra">hydra</a> を使うことでお好みのミニバッファーメニューを構築できます。主にEmacsの編集をしているときに必要となるサイトを設定しておくと便利です。私の場合、Emacsから起動できたら便利かなと思うApplicationもいくつか設定しています。</p>
 <p><img src="https://c1.staticflickr.com/5/4915/44353090030_e646922131_b.jpg" alt="Alt Text"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(key-chord-define-global
- <span style="color:#e6db74">&#34;kl&#34;</span>
- (defhydra hydra-browse (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
-   <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74"> ^Shop^           ^SNS^           ^Repos^          ^GH^           ^Favorite^      ^Others^        ^Applications^
-</span><span style="color:#e6db74"> ^^^^^^------------------------------------------------------------------------------------------------
-</span><span style="color:#e6db74"> _a_: Amazon      _t_: Twitter    _g_: minorugh    _h_: HOME      _j_: Jorudan    _D_: Dropbox    _c_: Calendar
-</span><span style="color:#e6db74"> _r_: Rakuten     _u_: Youtube    _0_: my gist     _d_: d.kukai   _n_: News       _x_: Xserver    _l_: ForkLift
-</span><span style="color:#e6db74"> _y_: Yodobashi   _f_: Flickr     _1_: masasam     _m_: m.kukai   _w_: Weather    _q_: Qiita      _@_: AirMail
-</span><span style="color:#e6db74"> _k_: Kakaku      _e_: Evernote   _2_: gitbucket   _b_: BBS       _s_: SanyoBas   _p_: Pocket     _i_: iTerm
-</span><span style="color:#e6db74">&#34;</span>
-   (<span style="color:#e6db74">&#34;a&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.amazon.co.jp/&#34;</span>))
-   (<span style="color:#e6db74">&#34;r&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.rakuten.co.jp/&#34;</span>))
-   (<span style="color:#e6db74">&#34;y&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.yodobashi.com/&#34;</span>))
-   (<span style="color:#e6db74">&#34;k&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://kakaku.com/&#34;</span>))
-   (<span style="color:#e6db74">&#34;t&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://twitter.com&#34;</span>))
-   (<span style="color:#e6db74">&#34;u&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.youtube.com/channel/UCnwoipb9aTyORVKHeTw159A/videos&#34;</span>))
-   (<span style="color:#e6db74">&#34;f&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.flickr.com/photos/minorugh/&#34;</span>))
-   (<span style="color:#e6db74">&#34;e&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.evernote.com/client/web#?an=true&amp;n=02ab918a-18a7-472b-a166-835a922d3fad&amp;s=s278&amp;&#34;</span>))
-   (<span style="color:#e6db74">&#34;g&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://github.com/minorugh/emacs.d&#34;</span>))
-   (<span style="color:#e6db74">&#34;0&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://gist.github.com/minorugh&#34;</span>))
-   (<span style="color:#e6db74">&#34;1&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://github.com/masasam/dotfiles/tree/master/.emacs.d&#34;</span>))
-   (<span style="color:#e6db74">&#34;2&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://localhost:8080/minoru&#34;</span>))
-   (<span style="color:#e6db74">&#34;h&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/&#34;</span>))
-   (<span style="color:#e6db74">&#34;d&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/d_kukai/&#34;</span>))
-   (<span style="color:#e6db74">&#34;m&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/m_kukai/&#34;</span>))
-   (<span style="color:#e6db74">&#34;b&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://gospel-haiku.com/danwa/&#34;</span>))
-   (<span style="color:#e6db74">&#34;B&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://app.box.com/folder/0&#34;</span>))
-   (<span style="color:#e6db74">&#34;j&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.jorudan.co.jp/&#34;</span>))
-   (<span style="color:#e6db74">&#34;n&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://news.yahoo.co.jp/&#34;</span>))
-   (<span style="color:#e6db74">&#34;w&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://tenki.jp/week/6/31/&#34;</span>))
-   (<span style="color:#e6db74">&#34;s&#34;</span> (browse-url <span style="color:#e6db74">&#34;http://www.sanyo-bus.co.jp/pdf/180913.pdf&#34;</span>))
-   (<span style="color:#e6db74">&#34;x&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.xserver.ne.jp/login_server.php&#34;</span>))
-   (<span style="color:#e6db74">&#34;D&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://www.dropbox.com/home/emacs.d&#34;</span>))
-   (<span style="color:#e6db74">&#34;q&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://qiita.com/minoruGH&#34;</span>))
-   (<span style="color:#e6db74">&#34;v&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://drive.google.com/drive/u/0/my-drive&#34;</span>))
-   (<span style="color:#e6db74">&#34;P&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://photos.google.com/?pageId=none&#34;</span>))
-   (<span style="color:#e6db74">&#34;p&#34;</span> (browse-url <span style="color:#e6db74">&#34;https://getpocket.com/a/queue/list/&#34;</span>))
-   (<span style="color:#e6db74">&#34;.&#34;</span> hydra-dired/body)
-   (<span style="color:#e6db74">&#34;/&#34;</span> hydra-works/body)
-   (<span style="color:#e6db74">&#34;c&#34;</span> my/calendar-app)
-   (<span style="color:#e6db74">&#34;l&#34;</span> my/forklift-app)
-   (<span style="color:#e6db74">&#34;@&#34;</span> my/amail-app)
-   (<span style="color:#e6db74">&#34;i&#34;</span> my/iterm-app)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">key-chord-define-global</span>
+ <span style="color:#c41a16">&#34;kl&#34;</span>
+ (<span style="color:#000">defhydra</span> <span style="color:#000">hydra-browse</span> (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16"> ^Shop^           ^SNS^           ^Repos^          ^GH^           ^Favorite^      ^Others^        ^Applications^
+</span><span style="color:#c41a16"> ^^^^^^------------------------------------------------------------------------------------------------
+</span><span style="color:#c41a16"> _a_: Amazon      _t_: Twitter    _g_: minorugh    _h_: HOME      _j_: Jorudan    _D_: Dropbox    _c_: Calendar
+</span><span style="color:#c41a16"> _r_: Rakuten     _u_: Youtube    _0_: my gist     _d_: d.kukai   _n_: News       _x_: Xserver    _l_: ForkLift
+</span><span style="color:#c41a16"> _y_: Yodobashi   _f_: Flickr     _1_: masasam     _m_: m.kukai   _w_: Weather    _q_: Qiita      _@_: AirMail
+</span><span style="color:#c41a16"> _k_: Kakaku      _e_: Evernote   _2_: gitbucket   _b_: BBS       _s_: SanyoBas   _p_: Pocket     _i_: iTerm
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;a&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.amazon.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;r&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.rakuten.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;y&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.yodobashi.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;k&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://kakaku.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;t&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://twitter.com&#34;</span>))
+   (<span style="color:#c41a16">&#34;u&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.youtube.com/channel/UCnwoipb9aTyORVKHeTw159A/videos&#34;</span>))
+   (<span style="color:#c41a16">&#34;f&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.flickr.com/photos/minorugh/&#34;</span>))
+   (<span style="color:#c41a16">&#34;e&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.evernote.com/client/web#?an=true&amp;n=02ab918a-18a7-472b-a166-835a922d3fad&amp;s=s278&amp;&#34;</span>))
+   (<span style="color:#c41a16">&#34;g&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://github.com/minorugh/emacs.d&#34;</span>))
+   (<span style="color:#c41a16">&#34;0&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://gist.github.com/minorugh&#34;</span>))
+   (<span style="color:#c41a16">&#34;1&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://github.com/masasam/dotfiles/tree/master/.emacs.d&#34;</span>))
+   (<span style="color:#c41a16">&#34;2&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://localhost:8080/minoru&#34;</span>))
+   (<span style="color:#c41a16">&#34;h&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://gospel-haiku.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;d&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://gospel-haiku.com/d_kukai/&#34;</span>))
+   (<span style="color:#c41a16">&#34;m&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://gospel-haiku.com/m_kukai/&#34;</span>))
+   (<span style="color:#c41a16">&#34;b&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://gospel-haiku.com/danwa/&#34;</span>))
+   (<span style="color:#c41a16">&#34;B&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://app.box.com/folder/0&#34;</span>))
+   (<span style="color:#c41a16">&#34;j&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.jorudan.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;n&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://news.yahoo.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;w&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://tenki.jp/week/6/31/&#34;</span>))
+   (<span style="color:#c41a16">&#34;s&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://www.sanyo-bus.co.jp/pdf/180913.pdf&#34;</span>))
+   (<span style="color:#c41a16">&#34;x&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.xserver.ne.jp/login_server.php&#34;</span>))
+   (<span style="color:#c41a16">&#34;D&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.dropbox.com/home/emacs.d&#34;</span>))
+   (<span style="color:#c41a16">&#34;q&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://qiita.com/minoruGH&#34;</span>))
+   (<span style="color:#c41a16">&#34;v&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://drive.google.com/drive/u/0/my-drive&#34;</span>))
+   (<span style="color:#c41a16">&#34;P&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://photos.google.com/?pageId=none&#34;</span>))
+   (<span style="color:#c41a16">&#34;p&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://getpocket.com/a/queue/list/&#34;</span>))
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">hydra-dired/body</span>)
+   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">hydra-works/body</span>)
+   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my/calendar-app</span>)
+   (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">my/forklift-app</span>)
+   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">my/amail-app</span>)
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">my/iterm-app</span>)))
 
-<span style="color:#75715e">;; Launch for Mac applications</span>
-(defun my/calendar-app ()
-  <span style="color:#e6db74">&#34;Launch for calendar.app.&#34;</span>
-  (interactive)
-  (shell-command <span style="color:#e6db74">&#34;open -a calendar.app&#34;</span>))
-(defun my/forklift-app ()
-  <span style="color:#e6db74">&#34;Launch for forklift.app.&#34;</span>
-  (interactive)
-  (shell-command <span style="color:#e6db74">&#34;open -a forklift.app&#34;</span>))
-(defun my/amail-app ()
-  <span style="color:#e6db74">&#34;Launch for airmail3.app.&#34;</span>
-  (interactive)
-  (shell-command <span style="color:#e6db74">&#34;open -a &#39;airmail 3.app&#39;&#34;</span>))
-(defun my/iterm-app ()
-  <span style="color:#e6db74">&#34;Launch for iterm.app.&#34;</span>
-  (interactive)
-  (shell-command <span style="color:#e6db74">&#34;open -a iterm.app&#34;</span>))
+<span style="color:#177500">;; Launch for Mac applications</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/calendar-app</span> ()
+  <span style="color:#c41a16">&#34;Launch for calendar.app.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">shell-command</span> <span style="color:#c41a16">&#34;open -a calendar.app&#34;</span>))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/forklift-app</span> ()
+  <span style="color:#c41a16">&#34;Launch for forklift.app.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">shell-command</span> <span style="color:#c41a16">&#34;open -a forklift.app&#34;</span>))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/amail-app</span> ()
+  <span style="color:#c41a16">&#34;Launch for airmail3.app.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">shell-command</span> <span style="color:#c41a16">&#34;open -a &#39;airmail 3.app&#39;&#34;</span>))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/iterm-app</span> ()
+  <span style="color:#c41a16">&#34;Launch for iterm.app.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">shell-command</span> <span style="color:#c41a16">&#34;open -a iterm.app&#34;</span>))
 </code></pre></div><h3 id="i-classfa-fa-editi-chromeのテキストエリアをemacsでリアルタイム編集するための設定"><!-- raw HTML omitted --><!-- raw HTML omitted --> ChromeのテキストエリアをEmacsでリアルタイム編集するための設定</h3>
 <p>Google Chromeに拡張機能
 <a href="https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc">Atomic Chrome</a>
 をインストールします。つづいて、EmacsにMelpaから<a href="https://github.com/alpha22jp/atomic-chrome">atmic-chrome.el</a>をパッケージインストールしてinit.elに下記の設定を追加します。私の場合、markdownでも書けるように設定しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; atomic-chrome</span>
-(atomic-chrome-start-server)
-(setq atomic-chrome-default-major-mode <span style="color:#e6db74">&#39;markdown-mode</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; atomic-chrome</span>
+(<span style="color:#000">atomic-chrome-start-server</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">atomic-chrome-default-major-mode</span> <span style="color:#c41a16">&#39;markdown-mode</span>)
 </code></pre></div><p><img src="https://c1.staticflickr.com/5/4823/31230493847_0856377333_b.jpg" alt="Alt Text"></p>
 <h2 id="chromeからemacsへ色々captureする">ChromeからEmacsへ色々Captureする</h2>
 <p>Chromeに拡張機能 <a href="https://chrome.google.com/webstore/detail/org-capture/kkkjlfejijcjgjllecmnejhogpbcigdc">Org Capture</a>
@@ -279,91 +279,91 @@
 <p><img src="https://c1.staticflickr.com/5/4911/44354397670_5d66b85f8c_b.jpg" alt="Alt Text"></p>
 <p>Captureされたリンクにカーソルを置いて、&ldquo;C-c o&rdquo; でプラウザを開くことができます。</p>
 <p>org-modeの設定は、『<a href="https://solist.work/blog/posts/information-organizize-method/">効率よくプログラミングを覚えるためにしていること</a> 』の記事で紹介されているものをベースにして、orgファイルを閲覧するためのミニバッファーメニューを <a href="https://github.com/abo-abo/hydra">hydra</a>で設定しました。viewモードで開くほうがキー操作が楽ですし、Tabキーでの折り畳み操作に便利なようにカーソルをバッファーの先頭行へ移動させています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package org)
-(setq org-log-done <span style="color:#e6db74">&#39;time</span>)
-(setq org-use-speed-commands <span style="color:#66d9ef">t</span>)
-(setq org-src-fontify-natively <span style="color:#66d9ef">t</span>)
-(setq org-agenda-files <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/Dropbox/org/&#34;</span>))
-(setq calendar-holidays <span style="color:#66d9ef">nil</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">use-package</span> <span style="color:#000">org</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-log-done</span> <span style="color:#c41a16">&#39;time</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-use-speed-commands</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-src-fontify-natively</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-agenda-files</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;~/Dropbox/org/&#34;</span>))
+(<span style="color:#a90d91">setq</span> <span style="color:#000">calendar-holidays</span> <span style="color:#000">nil</span>)
 
-(bind-key <span style="color:#e6db74">&#34;C-c a&#34;</span> <span style="color:#e6db74">&#39;org-agenda</span>)
-(bind-key <span style="color:#e6db74">&#34;C-c c&#34;</span> <span style="color:#e6db74">&#39;org-capture</span>)
-(bind-key <span style="color:#e6db74">&#34;C-c o&#34;</span> <span style="color:#e6db74">&#39;org-open-at-point</span>) <span style="color:#75715e">;; Open link</span>
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-c a&#34;</span> <span style="color:#c41a16">&#39;org-agenda</span>)
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-c c&#34;</span> <span style="color:#c41a16">&#39;org-capture</span>)
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-c o&#34;</span> <span style="color:#c41a16">&#39;org-open-at-point</span>) <span style="color:#177500">;; Open link</span>
 
-(setq org-capture-templates
-      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#34;Code capture with Chrome&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/code.org&#34;</span> <span style="color:#e6db74">&#34;Code&#34;</span>)
-	 <span style="color:#e6db74">&#34;* %^{Title} \nSOURCE: %:link\nCAPTURED: %U\n\n #+BEGIN_QUOTE emacs-lisp\n%i\n#+END_QUOTE\n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
-	(<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#e6db74">&#34;Link capture with Chrome&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/links.org&#34;</span> <span style="color:#e6db74">&#34;Links&#34;</span>)
-         <span style="color:#e6db74">&#34;* [[%:link][%:description]] \nCAPTURED: %U\nREMARKS: %?&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
-	(<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#e6db74">&#34;Memo&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span> <span style="color:#e6db74">&#34;Memo&#34;</span>)
-	 <span style="color:#e6db74">&#34;* %? %U&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
-	(<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#34;Remember&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span> <span style="color:#e6db74">&#34;Remember&#34;</span>)
-	 <span style="color:#e6db74">&#34;* %? %i&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
-	(<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#34;Task&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#e6db74">&#34;Task&#34;</span>)
-	 <span style="color:#e6db74">&#34;** TODO %? \n   SCHEDULED: %^t \n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
-	(<span style="color:#e6db74">&#34;f&#34;</span> <span style="color:#e6db74">&#34;Future Task&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/task_future.org&#34;</span> <span style="color:#e6db74">&#34;Future&#34;</span>)
-	 <span style="color:#e6db74">&#34;** TODO %? \n&#34;</span> :prepend <span style="color:#66d9ef">t</span>)))
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-capture-templates</span>
+      <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#c41a16">&#34;Code capture with Chrome&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/code.org&#34;</span> <span style="color:#c41a16">&#34;Code&#34;</span>)
+	 <span style="color:#c41a16">&#34;* %^{Title} \nSOURCE: %:link\nCAPTURED: %U\n\n #+BEGIN_QUOTE emacs-lisp\n%i\n#+END_QUOTE\n&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
+	(<span style="color:#c41a16">&#34;L&#34;</span> <span style="color:#c41a16">&#34;Link capture with Chrome&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/links.org&#34;</span> <span style="color:#c41a16">&#34;Links&#34;</span>)
+         <span style="color:#c41a16">&#34;* [[%:link][%:description]] \nCAPTURED: %U\nREMARKS: %?&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
+	(<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#c41a16">&#34;Memo&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/memo.org&#34;</span> <span style="color:#c41a16">&#34;Memo&#34;</span>)
+	 <span style="color:#c41a16">&#34;* %? %U&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
+	(<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#c41a16">&#34;Remember&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/remember.org&#34;</span> <span style="color:#c41a16">&#34;Remember&#34;</span>)
+	 <span style="color:#c41a16">&#34;* %? %i&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
+	(<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#c41a16">&#34;Task&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#c41a16">&#34;Task&#34;</span>)
+	 <span style="color:#c41a16">&#34;** TODO %? \n   SCHEDULED: %^t \n&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
+	(<span style="color:#c41a16">&#34;f&#34;</span> <span style="color:#c41a16">&#34;Future Task&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task_future.org&#34;</span> <span style="color:#c41a16">&#34;Future&#34;</span>)
+	 <span style="color:#c41a16">&#34;** TODO %? \n&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)))
 
-(setq org-refile-targets
-      (quote ((<span style="color:#e6db74">&#34;~/Dropbox/org/archives.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
-	      (<span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
-	      (<span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>)
-	      (<span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span> :level <span style="color:#f92672">.</span> <span style="color:#ae81ff">1</span>))))
+(<span style="color:#a90d91">setq</span> <span style="color:#000">org-refile-targets</span>
+      (<span style="color:#a90d91">quote</span> ((<span style="color:#c41a16">&#34;~/Dropbox/org/archives.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)
+	      (<span style="color:#c41a16">&#34;~/Dropbox/org/remember.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)
+	      (<span style="color:#c41a16">&#34;~/Dropbox/org/memo.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)
+	      (<span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>))))
 
 
-<span style="color:#75715e">;; Open GTD files with hydra</span>
-(bind-key
- <span style="color:#e6db74">&#34;C-;&#34;</span>
- (defhydra hydra-gtd (:hint <span style="color:#66d9ef">nil</span> :exit <span style="color:#66d9ef">t</span>)
-   <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">[GTD] _a_:Archives  _m_:Memo  _c_:Code  _l_:Links  _r_:Remember  _t_:Task  _f_:Future_Task&#34;</span>
-  (<span style="color:#e6db74">&#34;a&#34;</span> my/archives-org)
-  (<span style="color:#e6db74">&#34;m&#34;</span> my/memo-org)
-  (<span style="color:#e6db74">&#34;c&#34;</span> my/code-org)
-  (<span style="color:#e6db74">&#34;l&#34;</span> my/links-org)
-  (<span style="color:#e6db74">&#34;r&#34;</span> my/remember-org)
-  (<span style="color:#e6db74">&#34;t&#34;</span> my/task-org)
-  (<span style="color:#e6db74">&#34;f&#34;</span> my/future-org)
-  (<span style="color:#e6db74">&#34;.&#34;</span> hydra-dired/body)
-  (<span style="color:#e6db74">&#34;,&#34;</span> hydra-browse/body)
-  (<span style="color:#e6db74">&#34;q&#34;</span> keyboard-quit)))
+<span style="color:#177500">;; Open GTD files with hydra</span>
+(<span style="color:#000">bind-key</span>
+ <span style="color:#c41a16">&#34;C-;&#34;</span>
+ (<span style="color:#000">defhydra</span> <span style="color:#000">hydra-gtd</span> (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">[GTD] _a_:Archives  _m_:Memo  _c_:Code  _l_:Links  _r_:Remember  _t_:Task  _f_:Future_Task&#34;</span>
+  (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">my/archives-org</span>)
+  (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">my/memo-org</span>)
+  (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my/code-org</span>)
+  (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">my/links-org</span>)
+  (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">my/remember-org</span>)
+  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">my/task-org</span>)
+  (<span style="color:#c41a16">&#34;f&#34;</span> <span style="color:#000">my/future-org</span>)
+  (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">hydra-dired/body</span>)
+  (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">hydra-browse/body</span>)
+  (<span style="color:#c41a16">&#34;q&#34;</span> <span style="color:#000">keyboard-quit</span>)))
 
-<span style="color:#75715e">;; Open GTD files in view-mode</span>
-(defun my/archives-org ()
-  <span style="color:#e6db74">&#34;Open archives.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/archives.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/code-org ()
-  <span style="color:#e6db74">&#34;Open code.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/code.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/links-org ()
-  <span style="color:#e6db74">&#34;Open links.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/links.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/remember-org ()
-  <span style="color:#e6db74">&#34;Open remember.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/remember.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/memo-org ()
-  <span style="color:#e6db74">&#34;Open memo.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/memo.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/future-org ()
-  <span style="color:#e6db74">&#34;Open task_futurear.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/task_future.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
-(defun my/task-org ()
-  <span style="color:#e6db74">&#34;Open archives.org.&#34;</span>
-  (interactive)
-  (view-file <span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span>)
-  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-min</span>)))
+<span style="color:#177500">;; Open GTD files in view-mode</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/archives-org</span> ()
+  <span style="color:#c41a16">&#34;Open archives.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/archives.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/code-org</span> ()
+  <span style="color:#c41a16">&#34;Open code.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/code.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/links-org</span> ()
+  <span style="color:#c41a16">&#34;Open links.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/links.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/remember-org</span> ()
+  <span style="color:#c41a16">&#34;Open remember.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/remember.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/memo-org</span> ()
+  <span style="color:#c41a16">&#34;Open memo.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/memo.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/future-org</span> ()
+  <span style="color:#c41a16">&#34;Open task_futurear.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task_future.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my/task-org</span> ()
+  <span style="color:#c41a16">&#34;Open archives.org.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">view-file</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span>)
+  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
 </code></pre></div><h3 id="i-classfa-fa-bookmark-oi-ブックマークの管理について考えてみる"><!-- raw HTML omitted --><!-- raw HTML omitted --> ブックマークの管理について考えてみる</h3>
 <p>『<a href="https://solist.work/blog/posts/chrome/">Chromeのブックマークの整理法</a>』
 の記事がとても参考になりました。私の場合、次のような棲み分けをしています。</p>

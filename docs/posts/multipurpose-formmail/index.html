@@ -161,16 +161,16 @@ SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃さ�
         <p>読者からのFeedbackを受け付けるためにホームページ上のコンテンツごとにメールフォームを貼っていた。
 SPAM対策はしてあったがそれでもそれをくぐり抜けて攻撃されることが多くなったので、各ページにフォームを貼り付けるのはやめてCGIで表示させるようにした。</p>
 <h5 id="formcgi">form.cgi</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">#!/usr/bin/perl</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#177500">#!/usr/bin/perl</span>
 
-<span style="color:#66d9ef">use</span> Encode <span style="color:#e6db74">&#39;decode&#39;</span>;
-$subject <span style="color:#f92672">=</span> @ARGV[<span style="color:#ae81ff">0</span>];
+<span style="color:#a90d91">use</span> <span style="color:#000">Encode</span> <span style="color:#c41a16">&#39;decode&#39;</span>;
+<span style="color:#000">$subject</span> <span style="color:#000">=</span> <span style="color:#000">@ARGV</span>[<span style="color:#1c01ce">0</span>];
 
-<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Content-type: text/html; charset=utf-8\n\n&#34;</span>;
-<span style="color:#66d9ef">print</span><span style="color:#e6db74">&lt;&lt;&#34;</span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">&#34;;
-</span><span style="color:#e6db74">&lt;form method=&#34;post&#34; action=&#34;http://*******/send.cgi&#34; onsubmit=&#34;return sendmail(this);&#34;&gt;
-</span><span style="color:#e6db74">&lt;!--ここに$subjectに応じた画面表示用のfrom.htmlを書く --&gt;
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">EOF</span>
+<span style="color:#a90d91">print</span> <span style="color:#c41a16">&#34;Content-type: text/html; charset=utf-8\n\n&#34;</span>;
+<span style="color:#a90d91">print</span><span style="color:#c41a16">&lt;&lt;&#34;</span><span style="color:#c41a16">EOF</span><span style="color:#c41a16">&#34;;
+</span><span style="color:#c41a16">&lt;form method=&#34;post&#34; action=&#34;http://*******/send.cgi&#34; onsubmit=&#34;return sendmail(this);&#34;&gt;
+</span><span style="color:#c41a16">&lt;!--ここに$subjectに応じた画面表示用のfrom.htmlを書く --&gt;
+</span><span style="color:#c41a16"></span><span style="color:#c41a16">EOF</span>
 </code></pre></div><p><code>form.cgi?subject</code> で起動させると、引数（例えばコンテンツ名）の値が <code>@ARGV[0];</code> に保存される。
 私の例では、<code>$subject</code> がそれになる。</p>
 <p>form.cgiスクリプトの中で引数の値に応じて分岐させることで、引数に応じて全く異なる画面表示にすることも可能である。

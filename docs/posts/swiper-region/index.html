@@ -158,34 +158,34 @@
         <p>swiper/swiper-isearchをregion選択からも使えるようにするための設定。isearchではmigemoも使えるようにした。</p>
 <p><code>(with-eval-after-load 'ivy'</code> としているのは、<code>(use-package avy-migemo-e.g.swiper)</code>を遅延ロードさせてEmacsの起動時間を短縮するため。</p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun swiper-isearch-region ()
-  <span style="color:#e6db74">&#34;If region is selected </span><span style="color:#e6db74">`swiper-isearch&#39;</span><span style="color:#e6db74"> with the keyword selected in region.
-</span><span style="color:#e6db74">If the region isn&#39;t selected </span><span style="color:#e6db74">`swiper-isearch&#39;</span><span style="color:#e6db74">.&#34;</span>
-  (interactive)
-  (if (not (use-region-p))
-      (swiper-isearch-migemo)
-    (deactivate-mark)
-    (swiper-isearch (<span style="color:#a6e22e">buffer-substring-no-properties</span>
-		     (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">swiper-isearch-region</span> ()
+  <span style="color:#c41a16">&#34;If region is selected </span><span style="color:#c41a16">`swiper-isearch&#39;</span><span style="color:#c41a16"> with the keyword selected in region.
+</span><span style="color:#c41a16">If the region isn&#39;t selected </span><span style="color:#c41a16">`swiper-isearch&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+      (<span style="color:#000">swiper-isearch-migemo</span>)
+    (<span style="color:#000">deactivate-mark</span>)
+    (<span style="color:#000">swiper-isearch</span> (<span style="color:#000">buffer-substring-no-properties</span>
+		     (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))))
 
-(defun swiper-region ()
-  <span style="color:#e6db74">&#34;If region is selected </span><span style="color:#e6db74">`swiper&#39;</span><span style="color:#e6db74"> with the keyword selected in region.
-</span><span style="color:#e6db74">If the region isn&#39;t selected </span><span style="color:#e6db74">`swiper&#39;</span><span style="color:#e6db74">.&#34;</span>
-  (interactive)
-  (if (not (use-region-p))
-      (swiper)
-    (deactivate-mark)
-    (swiper (<span style="color:#a6e22e">buffer-substring-no-properties</span>
-	     (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>)))))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">swiper-region</span> ()
+  <span style="color:#c41a16">&#34;If region is selected </span><span style="color:#c41a16">`swiper&#39;</span><span style="color:#c41a16"> with the keyword selected in region.
+</span><span style="color:#c41a16">If the region isn&#39;t selected </span><span style="color:#c41a16">`swiper&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+      (<span style="color:#000">swiper</span>)
+    (<span style="color:#000">deactivate-mark</span>)
+    (<span style="color:#000">swiper</span> (<span style="color:#000">buffer-substring-no-properties</span>
+	     (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))))
 
-(with-eval-after-load <span style="color:#e6db74">&#39;ivy</span>
-  (use-package avy-migemo-e.g.swiper)
-  (defun swiper-isearch-migemo ()
-    <span style="color:#e6db74">&#34;Using migemo with </span><span style="color:#e6db74">`swiper-iserach&#39;</span><span style="color:#e6db74">.&#34;</span>
-    (interactive)
-    (avy-migemo-mode <span style="color:#ae81ff">1</span>)
-    (swiper-isearch)
-    (avy-migemo-mode <span style="color:#ae81ff">0</span>)))
+(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;ivy</span>
+  (<span style="color:#a90d91">use-package</span> <span style="color:#000">avy-migemo-e.g.swiper</span>)
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">swiper-isearch-migemo</span> ()
+    <span style="color:#c41a16">&#34;Using migemo with </span><span style="color:#c41a16">`swiper-iserach&#39;</span><span style="color:#c41a16">.&#34;</span>
+    (<span style="color:#a90d91">interactive</span>)
+    (<span style="color:#000">avy-migemo-mode</span> <span style="color:#1c01ce">1</span>)
+    (<span style="color:#000">swiper-isearch</span>)
+    (<span style="color:#000">avy-migemo-mode</span> <span style="color:#1c01ce">0</span>)))
 
 </code></pre></div><h2 id="avy-migemo-でエラー発生">avy-migemo でエラー発生</h2>
 <p>avy、swiper、counsel の最近の仕様変更により関数名などが変わったため現状ではエラーが出るようになった。その対応のために下記のPRが出されているがまだマージされていないようなので、自分で差し替えて使っている。</p>
