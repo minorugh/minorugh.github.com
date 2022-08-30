@@ -188,7 +188,7 @@
 <li>**【重要】BasicTeX には標準で日本語 pTeX / upTeX が入っていません。**これらを使えるようにするために collection-langjapanese を追加でインストールします。collection-langjapanese をインストールすれば，依存関係で collection-langcjk もインストールされます。</li>
 </ol>
 <p>上記ターミナル上での手順をまとめると以下のとおりです。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr update --self --all 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr update --self --all 
 sudo tlmgr paper a4 
 sudo tlmgr install collection-langjapanese
 </code></pre></div><h2 id="フォント関係の設定">フォント関係の設定</h2>
@@ -198,19 +198,19 @@ sudo tlmgr install collection-langjapanese
 </ul>
 <h3 id="tlcontrib-からの追加インストール">TLContrib からの追加インストール</h3>
 <p>続いて，TLContrib をレポジトリとして登録し，そこからmacOS／ヒラギノ関連のパッケージをダウンロードします。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr repository add http://contrib.texlive.info/current tlcontrib
-sudo tlmgr pinning add tlcontrib <span style="color:#c41a16">&#39;*&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo tlmgr repository add http://contrib.texlive.info/current tlcontrib
+sudo tlmgr pinning add tlcontrib <span style="color:#e6db74">&#39;*&#39;</span>
 sudo tlmgr install japanese-otf-nonfree japanese-otf-uptex-nonfree ptex-fontmaps-macos cjk-gs-integrate-macos
 </code></pre></div><h3 id="ヒラギノフォントの準備">ヒラギノフォントの準備</h3>
 <p>続いて，macOS に標準で用意されている美しいヒラギノフォントを TeX で使用するため，次の一連のコマンドを実行します。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cjk-gs-integrate --link-texmf --cleanup --force
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cjk-gs-integrate --link-texmf --cleanup --force
 sudo cjk-gs-integrate-macos --link-texmf --force
 sudo mktexlsr
 </code></pre></div><h3 id="ヒラギノフォントの埋め込み設定">ヒラギノフォントの埋め込み設定</h3>
 <p>ヒラギノフォントを埋め込んだPDFを作成するために、次のコマンドを実行します。
 私の場合はmacOS 10.13 High Sierra ですが、macOS のバージョンによって実行するコマンドが異なります。macOSの他のバージョンでの設定は、前述の参考サイトの記事を見てください。</p>
 <h5 id="macos-1013-high-sierra-の場合">macOS 10.13 High Sierra の場合</h5>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
 </code></pre></div><p>以上で，(u)pLaTeX + dvipdfmx によって，美しいヒラギノフォントを埋め込んだ和文PDFを作成できるようになりました。</p>
 <h2 id="自前のスタイルファイルの置き場所">自前のスタイルファイルの置き場所</h2>
 <p>私の場合、縦書き文書での利用が多く、バイブルとして下記の書を座右においています。</p>
@@ -223,40 +223,40 @@ sudo mktexlsr
 </ul>
 <h2 id="yatexの設定">YaTeXの設定</h2>
 <p>参考までに私の Emacs:YaTeXの設定を貼っておきます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#000">use-package</span> <span style="color:#000">yatex</span>)
-(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;auto-mode-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">yatex-mode</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#a6e22e">use-package</span> yatex)
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#f92672">.</span> yatex-mode))
 
-<span style="color:#177500">;; Script for opening PDF generated from dvi in ​​Preview.app</span>
-<span style="color:#177500">;; Create dvpd.sh as follows and place it in /usr/local/bin</span>
-<span style="color:#177500">;; | #!/bin/bash</span>
-<span style="color:#177500">;; | name=$1</span>
-<span style="color:#177500">;; | dvipdfmx $1 &amp;&amp; open -a Preview.app ${name%.*}.pdf</span>
+<span style="color:#75715e">;; Script for opening PDF generated from dvi in ​​Preview.app</span>
+<span style="color:#75715e">;; Create dvpd.sh as follows and place it in /usr/local/bin</span>
+<span style="color:#75715e">;; | #!/bin/bash</span>
+<span style="color:#75715e">;; | name=$1</span>
+<span style="color:#75715e">;; | dvipdfmx $1 &amp;&amp; open -a Preview.app ${name%.*}.pdf</span>
 
-(<span style="color:#a90d91">setq</span> <span style="color:#000">tex-command</span> <span style="color:#c41a16">&#34;platex&#34;</span>
-      <span style="color:#000">dviprint-command-format</span> <span style="color:#c41a16">&#34;dvpd.sh %s&#34;</span>
-      <span style="color:#000">YaTeX-kanji-code</span> <span style="color:#000">nil</span>
-      <span style="color:#000">YaTeX-latex-message-code</span> <span style="color:#c41a16">&#39;utf-8</span>
-      <span style="color:#000">Section-name</span> <span style="color:#c41a16">&#34;documentclass&#34;</span>
-      <span style="color:#000">makeindex-command</span> <span style="color:#c41a16">&#34;mendex&#34;</span>
-      <span style="color:#000">YaTeX-use-AMS-LaTeX</span> <span style="color:#000">t</span>
-      <span style="color:#000">YaTeX-use-LaTeX2e</span> <span style="color:#000">t</span>
-      <span style="color:#000">YaTeX-use-font-lock</span> <span style="color:#000">t</span>)
+(<span style="color:#66d9ef">setq</span> tex-command <span style="color:#e6db74">&#34;platex&#34;</span>
+      dviprint-command-format <span style="color:#e6db74">&#34;dvpd.sh %s&#34;</span>
+      YaTeX-kanji-code <span style="color:#66d9ef">nil</span>
+      YaTeX-latex-message-code <span style="color:#e6db74">&#39;utf-8</span>
+      Section-name <span style="color:#e6db74">&#34;documentclass&#34;</span>
+      makeindex-command <span style="color:#e6db74">&#34;mendex&#34;</span>
+      YaTeX-use-AMS-LaTeX <span style="color:#66d9ef">t</span>
+      YaTeX-use-LaTeX2e <span style="color:#66d9ef">t</span>
+      YaTeX-use-font-lock <span style="color:#66d9ef">t</span>)
 
-(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;yatex-mode-hook</span>
-   (<span style="color:#a90d91">lambda</span>()
-    (<span style="color:#000">use-package</span> <span style="color:#000">yatexprc</span>)
-    (<span style="color:#000">local-set-key</span> <span style="color:#000">[</span>(<span style="color:#000">M</span> <span style="color:#000">c</span>)<span style="color:#000">]</span> <span style="color:#c41a16">&#39;YaTeX-typeset-buffer</span>)   <span style="color:#177500">;; Type set</span>
-    (<span style="color:#000">local-set-key</span> <span style="color:#000">[</span>(<span style="color:#000">M</span> <span style="color:#000">l</span>)<span style="color:#000">]</span> <span style="color:#c41a16">&#39;YaTeX-lpr</span>)))            <span style="color:#177500">;; Open PDF file</span>
+(add-hook <span style="color:#e6db74">&#39;yatex-mode-hook</span>
+   (lambda()
+    (<span style="color:#a6e22e">use-package</span> yatexprc)
+    (local-set-key [(M c)] <span style="color:#e6db74">&#39;YaTeX-typeset-buffer</span>)   <span style="color:#75715e">;; Type set</span>
+    (local-set-key [(M l)] <span style="color:#e6db74">&#39;YaTeX-lpr</span>)))            <span style="color:#75715e">;; Open PDF file</span>
 </code></pre></div><p>上記の設定で何をしているかというと</p>
 <ul>
 <li>Emacsでtexファイルを開き、YaTeX-typeset-bufferを実行するとplatexが実行されてdviファイルが生成されます。続いて、YaTeX-lprを実行するとdvpd.shが呼ばれてdvi-&gt;PDFが実行され、生成されたPDFをMacのPreview.appで自動的に開きます。</li>
 <li>これの自動化を実現させるためにあらかじめdvpd.shを次のように作成し、/usr/local/binに置きます。当然PATHが通っている必要があります。ターミナルで、/usr/local/binに移動し、<code> chmod +x dvpd.sh</code> を実行して dvpd.shをコマンドとして使うために実行権限を与えます。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#633820">#!/bin/bash
-</span><span style="color:#633820"></span><span style="color:#177500"># 生成されたPDFをPreview.appで開く</span>
-<span style="color:#000">name</span><span style="color:#000">=</span><span style="color:#000">$1</span>
-dvipdfmx <span style="color:#000">$1</span> <span style="color:#000">&amp;&amp;</span> open -a Preview.app <span style="color:#c41a16">${</span><span style="color:#000">name</span>%.*<span style="color:#c41a16">}</span>.pdf
-<span style="color:#177500"># 不要ファイルを削除</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># 生成されたPDFをPreview.appで開く</span>
+name<span style="color:#f92672">=</span>$1
+dvipdfmx $1 <span style="color:#f92672">&amp;&amp;</span> open -a Preview.app <span style="color:#e6db74">${</span>name%.*<span style="color:#e6db74">}</span>.pdf
+<span style="color:#75715e"># 不要ファイルを削除</span>
 rm *.au*
 rm *.dv*
 rm *.lo*

@@ -164,35 +164,35 @@
 </ol>
 <h2 id="scratch-buffer-を-kill-させない">Scratch buffer を kill させない</h2>
 <p>特にpackageを導入せずともemacsの標準機能で実現できます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; Set buffer that can not be killed.</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;; Set buffer that can not be killed.</span>
 
-(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
-  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
+(with-current-buffer <span style="color:#e6db74">&#34;*scratch*&#34;</span>
+  (emacs-lock-mode <span style="color:#e6db74">&#39;kill</span>))
 </code></pre></div><p>設定反映後、scratch bufferを <code>kill-buffer</code> すると <code>Buffer &quot;*scratch*&quot; is locked and cannot be killed</code> とmessageがでます。</p>
 <h2 id="scratch-buffer-の内容を記憶させる">Scratch buffer の内容を記憶させる</h2>
 <p><code>persistent-scratch</code> というpackageもありますが、大方のemacserは使っていると思う <code>auto-save-buffers-enhanced</code> の設定で実現できます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; auto-save-buffers-enhanced</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;; auto-save-buffers-enhanced</span>
 
-(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-quiet-save-p</span> <span style="color:#000">t</span>)
-<span style="color:#177500">;; scratch bufferを `~/.emacs.d/scratch` に保存</span>
-(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-save-scratch-buffer-to-file-p</span> <span style="color:#000">t</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-file-related-with-scratch-buffer</span>
-      (<span style="color:#000">locate-user-emacs-file</span> <span style="color:#c41a16">&#34;scratch&#34;</span>))
-(<span style="color:#000">auto-save-buffers-enhanced</span> <span style="color:#000">t</span>)
+(setq auto-save-buffers-enhanced-quiet-save-p <span style="color:#66d9ef">t</span>)
+<span style="color:#75715e">;; scratch bufferを `~/.emacs.d/scratch` に保存</span>
+(setq auto-save-buffers-enhanced-save-scratch-buffer-to-file-p <span style="color:#66d9ef">t</span>)
+(setq auto-save-buffers-enhanced-file-related-with-scratch-buffer
+      (locate-user-emacs-file <span style="color:#e6db74">&#34;scratch&#34;</span>))
+(auto-save-buffers-enhanced <span style="color:#66d9ef">t</span>)
 </code></pre></div><h2 id="ワンキーで-scratch-bufferを表示させる">ワンキーで Scratch bufferを表示させる</h2>
 <p>popwinの機能を使います。<code>my:pop-scratch</code> を起動するとscratch bufferがpopupします。メモしたあと <code>C-g</code> で隠せるので便利です。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; Popup the scratch buffer</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;; Popup the scratch buffer</span>
 
-(<span style="color:#000">bind-key</span>
- <span style="color:#c41a16">&#34;s-x&#34;</span>
- (<span style="color:#a90d91">defun</span> <span style="color:#000">my:pop-scratch</span> ()
-   <span style="color:#c41a16">&#34;Popup the scratch buffer.&#34;</span>
-   (<span style="color:#a90d91">interactive</span>)
-   (<span style="color:#a90d91">setq</span> <span style="color:#000">popwin:special-display-config</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;*scratch*&#34;</span>))
-   (<span style="color:#000">display-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>)))
+(bind-key
+ <span style="color:#e6db74">&#34;s-x&#34;</span>
+ (defun my:pop-scratch ()
+   <span style="color:#e6db74">&#34;Popup the scratch buffer.&#34;</span>
+   (interactive)
+   (setq popwin:special-display-config <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;*scratch*&#34;</span>))
+   (display-buffer <span style="color:#e6db74">&#34;*scratch*&#34;</span>)))
 </code></pre></div>
       </div>
     </article>

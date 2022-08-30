@@ -161,22 +161,22 @@
 親ページの設定のみで動作するものを見つけて試したところ実に快適だったのでこのスクリプトを採用することにした。</p>
 <h2 id="htmlで準備すること">HTMLで準備すること</h2>
 <p>高さを自動調整したい iframeの classに「autoHeight」を付けるだけです。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#000">iframe</span> <span style="color:#836c28">src</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;http://www.example.com/&#34;</span> <span style="color:#836c28">class</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;autoHeight&#34;</span>&gt;&lt;/<span style="color:#000">iframe</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.example.com/&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;autoHeight&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </code></pre></div><h2 id="iframeの高さを自動的に調整してくれるスクリプト">iframeの高さを自動的に調整してくれるスクリプト</h2>
 <p>jQueryを読み込んだ状態で以下のスクリプトを実行します。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#a90d91">function</span>(<span style="color:#a90d91">window</span>, <span style="color:#000">$</span>){
-	<span style="color:#000">$</span>(<span style="color:#a90d91">window</span>).<span style="color:#000">on</span>(<span style="color:#c41a16">&#34;load&#34;</span>,<span style="color:#a90d91">function</span>(){
-		<span style="color:#000">$</span>(<span style="color:#c41a16">&#39;iframe.autoHeight&#39;</span>).<span style="color:#000">each</span>(<span style="color:#a90d91">function</span>(){
-			<span style="color:#a90d91">var</span> <span style="color:#000">D</span> <span style="color:#000">=</span> <span style="color:#000">$</span>(<span style="color:#a90d91">this</span>).<span style="color:#000">get</span>(<span style="color:#1c01ce">0</span>).<span style="color:#000">contentWindow</span>.<span style="color:#a90d91">document</span>;
-			<span style="color:#a90d91">var</span> <span style="color:#000">innerHeight</span> <span style="color:#000">=</span> <span style="color:#a90d91">Math</span>.<span style="color:#000">max</span>(
-				<span style="color:#000">D</span>.<span style="color:#000">body</span>.<span style="color:#000">scrollHeight</span>, <span style="color:#000">D</span>.<span style="color:#000">documentElement</span>.<span style="color:#000">scrollHeight</span>,
-				<span style="color:#000">D</span>.<span style="color:#000">body</span>.<span style="color:#000">offsetHeight</span>, <span style="color:#000">D</span>.<span style="color:#000">documentElement</span>.<span style="color:#000">offsetHeight</span>,
-				<span style="color:#000">D</span>.<span style="color:#000">body</span>.<span style="color:#000">clientHeight</span>, <span style="color:#000">D</span>.<span style="color:#000">documentElement</span>.<span style="color:#000">clientHeight</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span>(window, <span style="color:#a6e22e">$</span>){
+	<span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;load&#34;</span>,<span style="color:#66d9ef">function</span>(){
+		<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;iframe.autoHeight&#39;</span>).<span style="color:#a6e22e">each</span>(<span style="color:#66d9ef">function</span>(){
+			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">get</span>(<span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">contentWindow</span>.document;
+			<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">innerHeight</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>(
+				<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollHeight</span>, <span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollHeight</span>,
+				<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">offsetHeight</span>, <span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">offsetHeight</span>,
+				<span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">clientHeight</span>, <span style="color:#a6e22e">D</span>.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>
 				);
-			<span style="color:#000">$</span>(<span style="color:#a90d91">this</span>).<span style="color:#000">removeAttr</span>(<span style="color:#c41a16">&#34;height&#34;</span>).<span style="color:#000">css</span>(<span style="color:#c41a16">&#39;height&#39;</span>, <span style="color:#000">innerHeight</span> <span style="color:#000">+</span> <span style="color:#c41a16">&#39;px&#39;</span>);
+			<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">removeAttr</span>(<span style="color:#e6db74">&#34;height&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;height&#39;</span>, <span style="color:#a6e22e">innerHeight</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;px&#39;</span>);
 		});
 	});
-})(<span style="color:#a90d91">window</span>, <span style="color:#000">jQuery</span>);
+})(window, <span style="color:#a6e22e">jQuery</span>);
 </code></pre></div><p>ページに配置された画像などの読み込みが完了した時点で iframeの高さを調整します。</p>
 <p>同じページ内に複数の iframeがあっても、正常に高さを設定できます。</p>
 <p><code>class=&quot;autoHeight&quot;</code> と書くだけで <code>scrolling=&quot;no&quot; frameborder=&quot;no&quot;</code> とかを書く必要なくとてもシンプルな優れものでした。</p>

@@ -178,91 +178,91 @@ hydraが終了する条件は、定義された赤いキー以外をタイプす
 <h2 id="矢印キーの扱い">矢印キーの扱い</h2>
 <p>Emacserの方から見ると邪道だと言われそうですが、私はカーソル移動に矢印キーを使うことも多いです。基本は、h,j,k,lを使うようにしていてもうっかり矢印キーに触れるとhydra-pinkyが消えてしまうので、pinky発動中は矢印関係の操作で消えないようにしています。</p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; sequential-command</span>
-(<span style="color:#a90d91">use-package</span> <span style="color:#000">sequential-command-config</span>
-  <span style="color:#a90d91">:commands</span> <span style="color:#000">sequential-command-setup-keys</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init</span> <span style="color:#000">.</span> <span style="color:#000">sequential-command-setup-keys</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; sequential-command</span>
+(use-package sequential-command-config
+  :commands sequential-command-setup-keys
+  :hook (after-init <span style="color:#f92672">.</span> sequential-command-setup-keys))
 
-<span style="color:#177500">;; other-window-or-split</span>
-(<span style="color:#000">bind-key</span>
- <span style="color:#c41a16">&#34;C-q&#34;</span>
- (<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
-   <span style="color:#c41a16">&#34;If there is one window, open split window.
-</span><span style="color:#c41a16">If there are two or more windows, it will go to another window.&#34;</span>
-   (<span style="color:#a90d91">interactive</span>)
-   (<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
-     (<span style="color:#000">split-window-horizontally</span>))
-   (<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>)))
+<span style="color:#75715e">;; other-window-or-split</span>
+(bind-key
+ <span style="color:#e6db74">&#34;C-q&#34;</span>
+ (defun other-window-or-split ()
+   <span style="color:#e6db74">&#34;If there is one window, open split window.
+</span><span style="color:#e6db74">If there are two or more windows, it will go to another window.&#34;</span>
+   (interactive)
+   (when (one-window-p)
+     (split-window-horizontally))
+   (other-window <span style="color:#ae81ff">1</span>)))
 
-<span style="color:#177500">;; window-toggle-division</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">window-toggle-division</span> ()
-  <span style="color:#c41a16">&#34;Replace vertical &lt;-&gt; horizontal when divided into two.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">unless</span> (<span style="color:#000">=</span> (<span style="color:#000">count-windows</span> <span style="color:#1c01ce">1</span>) <span style="color:#1c01ce">2</span>)
-    (<span style="color:#000">error</span> <span style="color:#c41a16">&#34;Not divided into two!&#34;</span>))
-  (<span style="color:#a90d91">let</span> ((<span style="color:#000">before-height</span>)
-        (<span style="color:#000">other-buf</span> (<span style="color:#000">window-buffer</span> (<span style="color:#000">next-window</span>))))
-    (<span style="color:#a90d91">setq</span> <span style="color:#000">before-height</span> (<span style="color:#000">window-height</span>))
-    (<span style="color:#000">delete-other-windows</span>)
-    (<span style="color:#a90d91">if</span> (<span style="color:#000">=</span> (<span style="color:#000">window-height</span>) <span style="color:#000">before-height</span>)
-        (<span style="color:#000">split-window-vertically</span>)
-      (<span style="color:#000">split-window-horizontally</span>))
-    (<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>)
-    (<span style="color:#000">switch-to-buffer</span> <span style="color:#000">other-buf</span>)
-    (<span style="color:#000">other-window</span> <span style="color:#1c01ce">-1</span>)))
+<span style="color:#75715e">;; window-toggle-division</span>
+(defun window-toggle-division ()
+  <span style="color:#e6db74">&#34;Replace vertical &lt;-&gt; horizontal when divided into two.&#34;</span>
+  (interactive)
+  (unless (<span style="color:#a6e22e">=</span> (count-windows <span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">2</span>)
+    (<span style="color:#a6e22e">error</span> <span style="color:#e6db74">&#34;Not divided into two!&#34;</span>))
+  (let ((before-height)
+        (other-buf (<span style="color:#a6e22e">window-buffer</span> (<span style="color:#a6e22e">next-window</span>))))
+    (setq before-height (window-height))
+    (delete-other-windows)
+    (if (<span style="color:#a6e22e">=</span> (window-height) before-height)
+        (split-window-vertically)
+      (split-window-horizontally))
+    (other-window <span style="color:#ae81ff">1</span>)
+    (switch-to-buffer other-buf)
+    (other-window <span style="color:#ae81ff">-1</span>)))
 
-<span style="color:#177500">;; iflipb</span>
-(<span style="color:#a90d91">setq</span> <span style="color:#000">iflipb-wrap-around</span> <span style="color:#000">t</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">iflipb-ignore-buffers</span> (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;^[*]&#34;</span> <span style="color:#c41a16">&#34;^magit&#34;</span> <span style="color:#c41a16">&#34;dir]$&#34;</span>))
+<span style="color:#75715e">;; iflipb</span>
+(setq iflipb-wrap-around <span style="color:#66d9ef">t</span>)
+(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span> <span style="color:#e6db74">&#34;dir]$&#34;</span>))
 
-<span style="color:#177500">;; Hydra-pinky</span>
-(<span style="color:#000">bind-key</span> [<span style="color:#000">f11</span>] <span style="color:#c41a16">&#39;hydra-pinky/body</span>)
-(<span style="color:#000">key-chord-define-global</span>
- <span style="color:#c41a16">&#34;::&#34;</span>
- (<span style="color:#000">defhydra</span> <span style="color:#000">hydra-pinky</span> (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
-   <span style="color:#c41a16">&#34;
-</span><span style="color:#c41a16"> ：_0_._1_._2_._3_._o_._S_._x_   ：_j_._k_._h_._l_._c_._a_._e_._b_._v_._SPC_._w_._s_._/_   ：_n_._p_._u_._t_   ：_&lt;_-_:_-_&gt;_   ：_q_uit&#34;</span>
-   <span style="color:#177500">;; window</span>
-   (<span style="color:#c41a16">&#34;0&#34;</span> <span style="color:#000">delete-window</span>)
-   (<span style="color:#c41a16">&#34;1&#34;</span> <span style="color:#000">delete-other-windows</span>)
-   (<span style="color:#c41a16">&#34;2&#34;</span> <span style="color:#000">split-window-below</span>)
-   (<span style="color:#c41a16">&#34;3&#34;</span> <span style="color:#000">split-window-right</span>)
-   (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">other-window-or-split</span>)
-   (<span style="color:#c41a16">&#34;S&#34;</span> <span style="color:#000">window-swap-states</span>)
-   (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">window-toggle-division</span>)
-   <span style="color:#177500">;; page</span>
-   (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">seq-home</span>)
-   (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">seq-end</span>)
-   (<span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#000">next-line</span>)
-   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">previous-line</span>)
-   (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">forward-char</span>)
-   (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">backward-char</span>)
-   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">recenter-top-bottom</span>)
-   (<span style="color:#c41a16">&#34;&lt;down&gt;&#34;</span> <span style="color:#000">next-line</span>)
-   (<span style="color:#c41a16">&#34;&lt;up&gt;&#34;</span> <span style="color:#000">previous-line</span>)
-   (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">forward-char</span>)
-   (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">backward-char</span>)
-   (<span style="color:#c41a16">&#34;&lt;C-up&gt;&#34;</span> <span style="color:#000">backward-paragraph</span>)
-   (<span style="color:#c41a16">&#34;&lt;C-down&gt;&#34;</span> <span style="color:#000">forward-paragraph</span>)
-   (<span style="color:#c41a16">&#34;&lt;C-left&gt;&#34;</span> <span style="color:#000">left-word</span>)
-   (<span style="color:#c41a16">&#34;&lt;C-right&gt;&#34;</span> <span style="color:#000">right-word</span>)
-   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">scroll-down-command</span>)
-   (<span style="color:#c41a16">&#34;v&#34;</span> <span style="color:#000">scroll-up-command</span>)
-   (<span style="color:#c41a16">&#34;SPC&#34;</span> <span style="color:#000">set-mark-command</span>)
-   (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">avy-goto-word-1</span>)
-   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">swiper-isearch-region</span>)
-   <span style="color:#177500">;; git</span>
-   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">git-gutter:next-hunk</span>)
-   (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">git-gutter:previous-hunk</span>)
-   (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">git-gutter:popup-hunk</span>)
-   (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">git-gutter:toggle-popup-hunk</span>)
-   <span style="color:#177500">;; buffer</span>
-   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">kill-buffer</span>)
-   (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">counsel-switch-buffer</span>)
-   (<span style="color:#c41a16">&#34;&lt;&#34;</span> <span style="color:#000">iflipb-previous-buffer</span>)
-   (<span style="color:#c41a16">&#34;&gt;&#34;</span> <span style="color:#000">iflipb-next-buffer</span>)
-   <span style="color:#177500">;; quit</span>
-   (<span style="color:#c41a16">&#34;q&#34;</span> <span style="color:#000">nil</span>)))
+<span style="color:#75715e">;; Hydra-pinky</span>
+(bind-key [f11] <span style="color:#e6db74">&#39;hydra-pinky/body</span>)
+(key-chord-define-global
+ <span style="color:#e6db74">&#34;::&#34;</span>
+ (defhydra hydra-pinky (:color red :hint <span style="color:#66d9ef">nil</span>)
+   <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74"> ：_0_._1_._2_._3_._o_._S_._x_   ：_j_._k_._h_._l_._c_._a_._e_._b_._v_._SPC_._w_._s_._/_   ：_n_._p_._u_._t_   ：_&lt;_-_:_-_&gt;_   ：_q_uit&#34;</span>
+   <span style="color:#75715e">;; window</span>
+   (<span style="color:#e6db74">&#34;0&#34;</span> delete-window)
+   (<span style="color:#e6db74">&#34;1&#34;</span> delete-other-windows)
+   (<span style="color:#e6db74">&#34;2&#34;</span> split-window-below)
+   (<span style="color:#e6db74">&#34;3&#34;</span> split-window-right)
+   (<span style="color:#e6db74">&#34;o&#34;</span> other-window-or-split)
+   (<span style="color:#e6db74">&#34;S&#34;</span> window-swap-states)
+   (<span style="color:#e6db74">&#34;x&#34;</span> window-toggle-division)
+   <span style="color:#75715e">;; page</span>
+   (<span style="color:#e6db74">&#34;a&#34;</span> seq-home)
+   (<span style="color:#e6db74">&#34;e&#34;</span> seq-end)
+   (<span style="color:#e6db74">&#34;j&#34;</span> next-line)
+   (<span style="color:#e6db74">&#34;k&#34;</span> previous-line)
+   (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#a6e22e">forward-char</span>)
+   (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#a6e22e">backward-char</span>)
+   (<span style="color:#e6db74">&#34;c&#34;</span> recenter-top-bottom)
+   (<span style="color:#e6db74">&#34;&lt;down&gt;&#34;</span> next-line)
+   (<span style="color:#e6db74">&#34;&lt;up&gt;&#34;</span> previous-line)
+   (<span style="color:#e6db74">&#34;&lt;right&gt;&#34;</span> <span style="color:#a6e22e">forward-char</span>)
+   (<span style="color:#e6db74">&#34;&lt;left&gt;&#34;</span> <span style="color:#a6e22e">backward-char</span>)
+   (<span style="color:#e6db74">&#34;&lt;C-up&gt;&#34;</span> backward-paragraph)
+   (<span style="color:#e6db74">&#34;&lt;C-down&gt;&#34;</span> forward-paragraph)
+   (<span style="color:#e6db74">&#34;&lt;C-left&gt;&#34;</span> left-word)
+   (<span style="color:#e6db74">&#34;&lt;C-right&gt;&#34;</span> right-word)
+   (<span style="color:#e6db74">&#34;b&#34;</span> scroll-down-command)
+   (<span style="color:#e6db74">&#34;v&#34;</span> scroll-up-command)
+   (<span style="color:#e6db74">&#34;SPC&#34;</span> set-mark-command)
+   (<span style="color:#e6db74">&#34;w&#34;</span> avy-goto-word-1)
+   (<span style="color:#e6db74">&#34;s&#34;</span> swiper-isearch-region)
+   <span style="color:#75715e">;; git</span>
+   (<span style="color:#e6db74">&#34;n&#34;</span> git-gutter:next-hunk)
+   (<span style="color:#e6db74">&#34;p&#34;</span> git-gutter:previous-hunk)
+   (<span style="color:#e6db74">&#34;u&#34;</span> git-gutter:popup-hunk)
+   (<span style="color:#e6db74">&#34;t&#34;</span> git-gutter:toggle-popup-hunk)
+   <span style="color:#75715e">;; buffer</span>
+   (<span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">kill-buffer</span>)
+   (<span style="color:#e6db74">&#34;:&#34;</span> counsel-switch-buffer)
+   (<span style="color:#e6db74">&#34;&lt;&#34;</span> iflipb-previous-buffer)
+   (<span style="color:#e6db74">&#34;&gt;&#34;</span> iflipb-next-buffer)
+   <span style="color:#75715e">;; quit</span>
+   (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span>)))
 </code></pre></div>
       </div>
     </article>

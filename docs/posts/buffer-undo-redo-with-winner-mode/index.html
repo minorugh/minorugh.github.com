@@ -156,12 +156,12 @@
 
       <div class="post-content">
         <p>emacsでいろいろ作業していると意図しない形で勝手にウインドウズが分割されたりします。設定して &ldquo;C-g&rdquo; で隠せるものもありますが、それも出来ないときは、&ldquo;C-x 0&rdquo; や &ldquo;C-x 1&rdquo; のお世話になります。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">winner-mode</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#c41a16">&#39;winner-undo</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#c41a16">&#39;winner-redo</span>)
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">winner-mode</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-c &lt;left&gt;&#34;</span> <span style="color:#c41a16">&#39;winner-undo</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-c &lt;right&gt;&#34;</span> <span style="color:#c41a16">&#39;winner-redo</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(winner-mode)
+(bind-key <span style="color:#e6db74">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;winner-undo</span>)
+(bind-key <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;winner-redo</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(winner-mode)
+(bind-key <span style="color:#e6db74">&#34;C-c &lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;winner-undo</span>)
+(bind-key <span style="color:#e6db74">&#34;C-c &lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;winner-redo</span>)
 </code></pre></div>
       </div>
     </article>

@@ -156,9 +156,9 @@
 
       <div class="post-content">
         <p>emacs-mozcを使っているときは、紛らわしいのでfcitxをOFFにしておきたい…と、あれこれ悩んでいたのですが、「Emacs利用時にはXIMを無効にする」というのはが常識だったようで今更ながら ~/.Xresources を設定しました。これを設定すると何故かEmacsの起動も若干早くなる。不思議</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">!~/.Xresources
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">!~/.Xresources
 ! Emacs XIMを無効化
-Emacs*useXIM: <span style="color:#a90d91">false</span>
+Emacs*useXIM: false
 
 </code></pre></div><p>私の場合、fcitxのON/OFFをWindowsにあわせて <code>hiragana-katakana</code> に設定しているのですが、
 上記を設定することでEmacs利用時にはこのキーが空いてくるので、emacs-mozcのON/OFFも <code>hiragana-katakana</code> に割り当てることにしました。</p>

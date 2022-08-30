@@ -157,52 +157,52 @@
       <div class="post-content">
         <p>先の Linuxbrewさえうまくインストールできれば、brewで ghを installするのは実に簡単。</p>
 <h2 id="install">install</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% brew install gh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% brew install gh
 </code></pre></div><p>とするだけ。</p>
 <p>コマンドラインで使えるように <code>.zshrc</code> に下記の設定を書く。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#177500"># GitHub CLI</span>
-<span style="color:#a90d91">eval</span> <span style="color:#c41a16">&#34;</span><span style="color:#a90d91">$(</span>gh completion -s zsh<span style="color:#a90d91">)</span><span style="color:#c41a16">&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#75715e"># GitHub CLI</span>
+eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>gh completion -s zsh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>bashなら <code>.bashrc</code>に書く。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#a90d91">eval</span> <span style="color:#c41a16">&#34;</span><span style="color:#a90d91">$(</span>gh completion -s bash<span style="color:#a90d91">)</span><span style="color:#c41a16">&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>gh completion -s bash<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </code></pre></div><h2 id="auth-login">auth login</h2>
 <p>次のように <code>gh auth login</code> と入力しあとは terminal画面の指示通りに進めて完了させれば、ghコマンドが使えるようになります。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% gh auth login
-? What account <span style="color:#a90d91">do</span> you want to log into? GitHub.com
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% gh auth login
+? What account <span style="color:#66d9ef">do</span> you want to log into? GitHub.com
 - Logging into github.com
 ? How would you like to authenticate? Login with a web browser
 ! First copy your one-time code: ****-****
-<span style="color:#177500">#👇Enterキーを押すとブラウザから認証作業ができます(下の図参照)。</span>
+<span style="color:#75715e">#👇Enterキーを押すとブラウザから認証作業ができます(下の図参照)。</span>
 - Press Enter to open github.com in your browser...
-<span style="color:#177500">#👇ブラウザでの作業完了後に表示されます。</span>
-✓ Authentication complete. Press Enter to <span style="color:#a90d91">continue</span>...
+<span style="color:#75715e">#👇ブラウザでの作業完了後に表示されます。</span>
+✓ Authentication complete. Press Enter to <span style="color:#66d9ef">continue</span>...
 ? Choose default git protocol HTTPS
-- gh config <span style="color:#a90d91">set</span> -h github.com git_protocol https
+- gh config set -h github.com git_protocol https
 ✓ Configured git protocol
 ✓ Logged in as ***********
 </code></pre></div><p>認証後正常にログインできるようになっていると、ステータスが正常に跳ね返ってきます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% gh auth status                                                                                                        <span style="color:#000">[</span>~<span style="color:#000">][</span>master<span style="color:#000">]</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% gh auth status                                                                                                        <span style="color:#f92672">[</span>~<span style="color:#f92672">][</span>master<span style="color:#f92672">]</span>
 github.com
-  ✓ Logged in to github.com as minorugh <span style="color:#000">(</span>/home/minoru/.config/gh/hosts.yml<span style="color:#000">)</span>
-  ✓ Git operations <span style="color:#a90d91">for</span> github.com configured to use https protocol.
+  ✓ Logged in to github.com as minorugh <span style="color:#f92672">(</span>/home/minoru/.config/gh/hosts.yml<span style="color:#f92672">)</span>
+  ✓ Git operations <span style="color:#66d9ef">for</span> github.com configured to use https protocol.
   ✓ Token: *******************
 </code></pre></div><h2 id="write-automation-commands-in-zshrc">Write automation commands in zshrc</h2>
 <p>現状、ghコマンドで複雑なことをするつもりはないので、新規リポジトリ作成と cloneだけを.zshrcに設定した。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#177500"># Create a new repository and first commit</span>
-<span style="color:#a90d91">function</span> gh-new<span style="color:#000">()</span> <span style="color:#000">{</span>
-    <span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#34;Type repository name: &#34;</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#a90d91">read</span> name;
-	<span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#34;# </span><span style="color:#c41a16">${</span><span style="color:#000">name</span><span style="color:#c41a16">}</span><span style="color:#c41a16">&#34;</span> &gt;&gt; README.md
-    git init <span style="color:#000">&amp;&amp;</span> git add README.md <span style="color:#000">&amp;&amp;</span> git commit -m <span style="color:#c41a16">&#34;First commit&#34;</span>
-    gh repo create <span style="color:#c41a16">${</span><span style="color:#000">name</span><span style="color:#c41a16">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#75715e"># Create a new repository and first commit</span>
+<span style="color:#66d9ef">function</span> gh-new<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;Type repository name: &#34;</span> <span style="color:#f92672">&amp;&amp;</span> read name;
+	echo <span style="color:#e6db74">&#34;# </span><span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; README.md
+    git init <span style="color:#f92672">&amp;&amp;</span> git add README.md <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;First commit&#34;</span>
+    gh repo create <span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>
 	git branch -M main
 	git remote rm origin
-    git remote add origin git@github.com:minorugh/<span style="color:#c41a16">${</span><span style="color:#000">name</span><span style="color:#c41a16">}</span>.git
+    git remote add origin git@github.com:minorugh/<span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>.git
     git push -u origin main;
-<span style="color:#000">}</span>
+<span style="color:#f92672">}</span>
 
-<span style="color:#177500"># Cloning a repository</span>
-<span style="color:#a90d91">function</span> gh-clone<span style="color:#000">()</span> <span style="color:#000">{</span>
-    <span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#34;Type repository name: &#34;</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#a90d91">read</span> name;
-    gh repo clone <span style="color:#c41a16">${</span><span style="color:#000">name</span><span style="color:#c41a16">}</span>
+<span style="color:#75715e"># Cloning a repository</span>
+<span style="color:#66d9ef">function</span> gh-clone<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;Type repository name: &#34;</span> <span style="color:#f92672">&amp;&amp;</span> read name;
+    gh repo clone <span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span>
 </code></pre></div><p>ローカルリポジトリ用のデレクトリを作成し、そのデレクトリをカレントとして <code>gh-new</code> コマンドを打てばあとは全自動でローカルレポジトリとの同期まで完了する。</p>
 <p>cloneも同様に、作成したローカルリポジトリ用のデレクトリで <code>gh-clone</code> を打つだけ。</p>
 

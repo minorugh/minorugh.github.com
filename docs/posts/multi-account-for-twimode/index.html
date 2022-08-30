@@ -158,41 +158,41 @@
       <div class="post-content">
         <p>EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&ldquo;な〜んだ(^o^)&rdquo; という落ちでしょうね。</p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Clear existing twit buffers</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my/reload-twit</span> ()
-  (<span style="color:#000">mapcar</span>
-   (<span style="color:#a90d91">lambda</span> (<span style="color:#000">buffer</span>)
-     (<span style="color:#000">twittering-deactivate-buffer</span> <span style="color:#000">buffer</span>)
-     (<span style="color:#000">kill-buffer</span> <span style="color:#000">buffer</span>))
-   (<span style="color:#000">twittering-get-buffer-list</span>))
-  (<span style="color:#000">twittering-unregister-killed-buffer</span>)
-  <span style="color:#177500">;; Clear variables</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-private-info-file-loaded</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-account-authorization</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-oauth-access-token-alist</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-buffer-info-list</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-timeline-data-table</span> (<span style="color:#000">make-hash-table</span> <span style="color:#a90d91">:test</span> <span style="color:#c41a16">&#39;equal</span>))
-  (<span style="color:#000">twit</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Clear existing twit buffers</span>
+(defun my/reload-twit ()
+  (<span style="color:#a6e22e">mapcar</span>
+   (lambda (buffer)
+     (twittering-deactivate-buffer buffer)
+     (<span style="color:#a6e22e">kill-buffer</span> buffer))
+   (twittering-get-buffer-list))
+  (twittering-unregister-killed-buffer)
+  <span style="color:#75715e">;; Clear variables</span>
+  (setq twittering-private-info-file-loaded <span style="color:#66d9ef">nil</span>)
+  (setq twittering-account-authorization <span style="color:#66d9ef">nil</span>)
+  (setq twittering-oauth-access-token-alist <span style="color:#66d9ef">nil</span>)
+  (setq twittering-buffer-info-list <span style="color:#66d9ef">nil</span>)
+  (setq twittering-timeline-data-table (<span style="color:#a6e22e">make-hash-table</span> :test <span style="color:#e6db74">&#39;equal</span>))
+  (twit))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my/twit-1</span> ()
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-private-info-file</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;~/.twittering-mode.gpg&#34;</span>))
-  <span style="color:#177500">;; timeline to read on startup</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-initial-timeline-spec-string</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;minoruGH&#34;</span> <span style="color:#c41a16">&#34;:mentions&#34;</span> <span style="color:#c41a16">&#34;:home&#34;</span>))
-  (<span style="color:#000">my/reload-twit</span>))
+(defun my/twit-1 ()
+  (interactive)
+  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/.twittering-mode.gpg&#34;</span>))
+  <span style="color:#75715e">;; timeline to read on startup</span>
+  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;minoruGH&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
+  (my/reload-twit))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my/twit-2</span> ()
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-private-info-file</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;~/Dropbox/dotfiles/twittering-mode2.gpg&#34;</span>))
-  <span style="color:#177500">;; timeline to read on startup</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-initial-timeline-spec-string</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;gospelhaiku&#34;</span> <span style="color:#c41a16">&#34;:mentions&#34;</span> <span style="color:#c41a16">&#34;:home&#34;</span>))
-  (<span style="color:#000">my/reload-twit</span>))
+(defun my/twit-2 ()
+  (interactive)
+  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/Dropbox/dotfiles/twittering-mode2.gpg&#34;</span>))
+  <span style="color:#75715e">;; timeline to read on startup</span>
+  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;gospelhaiku&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
+  (my/reload-twit))
 
-<span style="color:#177500">;; Twitterring-mode settings</span>
-(<span style="color:#a90d91">use-package</span> <span style="color:#000">twittering-mode</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">twittering-use-master-password</span> <span style="color:#000">t</span>)
+<span style="color:#75715e">;; Twitterring-mode settings</span>
+(use-package twittering-mode)
+(setq twittering-use-master-password <span style="color:#66d9ef">t</span>)
 
-<span style="color:#177500">;; 以降、必要な共通設定を書きます。</span>
+<span style="color:#75715e">;; 以降、必要な共通設定を書きます。</span>
 
 </code></pre></div><h2 id="twitterの公式アプリで複数アカウントを切り替える">Twitterの公式アプリで複数アカウントを切り替える</h2>
 <p>紐付けのメールアドレスさえ確保できれば、複数アカウントの取得は何も問題ありませんが、

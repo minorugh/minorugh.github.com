@@ -159,17 +159,17 @@
 <p>ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが、キーボードからの入力ではなくて、コピー貼付け操作をされる方も多く、意図しないスペースが入ったまま投稿されるケースが多いです。そのままですとシステムが正常に処理できないことがあるので、投稿受付時に不要なスペースやタブを自動的に削除するように対策を施すことにしました。</p>
 <h2 id="文字列前後の半角スペースタブを削除">文字列前後の半角スペース＆タブを削除</h2>
 <p>正規表現を使って文字列$valの末尾の半角スペース＆タブを削除するスクリプトは以下の通り。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#000">$val</span> <span style="color:#000">=~</span> <span style="color:#c41a16">s/\s*(.*?)\s*$/$1/</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
 </code></pre></div><p>テストスクリプトで確認してみましょう。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#177500">## 文字列前後のスペース＆タブ削除</span>
-<span style="color:#000">$val</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;This is a pen.     &#34;</span>;
-<span style="color:#000">$val</span> <span style="color:#000">=~</span> <span style="color:#c41a16">s/\s*(.*?)\s*$/$1/</span>;
-<span style="color:#a90d91">print</span> <span style="color:#000">$val</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">## 文字列前後のスペース＆タブ削除</span>
+$val <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is a pen.     &#34;</span>;
+$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
+<span style="color:#66d9ef">print</span> $val;
 </code></pre></div><h2 id="文字列前後の全角スペースを削除">文字列前後の全角スペースを削除</h2>
 <p>全角スペースの削除は、少しやっかいです。使用する文字コードによって異なるからです。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#000">$val</span> <span style="color:#000">=~</span> <span style="color:#c41a16">s/\x81\x40//g</span>; <span style="color:#000">…</span> <span style="color:#000">SJIS</span>
-<span style="color:#000">$val</span> <span style="color:#000">=~</span> <span style="color:#c41a16">s/\xa1\xa1//g</span>; <span style="color:#000">…</span> <span style="color:#000">EUC</span>
-<span style="color:#000">$val</span> <span style="color:#000">=~</span> <span style="color:#c41a16">s/\xE3\x80\x80//g</span>; <span style="color:#000">…</span> <span style="color:#000">utf</span><span style="color:#000">-</span><span style="color:#1c01ce">8</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\x81\x40//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> SJIS
+$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xa1\xa1//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> EUC
+$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xE3\x80\x80//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> utf<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>
 </code></pre></div>
       </div>
     </article>

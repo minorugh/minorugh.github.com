@@ -160,37 +160,37 @@
 <p>サンプルコードの場合、うまく動くことが確認できたらあとは使い捨てになるので保存場所にはさほど神経質にならなくても良いが、あとからの検索を用意にするためにぼくの場合は、howmフォルダーに置いている。検索は、helm-agでもいいのだけどhowmの一覧機能や検索機能がとても使いやすく優れているからだ。</p>
 <h2 id="open-junk-fileel">open-junk-file.el</h2>
 <p>メモのファイル名は、[timestamp.拡張子]という使い方が多いみたいだけど、ちょっと判りにくいので、ぼくの場合は、20170717.hoghoge.plという感じにしてる。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;;--------------------------------------------------------------------------------</span>
-<span style="color:#177500">;; open-junk-file.el                                      last updated: 2017/07/17</span>
-<span style="color:#177500">;;--------------------------------------------------------------------------------</span>
-(<span style="color:#000">use-package</span> <span style="color:#000">open-junk-file</span>
-  <span style="color:#c41a16">:bind</span> (<span style="color:#c41a16">&#34;C-c j&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-junk-file</span>)
-  <span style="color:#c41a16">:config</span> (<span style="color:#a90d91">setq</span> <span style="color:#000">open-junk-file-format</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/junk/%Y/%Y%m%d.&#34;</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;;--------------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; open-junk-file.el                                      last updated: 2017/07/17</span>
+<span style="color:#75715e">;;--------------------------------------------------------------------------------</span>
+(<span style="color:#a6e22e">use-package</span> open-junk-file
+  <span style="color:#e6db74">:bind</span> (<span style="color:#e6db74">&#34;C-c j&#34;</span> <span style="color:#f92672">.</span> open-junk-file)
+  <span style="color:#e6db74">:config</span> (<span style="color:#66d9ef">setq</span> open-junk-file-format <span style="color:#e6db74">&#34;~/Dropbox/howm/junk/%Y/%Y%m%d.&#34;</span>))
 
-<span style="color:#177500">;; Automatically insert tags according to extension</span>
-(<span style="color:#a90d91">defvar</span> <span style="color:#000">open-junk-ext-tags-alist</span>
-  <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;el&#34;</span> <span style="color:#c41a16">&#34;;;&#34;</span> <span style="color:#c41a16">&#34;ELISP&#34;</span>)
-    (<span style="color:#c41a16">&#34;pl&#34;</span> <span style="color:#c41a16">&#34;#&#34;</span> <span style="color:#c41a16">&#34;PERL&#34;</span>)
-    (<span style="color:#c41a16">&#34;py&#34;</span> <span style="color:#c41a16">&#34;#&#34;</span> <span style="color:#c41a16">&#34;PYTHON&#34;</span>)
-    (<span style="color:#c41a16">&#34;rb&#34;</span> <span style="color:#c41a16">&#34;#&#34;</span> <span style="color:#c41a16">&#34;RUBY&#34;</span>)))
-(<span style="color:#000">defadvice</span> <span style="color:#000">open-junk-file</span>
-  (<span style="color:#000">after</span> <span style="color:#000">open-junk-file-insert-howm-comment-advice</span> <span style="color:#000">activate</span>)
-  <span style="color:#c41a16">&#34;After open-junk-file, insert a tag into the opened buffer
-</span><span style="color:#c41a16">to be searched by howm.&#34;</span>
-  (<span style="color:#a90d91">let*</span> ((<span style="color:#000">ext</span> (<span style="color:#000">replace-regexp-in-string</span> <span style="color:#c41a16">&#34;^.*\\.\\([^\\.]+\\)$&#34;</span> <span style="color:#c41a16">&#34;\\1&#34;</span> <span style="color:#000">buffer-file-name</span>))
-         (<span style="color:#000">asc</span> (<span style="color:#000">assoc</span> <span style="color:#000">ext</span> <span style="color:#000">open-junk-ext-tags-alist</span>))
-         (<span style="color:#000">prefix</span> (<span style="color:#000">cadr</span> <span style="color:#000">asc</span>))
-         (<span style="color:#000">tag</span> (<span style="color:#000">caddr</span> <span style="color:#000">asc</span>)))
-    (<span style="color:#000">insert</span> <span style="color:#000">prefix</span>)
-    (<span style="color:#000">insert</span> <span style="color:#c41a16">&#34; %&#34;</span> <span style="color:#000">tag</span>)))
+<span style="color:#75715e">;; Automatically insert tags according to extension</span>
+(defvar open-junk-ext-tags-alist
+  <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;el&#34;</span> <span style="color:#e6db74">&#34;;;&#34;</span> <span style="color:#e6db74">&#34;ELISP&#34;</span>)
+    (<span style="color:#e6db74">&#34;pl&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;PERL&#34;</span>)
+    (<span style="color:#e6db74">&#34;py&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;PYTHON&#34;</span>)
+    (<span style="color:#e6db74">&#34;rb&#34;</span> <span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#e6db74">&#34;RUBY&#34;</span>)))
+(defadvice open-junk-file
+  (after open-junk-file-insert-howm-comment-advice activate)
+  <span style="color:#e6db74">&#34;After open-junk-file, insert a tag into the opened buffer
+</span><span style="color:#e6db74">to be searched by howm.&#34;</span>
+  (<span style="color:#66d9ef">let*</span> ((ext (replace-regexp-in-string <span style="color:#e6db74">&#34;^.*\\.\\([^\\.]+\\)$&#34;</span> <span style="color:#e6db74">&#34;\\1&#34;</span> buffer-file-name))
+         (asc (<span style="color:#a6e22e">assoc</span> ext open-junk-ext-tags-alist))
+         (prefix (<span style="color:#a6e22e">cadr</span> asc))
+         (tag (<span style="color:#a6e22e">caddr</span> asc)))
+    (insert prefix)
+    (insert <span style="color:#e6db74">&#34; %&#34;</span> tag)))
 </code></pre></div><h2 id="quickrunel">quickrun.el</h2>
 <p>コードを試運転したりデバッグするときに quickrun.el を入れて併用すると最強となる。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;;-------------------------------------------------------------------------</span>
-<span style="color:#177500">;; 20_quicrun.el                                   last updated: 2017/07/05</span>
-<span style="color:#177500">;;-------------------------------------------------------------------------</span>
-(<span style="color:#000">use-package</span> <span style="color:#000">quickrun</span>
-  <span style="color:#c41a16">:bind</span> (<span style="color:#c41a16">&#34;C-c q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">quickrun</span>) <span style="color:#177500">;; ファイルを実行する</span>
-        (<span style="color:#c41a16">&#34;C-c c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">quickrun-compile-only</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;;-------------------------------------------------------------------------</span>
+<span style="color:#75715e">;; 20_quicrun.el                                   last updated: 2017/07/05</span>
+<span style="color:#75715e">;;-------------------------------------------------------------------------</span>
+(<span style="color:#a6e22e">use-package</span> quickrun
+  <span style="color:#e6db74">:bind</span> (<span style="color:#e6db74">&#34;C-c q&#34;</span> <span style="color:#f92672">.</span> quickrun) <span style="color:#75715e">;; ファイルを実行する</span>
+        (<span style="color:#e6db74">&#34;C-c c&#34;</span> <span style="color:#f92672">.</span> quickrun-compile-only))
 </code></pre></div>
       </div>
     </article>

@@ -156,38 +156,38 @@
 
       <div class="post-content">
         <p>機嫌よく動いていた自作のスクリプトに</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#a90d91">use</span> <span style="color:#000">warnings</span>; 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">use</span> warnings; 
 </code></pre></div><p>を入れたら作業そのものは止まることなく終了するのだけれど、</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#000">Use</span> <span style="color:#000">of</span> <span style="color:#000">uninitialized</span> <span style="color:#000">value</span> <span style="color:#000">...</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">Use of uninitialized value <span style="color:#f92672">...</span> 
 </code></pre></div><p>と叱られるようになった。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#a90d91">foreach</span> <span style="color:#a90d91">my</span> <span style="color:#000">$line</span> (<span style="color:#000">@log</span>){
-    <span style="color:#a90d91">chomp</span>(<span style="color:#000">$line</span>);
-    <span style="color:#a90d91">my</span> (<span style="color:#000">$no</span>,<span style="color:#000">$name</span>,<span style="color:#000">$date</span>,<span style="color:#000">$mail</span>,<span style="color:#000">$comment</span>,<span style="color:#000">$pass</span>)<span style="color:#000">=</span><span style="color:#a90d91">split</span>(<span style="color:#c41a16">/,/</span>,<span style="color:#000">$line</span>);
-    <span style="color:#177500"># $comment が空だった場合の処理</span>
-    <span style="color:#a90d91">if</span>(<span style="color:#000">$comment</span> <span style="color:#000">eq</span> <span style="color:#c41a16">&#34;&#34;</span>){
-	<span style="color:#000">$comment</span><span style="color:#000">=</span><span style="color:#000">$no</span>;<span style="color:#000">$c</span><span style="color:#000">++</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">foreach</span> <span style="color:#66d9ef">my</span> $line (@log){
+    chomp($line);
+    <span style="color:#66d9ef">my</span> ($no,$name,$date,$mail,$comment,$pass)<span style="color:#f92672">=</span>split(<span style="color:#e6db74">/,/</span>,$line);
+    <span style="color:#75715e"># $comment が空だった場合の処理</span>
+    <span style="color:#66d9ef">if</span>($comment <span style="color:#f92672">eq</span> <span style="color:#e6db74">&#34;&#34;</span>){
+	$comment<span style="color:#f92672">=</span>$no;$c<span style="color:#f92672">++</span>
     }
-    <span style="color:#a90d91">if</span> (<span style="color:#000">$c</span> <span style="color:#000">&gt;</span> <span style="color:#1c01ce">7</span>){  <span style="color:#177500"># 7日分を取得したら繰り返し終了</span>
-	<span style="color:#a90d91">last</span>
+    <span style="color:#66d9ef">if</span> ($c <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">7</span>){  <span style="color:#75715e"># 7日分を取得したら繰り返し終了</span>
+	<span style="color:#66d9ef">last</span>
     }
-	<span style="color:#000">....</span>
+	<span style="color:#f92672">....</span>
 </code></pre></div><p>上記を走らせたときに下記の部分で前述の警告が出る。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#a90d91">if</span>(<span style="color:#000">$comment</span> <span style="color:#000">eq</span> <span style="color:#c41a16">&#34;&#34;</span>){
-	<span style="color:#000">$comment</span><span style="color:#000">=</span><span style="color:#000">$no</span>;<span style="color:#000">$c</span><span style="color:#000">++</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">if</span>($comment <span style="color:#f92672">eq</span> <span style="color:#e6db74">&#34;&#34;</span>){
+	$comment<span style="color:#f92672">=</span>$no;$c<span style="color:#f92672">++</span>
 }
 </code></pre></div><p>$comment が存在しなかったときに他の変数を代入する…</p>
 <p>という条件式のつもりでしたが、存在しない（未定義の）変数だよ！ という警告なのである。落ち着いて考えたら当たり前ですね。ググってみたら未定義値かどうかを判定する
 <a href="https://www.javadrive.jp/perlfunc/other/index1.html">defined関数</a>
 というのがあるのを知りました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#a90d91">if</span> (<span style="color:#a90d91">defined</span> <span style="color:#000">$name</span>) {
-  <span style="color:#000">...</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#66d9ef">if</span> (defined $name) {
+  <span style="color:#f92672">...</span>
 }
 </code></pre></div><p>上記では定義されている場合に処理させるというものですが、私の場合は値が未定義だった場合に処理をさせたいので
 <a href="https://www.javadrive.jp/perl/if/index6.html">unless</a>
 を使えばいいという情報を得たので下記のように修正して警告が出なくなりました。めでたし(^o^)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#177500"># $comment が未定義だった場合の処理</span>
-<span style="color:#a90d91">unless</span> (<span style="color:#a90d91">defined</span> <span style="color:#000">$comment</span>){
-	<span style="color:#000">$comment</span><span style="color:#000">=</span><span style="color:#000">$no</span>;<span style="color:#000">$c</span><span style="color:#000">++</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># $comment が未定義だった場合の処理</span>
+<span style="color:#66d9ef">unless</span> (defined $comment){
+	$comment<span style="color:#f92672">=</span>$no;$c<span style="color:#f92672">++</span>
 }
 </code></pre></div>
       </div>

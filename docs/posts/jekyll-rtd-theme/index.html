@@ -166,15 +166,15 @@
 <p>この themeは特殊なのか、設定がまちがっているのかよくわからなかったが、ローカルでのプレビューはエラーが出てうまく行かなかった。</p>
 <p>結局、git pushするだけになったので <code>deploy.sh</code> と <code>makefile</code> を書いて自動化しました。deployに成功すると自動的にプラウザーで GitHub Pqgesを開くというものです。markdownファイルの編集が終わったら <code>make k</code> するだけで自動処理します。</p>
 <h2 id="deploysh">deploy.sh</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#633820">#!/bin/bash
-</span><span style="color:#633820"></span>git checkout master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>git checkout master
 git add -A
-git commit -m <span style="color:#c41a16">&#34;Update blog&#34;</span>
+git commit -m <span style="color:#e6db74">&#34;Update blog&#34;</span>
 git push origin master
 </code></pre></div><h2 id="makefile">makefile</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#000">a.out</span><span style="color:#000">:</span> <span style="color:#000">github</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#a6e22e">a.out</span><span style="color:#f92672">:</span> github
 
-<span style="color:#000">github</span><span style="color:#000">:</span>
+<span style="color:#a6e22e">github</span><span style="color:#f92672">:</span>
 	~/src/github.com/minorugh/minorugh.github.io/deploy.sh
 	chromium https://minorugh.github.io
 </code></pre></div>

@@ -157,17 +157,17 @@
       <div class="post-content">
         <p>Emacs27.2の安定版がリリースされたのでInstallした。</p>
 <p>私の場合は、makefileを下記のように修正してmakeコマンドを実行するだけで簡単にInstallできるようにしている。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#177500">## makefile
-</span><span style="color:#177500"></span><span style="color:#000">emacs-latest</span><span style="color:#000">:</span> <span style="color:#177500">## Install latest version of emacs
-</span><span style="color:#177500"></span>	<span style="color:#a90d91">cd</span> <span style="color:#c41a16">${</span><span style="color:#000">HOME</span><span style="color:#c41a16">}</span>/src;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	wget https://ftp.gnu.org/pub/gnu/emacs/emacs-27.2.tar.gz;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	tar -xzvf emacs-27.2.tar.gz;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	<span style="color:#a90d91">cd</span> emacs-27.2;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	./configure;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	make;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	sudo make install;<span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ make emacs-latest
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">## makefile
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">emacs-latest</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install latest version of emacs
+</span><span style="color:#75715e"></span>	cd <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/src;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	wget https://ftp.gnu.org/pub/gnu/emacs/emacs-27.2.tar.gz;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	tar -xzvf emacs-27.2.tar.gz;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	cd emacs-27.2;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	./configure;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	make;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	sudo make install;<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ make emacs-latest
 
 </code></pre></div><h2 id="スクリーンショット">スクリーンショット</h2>
 <p>Emacs27.2を起動し、Dashboard画面を表示させたスクショです。</p>

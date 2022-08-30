@@ -175,45 +175,45 @@
 <p>に従えばよいですが，このページでもネットワークインストーラを使う場合について簡単に説明します．</p>
 <p>まず，ミラーサイトから install-tl-unx.tar.gz をダウンロードします．</p>
 <h3 id="-wget-を使用する場合">※ wget を使用する場合</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 </code></pre></div><h3 id="-curl-を使用する場合">※ curl を使用する場合</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 </code></pre></div><p>install-tl-unx.tar.gz を展開します．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tar xvf install-tl-unx.tar.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tar xvf install-tl-unx.tar.gz
 </code></pre></div><p>展開したインストーラのディレクトリに移動します．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ <span style="color:#a90d91">cd</span> install-tl*
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd install-tl*
 </code></pre></div><p>root 権限でインストーラを実行します． オプションでダウンロードするリポジトリを指定できます．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
 
 ...
 Actions:
  &lt;I&gt; start installation to hard disk
- &lt;H&gt; <span style="color:#a90d91">help</span>
+ &lt;H&gt; help
  &lt;Q&gt; quit
 Enter command: I
 </code></pre></div><p>I を入力してインストールを開始します． サーバーの接続エラーが発生したり，何らかの理由により取得したアーカイブに問題があったりした場合はインストールが途中でストップします． この場合は，以下のコマンドで途中から再開できたりできなかったりします．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -profile installation.profile
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -profile installation.profile
 
 ABORTED INSTALLATION FOUND: installation.profile
-Do you want to <span style="color:#a90d91">continue</span> with the exact same settings as before <span style="color:#000">(</span>y/N<span style="color:#000">)</span>: y
+Do you want to <span style="color:#66d9ef">continue</span> with the exact same settings as before <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span>: y
 </code></pre></div><p>再開できない場合は接続先を変更するか，または ISO ファイルをミラーサイトからダウンロードしてインストールしてください．</p>
 <p>インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加します．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo /usr/local/texlive/????/bin/*/tlmgr path add
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo /usr/local/texlive/????/bin/*/tlmgr path add
 </code></pre></div><h3 id="アップデート-">アップデート †</h3>
 <p>アップデートは</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr update --self --all
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr update --self --all
 </code></pre></div><p>を実行すれば OK です．</p>
 <p>ただし，アップデートのタイミングによっては，今まで動いていたものが動かなくなったりすることがあるかもしれません．</p>
 <ul>
 <li>/usr/local/texlive/????/tlpkg/backups</li>
 </ul>
 <p>にパッケージのバックアップが保存されています． アップデートによって動作しなくなった場合は</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr restore （パッケージ名） （リビジョン番号）
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr restore （パッケージ名） （リビジョン番号）
 </code></pre></div><p>とすることで以前のバージョンに戻すことができます．</p>
 <h3 id="-my-styを追加する場所">※ My-styを追加する場所</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> /usr/local/texlive/????/texmf-dist/tex/platex
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> /usr/local/texlive/????/texmf-dist/tex/platex
 </code></pre></div><p>Dropboxからシンボリックを貼る</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo ln -s /home/minoru/Dropox/dotfiles/tex/platex/my-sty /usr/local/texlive/????/texmf-dist/tex/platex 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo ln -s /home/minoru/Dropox/dotfiles/tex/platex/my-sty /usr/local/texlive/????/texmf-dist/tex/platex 
 </code></pre></div><p>そのあと、<code>sudo mktexlsr</code> する。</p>
 
       </div>

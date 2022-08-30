@@ -160,11 +160,11 @@
       <div class="post-content">
         <p>Emacsのmakefile-modeで行頭のtabを挿入するたびに &ldquo;Suspicious line XXX. Save anyway?&rdquo; というポップアップ・プロンプトが出る。
 この現象は、auto-save-buers との関係らしく、以下のおまじないを設定することででなくなった。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#177500">;;; Makefile の Suspicious line XXX. Save anyway を抑制する</span>
-(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;makefile-mode-hook</span>
-    (<span style="color:#3f6e75">function</span>
-        (<span style="color:#a90d91">lambda</span> ()
-            (<span style="color:#000">fset</span> <span style="color:#c41a16">&#39;makefile-warn-suspicious-lines</span> <span style="color:#c41a16">&#39;ignore</span>))))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;;; Makefile の Suspicious line XXX. Save anyway を抑制する</span>
+(add-hook <span style="color:#e6db74">&#39;makefile-mode-hook</span>
+    (<span style="color:#a6e22e">function</span>
+        (lambda ()
+            (fset <span style="color:#e6db74">&#39;makefile-warn-suspicious-lines</span> <span style="color:#e6db74">&#39;ignore</span>))))
 </code></pre></div>
       </div>
     </article>

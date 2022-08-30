@@ -161,19 +161,19 @@
 <li><a href="https://stackoverflow.com/questions/23793288/cycle-custom-themes-w-emacs-24">stack-overflow</a></li>
 </ul>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">my-themes</span> (<span style="color:#000">list</span> <span style="color:#c41a16">&#39;doom-dracula</span> <span style="color:#c41a16">&#39;material</span> <span style="color:#c41a16">&#39;misterioso</span> <span style="color:#c41a16">&#39;deeper-blue</span>)) 
-(<span style="color:#a90d91">setq</span> <span style="color:#000">curr-theme</span> <span style="color:#000">my-themes</span>)
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my-theme-cycle</span> ()
-  <span style="color:#c41a16">&#34;Cycle custom theme.&#34;</span>
-    (<span style="color:#a90d91">interactive</span>)
-    (<span style="color:#000">disable-theme</span> (<span style="color:#000">car</span> <span style="color:#000">curr-theme</span>)) 
-    (<span style="color:#a90d91">setq</span> <span style="color:#000">curr-theme</span> (<span style="color:#000">cdr</span> <span style="color:#000">curr-theme</span>))
-    (<span style="color:#a90d91">if</span> (<span style="color:#000">null</span> <span style="color:#000">curr-theme</span>) (<span style="color:#a90d91">setq</span> <span style="color:#000">curr-theme</span> <span style="color:#000">my-themes</span>))
-    (<span style="color:#000">load-theme</span> (<span style="color:#000">car</span> <span style="color:#000">curr-theme</span>) <span style="color:#000">t</span>)
-    (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;%s&#34;</span> (<span style="color:#000">car</span> <span style="color:#000">curr-theme</span>)))
-(<span style="color:#000">global-set-key</span> [<span style="color:#000">f7</span>] <span style="color:#c41a16">&#39;my-theme-cycle</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">curr-theme</span> <span style="color:#000">my-themes</span>)
-(<span style="color:#000">load-theme</span> (<span style="color:#000">car</span> <span style="color:#000">curr-theme</span>) <span style="color:#000">t</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq my-themes (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#39;doom-dracula</span> <span style="color:#e6db74">&#39;material</span> <span style="color:#e6db74">&#39;misterioso</span> <span style="color:#e6db74">&#39;deeper-blue</span>)) 
+(setq curr-theme my-themes)
+(defun my-theme-cycle ()
+  <span style="color:#e6db74">&#34;Cycle custom theme.&#34;</span>
+    (interactive)
+    (disable-theme (<span style="color:#a6e22e">car</span> curr-theme)) 
+    (setq curr-theme (<span style="color:#a6e22e">cdr</span> curr-theme))
+    (if (<span style="color:#a6e22e">null</span> curr-theme) (setq curr-theme my-themes))
+    (load-theme (<span style="color:#a6e22e">car</span> curr-theme) <span style="color:#66d9ef">t</span>)
+    (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;%s&#34;</span> (<span style="color:#a6e22e">car</span> curr-theme)))
+(global-set-key [f7] <span style="color:#e6db74">&#39;my-theme-cycle</span>)
+(setq curr-theme my-themes)
+(load-theme (<span style="color:#a6e22e">car</span> curr-theme) <span style="color:#66d9ef">t</span>)
 
 </code></pre></div>
       </div>

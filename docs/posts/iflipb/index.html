@@ -170,11 +170,11 @@
 <li>戻り機能（最後になったら先頭へ戻る）を設定できる：iflipb-wrap-around</li>
 </ul>
 <h2 id="iflipbの設定">iflipbの設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; iflipb</span>
-(<span style="color:#a90d91">setq</span> <span style="color:#000">iflipb-ignore-buffers</span> (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;^[*]&#34;</span> <span style="color:#c41a16">&#34;^magit&#34;</span> <span style="color:#c41a16">&#34;]$&#34;</span>))
-(<span style="color:#a90d91">setq</span> <span style="color:#000">iflipb-wrap-around</span> <span style="color:#000">t</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#c41a16">&#39;iflipb-next-buffer</span>)
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#c41a16">&#39;iflipb-previous-buffer</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; iflipb</span>
+(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span> <span style="color:#e6db74">&#34;]$&#34;</span>))
+(setq iflipb-wrap-around <span style="color:#66d9ef">t</span>)
+(bind-key <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-next-buffer</span>)
+(bind-key <span style="color:#e6db74">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-previous-buffer</span>)
 </code></pre></div><p>ignore-buffersの設定は、正規表現が使えます。上記の設定では以下のバッファーを設定しています。</p>
 <ul>
 <li><code>*scratch*</code>などのアスタリスクのついたもの： <code>&quot;^[*]&quot;</code></li>
@@ -195,14 +195,14 @@
 <li><a href="https://goo.gl/aALmTA">超シンプル目立たない複数ウィンドウ管理(ぞ式ElScreen)</a></li>
 </ul>
 <h2 id="elscreenの設定">elscreenの設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; elscreen</span>
-(<span style="color:#a90d91">setq</span> <span style="color:#000">elscreen-display-tab</span> <span style="color:#000">nil</span>)  <span style="color:#177500">;; Turn off tabs</span>
-(<span style="color:#a90d91">setq</span> <span style="color:#000">elscreen-tab-display-kill-screen</span> <span style="color:#000">nil</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">elscreen-tab-display-control</span> <span style="color:#000">nil</span>)
-(<span style="color:#000">elscreen-start</span>)
-(<span style="color:#000">elscreen-create</span>) <span style="color:#177500">;; start with 2 tabs</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; elscreen</span>
+(setq elscreen-display-tab <span style="color:#66d9ef">nil</span>)  <span style="color:#75715e">;; Turn off tabs</span>
+(setq elscreen-tab-display-kill-screen <span style="color:#66d9ef">nil</span>)
+(setq elscreen-tab-display-control <span style="color:#66d9ef">nil</span>)
+(elscreen-start)
+(elscreen-create) <span style="color:#75715e">;; start with 2 tabs</span>
 
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;tab&gt;&#34;</span> <span style="color:#c41a16">&#39;elscreen-next</span>)
+(bind-key <span style="color:#e6db74">&#34;C-&lt;tab&gt;&#34;</span> <span style="color:#e6db74">&#39;elscreen-next</span>)
 </code></pre></div><p>ただし上記設定だけでは<code>*scratch*</code>を二面開く…という感じになって味気ないので、Emacs起動時のカレントバッファーには、以前、別記事で紹介した dashboard を表示させるようにしました。</p>
 <ul>
 <li><a href="https://snap.textgh.org/201710161509/">Emacsのスタート画面をイケメンにする</a></li>

@@ -161,12 +161,12 @@
 </ul>
 <h2 id="準備">準備</h2>
 <p>Xcodeが必要と言うことだけどコマンドラインツールのみで大丈夫だった。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xcode-select --install
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xcode-select --install
 </code></pre></div><p>ninja が要るらしいので homebrew でインストールしておく。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ninja
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ninja
 </code></pre></div><h2 id="mozc-をダウンロードする">mozc をダウンロードする</h2>
 <p>作業ディレクトリはどこでもいいが、僕は基本的にdesktopで作業することが多い。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a90d91">cd</span> desktop
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd desktop
 git clone https://github.com/google/mozc.git -b master --single-branch --recursive
 </code></pre></div><h2 id="mac-の-google日本語入力と連携させるためにソースを修正">Mac の google日本語入力と連携させるためにソースを修正</h2>
 <p>以下のファイルを作ってパッチをかけてもいいが、簡単なのでぼくは直接修正した。</p>
@@ -197,19 +197,19 @@ index 76b540d..2ee4006 100644
            ],
            
 </code></pre><h2 id="コンパイル">コンパイル</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a90d91">cd</span> mozc/src
-<span style="color:#000">GYP_DEFINES</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;mac_sdk=10.12 mac_deployment_target=10.12&#34;</span> python build_mozc.py gyp --noqt --branding<span style="color:#000">=</span>GoogleJapaneseInput
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd mozc/src
+GYP_DEFINES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mac_sdk=10.12 mac_deployment_target=10.12&#34;</span> python build_mozc.py gyp --noqt --branding<span style="color:#f92672">=</span>GoogleJapaneseInput
 $ python build_mozc.py build -c Release unix/emacs/emacs.gyp:mozc_emacs_helper
 </code></pre></div><h2 id="動作確認">動作確認</h2>
 <p>以下のように表示されれば成功！</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a90d91">echo</span> -e <span style="color:#c41a16">&#39;(0 CreateSession)\n(1 SendKey 1 hiragana)\n(2 SendKey 1 hiragana)\n(3 SendKey 1 97)&#39;</span> | out_mac/Release/mozc_emacs_helper
-<span style="color:#000">((</span>mozc-emacs-helper . t<span style="color:#000">)(</span>version . <span style="color:#c41a16">&#34;2.19.2643.101&#34;</span><span style="color:#000">)(</span>config . <span style="color:#000">((</span>preedit-method . roman<span style="color:#000">))))</span>
-<span style="color:#000">((</span>emacs-event-id . 0<span style="color:#000">)(</span>emacs-session-id . 1<span style="color:#000">)(</span>output . <span style="color:#000">()))</span>
-<span style="color:#000">((</span>emacs-event-id . 1<span style="color:#000">)(</span>emacs-session-id . 1<span style="color:#000">)(</span>output . <span style="color:#000">((</span>id . <span style="color:#c41a16">&#34;4087100232139049092&#34;</span><span style="color:#000">)(</span>mode . hiragana<span style="color:#000">)(</span>consumed . nil<span style="color:#000">)(</span>key . <span style="color:#000">((</span>special-key . kana<span style="color:#000">)))(</span>status . <span style="color:#000">((</span>activated . t<span style="color:#000">)(</span>mode . hiragana<span style="color:#000">)(</span>comeback-mode . hiragana<span style="color:#000">))))))</span>
-<span style="color:#000">((</span>emacs-event-id . 2<span style="color:#000">)(</span>emacs-session-id . 1<span style="color:#000">)(</span>output . <span style="color:#000">((</span>id . <span style="color:#c41a16">&#34;4087100232139049092&#34;</span><span style="color:#000">)(</span>mode . hiragana<span style="color:#000">)(</span>consumed . nil<span style="color:#000">)(</span>key . <span style="color:#000">((</span>special-key . kana<span style="color:#000">)))(</span>status . <span style="color:#000">((</span>activated . t<span style="color:#000">)(</span>mode . hiragana<span style="color:#000">)(</span>comeback-mode . hiragana<span style="color:#000">))))))</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo -e <span style="color:#e6db74">&#39;(0 CreateSession)\n(1 SendKey 1 hiragana)\n(2 SendKey 1 hiragana)\n(3 SendKey 1 97)&#39;</span> | out_mac/Release/mozc_emacs_helper
+<span style="color:#f92672">((</span>mozc-emacs-helper . t<span style="color:#f92672">)(</span>version . <span style="color:#e6db74">&#34;2.19.2643.101&#34;</span><span style="color:#f92672">)(</span>config . <span style="color:#f92672">((</span>preedit-method . roman<span style="color:#f92672">))))</span>
+<span style="color:#f92672">((</span>emacs-event-id . 0<span style="color:#f92672">)(</span>emacs-session-id . 1<span style="color:#f92672">)(</span>output . <span style="color:#f92672">()))</span>
+<span style="color:#f92672">((</span>emacs-event-id . 1<span style="color:#f92672">)(</span>emacs-session-id . 1<span style="color:#f92672">)(</span>output . <span style="color:#f92672">((</span>id . <span style="color:#e6db74">&#34;4087100232139049092&#34;</span><span style="color:#f92672">)(</span>mode . hiragana<span style="color:#f92672">)(</span>consumed . nil<span style="color:#f92672">)(</span>key . <span style="color:#f92672">((</span>special-key . kana<span style="color:#f92672">)))(</span>status . <span style="color:#f92672">((</span>activated . t<span style="color:#f92672">)(</span>mode . hiragana<span style="color:#f92672">)(</span>comeback-mode . hiragana<span style="color:#f92672">))))))</span>
+<span style="color:#f92672">((</span>emacs-event-id . 2<span style="color:#f92672">)(</span>emacs-session-id . 1<span style="color:#f92672">)(</span>output . <span style="color:#f92672">((</span>id . <span style="color:#e6db74">&#34;4087100232139049092&#34;</span><span style="color:#f92672">)(</span>mode . hiragana<span style="color:#f92672">)(</span>consumed . nil<span style="color:#f92672">)(</span>key . <span style="color:#f92672">((</span>special-key . kana<span style="color:#f92672">)))(</span>status . <span style="color:#f92672">((</span>activated . t<span style="color:#f92672">)(</span>mode . hiragana<span style="color:#f92672">)(</span>comeback-mode . hiragana<span style="color:#f92672">))))))</span>
 </code></pre></div><h2 id="インストールする">インストールする</h2>
 <p>パスの通ったところにコピーするだけ。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp out_mac/Release/mozc_emacs_helper /usr/local/bin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp out_mac/Release/mozc_emacs_helper /usr/local/bin
 </code></pre></div><h2 id="emacs-で使えるようにする">Emacs で使えるようにする</h2>
 <p>mozc.el をコピーするか Package install する。</p>
 <pre><code class="language-basu" data-lang="basu">cp mozc/src/unix/emacs/mozc.el &quot;YOUR EMACS ELISP PATH&quot;
@@ -218,17 +218,17 @@ $ python build_mozc.py build -c Release unix/emacs/emacs.gyp:mozc_emacs_helper
 <li>mozc-popup.el をパッケージインストールして変換候補を表示させる。</li>
 <li>mozc の on/off でカーソルの色を変える（mozc-el-extensions）</li>
 </ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#000">require</span> <span style="color:#c41a16">&#39;mozc</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">default-input-method</span> <span style="color:#c41a16">&#34;japanese-mozc&#34;</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">mozc-helper-program-name</span> <span style="color:#c41a16">&#34;mozc_emacs_helper&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;mozc</span>)
+(<span style="color:#66d9ef">setq</span> default-input-method <span style="color:#e6db74">&#34;japanese-mozc&#34;</span>)
+(<span style="color:#66d9ef">setq</span> mozc-helper-program-name <span style="color:#e6db74">&#34;mozc_emacs_helper&#34;</span>)
 
-(<span style="color:#000">require</span> <span style="color:#c41a16">&#39;mozc-popup</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">mozc-candidate-style</span> <span style="color:#c41a16">&#39;popup</span>) <span style="color:#177500">; select popup style.</span>
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;mozc-popup</span>)
+(<span style="color:#66d9ef">setq</span> mozc-candidate-style <span style="color:#e6db74">&#39;popup</span>) <span style="color:#75715e">; select popup style.</span>
 
-<span style="color:#177500">;; Changing the color of the cursor with on/off</span>
-(<span style="color:#000">require</span> <span style="color:#c41a16">&#39;mozc-cursor-color</span>)
+<span style="color:#75715e">;; Changing the color of the cursor with on/off</span>
+(<span style="color:#a6e22e">require</span> <span style="color:#e6db74">&#39;mozc-cursor-color</span>)
 
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#000">M-x</span> <span style="color:#000">mozc-mode</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">M-x mozc-mode
 </code></pre></div><p>で使える。toggle-input-method をキーバインドしてもよい。</p>
 <h2 id="使用感">使用感</h2>
 <p>google日本語の辞書、ユーザ辞書ともに完全に連携できるのでとても便利。</p>

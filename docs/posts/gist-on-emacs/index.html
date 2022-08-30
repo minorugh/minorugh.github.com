@@ -175,29 +175,29 @@
 <li><a href="https://qiita.com/minoruGH/items/6a81af6e35a8ba896a02">コマンドラインでgistを操作できる &ldquo;gist&rdquo;</a></li>
 </ul>
 <p>ターミナルで <code>gist -help</code> を打つといろいろオプションパラメターがわかります。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Usage: gist <span style="color:#000">[</span>-o|-c|-e<span style="color:#000">]</span> <span style="color:#000">[</span>-p<span style="color:#000">]</span> <span style="color:#000">[</span>-s<span style="color:#000">]</span> <span style="color:#000">[</span>-R<span style="color:#000">]</span> <span style="color:#000">[</span>-d DESC<span style="color:#000">]</span> <span style="color:#000">[</span>-u URL<span style="color:#000">]</span>
-                          <span style="color:#000">[</span>--skip-empty<span style="color:#000">]</span> <span style="color:#000">[</span>-P<span style="color:#000">]</span> <span style="color:#000">[</span>-f NAME|-t EXT<span style="color:#000">]</span>* FILE*
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Usage: gist <span style="color:#f92672">[</span>-o|-c|-e<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-R<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-d DESC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u URL<span style="color:#f92672">]</span>
+                          <span style="color:#f92672">[</span>--skip-empty<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-f NAME|-t EXT<span style="color:#f92672">]</span>* FILE*
        gist --login
-       gist <span style="color:#000">[</span>-l|-r<span style="color:#000">]</span>
+       gist <span style="color:#f92672">[</span>-l|-r<span style="color:#f92672">]</span>
 
         --login                      Authenticate gist on this computer.
-    -f, --filename <span style="color:#000">[</span>NAME.EXTENSION<span style="color:#000">]</span>  Sets the filename and syntax type.
-    -t, --type <span style="color:#000">[</span>EXTENSION<span style="color:#000">]</span>           Sets the file extension and syntax type.
+    -f, --filename <span style="color:#f92672">[</span>NAME.EXTENSION<span style="color:#f92672">]</span>  Sets the filename and syntax type.
+    -t, --type <span style="color:#f92672">[</span>EXTENSION<span style="color:#f92672">]</span>           Sets the file extension and syntax type.
     -p, --private                    Makes your gist private.
         --no-private
     -d, --description DESCRIPTION    Adds a description to your gist.
     -s, --shorten                    Shorten the gist URL using git.io.
-    -u, --update <span style="color:#000">[</span> URL | ID <span style="color:#000">]</span>        Update an existing gist.
+    -u, --update <span style="color:#f92672">[</span> URL | ID <span style="color:#f92672">]</span>        Update an existing gist.
     -c, --copy                       Copy the resulting URL to the clipboard
-    -e, --embed                      Copy the embed code <span style="color:#a90d91">for</span> the gist to the clipboard
+    -e, --embed                      Copy the embed code <span style="color:#66d9ef">for</span> the gist to the clipboard
     -o, --open                       Open the resulting URL in a browser
         --no-open
         --skip-empty                 Skip gisting empty files
     -P, --paste                      Paste from the clipboard to gist
     -R, --raw                        Display raw URL of the new gist
-    -l, --list <span style="color:#000">[</span>USER<span style="color:#000">]</span>                List all gists <span style="color:#a90d91">for</span> user
-    -r, --read ID <span style="color:#000">[</span>FILENAME<span style="color:#000">]</span>         Read a gist and print out the contents
-        --delete <span style="color:#000">[</span> URL | ID <span style="color:#000">]</span>        Delete a gist
+    -l, --list <span style="color:#f92672">[</span>USER<span style="color:#f92672">]</span>                List all gists <span style="color:#66d9ef">for</span> user
+    -r, --read ID <span style="color:#f92672">[</span>FILENAME<span style="color:#f92672">]</span>         Read a gist and print out the contents
+        --delete <span style="color:#f92672">[</span> URL | ID <span style="color:#f92672">]</span>        Delete a gist
     -h, --help                       Show this message.
     -v, --version                    Print the version.
 </code></pre></div><h2 id="emacsの設定">Emacsの設定</h2>
@@ -208,25 +208,25 @@
 <h3 id="3-open-lepton">3. open-lepton</h3>
 <p>クライアントアプリ Leptonを開くための設定です。</p>
 <h3 id="4-initel-の設定">4. init.el の設定</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">yagist</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">yagist-region-or-buffer</span>)
-         (<span style="color:#c41a16">&#34;C-c g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-gist-web-page</span>)
-         (<span style="color:#c41a16">&#34;C-c l&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-lepton</span>))
-  <span style="color:#a90d91">:config</span>
-  <span style="color:#177500">;; automatically use `browse-url&#39; to view gists after they&#39;reposted.</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">yagist-view-gist</span> <span style="color:#000">t</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf yagist
+  :ensure <span style="color:#66d9ef">t</span>
+  :bind ((<span style="color:#e6db74">&#34;C-c y&#34;</span> <span style="color:#f92672">.</span> yagist-region-or-buffer)
+         (<span style="color:#e6db74">&#34;C-c g&#34;</span> <span style="color:#f92672">.</span> open-gist-web-page)
+         (<span style="color:#e6db74">&#34;C-c l&#34;</span> <span style="color:#f92672">.</span> open-lepton))
+  :config
+  <span style="color:#75715e">;; automatically use `browse-url&#39; to view gists after they&#39;reposted.</span>
+  (setq yagist-view-gist <span style="color:#66d9ef">t</span>)
 
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">open-gist-web-page</span> ()
-    <span style="color:#c41a16">&#34;Open GitHub Gist page with chrome.&#34;</span>
-    (<span style="color:#a90d91">interactive</span>)
-    (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://gist.github.com/&lt;gist-user&gt;&#34;</span>))
+  (defun open-gist-web-page ()
+    <span style="color:#e6db74">&#34;Open GitHub Gist page with chrome.&#34;</span>
+    (interactive)
+    (browse-url <span style="color:#e6db74">&#34;https://gist.github.com/&lt;gist-user&gt;&#34;</span>))
 
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">open-lepton</span> ()
-	<span style="color:#c41a16">&#34;Open keepassxc withe auto passwd input.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;lepton&#34;</span>)
-	(<span style="color:#000">delete-other-windows</span>)))
+  (defun open-lepton ()
+	<span style="color:#e6db74">&#34;Open keepassxc withe auto passwd input.&#34;</span>
+	(interactive)
+	(compile <span style="color:#e6db74">&#34;lepton&#34;</span>)
+	(delete-other-windows)))
 </code></pre></div><h2 id="クライアントアプリの紹介">クライアントアプリの紹介</h2>
 <p>ローカルでビジュアルにGistを管理したいという方には、マルチプラートホームで利用可能な <a href="https://github.com/hackjutsu/Lepton">Lepton</a> というクライアントアプリがお薦めです。</p>
 <p>WEBページよりは見やすいですし、編集、削除も可能です。New fileをコピペして投稿することもできます。</p>

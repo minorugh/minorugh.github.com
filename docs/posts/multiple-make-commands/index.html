@@ -156,7 +156,7 @@
 
       <div class="post-content">
         <p>ホームページ管理のためにEmacsをワークデスクとして色んな作業をしています。その中で何度も繰り返し行う作業はMakeファイルに書いて限りなく自動化して、それをEmacsから実行しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#000">M-x</span> <span style="color:#000">compile</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">M-x compile
 </code></pre></div><p>とすると、</p>
 <pre><code>Compile command: make -k
 </code></pre><p>とミニバッファーにでます。ここでリターンキーを押すと、makeコマンドが実行されます。</p>
@@ -164,91 +164,91 @@
 <p>通常この使用法でも大した問題はないのですが、compile-commandの内容を書き換えて実行すると、次回に<code>M-x compile</code>コマンドを実行したとき <code>make -k</code> にはならず、先程の書き換えたものがデフォルトに変わってしまうのです。</p>
 <p>そこで いろいろな引数でmakeコマンドを使い分けるためい、hydraで設定してみました。</p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;;; 50_hydra-compile.el --- 50_hydra-compile.el</span>
-<span style="color:#177500">;;; Commentary:</span>
-<span style="color:#177500">;;; Code:</span>
-<span style="color:#177500">;;(setq debug-on-error t)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;; 50_hydra-compile.el --- 50_hydra-compile.el</span>
+<span style="color:#75715e">;;; Commentary:</span>
+<span style="color:#75715e">;;; Code:</span>
+<span style="color:#75715e">;;(setq debug-on-error t)</span>
 
-(<span style="color:#000">bind-key</span>
- [<span style="color:#000">f2</span>]
- (<span style="color:#000">defhydra</span> <span style="color:#000">hydra-compile</span> (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
-  <span style="color:#c41a16">&#34;
-</span><span style="color:#c41a16">╭─────────────────────────────────────┐
-</span><span style="color:#c41a16">│ 🗿 Compile:
-</span><span style="color:#c41a16">     make:_a_ll  _u_pftp  _m_ove  _b_klog  _g_it
-</span><span style="color:#c41a16">     ---------------------------------
-</span><span style="color:#c41a16">     make:-_k_   _c_lean
-</span><span style="color:#c41a16">└──────────────────────────────────────┘&#34;</span>
-   (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">my:make-all</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">my:make-upftp</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">my:make-move</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">my:make-bklog</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">my:make-git</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">my:make-default</span>)
-   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my:make-clean</span>)))
+(bind-key
+ [f2]
+ (defhydra hydra-compile (:color red :hint <span style="color:#66d9ef">nil</span>)
+  <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">╭─────────────────────────────────────┐
+</span><span style="color:#e6db74">│ 🗿 Compile:
+</span><span style="color:#e6db74">     make:_a_ll  _u_pftp  _m_ove  _b_klog  _g_it
+</span><span style="color:#e6db74">     ---------------------------------
+</span><span style="color:#e6db74">     make:-_k_   _c_lean
+</span><span style="color:#e6db74">└──────────────────────────────────────┘&#34;</span>
+   (<span style="color:#e6db74">&#34;a&#34;</span> my:make-all :exit <span style="color:#66d9ef">t</span>)
+   (<span style="color:#e6db74">&#34;u&#34;</span> my:make-upftp :exit <span style="color:#66d9ef">t</span>)
+   (<span style="color:#e6db74">&#34;m&#34;</span> my:make-move :exit <span style="color:#66d9ef">t</span>)
+   (<span style="color:#e6db74">&#34;b&#34;</span> my:make-bklog :exit <span style="color:#66d9ef">t</span>)
+   (<span style="color:#e6db74">&#34;g&#34;</span> my:make-git :exit <span style="color:#66d9ef">t</span>)
+   (<span style="color:#e6db74">&#34;k&#34;</span> my:make-default)
+   (<span style="color:#e6db74">&#34;c&#34;</span> my:make-clean)))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-default</span> ()
-  <span style="color:#c41a16">&#34;Make command default.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make -k&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-default ()
+  <span style="color:#e6db74">&#34;Make command default.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make -k&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-upftp</span> ()
-  <span style="color:#c41a16">&#34;Make command for upftp.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make up&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-upftp ()
+  <span style="color:#e6db74">&#34;Make command for upftp.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make up&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-all</span> ()
-  <span style="color:#c41a16">&#34;Make command for all.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make -k &amp;&amp; make up&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-all ()
+  <span style="color:#e6db74">&#34;Make command for all.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make -k &amp;&amp; make up&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-move</span> ()
-  <span style="color:#c41a16">&#34;Make command for move.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make mv&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-move ()
+  <span style="color:#e6db74">&#34;Make command for move.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make mv&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-bklog</span> ()
-  <span style="color:#c41a16">&#34;Make command for bklog.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make bk&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-bklog ()
+  <span style="color:#e6db74">&#34;Make command for bklog.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make bk&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-git</span> ()
-  <span style="color:#c41a16">&#34;Make command for git.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make git&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-git ()
+  <span style="color:#e6db74">&#34;Make command for git.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make git&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-clean</span> ()
-  <span style="color:#c41a16">&#34;Make command for clean.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make clean&#34;</span>)
-  (<span style="color:#000">my:compile</span>))
+(defun my:make-clean ()
+  <span style="color:#e6db74">&#34;Make command for clean.&#34;</span>
+  (interactive)
+  (setq compile-command <span style="color:#e6db74">&#34;make clean&#34;</span>)
+  (my:compile))
 
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:compile</span> ()
-  <span style="color:#c41a16">&#34;Restore compile command after recompile.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">recompile</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compile-command</span> <span style="color:#c41a16">&#34;make -k&#34;</span>))
+(defun my:compile ()
+  <span style="color:#e6db74">&#34;Restore compile command after recompile.&#34;</span>
+  (interactive)
+  (recompile)
+  (setq compile-command <span style="color:#e6db74">&#34;make -k&#34;</span>))
 
-<span style="color:#177500">;; Local Variables:</span>
-<span style="color:#177500">;; byte-compile-warnings: (not free-vars callargs)</span>
-<span style="color:#177500">;; End:</span>
-<span style="color:#177500">;;; 50_hydra-compile ends here</span>
+<span style="color:#75715e">;; Local Variables:</span>
+<span style="color:#75715e">;; byte-compile-warnings: (not free-vars callargs)</span>
+<span style="color:#75715e">;; End:</span>
+<span style="color:#75715e">;;; 50_hydra-compile ends here</span>
 </code></pre></div><h2 id="更に使いやすくする">更に使いやすくする</h2>
 <p><code>compile</code> や  <code>shell-command</code> を実行すると結果のログが表示されます。その都度閉じるのが面倒なので <code>popwin</code> で表示させるようにします。popwin windowは &ldquo;C-g&rdquo; で閉じることができます。emacsでは何かと &ldquo;C-g&rdquo; を使うことが多いので、私はキーハックアプリで <code>command_L</code> に割り当ててワンキーで実行できるようにしています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">use-package</span> <span style="color:#000">popwin</span>)
-(<span style="color:#000">popwin-mode</span> <span style="color:#1c01ce">1</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package popwin)
+(popwin-mode <span style="color:#ae81ff">1</span>)
 
-<span style="color:#177500">;; M-!</span>
-(<span style="color:#a90d91">push</span> <span style="color:#c41a16">&#34;*Shell Command Output*&#34;</span> <span style="color:#000">popwin:special-display-config</span>)
+<span style="color:#75715e">;; M-!</span>
+(push <span style="color:#e6db74">&#34;*Shell Command Output*&#34;</span> popwin:special-display-config)
 
-<span style="color:#177500">;; M-x compile</span>
-(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">compilation-mode</span> <span style="color:#a90d91">:noselect</span> <span style="color:#000">t</span>) <span style="color:#000">popwin:special-display-config</span>)
+<span style="color:#75715e">;; M-x compile</span>
+(push <span style="color:#f92672">&#39;</span>(compilation-mode :noselect <span style="color:#66d9ef">t</span>) popwin:special-display-config)
 </code></pre></div>
       </div>
     </article>
