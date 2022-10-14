@@ -7,6 +7,9 @@ draft = false
 ## [Emacs Configuration](https://minorugh.github.io/emacs.d/)
 Emacs の設定についてのドキュメント
 
+## [Emacs Configuration](https://minorugh.github.io/emacs/)
+Emacs の設定についてのドキュメント（RTD バージョン）
+
 ## [Dotfiles](https://github.com/minorugh/dotfiles)
 Dotfilesによるバックアップ不要な開発環境
 
