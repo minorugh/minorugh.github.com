@@ -6,7 +6,16 @@
     <description>Recent content in mozc on 四時随順</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 13 Nov 2021 20:20:44 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/mozc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 14:22:20 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/mozc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>競合コピーが生じないようにemacs-mozc辞書を共有する方法</title>
+      <link>http://minorugh.github.io/posts/mozc-dictionary-sharing/</link>
+      <pubDate>Thu, 22 Sep 2022 14:22:20 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/mozc-dictionary-sharing/</guid>
+      <description>mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用</description>
+    </item>
+    
     <item>
       <title>ac-mozc : モードレス日本語入力を試してみた</title>
       <link>http://minorugh.github.io/posts/ac-mozc/</link>

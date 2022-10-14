@@ -5,8 +5,436 @@
         <description>Recent content in Posts on 四時随順</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
-        <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate>
+        <lastBuildDate>Wed, 12 Oct 2022 17:09:25 +0900</lastBuildDate>
         <atom:link href="http://minorugh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>EmacsからQiitaの記事投稿用にAtomic Chromeを再導入</title>
+            <link>http://minorugh.github.io/posts/atomic-chrome/</link>
+            <pubDate>Wed, 12 Oct 2022 17:09:25 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/atomic-chrome/</guid>
+            <description>久しぶりにQiitaに投稿しようとしたら以前は出来たコピペができなくなっている。 Emacsのクリップボードの設定ミスを疑って調べたけれど問題</description>
+            <content type="html"><![CDATA[<p>久しぶりにQiitaに投稿しようとしたら以前は出来たコピペができなくなっている。</p>
+<p>Emacsのクリップボードの設定ミスを疑って調べたけれど問題ない。仕様が変更されたのかどうかはわからないが、ダイレクトで記事を書くなんてことは考えられない。みんなどうしてるんだろう？</p>
+<p>はてさてと悩んで、前に使った <code>atomic-chrome</code> を再導入してみた。結果はGood！
+Chrome側の拡張機能は、atomic-chrome-extensions だったと記憶していたのだけれど見当たらず、
+<a href="https://chrome.google.com/webstore/detail/ghosttext/godiecgffnchndlihlpaajjcplehddca">Gost Text</a> に置き換わったみたい。このあたりは下記Tipsに詳しい。</p>
+<ul>
+<li><a href="https://qiita.com/iwaokimura/items/4932e0f8dcfd55c4556c">atomic-chrome再訪</a></li>
+</ul>
+<h2 id="emacsの設定">Emacsの設定</h2>
+<p>取り急ぎ下記の設定で試したところ快適にコピペ出来た。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; atomic-chrome</span>
+(leaf atomic-chrome
+  :ensure <span style="color:#66d9ef">t</span>
+  :hook (after-init-hook <span style="color:#f92672">.</span> atomic-chrome-start-server)
+  :custom (atomic-chrome-buffer-open-style <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;full</span>))
+</code></pre></div><p>結構起動時間を消費するので、<code>after-init-hook</code> で遅延起動している。また、Splitバッファーで表示されるデフォルトのスタイルが気に入らなかったので <code>full window</code> に変更している。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Google-translateからDeepl-translateに乗り換えた話</title>
+            <link>http://minorugh.github.io/posts/deeple-translate/</link>
+            <pubDate>Wed, 12 Oct 2022 13:21:38 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/deeple-translate/</guid>
+            <description>Emacsから翻訳するのにGoogle-translateを愛用していたが、Slackのemacs-jpでGoogleよりも高性能だと評判の</description>
+            <content type="html"><![CDATA[<p>Emacsから翻訳するのにGoogle-translateを愛用していたが、Slackのemacs-jpでGoogleよりも高性能だと評判の
+<a href="https://www.deepl.com/ja/translator">DeePL</a>
+を知ったので、早速導入してみた。</p>
+<h2 id="emacsからdeeplを使う">EmacsからDeePLを使う</h2>
+<p>&ldquo;EmacsからDeePLを使う&rdquo; で調べると下記3種類のTipsが見つかった。いづれもリージョン選択範囲を翻訳させるものである。</p>
+<h3 id="1-masatoideeplel">1. masatoi/deepl.el</h3>
+<ul>
+<li><a href="https://qiita.com/masatoi0/items/26c7384749393a1bf8fb">https://qiita.com/masatoi0/items/26c7384749393a1bf8fb</a></li>
+</ul>
+<p>翻訳結果はミニバッファーに表示され、同じ内容がクリップボードにコピーされる。</p>
+<p>オリジナルのコード
+（<a href="https://gist.github.com/masatoi/ec90d49331e40983427025f8167d01ee">deepl.el</a> ）
+は、<code>load-file</code> して使う仕様になっていたので、<code>el-get</code> でパッケージインストールできるようにアレンジしたものを自分のGitHubに置いている。DeePLにユーザー登録してAPIキーの取得が必要。</p>
+<ul>
+<li><a href="https://github.com/minorugh/deepl-translate">minorugh/deepl-translate</a></li>
+</ul>
+<h3 id="2-lorniugo-translateel">2. lorniu/go-translate.el</h3>
+<ul>
+<li><a href="https://hangstuck.com/emacs-deepl/">https://hangstuck.com/emacs-deepl/</a></li>
+</ul>
+<p>翻訳結果は、ウインドウ分割でOther-window-bufferに表示される。Google-translateとの同時使用が可能なので比較して選べる。</p>
+<p>buffer表示のほかにposframeやpopup-windowなどカスタマイズできる。
+Melpaからパッケージインストールできるが、こちらもDeePLユーザー登録してAPIキーの取得が必要。</p>
+<h3 id="3-kdmsnrdeepl-translateel">3. kdmsnr/deepl-translate.el</h3>
+<ul>
+<li><a href="https://gist.github.com/kdmsnr/7209a98e9ccacec449011e11f46fdcf7">https://gist.github.com/kdmsnr/7209a98e9ccacec449011e11f46fdcf7</a></li>
+</ul>
+<p>brows-urlを使ってWEB版のDeePL翻訳を表示させるもの。リージョン選択範囲が自動で貼り付けられる。
+パッケージツールではないので、設定コードを<code>init.el</code> に貼り付けるだけで良く、APIキーも不要。</p>
+<h2 id="deepl-apiの認証キーの取得">DeepL APIの認証キーの取得</h2>
+<p>EmacsからDeePLを使うためには、ユーザー登録をしてAPI認証キーを取得する必要がある。手順は下記の通り。
+詳細は、<a href="https://hangstuck.com/emacs-deepl/#toc4">こちら</a> がわかりやすい。</p>
+<ul>
+<li>公式サイトにアクセスします。
+<a href="https://www.deepl.com/translator">DeepL</a></li>
+<li>サイトの上の方に「API」と書いてあるところがあるのでそこをクリックします。</li>
+<li>無料で登録するをクリックしてアカウント登録を済ませます。</li>
+<li>登録後ログインしてアカウント情報を見るとAPI認証キーも表示されるのでコピーします。</li>
+</ul>
+<h2 id="emacsの設定">Emacsの設定</h2>
+<p>とりあえず全部設定して使い分けてみることにした。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Deepl translation appears in minibuffer.</span>
+<span style="color:#75715e">;; Also, the same content is copied to the clipboard</span>
+(leaf deepl-translate
+  :el-get minorugh/deepl-translate
+  :bind (<span style="color:#e6db74">&#34;C-t&#34;</span> <span style="color:#f92672">.</span> deepl-translate)
+  :custom (deepl-auth-key <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX:XX&#34;</span>))
+
+
+<span style="color:#75715e">;; Deepl translate with go-translate</span>
+(leaf go-translate
+  :ensure <span style="color:#66d9ef">t</span>
+  :bind (<span style="color:#e6db74">&#34;C-c t&#34;</span> <span style="color:#f92672">.</span> gts-do-translate)
+  :config
+  (setq gts-translate-list <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#e6db74">&#34;ja&#34;</span>) (<span style="color:#e6db74">&#34;ja&#34;</span> <span style="color:#e6db74">&#34;en&#34;</span>)))
+  (setq gts-default-translator
+		(gts-translator
+		 :picker (gts-noprompt-picker)
+		 :engines (<span style="color:#a6e22e">list</span>
+				   (gts-deepl-engine :auth-key <span style="color:#e6db74">&#34;XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX:XX&#34;</span> :pro <span style="color:#66d9ef">nil</span>)
+				   (gts-google-engine))
+ 		 :render (gts-buffer-render))))
+
+
+<span style="color:#75715e">;; Deepl translation on web page</span>
+(leaf my:deeple-traqslate
+  :bind (<span style="color:#e6db74">&#34;C-c d&#34;</span> <span style="color:#f92672">.</span> my:deepl-translate)
+  :preface
+  (defun my:deepl-translate (<span style="color:#66d9ef">&amp;optional</span> <span style="color:#a6e22e">string</span>)
+	(interactive)
+	(setq <span style="color:#a6e22e">string</span>
+          (cond ((<span style="color:#a6e22e">stringp</span> <span style="color:#a6e22e">string</span>) <span style="color:#a6e22e">string</span>)
+				((use-region-p)
+				 (<span style="color:#a6e22e">buffer-substring</span> (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>)))
+				(<span style="color:#66d9ef">t</span>
+				 (save-excursion
+				   (let (s)
+					 (<span style="color:#a6e22e">forward-char</span> <span style="color:#ae81ff">1</span>)
+					 (backward-sentence)
+					 (setq s (<span style="color:#a6e22e">point</span>))
+					 (forward-sentence)
+					 (<span style="color:#a6e22e">buffer-substring</span> s (<span style="color:#a6e22e">point</span>)))))))
+	(run-at-time <span style="color:#ae81ff">0.1</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;deactivate-mark</span>)
+	(browse-url
+	 (<span style="color:#a6e22e">concat</span>
+      <span style="color:#e6db74">&#34;https://www.deepl.com/translator#en/ja/&#34;</span>
+      (url-hexify-string <span style="color:#a6e22e">string</span>)
+      ))))
+</code></pre></div><h2 id="評価">評価</h2>
+<ol>
+<li>
+<p>の<code>deepl.el</code> は、設定ファイルなどに書く短いコメント類の翻訳に適している。結果が気に入ればそのまま即yankで貼り付けできるので便利だ。自分的には、一番利用機会が多い。</p>
+</li>
+<li>
+<p>の<code>go-tranlate.el</code> は、Google-translateと併用表示させて、気に入ったほうを採用する…という感じに使える。
+buffer表示できるので長文の場合でも見やすい。カスタマイズ性が高く自分好みにアレンジできる点も優れている。</p>
+</li>
+<li>
+<p>の<code>my:deepl-translate</code> は、brows-urlでDeePLサイトを表示させるもので、心なしかレスポンスも悪い。何らかのトラブルでAPIアクセスができなくなったときの予備的な位置づけになるかと思う。</p>
+</li>
+</ol>
+<p>蛇足だが、<a href="https://www.deepl.com/ja/chrome-extension">DeepLのChrome拡張機能</a>を追加して有効化しておくと Chrome画面上でリージョン選択後、右クリックで「選択したテキストで翻訳」からも利用できて便利だ。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Dockerを利用してCGI/SSI が動作するWEBサーバーを構築</title>
+            <link>http://minorugh.github.io/posts/docker-webcgi/</link>
+            <pubDate>Wed, 05 Oct 2022 14:08:49 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/docker-webcgi/</guid>
+            <description>Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。 Docker Web サーバーの構築例は、nginx を使ったものが多かったが</description>
+            <content type="html"><![CDATA[<p>Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。</p>
+<p>Docker Web サーバーの構築例は、<code>nginx</code> を使ったものが多かったが、自分が利用しているレンタルサーバー（xserver）の環境にあわせる必要があったので <code>Apache</code> で構成することにした。多くのTipsのうち偶然見つけた下記の記事がわかりやすく比較的楽に導入に成功した。</p>
+<ul>
+<li><a href="https://getpocket.com/read/3714179719">Docker Desktop for Windows＝CGIお試し開発環境＝</a></li>
+</ul>
+<h2 id="dockerインストール">dockerインストール</h2>
+<p>自分の環境（Debian11）へのDockerインストールの手順は、下記<code>makefile</code> の通り。
+ついでにdocker-composeもインストールして使えるようにした。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">## makefile
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">docker</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker
+</span><span style="color:#75715e"></span>	sudo apt-get install ca-certificates lsb-release
+	curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian  </span>$$<span style="color:#e6db74">(lsb_release -cs) stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list
+	sudo apt update
+	sudo apt install docker-ce docker-ce-cli containerd.io
+
+<span style="color:#a6e22e">docker-compose</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker-compose
+</span><span style="color:#75715e"></span>	sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div><h2 id="dockerコマンドをsudoなしで実行できるようにする">dockerコマンドをsudoなしで実行できるようにする</h2>
+<p>dockerコマンドを入力するたびにsudoをつけるのは面倒なので下記の設定を行う。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># dockerグループを作る</span>
+$ sudo groupadd docker
+<span style="color:#75715e"># dockerを操作するユーザ(ここでは今のユーザ)をdockerグループに所属させる</span>
+$ sudo gpasswd -a $USER docker
+<span style="color:#75715e"># dockerデーモンを再起動する</span>
+$ sudo restart docker
+<span style="color:#75715e"># 再ログインすると反映される</span>
+$ exit
+<span style="color:#75715e"># Dockerをブート時に自動起動させる</span>
+$ sudo systemctl enable --now docker
+</code></pre></div><p>頻繁の使うことになるコマンドは、<code>zshrc</code> (または<code>bashrc</code>)に、aliasを設定しておくと更に便利</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#75715e"># zshrc</span>
+<span style="color:#75715e"># For docker-compose</span>
+alias dcbd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d --build&#34;</span>
+alias dcup<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d&#34;</span>
+alias dcdn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose down -v&#34;</span>
+alias dcps<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose ps&#34;</span>
+alias dcex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker container exec -it &lt;コンテナ名&gt; bash&#34;</span>
+</code></pre></div><h2 id="dockerファイル構成">dockerファイル構成</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">webcgi
+├──server
+│    ├──apache
+│    │    └──000-default.conf
+│    ├──php
+│    │    └──php.ini
+│    └──Dockerfile
+├──www
+│    └──html
+│        ├──index.html
+│        ├──info.php
+│        ├──index.pl
+│        ├──index.py
+│        └──index.rb
+└──docker-compose.yml
+</code></pre></div><h2 id="how-to-use">How to use</h2>
+<ol>
+<li>download ZIP &amp;&amp; unzip</li>
+<li>mv docker-webcgi-main YOUR_PROJECT_NAME</li>
+<li>cd YOUR_PROJECT_NAME</li>
+<li>docker-compose up -d &ndash;build</li>
+</ol>
+<h2 id="files">files</h2>
+<h3 id="docker-composeyml">docker-compose.yml</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">version: <span style="color:#e6db74">&#39;3&#39;</span>
+services:
+  webcgi:
+    container_name: webcgi
+
+    build: ./server
+    ports:
+     - 80:80
+    restart: always
+
+    volumes:
+       - ./www:/var/www
+</code></pre></div><h3 id="serverapache000-defaultconf">server/apache/000-default.conf</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Alias /html/ <span style="color:#e6db74">&#34;/var/www/html/&#34;</span>
+&lt;Directory <span style="color:#e6db74">&#34;/var/www/html&#34;</span>&gt; 
+   AllowOverride All
+   Options +ExecCGI +Includes
+   AddType text/html .html
+   AddHandler server-parsed .html
+   AddHandler cgi-script .cgi .pl .py .rb
+&lt;/Directory&gt;
+</code></pre></div><h3 id="serverphpphpini">server/php/php.ini</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>Date<span style="color:#f92672">]</span>
+date.timezone <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Asia/Tokyo&#34;</span>
+<span style="color:#f92672">[</span>mbstring<span style="color:#f92672">]</span>
+mbstring.internal_encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>
+mbstring.language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Japanese&#34;</span>
+<span style="color:#f92672">[</span>error<span style="color:#f92672">]</span>
+display_errors <span style="color:#f92672">=</span> Off
+display_startup_errors <span style="color:#f92672">=</span> Off
+</code></pre></div><h3 id="serverdockerfile">server/dockerfile</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># dockerイメージの指定</span>
+FROM php:7.4-apache
+
+<span style="color:#75715e"># 設定ファイルをdockerコンテナ内のPHPとApacheに読み込ませる</span>
+COPY ./php/php.ini /usr/local/etc/php/
+COPY ./apache/000-default.conf /etc/apache2/conf-available/
+
+<span style="color:#75715e"># インストール</span>
+<span style="color:#75715e"># `apt-get install`で任意の自身に必要なミドルウェアを指定しインストールする</span>
+<span style="color:#75715e"># `a2enmod rewrite`でApacheの設定を.htaccessで上書きできるようにしている</span>
+
+RUN apt-get update <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>git <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>zip <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>unzip <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>nano <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>python3 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>ruby <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get -y clean <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/* <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod cgid <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod include <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod rewrite <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enconf 000-default
+
+RUN useradd -o -U -m -u <span style="color:#ae81ff">1000</span> minoru
+WORKDIR /var/www
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>XserverにNextcloudを導入</title>
+            <link>http://minorugh.github.io/posts/nextcloud/</link>
+            <pubDate>Thu, 22 Sep 2022 22:48:31 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/nextcloud/</guid>
+            <description>WEBサイトを運用するためにXserverレンタルサーバーを利用している。 月額1,000円ほどのスタンダード契約なんだけれど300GBのNV</description>
+            <content type="html"><![CDATA[<p>WEBサイトを運用するためにXserverレンタルサーバーを利用している。</p>
+<p>月額1,000円ほどのスタンダード契約なんだけれど300GBのNVMeが割り当てられている。
+メインの俳句サイトや個人ブログ、息子や娘のWordpressサイトなど複数ドメインで利用しているが、せいぜい30GBほどの消費で、将来的な増加を配慮したとしてもなお200GB超の余裕がある。</p>
+<p>せっかくなので勉強を兼ねてNextcloudを導入してみた。
+Dropboxも無料で16GBのスペースを確保できているので実用上は困っていないのだけれど、他に活用できるかもと思って導入してみた。
+手順は、下記サイトのTipsを参考にした。</p>
+<ul>
+<li><a href="https://tech.cmd08.com/nextcloud-xserver">Nextcloudをエックスサーバーにインストールして自分専用のクラウドストレージを構築する</a></li>
+</ul>
+<h2 id="1-導入手順">1. 導入手順</h2>
+<p>参考サイトに詳しく説明があるが、要はWordpressをインストールするのと同じだと考えれば良い。</p>
+<h3 id="11-インストールする場所を決める">1.1 インストールする場所を決める</h3>
+<p>サブドメインでも構わない。
+自分は、サーバーを契約したときに自動的に割り当てられる独自ドメイン <code>minorugh.xsrv.jp</code>
+が使わずに残っていたのでそれを使いました。</p>
+<ul>
+<li>Nextcloud本体を<code>home/minorugh/minorugh.xsrv.jp/public_html/nextcloud</code> へインストールします。</li>
+<li>データー保存用には、非公開ディレクトリ<code>home/minorugh/data/nextcloud</code>を作成しておきます。</li>
+</ul>
+<pre><code>📁 home/minorugh
+|--📁 minorugh.xsrve.jp
+|   |--📁 ...
+|   └--📁 public_html
+|       └--📁 nextcloud
+└--📁 data
+    └--📁 nextcloud
+</code></pre><h3 id="12-データーベースの準備">1.2 データーベースの準備</h3>
+<p>Nextcloud用にあたらしくデータベースを作成し、ユーザーを追加します。</p>
+<p>エックスサーバーのサーバーパネル(MySQL設定)にて</p>
+<ul>
+<li>新規データベースの作成</li>
+<li>必要があれば新規ユーザー作成</li>
+<li>アクセス権所有の設定</li>
+</ul>
+<h3 id="2-インストーラーのダウンロード">2. インストーラーのダウンロード</h3>
+<p><a href="https://nextcloud.com/install/#instructions-server">Nextcloud Install</a> へアクセス、
+DOWNLOAD Server &gt; Community projects &gt; Web installer をクリック、
+setup-nextcloud.phpをダウンロードします。今回はサーバーへの転送を省くために直接サーバーにダウンロードします。</p>
+<p>エックスサーバーにSSH接続して以下のコマンドを実行します</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/minorugh.xsrv.jp/public_html/nextcloud
+
+$ wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
+......
+...... <span style="color:#e6db74">`</span>setup-nextcloud.php<span style="color:#960050;background-color:#1e0010">&#39;</span> へ保存完了
+</code></pre></div><h3 id="3-インストール">3. インストール</h3>
+<p><code>minorug.xsrv.jp/nextcloud/setup-nextcloud.php</code> へアクセスしてインストールします。</p>
+<p>インストールディレクトリの指定に「.」を入力してカレントディレクトリに展開します。以上でインストールが完了してセットアップに移るのですが、エックスサーバーではこの記事公開時点で 500 Internal Server Errorが出ます。</p>
+<p>minorugh.xsrv.jp/nextcloud/.htaccessの該当箇所を下記のように修正します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.htaccess" data-lang=".htaccess"><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">pagespeed_module</span><span style="color:#f92672">&gt;</span>
+<span style="color:#75715e">#  ModPagespeed Off コメントアウト</span>
+<span style="color:#f92672">&lt;/IfModule&gt;</span>
+</code></pre></div><h2 id="4-セットアップ">4. セットアップ</h2>
+<p><code>.htaccess</code> の修正が終わったら再度<code>minorugh.xsrver.jp/nextcloud</code> へアクセスしてセットアップを終了させます。</p>
+<h3 id="41-ユーザー名">4.1 ユーザー名</h3>
+<p>ユーザー名兼ユーザーIDになります。ここで入力した文字列(ユーザーID。最大64文字)がWebDAVアクセスへのURLとして使用されます。ユーザー名の変更は後からも可能ですが、IDは変更できません。</p>
+<h3 id="42-データフォルダー">4.2 データフォルダー</h3>
+<p>準備で作成したディレクトリパスを入力します。</p>
+<h3 id="43-ユーザー作成インストール">4.3 ユーザー作成(インストール)</h3>
+<p>その他の入力も済まし、インストールをクリックします。次ページの推薦アプリはキャンセルをクリックします。</p>
+<h2 id="5-クライアントアプリをインストール">5. クライアントアプリをインストール</h2>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Debian 11 bullseye 〜Wifiを使ったネットインストール</title>
+            <link>http://minorugh.github.io/posts/install-debian11/</link>
+            <pubDate>Thu, 22 Sep 2022 22:09:24 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/install-debian11/</guid>
+            <description>Debian10をインストールしてから最近11にアップデートしたのだけれど、いろいろ試行錯誤して触りまくっていたのでなんとなく安定しないので</description>
+            <content type="html"><![CDATA[<p>Debian10をインストールしてから最近11にアップデートしたのだけれど、いろいろ試行錯誤して触りまくっていたのでなんとなく安定しないので、思い切ってクリーンインストールすることにした。</p>
+<p>Dotfilesのお陰でさほど苦労もなくdebian11をクリーンインストールして動作も安定し心なしかフットワークもかるくなった気がする。一年に一度くらいはメンテナンスを兼ねてクリーンインストールするのもいいかなと思った。基本的に下記のTipsの通りの作業であるが、何箇所か躓いているので備忘録を記す。</p>
+<ul>
+<li><a href="https://www.linux-setting.tokyo/2021/08/debian-11-bullseye-stable-wifi.html?utm_source=pocket_mylist">Debian 11 “bullseye” stable 〜Wifiを使ったネットインストール方法</a></li>
+</ul>
+<h2 id="non-free-firmwareを含んだdebianインストールメディア">non-free-firmwareを含んだdebianインストールメディア</h2>
+<p>というのも見つけたので試したが、自分のThinkpadではだめだった。結局上記Tipsのとおりに、下記のfirmwareセットをダウンロードして上手く行った。</p>
+<ul>
+<li><a href="https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/stable/11.0.0/">Debian 11のfirmwareセット（zip形式）</a></li>
+</ul>
+<h2 id="デスクトップ環境のリストア">デスクトップ環境のリストア</h2>
+<p>パネル関係を再構築するのに結構手間取った。</p>
+<p>どうバックしておいたら簡単にリストアできるのかわからなくて対策していなかったのだけれど、${HOME}/.config/xfce4フォルダーをバックしておくといい感じであった。次回は、これで試せるようにmakefileを修正しておいた。</p>
+<h2 id="live版のインストールメディア">Live版のインストールメディア</h2>
+<p>こちらも試して見た。インストールは簡単に出来てデスクトップ表示まではOKだったが、そこからインストールを選ぶとWiFiで躓く。
+Live版にfirmwareを反映させる方法がわからないので諦めた。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Git と Dropbox の連携</title>
+            <link>http://minorugh.github.io/posts/github-dropbox/</link>
+            <pubDate>Thu, 22 Sep 2022 21:41:06 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/github-dropbox/</guid>
+            <description>重要なファイル群をDropboxに配置し複数端末で共有している。Dropbox だけでも多少の履歴は辿れるけれど、さらに保険をかける意味でGi</description>
+            <content type="html"><![CDATA[<p>重要なファイル群をDropboxに配置し複数端末で共有している。Dropbox だけでも多少の履歴は辿れるけれど、さらに保険をかける意味でGitHubにもリポジトリを作ってみようと思った。</p>
+<p>Dropbox内にgitツリーを置くとややこしくなろそうなのでDropbox外の別デレクトリにtreeをおくというTipsを見つけて真似してみた。</p>
+<ul>
+<li><a href="https://amano41.hatenablog.jp/entry/syncing-git-with-dropbox-but-working-tree-only?utm_source=pocket_mylist">Dropbox で Git のワークツリーのみを同期する</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/Dropbox/project
+
+$ git init --separate-git-dir /path/to/project.git
+Initialized empty Git repository in /path/to/project.git/
+</code></pre></div><p>上記を実行すると、Dropboxデレクトリにあった <code>.git</code> デレクトリは、/path/to/project.git に移動し、もとのデレクトリには、以下の内容の <code>.git</code> というファイルが生成される。内容はリンク先を書いただけのテキストファイルなのだが、Dropboxデレクトリでは普通に <code>magit-status</code>できる。</p>
+<pre><code>gitdir: /path/to/project.git
+</code></pre><h2 id="リストアするとき">リストアするとき</h2>
+<p>もし、将来ローカルリポジトリのPCをクリーン再インスールするケースを想定してテスト用のリポジトリで試してみた。</p>
+<p><code>mkdir /path/to &amp;&amp; cd /path/to</code> して<code>git clone priject.git</code>する。
+データリポジトリは、Dropboxをインストールして同期すれば、自動的にリストアできるので、<code>.git</code>デレクトリのみ残してデータは削除して良い。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>競合コピーが生じないようにemacs-mozc辞書を共有する方法</title>
+            <link>http://minorugh.github.io/posts/mozc-dictionary-sharing/</link>
+            <pubDate>Thu, 22 Sep 2022 14:22:20 +0900</pubDate>
+            
+            <guid>http://minorugh.github.io/posts/mozc-dictionary-sharing/</guid>
+            <description>mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用</description>
+            <content type="html"><![CDATA[<p>mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。</p>
+<p>リアルタイムで同時使用はしない…という使い方であれば何も問題ないのですが、
+自分の場合は、基本メイン機のEmacsは起動しっぱなし（蓋閉じでSleep）なので、その状態でサブ機のEmacsを立ち上げると、mozcのON/OFFとは関係なく<code>~/Dropbox/mozc/.mozc/</code> に競合コピーが量産されます。</p>
+<p>そこで、簡単な回避方法を考えてみました。大げさなタイトルですが、Tipsといえるほどのものではありません。</p>
+<h2 id="ファイル体系">ファイル体系</h2>
+<p>くどくど説明するより下図を見ていただければ、&ldquo;な〜んだ&rdquo; と理解いただけると思います。</p>
+<p>メイン機の <code>.mozc/</code> は、Dropboxに保存してシンボリックリンクで使い、サブ機で使うときはEmacsを起動するたびにDropboxにある最新の <code>.mozc/</code> をコピーして使うという仕組みです。</p>
+<pre><code>※ maine-machine
+~/.mozc &lt;-- symbolic link -- ~/Dropbox/mozc/.mozc
+　                               | Copy latest every time
+※ sub-mchine                    |
+~/.mozc &lt;-- symbolic link -- ~/Dropbox/backup/mozc/.mozc
+</code></pre><h2 id="emacsの設定">Emacsの設定</h2>
+<p>emacsの設定ファイルはメイン機とサブ機で共有しているので、<code>uname -n</code> を条件子としてメイン機（自分の場合はe590）でない場合（サブ機のとき）は、emacsを起動したときにmozc辞書をコピーしています。シンボリックリンクは、一度貼っておけばコピーのたびに貼り直さなくても大丈夫です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Clone the mozc dictionary placed in Dropbox to Nextcloud.</span>
+(defun mozc-copy ()
+ <span style="color:#e6db74">&#34;Copy mozc for submachine.&#34;</span>
+ (interactive)
+ (unless (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;e590&#34;</span> (shell-command-to-string <span style="color:#e6db74">&#34;uname -n&#34;</span>))
+	 (compile <span style="color:#e6db74">&#34;cp -rf ~/Dropbox/mozc/.mozc ~/Dropbox/backup/mozc&#34;</span>)))
+(add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span> <span style="color:#e6db74">&#39;mozc-copy</span>)
+</code></pre></div><h2 id="使い方">使い方</h2>
+<p>Dropboxに配置したmozc辞書は、メイン機での単語登録や入力履歴を記憶し常に最新の状態でバックアップされます。
+サブマシーンの場合は、emacsを起動するたびに最新の辞書をコピーしてそれを使うという簡単な割り切りです。</p>
+<p>サブマシーンで単語登録したら、元辞書へ書き戻すという仕組みも考えれますが、結局は、競合コピーをどう回避するかという課題になると思うので割り切ることにしました。良い方法があれば教えてください。</p>
+<p>メイン機、サブ機の定義は特にありません。使用頻度の高い方をメイン機として構成すればいいかなと思います。</p>
+]]></content>
+        </item>
         
         <item>
             <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>

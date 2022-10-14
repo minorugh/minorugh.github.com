@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qiita on 四時随順</title>
+    <link>http://minorugh.github.io/tags/qiita/</link>
+    <description>Recent content in qiita on 四時随順</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 12 Oct 2022 17:09:25 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/qiita/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EmacsからQiitaの記事投稿用にAtomic Chromeを再導入</title>
+      <link>http://minorugh.github.io/posts/atomic-chrome/</link>
+      <pubDate>Wed, 12 Oct 2022 17:09:25 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/atomic-chrome/</guid>
+      <description>久しぶりにQiitaに投稿しようとしたら以前は出来たコピペができなくなっている。 Emacsのクリップボードの設定ミスを疑って調べたけれど問題</description>
+    </item>
+    
+  </channel>
+</rss>

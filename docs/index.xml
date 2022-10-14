@@ -6,7 +6,70 @@
     <description>Recent content on 四時随順</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 17:09:25 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EmacsからQiitaの記事投稿用にAtomic Chromeを再導入</title>
+      <link>http://minorugh.github.io/posts/atomic-chrome/</link>
+      <pubDate>Wed, 12 Oct 2022 17:09:25 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/atomic-chrome/</guid>
+      <description>久しぶりにQiitaに投稿しようとしたら以前は出来たコピペができなくなっている。 Emacsのクリップボードの設定ミスを疑って調べたけれど問題</description>
+    </item>
+    
+    <item>
+      <title>Google-translateからDeepl-translateに乗り換えた話</title>
+      <link>http://minorugh.github.io/posts/deeple-translate/</link>
+      <pubDate>Wed, 12 Oct 2022 13:21:38 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/deeple-translate/</guid>
+      <description>Emacsから翻訳するのにGoogle-translateを愛用していたが、Slackのemacs-jpでGoogleよりも高性能だと評判の</description>
+    </item>
+    
+    <item>
+      <title>Dockerを利用してCGI/SSI が動作するWEBサーバーを構築</title>
+      <link>http://minorugh.github.io/posts/docker-webcgi/</link>
+      <pubDate>Wed, 05 Oct 2022 14:08:49 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/docker-webcgi/</guid>
+      <description>Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。 Docker Web サーバーの構築例は、nginx を使ったものが多かったが</description>
+    </item>
+    
+    <item>
+      <title>XserverにNextcloudを導入</title>
+      <link>http://minorugh.github.io/posts/nextcloud/</link>
+      <pubDate>Thu, 22 Sep 2022 22:48:31 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/nextcloud/</guid>
+      <description>WEBサイトを運用するためにXserverレンタルサーバーを利用している。 月額1,000円ほどのスタンダード契約なんだけれど300GBのNV</description>
+    </item>
+    
+    <item>
+      <title>Debian 11 bullseye 〜Wifiを使ったネットインストール</title>
+      <link>http://minorugh.github.io/posts/install-debian11/</link>
+      <pubDate>Thu, 22 Sep 2022 22:09:24 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/install-debian11/</guid>
+      <description>Debian10をインストールしてから最近11にアップデートしたのだけれど、いろいろ試行錯誤して触りまくっていたのでなんとなく安定しないので</description>
+    </item>
+    
+    <item>
+      <title>Git と Dropbox の連携</title>
+      <link>http://minorugh.github.io/posts/github-dropbox/</link>
+      <pubDate>Thu, 22 Sep 2022 21:41:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/github-dropbox/</guid>
+      <description>重要なファイル群をDropboxに配置し複数端末で共有している。Dropbox だけでも多少の履歴は辿れるけれど、さらに保険をかける意味でGi</description>
+    </item>
+    
+    <item>
+      <title>競合コピーが生じないようにemacs-mozc辞書を共有する方法</title>
+      <link>http://minorugh.github.io/posts/mozc-dictionary-sharing/</link>
+      <pubDate>Thu, 22 Sep 2022 14:22:20 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/mozc-dictionary-sharing/</guid>
+      <description>mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用</description>
+    </item>
+    
     <item>
       <title>Windows11 非対応 CPU&#43;TPM&#43;セキュアブート回避最強編</title>
       <link>http://minorugh.github.io/posts/windows11-upgrade/</link>

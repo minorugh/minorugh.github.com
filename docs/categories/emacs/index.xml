@@ -6,7 +6,34 @@
     <description>Recent content in emacs on 四時随順</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 18 Nov 2021 08:41:01 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 17:09:25 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EmacsからQiitaの記事投稿用にAtomic Chromeを再導入</title>
+      <link>http://minorugh.github.io/posts/atomic-chrome/</link>
+      <pubDate>Wed, 12 Oct 2022 17:09:25 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/atomic-chrome/</guid>
+      <description>久しぶりにQiitaに投稿しようとしたら以前は出来たコピペができなくなっている。 Emacsのクリップボードの設定ミスを疑って調べたけれど問題</description>
+    </item>
+    
+    <item>
+      <title>Google-translateからDeepl-translateに乗り換えた話</title>
+      <link>http://minorugh.github.io/posts/deeple-translate/</link>
+      <pubDate>Wed, 12 Oct 2022 13:21:38 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/deeple-translate/</guid>
+      <description>Emacsから翻訳するのにGoogle-translateを愛用していたが、Slackのemacs-jpでGoogleよりも高性能だと評判の</description>
+    </item>
+    
+    <item>
+      <title>競合コピーが生じないようにemacs-mozc辞書を共有する方法</title>
+      <link>http://minorugh.github.io/posts/mozc-dictionary-sharing/</link>
+      <pubDate>Thu, 22 Sep 2022 14:22:20 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/posts/mozc-dictionary-sharing/</guid>
+      <description>mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用</description>
+    </item>
+    
     <item>
       <title>pangu-spacing.el : 全角と半角の間に自動でスペースを入れる</title>
       <link>http://minorugh.github.io/posts/pangu-spacing/</link>

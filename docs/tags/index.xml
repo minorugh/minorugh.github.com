@@ -6,7 +6,79 @@
     <description>Recent content in Tags on 四時随順</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 31 Jan 2022 19:20:43 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 17:09:25 +0900</lastBuildDate><atom:link href="http://minorugh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>qiita</title>
+      <link>http://minorugh.github.io/tags/qiita/</link>
+      <pubDate>Wed, 12 Oct 2022 17:09:25 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/qiita/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>translate</title>
+      <link>http://minorugh.github.io/tags/translate/</link>
+      <pubDate>Wed, 12 Oct 2022 13:21:38 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/translate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>http://minorugh.github.io/tags/cloud/</link>
+      <pubDate>Thu, 22 Sep 2022 22:48:31 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link>http://minorugh.github.io/tags/debian/</link>
+      <pubDate>Thu, 22 Sep 2022 22:09:24 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dropbox</title>
+      <link>http://minorugh.github.io/tags/dropbox/</link>
+      <pubDate>Thu, 22 Sep 2022 21:41:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/dropbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://minorugh.github.io/tags/git/</link>
+      <pubDate>Thu, 22 Sep 2022 21:41:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>http://minorugh.github.io/tags/github/</link>
+      <pubDate>Thu, 22 Sep 2022 21:41:06 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mozc</title>
+      <link>http://minorugh.github.io/tags/mozc/</link>
+      <pubDate>Thu, 22 Sep 2022 14:22:20 +0900</pubDate>
+      
+      <guid>http://minorugh.github.io/tags/mozc/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>windows</title>
       <link>http://minorugh.github.io/tags/windows/</link>
@@ -134,24 +206,6 @@
     </item>
     
     <item>
-      <title>mozc</title>
-      <link>http://minorugh.github.io/tags/mozc/</link>
-      <pubDate>Sat, 13 Nov 2021 20:20:44 +0900</pubDate>
-      
-      <guid>http://minorugh.github.io/tags/mozc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debian</title>
-      <link>http://minorugh.github.io/tags/debian/</link>
-      <pubDate>Sun, 26 Sep 2021 07:24:50 +0900</pubDate>
-      
-      <guid>http://minorugh.github.io/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>theme</title>
       <link>http://minorugh.github.io/tags/theme/</link>
       <pubDate>Thu, 16 Sep 2021 14:31:40 +0900</pubDate>
@@ -193,15 +247,6 @@
       <pubDate>Wed, 01 Sep 2021 12:38:38 +0900</pubDate>
       
       <guid>http://minorugh.github.io/tags/gist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>http://minorugh.github.io/tags/github/</link>
-      <pubDate>Sun, 29 Aug 2021 07:31:24 +0900</pubDate>
-      
-      <guid>http://minorugh.github.io/tags/github/</guid>
       <description></description>
     </item>
     
