@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="livedown：markdownリアルタイムビューアーの導入">
-<meta itemprop="description" content="EmacsのMarkdown-modeビューアーは、multimarkdownが定番のようですが、プレビュー機能は専用エディタほどではありま">
-<meta itemprop="datePublished" content="2017-02-25T22:27:27+09:00" />
+<meta itemprop="description" content="EmacsのMarkdown-modeビューアーは、multimarkdownが定番のようですが、プレビュー機能は専用エディタほどではありま"><meta itemprop="datePublished" content="2017-02-25T22:27:27+09:00" />
 <meta itemprop="dateModified" content="2017-02-25T22:27:27+09:00" />
 <meta itemprop="wordCount" content="588">
-
-
-
 <meta itemprop="keywords" content="markdown," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="livedown：markdownリアルタイムビューアーの導入"/>
 <meta name="twitter:description" content="EmacsのMarkdown-modeビューアーは、multimarkdownが定番のようですが、プレビュー機能は専用エディタほどではありま"/>
@@ -164,25 +159,25 @@
 <h3 id="installation">Installation</h3>
 <p>First make sure you have node with npm installed.</p>
 <p>Then install livedown with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm install -g livedown
-</code></pre></div><p>Then install this plugin with</p>
-<pre><code>git clone https://github.com/shime/emacs-livedown.git ~/.emacs.d/emacs-livedown
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ npm install -g livedown
+</span></span></code></pre></div><p>Then install this plugin with</p>
+<pre tabindex="0"><code>git clone https://github.com/shime/emacs-livedown.git ~/.emacs.d/emacs-livedown
 cat &lt;&lt;EOF &gt;&gt; ~/.emacs.d/init.el
-(add-to-list 'load-path (expand-file-name &quot;~/.emacs.d/emacs-livedown&quot;))
-(require 'livedown)
+(add-to-list &#39;load-path (expand-file-name &#34;~/.emacs.d/emacs-livedown&#34;))
+(require &#39;livedown)
 EOF
 </code></pre><h3 id="configuration">Configuration</h3>
 <p>This plugin uses some configurable variables, with the following defaults</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(custom-set-variables
- <span style="color:#f92672">&#39;</span>(livedown-autostart <span style="color:#66d9ef">nil</span>) <span style="color:#75715e">; automatically open preview when opening markdown files</span>
- <span style="color:#f92672">&#39;</span>(livedown-open <span style="color:#66d9ef">t</span>)        <span style="color:#75715e">; automatically open the browser window</span>
- <span style="color:#f92672">&#39;</span>(livedown-port <span style="color:#ae81ff">1337</span>)     <span style="color:#75715e">; port for livedown server</span>
- <span style="color:#f92672">&#39;</span>(livedown-browser <span style="color:#66d9ef">nil</span>))  <span style="color:#75715e">; browser to use</span>
-</code></pre></div><p>Make sure to place them before the require line in your init.el.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(custom-set-variables
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#39;</span>(livedown-autostart <span style="color:#66d9ef">nil</span>) <span style="color:#75715e">; automatically open preview when opening markdown files</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#39;</span>(livedown-open <span style="color:#66d9ef">t</span>)        <span style="color:#75715e">; automatically open the browser window</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#39;</span>(livedown-port <span style="color:#ae81ff">1337</span>)     <span style="color:#75715e">; port for livedown server</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">&#39;</span>(livedown-browser <span style="color:#66d9ef">nil</span>))  <span style="color:#75715e">; browser to use</span>
+</span></span></code></pre></div><p>Make sure to place them before the require line in your init.el.</p>
 <p>You can also call the functions manually with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">M-x livedown-preview
-M-x livedown-kill
-</code></pre></div><h2 id="使用感活用法など">使用感、活用法など</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>M-x livedown-preview
+</span></span><span style="display:flex;"><span>M-x livedown-kill
+</span></span></code></pre></div><h2 id="使用感活用法など">使用感、活用法など</h2>
 <ul>
 <li>Mac unix Windowsなどマルチ環境で使えるのが good!</li>
 <li>Emacsの Markdown-modeで書いていれば、リアルタイムビューアーの必要性はさほど感じない。</li>
@@ -373,7 +368,7 @@ M-x livedown-kill
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -397,7 +392,7 @@ M-x livedown-kill
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

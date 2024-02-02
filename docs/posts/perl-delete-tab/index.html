@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Perl:文字列前後のスペース＆タブを削除">
-<meta itemprop="description" content="運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが">
-<meta itemprop="datePublished" content="2017-09-23T22:07:14+09:00" />
+<meta itemprop="description" content="運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが"><meta itemprop="datePublished" content="2017-09-23T22:07:14+09:00" />
 <meta itemprop="dateModified" content="2017-09-23T22:07:14+09:00" />
 <meta itemprop="wordCount" content="387">
-
-
-
 <meta itemprop="keywords" content="perl," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Perl:文字列前後のスペース＆タブを削除"/>
 <meta name="twitter:description" content="運営している俳句サイトで自動句会システムを作動させている。 ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが"/>
@@ -159,18 +154,18 @@
 <p>ユーザーが自分が詠んだ俳句をテキストフォームを使って投稿するという仕組みなのですが、キーボードからの入力ではなくて、コピー貼付け操作をされる方も多く、意図しないスペースが入ったまま投稿されるケースが多いです。そのままですとシステムが正常に処理できないことがあるので、投稿受付時に不要なスペースやタブを自動的に削除するように対策を施すことにしました。</p>
 <h2 id="文字列前後の半角スペースタブを削除">文字列前後の半角スペース＆タブを削除</h2>
 <p>正規表現を使って文字列$valの末尾の半角スペース＆タブを削除するスクリプトは以下の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
-</code></pre></div><p>テストスクリプトで確認してみましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e">## 文字列前後のスペース＆タブ削除</span>
-$val <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is a pen.     &#34;</span>;
-$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
-<span style="color:#66d9ef">print</span> $val;
-</code></pre></div><h2 id="文字列前後の全角スペースを削除">文字列前後の全角スペースを削除</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
+</span></span></code></pre></div><p>テストスクリプトで確認してみましょう。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">## 文字列前後のスペース＆タブ削除</span>
+</span></span><span style="display:flex;"><span>$val <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is a pen.     &#34;</span>;
+</span></span><span style="display:flex;"><span>$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\s*(.*?)\s*$/$1/</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span> $val;
+</span></span></code></pre></div><h2 id="文字列前後の全角スペースを削除">文字列前後の全角スペースを削除</h2>
 <p>全角スペースの削除は、少しやっかいです。使用する文字コードによって異なるからです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\x81\x40//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> SJIS
-$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xa1\xa1//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> EUC
-$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xE3\x80\x80//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> utf<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span>$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\x81\x40//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> SJIS
+</span></span><span style="display:flex;"><span>$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xa1\xa1//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> EUC
+</span></span><span style="display:flex;"><span>$val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xE3\x80\x80//g</span>; <span style="color:#960050;background-color:#1e0010">…</span> utf<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -354,7 +349,7 @@ $val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xE3\x8
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -378,7 +373,7 @@ $val <span style="color:#f92672">=~</span> <span style="color:#e6db74">s/\xE3\x8
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

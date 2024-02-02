@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Hydraを使ったview-mode設定">
-<meta itemprop="description" content="以前にご紹介した下記の記事を、hydra.elを使って更に使いやすく工夫してみた。 Emacsのview-modeでvimのコマンドを使えるよ">
-<meta itemprop="datePublished" content="2018-04-30T18:16:35+09:00" />
+<meta itemprop="description" content="以前にご紹介した下記の記事を、hydra.elを使って更に使いやすく工夫してみた。 Emacsのview-modeでvimのコマンドを使えるよ"><meta itemprop="datePublished" content="2018-04-30T18:16:35+09:00" />
 <meta itemprop="dateModified" content="2018-04-30T18:16:35+09:00" />
 <meta itemprop="wordCount" content="1629">
-
-
-
 <meta itemprop="keywords" content="hydra," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hydraを使ったview-mode設定"/>
 <meta name="twitter:description" content="以前にご紹介した下記の記事を、hydra.elを使って更に使いやすく工夫してみた。 Emacsのview-modeでvimのコマンドを使えるよ"/>
@@ -160,246 +155,245 @@
 <li><a href="https://snap.textgh.org/201801041902/">Emacsのview-modeでvimのコマンドを使えるようにする</a></li>
 </ul>
 <p>まずは、設定ファイルの全容を貼り付けます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Change mode-line color in view-mode</span>
-(<span style="color:#a6e22e">use-package</span> viewer)
-(<span style="color:#66d9ef">setq</span> viewer-modeline-color-view <span style="color:#e6db74">&#34;dark red&#34;</span>)
-(viewer-change-modeline-color-setup)
-
-<span style="color:#75715e">;; View-mode key map</span>
-(<span style="color:#a6e22e">use-package</span> keys-in-view-mode)
-(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-  (bind-key <span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#e6db74">&#39;backward-char</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#39;next-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#e6db74">&#39;previous-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#e6db74">&#39;forward-char</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#39;scroll-down</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#e6db74">&#39;beginning-of-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#e6db74">&#39;end-of-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#e6db74">&#39;goto-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#e6db74">&#39;View-goto-percent</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#e6db74">&#39;view-kill-whole-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#e6db74">&#39;magit-status</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#e6db74">&#39;vc-diff</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#e6db74">&#39;howm-remember</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#e6db74">&#39;view-undo</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#39;view-redo</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#39;view-jump-brace</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#e6db74">&#39;forward-word+1</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;W&#34;</span> <span style="color:#e6db74">&#39;backward-word</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#e6db74">&#39;new-line-below-insert</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#e6db74">&#39;copy-region-as-kill</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#39;view-copy-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#39;paste-at-cursor</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#39;paste-at-down-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#e6db74">&#39;view-del-char</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#e6db74">&#39;view-backward-kill-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#e6db74">&#39;kill-end-of-line</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;forward-char-to-insert</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#e6db74">&#39;end-of-line-to-insert</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#e6db74">&#39;view-mode</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#39;beginning-of-line-to-insert</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#e6db74">&#39;pdf-preview-buffer</span> view-mode-map)
-  (bind-key <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#e6db74">&#39;view-mode</span> view-mode-map)
-  (key-chord-define view-mode-map <span style="color:#e6db74">&#34;gg&#34;</span> <span style="color:#e6db74">&#39;View-goto-line</span>))
-
-<span style="color:#75715e">;; Add hl-line-mode to view-mode</span>
-(when (<span style="color:#a6e22e">functionp</span> <span style="color:#e6db74">&#39;hl-line-mode</span>)
-  (add-hook <span style="color:#e6db74">&#39;view-mode-hook</span> <span style="color:#f92672">&#39;</span>(lambda () (hl-line-mode <span style="color:#ae81ff">1</span>)))
-  (defadvice view-mode-disable (after disable-hl-line-mode activate)
-    (hl-line-mode <span style="color:#ae81ff">-1</span>)))
-
-<span style="color:#75715e">;; Customize to open file in view-mode</span>
-(defun neo-open-file (full-path <span style="color:#66d9ef">&amp;optional</span> arg)
-  (neo-global--select-mru-window arg)
-  (view-file full-path))
-
-<span style="color:#75715e">;; PDF-preview</span>
-  (with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-    (<span style="color:#a6e22e">use-package</span> pdf-preview)
-    (<span style="color:#66d9ef">setq</span> pdf-preview-font-rescale-factor <span style="color:#ae81ff">1.2</span>)
-    (when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;darwin</span>)
-      (<span style="color:#66d9ef">setq</span> pdf-preview-preview-command <span style="color:#e6db74">&#34;open -a Preview.app&#34;</span>))
-    (when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;gnu/linux</span>)
-      (<span style="color:#66d9ef">setq</span> pdf-preview-preview-command <span style="color:#e6db74">&#34;evince&#34;</span>))
-    (<span style="color:#66d9ef">setq</span> ps-line-number <span style="color:#66d9ef">t</span>))
-
-<span style="color:#75715e">;; hydra-view-mode</span>
-(defhydra hydra-view-mode (<span style="color:#e6db74">:hint</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">:exit</span> <span style="color:#66d9ef">t</span>)
-  <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">^Insert mode^        ^Move^            ^Delete^            ^Editing^             ^Utl
-</span><span style="color:#e6db74">^^^^^^------------------------------------------------------------------------------------------
-</span><span style="color:#e6db74">_a_: after cursor  _spc_: next page    _d_: one line       _u_: undo  _r_: redo    _m_: magit-status
-</span><span style="color:#e6db74">_i_: at the cursor   _b_: prev page    _x_: one char       _y_: copy region      _v_: vc-diff
-</span><span style="color:#e6db74">_A_: at end line     _w_: next word    _X_: to begin line  _Y_: copy line        _n_: neotree
-</span><span style="color:#e6db74">_I_: at begin line   _W_: prev word    _D_: to end line    _p_: paste at cursor  _L_: PDF preview
-</span><span style="color:#e6db74">_o_: new line below  _%_: match parens                   _P_: paste down line  _,_: remember
-</span><span style="color:#e6db74">&#34;</span>
-  <span style="color:#75715e">;; Insert mode</span>
-  (<span style="color:#e6db74">&#34;a&#34;</span> forward-char-to-insert)
-  (<span style="color:#e6db74">&#34;i&#34;</span> view-mode)
-  (<span style="color:#e6db74">&#34;A&#34;</span> end-of-line-to-insert)
-  (<span style="color:#e6db74">&#34;I&#34;</span> beginning-of-line-to-insert)
-  (<span style="color:#e6db74">&#34;o&#34;</span> new-line-below-insert)
-  <span style="color:#75715e">;; Move</span>
-  (<span style="color:#e6db74">&#34;b&#34;</span> scroll-down)
-  (<span style="color:#e6db74">&#34;spc&#34;</span> scroll-up)
-  (<span style="color:#e6db74">&#34;w&#34;</span> forward-word+1)
-  (<span style="color:#e6db74">&#34;W&#34;</span> backward-word)
-  (<span style="color:#e6db74">&#34;%&#34;</span> view-jump-brace)
-  <span style="color:#75715e">;; Delete</span>
-  (<span style="color:#e6db74">&#34;d&#34;</span> view-kill-whole-line)
-  (<span style="color:#e6db74">&#34;x&#34;</span> view-del-char)
-  (<span style="color:#e6db74">&#34;X&#34;</span> view-backward-kill-line)
-  (<span style="color:#e6db74">&#34;D&#34;</span> kill-end-of-line)
-  <span style="color:#75715e">;; Editing</span>
-  (<span style="color:#e6db74">&#34;u&#34;</span> view-undo)
-  (<span style="color:#e6db74">&#34;r&#34;</span> view-redo)
-  (<span style="color:#e6db74">&#34;y&#34;</span> copy-region-as-kill)
-  (<span style="color:#e6db74">&#34;Y&#34;</span> view-copy-line)
-  (<span style="color:#e6db74">&#34;p&#34;</span> paste-at-cursor)
-  (<span style="color:#e6db74">&#34;P&#34;</span> paste-at-down-line)
-  <span style="color:#75715e">;; Utl</span>
-  (<span style="color:#e6db74">&#34;m&#34;</span> magit-status)
-  (<span style="color:#e6db74">&#34;v&#34;</span> vc-diff)
-  (<span style="color:#e6db74">&#34;n&#34;</span> neotree-toggle)
-  (<span style="color:#e6db74">&#34;,&#34;</span> howm-remember)
-  (<span style="color:#e6db74">&#34;L&#34;</span> pdf-preview-buffer)
-  (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;leave&#34;</span>))
-
-(define-key view-mode-map <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#e6db74">&#39;hydra-view-mode/body</span>)
-
-</code></pre></div><h2 id="hydraで対話式にコマンドを使えるようにする">hydraで対話式にコマンドを使えるようにする</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Change mode-line color in view-mode</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">use-package</span> viewer)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">setq</span> viewer-modeline-color-view <span style="color:#e6db74">&#34;dark red&#34;</span>)
+</span></span><span style="display:flex;"><span>(viewer-change-modeline-color-setup)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; View-mode key map</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">use-package</span> keys-in-view-mode)
+</span></span><span style="display:flex;"><span>(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#e6db74">&#39;backward-char</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#39;next-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#e6db74">&#39;previous-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#e6db74">&#39;forward-char</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#39;scroll-down</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#e6db74">&#39;beginning-of-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#e6db74">&#39;end-of-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#e6db74">&#39;goto-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#e6db74">&#39;View-goto-percent</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#e6db74">&#39;view-kill-whole-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#e6db74">&#39;magit-status</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#e6db74">&#39;vc-diff</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#e6db74">&#39;howm-remember</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#e6db74">&#39;view-undo</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#39;view-redo</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#e6db74">&#39;view-jump-brace</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#e6db74">&#39;forward-word+1</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;W&#34;</span> <span style="color:#e6db74">&#39;backward-word</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#e6db74">&#39;new-line-below-insert</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#e6db74">&#39;copy-region-as-kill</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#e6db74">&#39;view-copy-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#39;paste-at-cursor</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#e6db74">&#39;paste-at-down-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#e6db74">&#39;view-del-char</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#e6db74">&#39;view-backward-kill-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#e6db74">&#39;kill-end-of-line</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;forward-char-to-insert</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#e6db74">&#39;end-of-line-to-insert</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#e6db74">&#39;view-mode</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#e6db74">&#39;beginning-of-line-to-insert</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#e6db74">&#39;pdf-preview-buffer</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (bind-key <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#e6db74">&#39;view-mode</span> view-mode-map)
+</span></span><span style="display:flex;"><span>  (key-chord-define view-mode-map <span style="color:#e6db74">&#34;gg&#34;</span> <span style="color:#e6db74">&#39;View-goto-line</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Add hl-line-mode to view-mode</span>
+</span></span><span style="display:flex;"><span>(when (<span style="color:#a6e22e">functionp</span> <span style="color:#e6db74">&#39;hl-line-mode</span>)
+</span></span><span style="display:flex;"><span>  (add-hook <span style="color:#e6db74">&#39;view-mode-hook</span> <span style="color:#f92672">&#39;</span>(lambda () (hl-line-mode <span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>  (defadvice view-mode-disable (after disable-hl-line-mode activate)
+</span></span><span style="display:flex;"><span>    (hl-line-mode <span style="color:#ae81ff">-1</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Customize to open file in view-mode</span>
+</span></span><span style="display:flex;"><span>(defun neo-open-file (full-path <span style="color:#66d9ef">&amp;optional</span> arg)
+</span></span><span style="display:flex;"><span>  (neo-global--select-mru-window arg)
+</span></span><span style="display:flex;"><span>  (view-file full-path))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; PDF-preview</span>
+</span></span><span style="display:flex;"><span>  (with-eval-after-load <span style="color:#e6db74">&#39;view</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">use-package</span> pdf-preview)
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">setq</span> pdf-preview-font-rescale-factor <span style="color:#ae81ff">1.2</span>)
+</span></span><span style="display:flex;"><span>    (when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;darwin</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">setq</span> pdf-preview-preview-command <span style="color:#e6db74">&#34;open -a Preview.app&#34;</span>))
+</span></span><span style="display:flex;"><span>    (when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;gnu/linux</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#66d9ef">setq</span> pdf-preview-preview-command <span style="color:#e6db74">&#34;evince&#34;</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#66d9ef">setq</span> ps-line-number <span style="color:#66d9ef">t</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; hydra-view-mode</span>
+</span></span><span style="display:flex;"><span>(defhydra hydra-view-mode (<span style="color:#e6db74">:hint</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">:exit</span> <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">^Insert mode^        ^Move^            ^Delete^            ^Editing^             ^Utl
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">^^^^^^------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_a_: after cursor  _spc_: next page    _d_: one line       _u_: undo  _r_: redo    _m_: magit-status
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_i_: at the cursor   _b_: prev page    _x_: one char       _y_: copy region      _v_: vc-diff
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_A_: at end line     _w_: next word    _X_: to begin line  _Y_: copy line        _n_: neotree
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_I_: at begin line   _W_: prev word    _D_: to end line    _p_: paste at cursor  _L_: PDF preview
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_o_: new line below  _%_: match parens                   _P_: paste down line  _,_: remember
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Insert mode</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;a&#34;</span> forward-char-to-insert)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;i&#34;</span> view-mode)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;A&#34;</span> end-of-line-to-insert)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;I&#34;</span> beginning-of-line-to-insert)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;o&#34;</span> new-line-below-insert)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Move</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;b&#34;</span> scroll-down)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;spc&#34;</span> scroll-up)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;w&#34;</span> forward-word+1)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;W&#34;</span> backward-word)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;%&#34;</span> view-jump-brace)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Delete</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;d&#34;</span> view-kill-whole-line)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;x&#34;</span> view-del-char)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;X&#34;</span> view-backward-kill-line)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;D&#34;</span> kill-end-of-line)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Editing</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;u&#34;</span> view-undo)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;r&#34;</span> view-redo)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;y&#34;</span> copy-region-as-kill)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;Y&#34;</span> view-copy-line)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;p&#34;</span> paste-at-cursor)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;P&#34;</span> paste-at-down-line)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Utl</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;m&#34;</span> magit-status)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;v&#34;</span> vc-diff)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;n&#34;</span> neotree-toggle)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;,&#34;</span> howm-remember)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;L&#34;</span> pdf-preview-buffer)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;leave&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(define-key view-mode-map <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#e6db74">&#39;hydra-view-mode/body</span>)
+</span></span></code></pre></div><h2 id="hydraで対話式にコマンドを使えるようにする">hydraで対話式にコマンドを使えるようにする</h2>
 <p><img src="https://c1.staticflickr.com/1/868/26930372267_800476a1d7_b.jpg" alt="Alt Text"></p>
 <p>view-modeのkey-mapを覚えてしまえば必要ないのですが、ボケ始めた頭が混乱することもあるので、「.」を押すだけでhydraメニューがpopupします。</p>
 <p>hydraを使ったミニバッファーメニューは、&ldquo;nil&rdquo; を渡すまで永続的に残りますが、<code>:exit</code> オプションを書くことで、目的のキーをセレクトした瞬間にメニューが消えるので便利です。</p>
 <h2 id="view-mode-用のkey定義ファイル">view-mode 用のkey定義ファイル</h2>
 <p><code>keys-in-view-mode.el</code> を作成して、use-packegeで読み込ませています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Key bind for view-mode-vim-like</span>
-<span style="color:#75715e">;; ================================</span>
-<span style="color:#75715e">;; like a</span>
-(defun forward-char-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (forward-char <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like A</span>
-(defun end-of-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (end-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like I</span>
-(defun beginning-of-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like dd</span>
-(defun view-kill-whole-line ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-whole-line)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;kill-whole-line&#34;</span>))
-<span style="color:#75715e">;; like D</span>
-(defun kill-end-of-line ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-line)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;kill-line&#34;</span>))
-<span style="color:#75715e">;; like o</span>
-(defun new-line-below-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (forward-line)
-  (open-line <span style="color:#ae81ff">1</span>)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like x</span>
-(defun view-del-char ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (delete-char <span style="color:#ae81ff">1</span>)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;delete-char&#34;</span>))
-<span style="color:#75715e">;; undo</span>
-(defun view-undo ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (undo-tree-undo)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;undo !&#34;</span>))
-<span style="color:#75715e">;; redo</span>
-(defun view-redo ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (undo-tree-redo)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;redo !&#34;</span>))
-<span style="color:#75715e">;; like Y</span>
-(defun view-copy-line (arg)
-  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
-  (kill-ring-save (line-beginning-position)
-                  (line-beginning-position (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> arg)))
-  (message <span style="color:#e6db74">&#34;%d line%s copied&#34;</span> arg (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">=</span> <span style="color:#ae81ff">1</span> arg) <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;s&#34;</span>)))
-<span style="color:#75715e">;; like p</span>
-(defun paste-at-cursor ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (yank)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>))
-<span style="color:#75715e">;; like P</span>
-(defun paste-at-down-line ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (beginning-of-line)
-  (yank)
-  (beginning-of-line)
-  (forward-line <span style="color:#ae81ff">-1</span>)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
-<span style="color:#75715e">;; like w</span>
-(defun forward-word+1 ()
-  (interactive)
-  (forward-word)
-  (forward-char))
-<span style="color:#75715e">;; like %</span>
-(defun view-jump-brace ()
-  <span style="color:#e6db74">&#34;Jump to correspondence parenthesis&#34;</span>
-  (interactive)
-  (<span style="color:#66d9ef">let</span> ((c (following-char))
-				(p (preceding-char)))
-		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax c) <span style="color:#ae81ff">40</span>) (forward-list)
-			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax p) <span style="color:#ae81ff">41</span>) (backward-list)
-				(backward-up-list)))))
-
-<span style="color:#75715e">;; Delete from the cursor position to the beginning of the line : like X</span>
-(defun view-backward-kill-line (arg)
-  <span style="color:#e6db74">&#34;Kill chars backward until encountering the end of a line.&#34;</span>
-  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-line <span style="color:#ae81ff">0</span>)
-  (save-buffer)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;backward-kill-line&#34;</span>))
-
-(<span style="color:#a6e22e">provide</span> <span style="color:#e6db74">&#39;keys-in-view-mode</span>)
-<span style="color:#75715e">;;; keys-in-view-mode.el ends here:</span>
-</code></pre></div><h2 id="今後の方向性を考える">今後の方向性を考える</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Key bind for view-mode-vim-like</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; ================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like a</span>
+</span></span><span style="display:flex;"><span>(defun forward-char-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (forward-char <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like A</span>
+</span></span><span style="display:flex;"><span>(defun end-of-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (end-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like I</span>
+</span></span><span style="display:flex;"><span>(defun beginning-of-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like dd</span>
+</span></span><span style="display:flex;"><span>(defun view-kill-whole-line ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-whole-line)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;kill-whole-line&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like D</span>
+</span></span><span style="display:flex;"><span>(defun kill-end-of-line ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-line)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;kill-line&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like o</span>
+</span></span><span style="display:flex;"><span>(defun new-line-below-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (forward-line)
+</span></span><span style="display:flex;"><span>  (open-line <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like x</span>
+</span></span><span style="display:flex;"><span>(defun view-del-char ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (delete-char <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;delete-char&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; undo</span>
+</span></span><span style="display:flex;"><span>(defun view-undo ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (undo-tree-undo)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;undo !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; redo</span>
+</span></span><span style="display:flex;"><span>(defun view-redo ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (undo-tree-redo)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;redo !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like Y</span>
+</span></span><span style="display:flex;"><span>(defun view-copy-line (arg)
+</span></span><span style="display:flex;"><span>  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
+</span></span><span style="display:flex;"><span>  (kill-ring-save (line-beginning-position)
+</span></span><span style="display:flex;"><span>                  (line-beginning-position (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> arg)))
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;%d line%s copied&#34;</span> arg (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">=</span> <span style="color:#ae81ff">1</span> arg) <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;s&#34;</span>)))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like p</span>
+</span></span><span style="display:flex;"><span>(defun paste-at-cursor ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (yank)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like P</span>
+</span></span><span style="display:flex;"><span>(defun paste-at-down-line ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (yank)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (forward-line <span style="color:#ae81ff">-1</span>)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like w</span>
+</span></span><span style="display:flex;"><span>(defun forward-word+1 ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (forward-word)
+</span></span><span style="display:flex;"><span>  (forward-char))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like %</span>
+</span></span><span style="display:flex;"><span>(defun view-jump-brace ()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Jump to correspondence parenthesis&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let</span> ((c (following-char))
+</span></span><span style="display:flex;"><span>				(p (preceding-char)))
+</span></span><span style="display:flex;"><span>		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax c) <span style="color:#ae81ff">40</span>) (forward-list)
+</span></span><span style="display:flex;"><span>			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax p) <span style="color:#ae81ff">41</span>) (backward-list)
+</span></span><span style="display:flex;"><span>				(backward-up-list)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Delete from the cursor position to the beginning of the line : like X</span>
+</span></span><span style="display:flex;"><span>(defun view-backward-kill-line (arg)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Kill chars backward until encountering the end of a line.&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-line <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (save-buffer)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;backward-kill-line&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">provide</span> <span style="color:#e6db74">&#39;keys-in-view-mode</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;; keys-in-view-mode.el ends here:</span>
+</span></span></code></pre></div><h2 id="今後の方向性を考える">今後の方向性を考える</h2>
 <p>view-modeでvimのコマンドを使えるようにすることを目標に工夫してきましたが、emacs自身の設定で便利に使える機能まであえてvim-likeにする必要はないと思います。</p>
 <p>例えば、カーソル移動の機能、「行頭、行末、ページの先頭、ページの最後」は、sequeqtial-command というパッケージを導入していて使い慣れているのでview-modeの機能からは省いてもいいかなと思っています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; sequential-command</span>
-(<span style="color:#a6e22e">use-package</span> sequential-command-config)
-(sequential-command-setup-keys)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; sequential-command</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">use-package</span> sequential-command-config)
+</span></span><span style="display:flex;"><span>(sequential-command-setup-keys)
+</span></span></code></pre></div><ul>
 <li>C-aを連続で打つことで行の先頭→ページの先頭→元の位置とカーソルが移動する。</li>
 <li>C-eを連続で打つことで行の最後→ページの最後→元の位置とカーソルが移動する。</li>
 </ul>
@@ -592,7 +586,7 @@ emacsをvimのように使うというようなTipsも多いですが、そん�
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -616,7 +610,7 @@ emacsをvimのように使うというようなTipsも多いですが、そん�
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

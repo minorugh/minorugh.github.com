@@ -49,15 +49,10 @@
 
 <meta itemprop="name" content="Scratchバッファの保存と復元">
 <meta itemprop="description" content="Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
-これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。">
-<meta itemprop="datePublished" content="2018-09-24T17:11:06+09:00" />
+これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。"><meta itemprop="datePublished" content="2018-09-24T17:11:06+09:00" />
 <meta itemprop="dateModified" content="2018-09-24T17:11:06+09:00" />
 <meta itemprop="wordCount" content="299">
-
-
-
 <meta itemprop="keywords" content="buffer," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scratchバッファの保存と復元"/>
 <meta name="twitter:description" content="Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
@@ -161,14 +156,14 @@
         <p>Scratchバッファはkillさせない。Scratchバッファーの内容を保存して再起動時に復元する。
 これを実現させるための Emacs-lisp は沢山紹介されていますが、MELPAからpackage-installするだけで簡単に導入できるので紹介します。</p>
 <h2 id="unkillable-scratch">unkillable-scratch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; unkillable-scratch</span>
-(<span style="color:#66d9ef">setq</span> unkillable-buffers <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;^\\*scratch*\\*$&#34;</span> <span style="color:#e6db74">&#34;^\\*dashboard\\*$&#34;</span>))
-(unkillable-scratch <span style="color:#ae81ff">1</span>)
-</code></pre></div><p>scratchバッファをkillさせないためのものですが、正規表現マッチを追加することで自由にカスタマイズできます。私の場合は、dashboardも消さないように追記しています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; unkillable-scratch</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">setq</span> unkillable-buffers <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;^\\*scratch*\\*$&#34;</span> <span style="color:#e6db74">&#34;^\\*dashboard\\*$&#34;</span>))
+</span></span><span style="display:flex;"><span>(unkillable-scratch <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>scratchバッファをkillさせないためのものですが、正規表現マッチを追加することで自由にカスタマイズできます。私の場合は、dashboardも消さないように追記しています。</p>
 <h2 id="persist-scratch">persist-scratch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Persist and save/restore *scratch* buffer</span>
-(persistent-scratch-setup-default)
-</code></pre></div><p>scratchバッファの内容を保存して再起動時に復元させるものです。保存データーはデフォルトで<code>~/.emacs.d/.scratch</code>に保存されます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Persist and save/restore *scratch* buffer</span>
+</span></span><span style="display:flex;"><span>(persistent-scratch-setup-default)
+</span></span></code></pre></div><p>scratchバッファの内容を保存して再起動時に復元させるものです。保存データーはデフォルトで<code>~/.emacs.d/.scratch</code>に保存されます。</p>
       </div>
     </article>
 
@@ -352,7 +347,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -376,7 +371,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

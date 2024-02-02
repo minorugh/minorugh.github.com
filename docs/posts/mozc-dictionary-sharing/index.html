@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="競合コピーが生じないようにemacs-mozc辞書を共有する方法">
-<meta itemprop="description" content="Mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用">
-<meta itemprop="datePublished" content="2022-09-22T14:22:20+09:00" />
+<meta itemprop="description" content="Mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用"><meta itemprop="datePublished" content="2022-09-22T14:22:20+09:00" />
 <meta itemprop="dateModified" content="2022-09-22T14:22:20+09:00" />
 <meta itemprop="wordCount" content="877">
-
-
-
 <meta itemprop="keywords" content="mozc," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="競合コピーが生じないようにemacs-mozc辞書を共有する方法"/>
 <meta name="twitter:description" content="Mozc辞書をDropboxに置いて、そのシンボリックをそれぞれの各端末に貼って辞書共有をしている人は多いと思います。 リアルタイムで同時使用"/>
@@ -162,21 +157,21 @@
 <h2 id="ファイル体系">ファイル体系</h2>
 <p>くどくど説明するより下図を見ていただければ、&ldquo;な〜んだ&rdquo; と理解いただけると思います。</p>
 <p>メイン機の <code>.mozc/</code> は、Dropboxに保存してシンボリックリンクで使い、サブ機で使うときはEmacsを起動するたびにDropboxにある最新の <code>.mozc/</code> をコピーして使うという仕組みです。</p>
-<pre><code>※ maine-machine
+<pre tabindex="0"><code>※ maine-machine
 ~/.mozc &lt;-- symbolic link -- ~/Dropbox/mozc/.mozc
 　                               | Copy latest every time
 ※ sub-mchine                    |
 ~/.mozc &lt;-- symbolic link -- ~/Dropbox/backup/mozc/.mozc
 </code></pre><h2 id="emacsの設定">Emacsの設定</h2>
 <p>emacsの設定ファイルはメイン機とサブ機で共有しているので、<code>uname -n</code> を条件子としてメイン機（自分の場合はe590）でない場合（サブ機のとき）は、emacsを起動したときにmozc辞書をコピーしています。シンボリックリンクは、一度貼っておけばコピーのたびに貼り直さなくても大丈夫です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Clone the mozc dictionary placed in Dropbox to Nextcloud.</span>
-(defun mozc-copy ()
- <span style="color:#e6db74">&#34;Copy mozc for submachine.&#34;</span>
- (interactive)
- (unless (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;e590&#34;</span> (shell-command-to-string <span style="color:#e6db74">&#34;uname -n&#34;</span>))
-	 (compile <span style="color:#e6db74">&#34;cp -rf ~/Dropbox/mozc/.mozc ~/Dropbox/backup/mozc&#34;</span>)))
-(add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span> <span style="color:#e6db74">&#39;mozc-copy</span>)
-</code></pre></div><h2 id="使い方">使い方</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Clone the mozc dictionary placed in Dropbox to Nextcloud.</span>
+</span></span><span style="display:flex;"><span>(defun mozc-copy ()
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;Copy mozc for submachine.&#34;</span>
+</span></span><span style="display:flex;"><span> (interactive)
+</span></span><span style="display:flex;"><span> (unless (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;e590&#34;</span> (shell-command-to-string <span style="color:#e6db74">&#34;uname -n&#34;</span>))
+</span></span><span style="display:flex;"><span>	 (compile <span style="color:#e6db74">&#34;cp -rf ~/Dropbox/mozc/.mozc ~/Dropbox/backup/mozc&#34;</span>)))
+</span></span><span style="display:flex;"><span>(add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span> <span style="color:#e6db74">&#39;mozc-copy</span>)
+</span></span></code></pre></div><h2 id="使い方">使い方</h2>
 <p>Dropboxに配置したmozc辞書は、メイン機での単語登録や入力履歴を記憶し常に最新の状態でバックアップされます。
 サブマシーンの場合は、emacsを起動するたびに最新の辞書をコピーしてそれを使うという簡単な割り切りです。</p>
 <p>サブマシーンで単語登録したら、元辞書へ書き戻すという仕組みも考えれますが、結局は、競合コピーをどう回避するかという課題になると思うので割り切ることにしました。良い方法があれば教えてください。</p>
@@ -365,7 +360,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -389,7 +384,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

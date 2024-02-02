@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="apt installを使わずにTeXLiveを導入する">
-<meta itemprop="description" content="TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live">
-<meta itemprop="datePublished" content="2020-02-10T09:09:09+09:00" />
+<meta itemprop="description" content="TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live"><meta itemprop="datePublished" content="2020-02-10T09:09:09+09:00" />
 <meta itemprop="dateModified" content="2020-02-10T09:09:09+09:00" />
 <meta itemprop="wordCount" content="950">
-
-
-
 <meta itemprop="keywords" content="Latex,linux," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="apt installを使わずにTeXLiveを導入する"/>
 <meta name="twitter:description" content="TeX ディストリビューション Linux で TeX 環境を構築するには，2つの方法があります． 使用している Linux ディストリビューションのパッケージ管理システムから TeX Live"/>
@@ -175,46 +170,46 @@
 <p>に従えばよいですが，このページでもネットワークインストーラを使う場合について簡単に説明します．</p>
 <p>まず，ミラーサイトから install-tl-unx.tar.gz をダウンロードします．</p>
 <h3 id="-wget-を使用する場合">※ wget を使用する場合</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-</code></pre></div><h3 id="-curl-を使用する場合">※ curl を使用する場合</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-</code></pre></div><p>install-tl-unx.tar.gz を展開します．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tar xvf install-tl-unx.tar.gz
-</code></pre></div><p>展開したインストーラのディレクトリに移動します．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd install-tl*
-</code></pre></div><p>root 権限でインストーラを実行します． オプションでダウンロードするリポジトリを指定できます．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
-
-...
-Actions:
- &lt;I&gt; start installation to hard disk
- &lt;H&gt; help
- &lt;Q&gt; quit
-Enter command: I
-</code></pre></div><p>I を入力してインストールを開始します． サーバーの接続エラーが発生したり，何らかの理由により取得したアーカイブに問題があったりした場合はインストールが途中でストップします． この場合は，以下のコマンドで途中から再開できたりできなかったりします．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./install-tl -no-gui -profile installation.profile
-
-ABORTED INSTALLATION FOUND: installation.profile
-Do you want to <span style="color:#66d9ef">continue</span> with the exact same settings as before <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span>: y
-</code></pre></div><p>再開できない場合は接続先を変更するか，または ISO ファイルをミラーサイトからダウンロードしてインストールしてください．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+</span></span></code></pre></div><h3 id="-curl-を使用する場合">※ curl を使用する場合</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ curl -O http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+</span></span></code></pre></div><p>install-tl-unx.tar.gz を展開します．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ tar xvf install-tl-unx.tar.gz
+</span></span></code></pre></div><p>展開したインストーラのディレクトリに移動します．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd install-tl*
+</span></span></code></pre></div><p>root 権限でインストーラを実行します． オプションでダウンロードするリポジトリを指定できます．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo ./install-tl -no-gui -repository http://mirror.ctan.org/systems/texlive/tlnet/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Actions:
+</span></span><span style="display:flex;"><span> &lt;I&gt; start installation to hard disk
+</span></span><span style="display:flex;"><span> &lt;H&gt; help
+</span></span><span style="display:flex;"><span> &lt;Q&gt; quit
+</span></span><span style="display:flex;"><span>Enter command: I
+</span></span></code></pre></div><p>I を入力してインストールを開始します． サーバーの接続エラーが発生したり，何らかの理由により取得したアーカイブに問題があったりした場合はインストールが途中でストップします． この場合は，以下のコマンドで途中から再開できたりできなかったりします．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo ./install-tl -no-gui -profile installation.profile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ABORTED INSTALLATION FOUND: installation.profile
+</span></span><span style="display:flex;"><span>Do you want to <span style="color:#66d9ef">continue</span> with the exact same settings as before <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span>: y
+</span></span></code></pre></div><p>再開できない場合は接続先を変更するか，または ISO ファイルをミラーサイトからダウンロードしてインストールしてください．</p>
 <p>インストールが終了したら /usr/local/bin ディレクトリ配下にシンボリックリンクを追加します．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo /usr/local/texlive/????/bin/*/tlmgr path add
-</code></pre></div><h3 id="アップデート-">アップデート †</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo /usr/local/texlive/????/bin/*/tlmgr path add
+</span></span></code></pre></div><h3 id="アップデート-">アップデート †</h3>
 <p>アップデートは</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr update --self --all
-</code></pre></div><p>を実行すれば OK です．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo tlmgr update --self --all
+</span></span></code></pre></div><p>を実行すれば OK です．</p>
 <p>ただし，アップデートのタイミングによっては，今まで動いていたものが動かなくなったりすることがあるかもしれません．</p>
 <ul>
 <li>/usr/local/texlive/????/tlpkg/backups</li>
 </ul>
 <p>にパッケージのバックアップが保存されています． アップデートによって動作しなくなった場合は</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo tlmgr restore （パッケージ名） （リビジョン番号）
-</code></pre></div><p>とすることで以前のバージョンに戻すことができます．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo tlmgr restore （パッケージ名） （リビジョン番号）
+</span></span></code></pre></div><p>とすることで以前のバージョンに戻すことができます．</p>
 <h3 id="-my-styを追加する場所">※ My-styを追加する場所</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> /usr/local/texlive/????/texmf-dist/tex/platex
-</code></pre></div><p>Dropboxからシンボリックを貼る</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo ln -s /home/minoru/Dropox/dotfiles/tex/platex/my-sty /usr/local/texlive/????/texmf-dist/tex/platex 
-</code></pre></div><p>そのあと、<code>sudo mktexlsr</code> する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> /usr/local/texlive/????/texmf-dist/tex/platex
+</span></span></code></pre></div><p>Dropboxからシンボリックを貼る</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo ln -s /home/minoru/Dropox/dotfiles/tex/platex/my-sty /usr/local/texlive/????/texmf-dist/tex/platex 
+</span></span></code></pre></div><p>そのあと、<code>sudo mktexlsr</code> する。</p>
 
       </div>
     </article>
@@ -400,7 +395,7 @@ Do you want to <span style="color:#66d9ef">continue</span> with the exact same s
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -424,7 +419,7 @@ Do you want to <span style="color:#66d9ef">continue</span> with the exact same s
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

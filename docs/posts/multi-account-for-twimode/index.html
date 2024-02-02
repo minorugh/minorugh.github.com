@@ -48,15 +48,10 @@
 
 
 <meta itemprop="name" content="複数アカウトでtwittering-modeを使う ">
-<meta itemprop="description" content="EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&ldquo;な〜んだ(^o^)&rdquo; という落ちでしょうね。">
-<meta itemprop="datePublished" content="2018-10-15T14:19:10+09:00" />
+<meta itemprop="description" content="EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&ldquo;な〜んだ(^o^)&rdquo; という落ちでしょうね。"><meta itemprop="datePublished" content="2018-10-15T14:19:10+09:00" />
 <meta itemprop="dateModified" content="2018-10-15T14:19:10+09:00" />
 <meta itemprop="wordCount" content="1169">
-
-
-
 <meta itemprop="keywords" content="twitter," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="複数アカウトでtwittering-modeを使う "/>
 <meta name="twitter:description" content="EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&ldquo;な〜んだ(^o^)&rdquo; という落ちでしょうね。"/>
@@ -158,43 +153,42 @@
       <div class="post-content">
         <p>EmacsのTwittering-modeで複数アカウントを扱うという課題に挑戦してみました。アカウント毎にログイン用のgpgファイルを生成し、基本設定部分をその都度リッセトしながら切り替えているだけです。意外と簡単に実現できたので備忘録として残しておきます。設定を見ていただければ、&ldquo;な〜んだ(^o^)&rdquo; という落ちでしょうね。</p>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Clear existing twit buffers</span>
-(defun my/reload-twit ()
-  (<span style="color:#a6e22e">mapcar</span>
-   (lambda (buffer)
-     (twittering-deactivate-buffer buffer)
-     (<span style="color:#a6e22e">kill-buffer</span> buffer))
-   (twittering-get-buffer-list))
-  (twittering-unregister-killed-buffer)
-  <span style="color:#75715e">;; Clear variables</span>
-  (setq twittering-private-info-file-loaded <span style="color:#66d9ef">nil</span>)
-  (setq twittering-account-authorization <span style="color:#66d9ef">nil</span>)
-  (setq twittering-oauth-access-token-alist <span style="color:#66d9ef">nil</span>)
-  (setq twittering-buffer-info-list <span style="color:#66d9ef">nil</span>)
-  (setq twittering-timeline-data-table (<span style="color:#a6e22e">make-hash-table</span> :test <span style="color:#e6db74">&#39;equal</span>))
-  (twit))
-
-(defun my/twit-1 ()
-  (interactive)
-  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/.twittering-mode.gpg&#34;</span>))
-  <span style="color:#75715e">;; timeline to read on startup</span>
-  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;minoruGH&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
-  (my/reload-twit))
-
-(defun my/twit-2 ()
-  (interactive)
-  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/Dropbox/dotfiles/twittering-mode2.gpg&#34;</span>))
-  <span style="color:#75715e">;; timeline to read on startup</span>
-  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;gospelhaiku&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
-  (my/reload-twit))
-
-<span style="color:#75715e">;; Twitterring-mode settings</span>
-(use-package twittering-mode)
-(setq twittering-use-master-password <span style="color:#66d9ef">t</span>)
-
-<span style="color:#75715e">;; 以降、必要な共通設定を書きます。</span>
-
-</code></pre></div><h2 id="twitterの公式アプリで複数アカウントを切り替える">Twitterの公式アプリで複数アカウントを切り替える</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Clear existing twit buffers</span>
+</span></span><span style="display:flex;"><span>(defun my/reload-twit ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a6e22e">mapcar</span>
+</span></span><span style="display:flex;"><span>   (lambda (buffer)
+</span></span><span style="display:flex;"><span>     (twittering-deactivate-buffer buffer)
+</span></span><span style="display:flex;"><span>     (<span style="color:#a6e22e">kill-buffer</span> buffer))
+</span></span><span style="display:flex;"><span>   (twittering-get-buffer-list))
+</span></span><span style="display:flex;"><span>  (twittering-unregister-killed-buffer)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Clear variables</span>
+</span></span><span style="display:flex;"><span>  (setq twittering-private-info-file-loaded <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>  (setq twittering-account-authorization <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>  (setq twittering-oauth-access-token-alist <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>  (setq twittering-buffer-info-list <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>  (setq twittering-timeline-data-table (<span style="color:#a6e22e">make-hash-table</span> :test <span style="color:#e6db74">&#39;equal</span>))
+</span></span><span style="display:flex;"><span>  (twit))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun my/twit-1 ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/.twittering-mode.gpg&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; timeline to read on startup</span>
+</span></span><span style="display:flex;"><span>  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;minoruGH&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
+</span></span><span style="display:flex;"><span>  (my/reload-twit))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(defun my/twit-2 ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (setq twittering-private-info-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/Dropbox/dotfiles/twittering-mode2.gpg&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; timeline to read on startup</span>
+</span></span><span style="display:flex;"><span>  (setq twittering-initial-timeline-spec-string <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;gospelhaiku&#34;</span> <span style="color:#e6db74">&#34;:mentions&#34;</span> <span style="color:#e6db74">&#34;:home&#34;</span>))
+</span></span><span style="display:flex;"><span>  (my/reload-twit))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Twitterring-mode settings</span>
+</span></span><span style="display:flex;"><span>(use-package twittering-mode)
+</span></span><span style="display:flex;"><span>(setq twittering-use-master-password <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; 以降、必要な共通設定を書きます。</span>
+</span></span></code></pre></div><h2 id="twitterの公式アプリで複数アカウントを切り替える">Twitterの公式アプリで複数アカウントを切り替える</h2>
 <p>紐付けのメールアドレスさえ確保できれば、複数アカウントの取得は何も問題ありませんが、
 Emacsのtwittering-modeで複数環境を構築するには、アカウントごとにgpgファイルを生成させる必要があります。</p>
 <p>そのために公式アプリで複数アカウントを切り替えられる用に設定しておくと便利です.</p>
@@ -398,7 +392,7 @@ Emacsのtwittering-modeで複数環境を構築するには、アカウントご
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -422,7 +416,7 @@ Emacsのtwittering-modeで複数環境を構築するには、アカウントご
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

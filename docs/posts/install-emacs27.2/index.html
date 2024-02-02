@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Emacs27.2をInstall">
-<meta itemprop="description" content="Emacs27.2の安定版がリリースされたのでInstallした。 私の場合は、makefileを下記のように修正してmakeコマンドを実行す">
-<meta itemprop="datePublished" content="2021-08-21T17:34:15+09:00" />
+<meta itemprop="description" content="Emacs27.2の安定版がリリースされたのでInstallした。 私の場合は、makefileを下記のように修正してmakeコマンドを実行す"><meta itemprop="datePublished" content="2021-08-21T17:34:15+09:00" />
 <meta itemprop="dateModified" content="2021-08-21T17:34:15+09:00" />
 <meta itemprop="wordCount" content="220">
-
-
-
 <meta itemprop="keywords" content="emacs," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs27.2をInstall"/>
 <meta name="twitter:description" content="Emacs27.2の安定版がリリースされたのでInstallした。 私の場合は、makefileを下記のように修正してmakeコマンドを実行す"/>
@@ -157,19 +152,17 @@
       <div class="post-content">
         <p>Emacs27.2の安定版がリリースされたのでInstallした。</p>
 <p>私の場合は、makefileを下記のように修正してmakeコマンドを実行するだけで簡単にInstallできるようにしている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">## makefile
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">emacs-latest</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install latest version of emacs
-</span><span style="color:#75715e"></span>	cd <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/src;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	wget https://ftp.gnu.org/pub/gnu/emacs/emacs-27.2.tar.gz;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	tar -xzvf emacs-27.2.tar.gz;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	cd emacs-27.2;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	./configure;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	make;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	sudo make install;<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ make emacs-latest
-
-</code></pre></div><h2 id="スクリーンショット">スクリーンショット</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#75715e">## makefile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">emacs-latest</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install latest version of emacs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	cd <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>/src;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	wget https://ftp.gnu.org/pub/gnu/emacs/emacs-27.2.tar.gz;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	tar -xzvf emacs-27.2.tar.gz;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	cd emacs-27.2;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	./configure;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	make;<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	sudo make install;<span style="color:#ae81ff">\
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ make emacs-latest
+</span></span></code></pre></div><h2 id="スクリーンショット">スクリーンショット</h2>
 <p>Emacs27.2を起動し、Dashboard画面を表示させたスクショです。</p>
 <p><img src="https://live.staticflickr.com/65535/51396304028_74698110f6_b.jpg" alt="Alt Text"></p>
 <ul>
@@ -359,7 +352,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -383,7 +376,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

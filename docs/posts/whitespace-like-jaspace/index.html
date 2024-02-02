@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="whitespace-modeでjaspace風に表示させる設定">
-<meta itemprop="description" content="Emacs24以降は、内包されたWhitespaceで全角スペースなどを明示的に表示できることは知っていたけれど、長い間使い馴染んだjasp">
-<meta itemprop="datePublished" content="2017-06-26T22:50:39+09:00" />
+<meta itemprop="description" content="Emacs24以降は、内包されたWhitespaceで全角スペースなどを明示的に表示できることは知っていたけれど、長い間使い馴染んだjasp"><meta itemprop="datePublished" content="2017-06-26T22:50:39+09:00" />
 <meta itemprop="dateModified" content="2017-06-26T22:50:39+09:00" />
 <meta itemprop="wordCount" content="260">
-
-
-
 <meta itemprop="keywords" content="whitespace," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="whitespace-modeでjaspace風に表示させる設定"/>
 <meta name="twitter:description" content="Emacs24以降は、内包されたWhitespaceで全角スペースなどを明示的に表示できることは知っていたけれど、長い間使い馴染んだjasp"/>
@@ -160,31 +155,29 @@
 <ul>
 <li><a href="http://piyolian.blogspot.jp/2011/12/emacs-whitespace-like-jaspace.html">参考にしたTips</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#a6e22e">use-package</span> whitespace
-  <span style="color:#e6db74">:diminish</span> global-whitespace-mode
-  <span style="color:#e6db74">:config</span>
-  (<span style="color:#66d9ef">setq</span> whitespace-style
-    <span style="color:#f92672">&#39;</span>(face
-      tabs spaces newline space-mark tab-mark newline-mark))
-  (<span style="color:#66d9ef">let</span> ((dark (<span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#39;dark</span> (frame-parameter <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;background-mode</span>))))
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-space</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;pink4&#34;</span> <span style="color:#e6db74">&#34;azure3&#34;</span>)
-    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>)
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-tab</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;gray20&#34;</span> <span style="color:#e6db74">&#34;gray80&#34;</span>)
-    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>
-    		<span style="color:#e6db74">:strike-through</span> <span style="color:#66d9ef">t</span>)
-    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-newline</span> <span style="color:#66d9ef">nil</span>
-    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;darkcyan&#34;</span> <span style="color:#e6db74">&#34;darkseagreen&#34;</span>)))
-  (<span style="color:#66d9ef">setq</span> whitespace-space-regexp <span style="color:#e6db74">&#34;\\(　+\\)&#34;</span>)
-  (<span style="color:#66d9ef">setq</span> whitespace-display-mappings
-        <span style="color:#f92672">&#39;</span>((space-mark   ?　    [?<span style="color:#960050;background-color:#1e0010">□</span>]    [?＿]) <span style="color:#75715e">; full-width space - square</span>
-          (newline-mark ?\n    [?\xAB ?\n])))   <span style="color:#75715e">; eol - right quote mark</span>
-  (<span style="color:#66d9ef">setq</span> whitespace-global-modes <span style="color:#f92672">&#39;</span>(<span style="color:#a6e22e">not</span> dired-mode tar-mode))
-  (global-whitespace-mode <span style="color:#ae81ff">1</span>))
-
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#a6e22e">use-package</span> whitespace
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:diminish</span> global-whitespace-mode
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">:config</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> whitespace-style
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#39;</span>(face
+</span></span><span style="display:flex;"><span>      tabs spaces newline space-mark tab-mark newline-mark))
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let</span> ((dark (<span style="color:#a6e22e">eq</span> <span style="color:#e6db74">&#39;dark</span> (frame-parameter <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;background-mode</span>))))
+</span></span><span style="display:flex;"><span>    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-space</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;pink4&#34;</span> <span style="color:#e6db74">&#34;azure3&#34;</span>)
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>)
+</span></span><span style="display:flex;"><span>    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-tab</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;gray20&#34;</span> <span style="color:#e6db74">&#34;gray80&#34;</span>)
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:background</span> <span style="color:#e6db74">&#39;unspecified</span>
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:strike-through</span> <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>    (set-face-attribute <span style="color:#e6db74">&#39;whitespace-newline</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">:foreground</span> (<span style="color:#66d9ef">if</span> dark <span style="color:#e6db74">&#34;darkcyan&#34;</span> <span style="color:#e6db74">&#34;darkseagreen&#34;</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> whitespace-space-regexp <span style="color:#e6db74">&#34;\\(　+\\)&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> whitespace-display-mappings
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;</span>((space-mark   ?　    [?<span style="color:#960050;background-color:#1e0010">□</span>]    [?＿]) <span style="color:#75715e">; full-width space - square</span>
+</span></span><span style="display:flex;"><span>          (newline-mark ?\n    [?\xAB ?\n])))   <span style="color:#75715e">; eol - right quote mark</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> whitespace-global-modes <span style="color:#f92672">&#39;</span>(<span style="color:#a6e22e">not</span> dired-mode tar-mode))
+</span></span><span style="display:flex;"><span>  (global-whitespace-mode <span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -368,7 +361,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -392,7 +385,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

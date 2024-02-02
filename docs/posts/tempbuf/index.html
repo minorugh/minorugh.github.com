@@ -50,15 +50,10 @@
 
 <meta itemprop="name" content="Emacsの不要なバッファーを自動的にkillする">
 <meta itemprop="description" content="Emacsのbufferをtabで切り替えるのはあまり好きでないので switch-buffer の機能を使っているが、magitやdired関係の不要なバッファーが沢山増えていくと煩わしくなる。
-手動で削除すれば済む話ではあるが、やっぱり自動化したい。MELPAでいろいろpackageを探したが適当なものがなく、ググっていたら下記の記事を見つけました。">
-<meta itemprop="datePublished" content="2018-09-21T18:58:53+09:00" />
+手動で削除すれば済む話ではあるが、やっぱり自動化したい。MELPAでいろいろpackageを探したが適当なものがなく、ググっていたら下記の記事を見つけました。"><meta itemprop="datePublished" content="2018-09-21T18:58:53+09:00" />
 <meta itemprop="dateModified" content="2018-09-21T18:58:53+09:00" />
 <meta itemprop="wordCount" content="490">
-
-
-
 <meta itemprop="keywords" content="buffer," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacsの不要なバッファーを自動的にkillする"/>
 <meta name="twitter:description" content="Emacsのbufferをtabで切り替えるのはあまり好きでないので switch-buffer の機能を使っているが、magitやdired関係の不要なバッファーが沢山増えていくと煩わしくなる。
@@ -165,29 +160,29 @@
 <li><a href="https://www.shigemk2.com/entry/20120908/1347090453">不要なバッファを自動的にkillしてくれる</a></li>
 </ul>
 <p>早速設定して使ってみたところ実に快適！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; automatically kill unnecessary buffers</span>
-(<span style="color:#a6e22e">use-package</span> tempbuf)
-(add-hook <span style="color:#e6db74">&#39;dired-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
-(add-hook <span style="color:#e6db74">&#39;magit-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; automatically kill unnecessary buffers</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">use-package</span> tempbuf)
+</span></span><span style="display:flex;"><span>(add-hook <span style="color:#e6db74">&#39;dired-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
+</span></span><span style="display:flex;"><span>(add-hook <span style="color:#e6db74">&#39;magit-mode-hook</span> <span style="color:#e6db74">&#39;turn-on-tempbuf-mode</span>)
+</span></span></code></pre></div><ul>
 <li><a href="https://www.emacswiki.org/emacs/tempbuf.el">tempbuf.el はここから落としてきました。</a></li>
 </ul>
 <h2 id="参考">参考</h2>
 <p>switch-buffer機能は、ivy-switch-buffer と iflipb とを併用しています。</p>
 <p>前者は、Helm-mini の代わりに使います。後者はキー操作によって開いているバッファーを切り替えたいときに使います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(ivy-mode <span style="color:#ae81ff">1</span>)
-(setq ivy-use-virtual-buffers <span style="color:#66d9ef">t</span>)
-(setq enable-recursive-minibuffers <span style="color:#66d9ef">t</span>)
-(bind-key <span style="color:#e6db74">&#34;M-:&#34;</span> <span style="color:#e6db74">&#39;ivy-switch-buffer</span>)
-</code></pre></div><p>iflipb.el の機能は、Emacs標準の <code>M-x switch-to-next-buffer</code> とは全く別物で優れものです。詳細はるびきちさんの記事が参考になるでしょう。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(ivy-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>(setq ivy-use-virtual-buffers <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>(setq enable-recursive-minibuffers <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;M-:&#34;</span> <span style="color:#e6db74">&#39;ivy-switch-buffer</span>)
+</span></span></code></pre></div><p>iflipb.el の機能は、Emacs標準の <code>M-x switch-to-next-buffer</code> とは全く別物で優れものです。詳細はるびきちさんの記事が参考になるでしょう。</p>
 <ul>
 <li><a href="http://emacs.rubikitch.com/iflipb/">詳説！Alt+Tab感覚で賢くバッファをワンタッチで切り替える</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; iflipb</span>
-(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span>))
-(bind-key <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-next-buffer</span>)
-(bind-key <span style="color:#e6db74">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-previous-buffer</span>)
-</code></pre></div><p>私は org-modeを使わないので <code>C-&lt;right&gt;</code> <code>C-&lt;left&gt;</code> に key bind してますが、そこはお好みで設定してください。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; iflipb</span>
+</span></span><span style="display:flex;"><span>(setq iflipb-ignore-buffers (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;^[*]&#34;</span> <span style="color:#e6db74">&#34;^magit&#34;</span>))
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;C-&lt;right&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-next-buffer</span>)
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#e6db74">&#39;iflipb-previous-buffer</span>)
+</span></span></code></pre></div><p>私は org-modeを使わないので <code>C-&lt;right&gt;</code> <code>C-&lt;left&gt;</code> に key bind してますが、そこはお好みで設定してください。</p>
       </div>
     </article>
 
@@ -371,7 +366,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -395,7 +390,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

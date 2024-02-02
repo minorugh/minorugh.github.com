@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="SlackAppを最小化状態で自動起動する for Linux">
-<meta itemprop="description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac">
-<meta itemprop="datePublished" content="2022-01-26T10:29:22+09:00" />
+<meta itemprop="description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac"><meta itemprop="datePublished" content="2022-01-26T10:29:22+09:00" />
 <meta itemprop="dateModified" content="2022-01-26T10:29:22+09:00" />
 <meta itemprop="wordCount" content="297">
-
-
-
 <meta itemprop="keywords" content="slack,linux," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SlackAppを最小化状態で自動起動する for Linux"/>
 <meta name="twitter:description" content="元ネタ SlackAppを最小化状態で自動起動する SlackAppを自動起動にしている場合は ~/.config/autostart/slack.desktop と言うファイルがあります。 私の環境では、slac"/>
@@ -158,7 +153,7 @@
         <p>元ネタ
 <a href="https://bre.is/tEgwhUeT">SlackAppを最小化状態で自動起動する</a></p>
 <p>SlackAppを自動起動にしている場合は <code>~/.config/autostart/slack.desktop</code> と言うファイルがあります。 私の環境では、<code>slack.desktop</code> は <code>/usr/share/applications/slack.desktop</code> に存在していました。 なので、編集するには `sudo`` が必要です。</p>
-<pre><code class="language-conf" data-lang="conf">[Desktop Entry]
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[Desktop Entry]
 Name=Slack
 StartupWMClass=Slack
 Comment=Slack Desktop
@@ -170,7 +165,7 @@ StartupNotify=true
 Categories=GNOME;GTK;Network;InstantMessaging;
 MimeType=x-scheme-handler/slack;
 </code></pre><p>Exec が実際に実行するコマンドを指定しています。<code>/usr/bin/slack</code> が本体なので、この直後に <code>--startup</code> を挿入すれば最小化状態で自動起動するようになります。</p>
-<pre><code class="language-conf" data-lang="conf">Exec=/usr/bin/slack --startup %U
+<pre tabindex="0"><code class="language-conf" data-lang="conf">Exec=/usr/bin/slack --startup %U
 </code></pre><p>おそらく、SlackAppをアップデートすると <code>/usr/share/applications/slack.desktop</code> は上書きされて <code>--startup</code> が消えるので、<code>~/.config/autostart/</code> にはシンボリックリンクではなく、コピーを置くなどのしたほうがいいです。</p>
 
       </div>
@@ -357,7 +352,7 @@ MimeType=x-scheme-handler/slack;
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -381,7 +376,7 @@ MimeType=x-scheme-handler/slack;
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

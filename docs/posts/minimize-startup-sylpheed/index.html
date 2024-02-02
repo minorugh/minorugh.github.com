@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Sylpheedをログイン時に最小化起動させる">
-<meta itemprop="description" content="元ネタは下記 Sylpheedをログイン時に最小化起動する方法 Devil&rsquo;s Pieのインストール sudo apt install devilspie 設定ファイルの作成 ~/.devilspie/に設定">
-<meta itemprop="datePublished" content="2022-01-26T10:19:14+09:00" />
+<meta itemprop="description" content="元ネタは下記 Sylpheedをログイン時に最小化起動する方法 Devil&rsquo;s Pieのインストール sudo apt install devilspie 設定ファイルの作成 ~/.devilspie/に設定"><meta itemprop="datePublished" content="2022-01-26T10:19:14+09:00" />
 <meta itemprop="dateModified" content="2022-01-26T10:19:14+09:00" />
 <meta itemprop="wordCount" content="472">
-
-
-
 <meta itemprop="keywords" content="Sylpheed," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sylpheedをログイン時に最小化起動させる"/>
 <meta name="twitter:description" content="元ネタは下記 Sylpheedをログイン時に最小化起動する方法 Devil&rsquo;s Pieのインストール sudo apt install devilspie 設定ファイルの作成 ~/.devilspie/に設定"/>
@@ -160,21 +155,21 @@
 <li><a href="https://bre.is/Vf9rwzFo">Sylpheedをログイン時に最小化起動する方法</a></li>
 </ul>
 <h2 id="devils-pieのインストール">Devil&rsquo;s Pieのインストール</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> sudo apt install devilspie
-</code></pre></div><h2 id="設定ファイルの作成">設定ファイルの作成</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> sudo apt install devilspie
+</span></span></code></pre></div><h2 id="設定ファイルの作成">設定ファイルの作成</h2>
 <p>~/.devilspie/に設定ファイル sylpheed.dsを以下の内容で作成する。　ファイル名は拡張子が.dsならアプリケーション名でなくてもいいようだ。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span>
- <span style="color:#f92672">(</span>is <span style="color:#f92672">(</span>application_name<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;sylpheed&#34;</span><span style="color:#f92672">)</span>
- <span style="color:#f92672">(</span>begin <span style="color:#f92672">(</span>minimize<span style="color:#f92672">))</span>
- <span style="color:#f92672">)</span>
-</code></pre></div><h2 id="devils-pie起動終了スクリプトの作成">Devil&rsquo;s Pie起動＆終了スクリプトの作成</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>is <span style="color:#f92672">(</span>application_name<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;sylpheed&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>begin <span style="color:#f92672">(</span>minimize<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="devils-pie起動終了スクリプトの作成">Devil&rsquo;s Pie起動＆終了スクリプトの作成</h2>
 <p>/usr/local/bin/あたりにシェルスクリプト minimize_sylpheed.shを以下の内容で作成する。　ファイル名は任意、実行権限を忘れずに付与しておくこと。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> <span style="color:#75715e">#!/bin/bash</span>
- devilspie &amp;
- sylpheed &amp;
- sleep 5s
- killall -9 devilspie
-</code></pre></div><p>devilspieは常駐監視するタイプのツールなので、5秒で強制終了させている。　 Sylpheedが最小化しないときは時間を延ばしてみる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> <span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span> devilspie &amp;
+</span></span><span style="display:flex;"><span> sylpheed &amp;
+</span></span><span style="display:flex;"><span> sleep 5s
+</span></span><span style="display:flex;"><span> killall -9 devilspie
+</span></span></code></pre></div><p>devilspieは常駐監視するタイプのツールなので、5秒で強制終了させている。　 Sylpheedが最小化しないときは時間を延ばしてみる。</p>
 <h2 id="シェルスクリプトを自動開始アプリケーションに登録する">シェルスクリプトを自動開始アプリケーションに登録する</h2>
 <p>Debian場合は「設定マネージャー」→「セッションと起動」→「自動開始アプリケーション」
 Sylpheedの設定「新着メールを自動チェックする（○分ごと）」「起動時に新着メールをチェックする」を利用するとバックグラウンドでメールチェックしてくれて便利。</p>
@@ -362,7 +357,7 @@ Sylpheedの設定「新着メールを自動チェックする（○分ごと）
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -386,7 +381,7 @@ Sylpheedの設定「新着メールを自動チェックする（○分ごと）
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

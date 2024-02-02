@@ -49,15 +49,10 @@
 
 <meta itemprop="name" content="Emacsのview-modeでvimのコマンドを使えるようにする">
 <meta itemprop="description" content="vimを少し触り始めて、Emacsのview-modeでも簡単な編集操作は可能にしたいと思うようになったので、
-viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集機能を実現させるべく試運転中です。">
-<meta itemprop="datePublished" content="2018-01-04T19:09:15+09:00" />
+viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集機能を実現させるべく試運転中です。"><meta itemprop="datePublished" content="2018-01-04T19:09:15+09:00" />
 <meta itemprop="dateModified" content="2018-01-04T19:09:15+09:00" />
 <meta itemprop="wordCount" content="3393">
-
-
-
 <meta itemprop="keywords" content="vim," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacsのview-modeでvimのコマンドを使えるようにする"/>
 <meta name="twitter:description" content="vimを少し触り始めて、Emacsのview-modeでも簡単な編集操作は可能にしたいと思うようになったので、
@@ -161,105 +156,105 @@ viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集
         <p>vimを少し触り始めて、Emacsのview-modeでも簡単な編集操作は可能にしたいと思うようになったので、
 viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集機能を実現させるべく試運転中です。</p>
 <p>まずは、私のview-mode設定をご覧ください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; View-mode key map</span>
-(use-package keys-in-view-mode)
-(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-  (bind-keys :map view-mode-map
-             (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">backward-char</span>)
-             (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#f92672">.</span> next-line)
-             (<span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#f92672">.</span> previous-line)
-             (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-char</span>)
-             (<span style="color:#e6db74">&#34;J&#34;</span> <span style="color:#f92672">.</span> scroll-down-line)
-             (<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">.</span> scroll-up-line)
-             (<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">scroll-down</span>)
-             (<span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">beginning-of-line</span>)
-             (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">end-of-line</span>)
-             (<span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#f92672">.</span> goto-line)
-             (<span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#f92672">.</span> View-goto-percent)
-             (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">.</span> dired-jump)
-             (<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#f92672">.</span> magit-status)
-             (<span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#f92672">.</span> vc-diff)
-             (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#f92672">.</span> neotree-toggle)
-             (<span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">.</span> swiper-migemo)
-             (<span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> save-buffer)
-             (<span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#f92672">.</span> vim-undo)
-             (<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#f92672">.</span> vim-redo)
-             (<span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#f92672">.</span> vim-jump-brace)
-             (<span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#f92672">.</span> forward-word+1)
-             (<span style="color:#e6db74">&#34;W&#34;</span> <span style="color:#f92672">.</span> backward-word)
-             (<span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#f92672">.</span> vim-o)
-             (<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">.</span> vim-O)
-             (<span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">.</span> copy-region-as-kill)
-             (<span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#f92672">.</span> vim-copy-line)
-             (<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#f92672">.</span> vim-p)
-             (<span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#f92672">.</span> vim-P)
-             (<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">.</span> vim-del-char)
-             (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">.</span> vim-del-char-to-insert)
-             (<span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#f92672">.</span> vim-backward-kill-line)
-             (<span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#f92672">.</span> vim-kill-line)
-             (<span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#f92672">.</span> vim-kill-line-to-insert)
-             (<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">.</span> vim-forward-char-to-insert)
-             (<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">.</span> vim-end-of-line-to-insert)
-             (<span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">.</span> view-mode)
-             (<span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#f92672">.</span> vim-beginning-of-line-to-insert)
-             (<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">.</span> pdf-preview-Buffer))
-(key-chord-define view-mode-map <span style="color:#e6db74">&#34;cc&#34;</span> <span style="color:#e6db74">&#39;vim-kill-whole-line-to-insert</span>)
-(key-chord-define view-mode-map <span style="color:#e6db74">&#34;dd&#34;</span> <span style="color:#e6db74">&#39;vim-kill-whole-line</span>)
-(key-chord-define view-mode-map <span style="color:#e6db74">&#34;gg&#34;</span> <span style="color:#e6db74">&#39;View-goto-line</span>))
-<span style="color:#75715e">;; In my case, use eikana.app to remap mac&#39;s fn key to &#34;S-&lt;f12&gt;&#34; only in emacs I will.</span>
-<span style="color:#75715e">;; This allows you to toggle view-mode with one key</span>
-(bind-key <span style="color:#e6db74">&#34;S-&lt;f12&gt;&#34;</span> <span style="color:#e6db74">&#39;view-mode</span>)
-
-<span style="color:#75715e">; Change mode-line color in view-mode</span>
-(use-package viewer)
-(setq viewer-modeline-color-view <span style="color:#e6db74">&#34;dark red&#34;</span>)
-(viewer-change-modeline-color-setup)
-
-<span style="color:#75715e">;; Add hl-line-mode to view-mode</span>
-(when (<span style="color:#a6e22e">functionp</span> <span style="color:#e6db74">&#39;hl-line-mode</span>)
-  (add-hook <span style="color:#e6db74">&#39;view-mode-hook</span> <span style="color:#f92672">&#39;</span>(lambda () (hl-line-mode <span style="color:#ae81ff">1</span>)))
-  (defadvice view-mode-disable (after disable-hl-line-mode activate)
-    (hl-line-mode <span style="color:#ae81ff">-1</span>)))
-
-<span style="color:#75715e">;; Open-file from ivy-switbuffer in view-mode</span>
-(defun ivy--switch-buffer-action (buffer)
-  (with-ivy-window
-    (if (zerop (<span style="color:#a6e22e">length</span> buffer))
-        (switch-to-buffer
-         ivy-text <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;force-same-window</span>)
-      (let ((virtual (<span style="color:#a6e22e">assoc</span> buffer ivy--virtual-buffers))
-            (view (<span style="color:#a6e22e">assoc</span> buffer ivy-views)))
-        (cond ((and virtual
-                    (not (<span style="color:#a6e22e">get-buffer</span> buffer)))
-               <span style="color:#75715e">;; (find-file (cdr virtual)))</span>
-               (view-file (<span style="color:#a6e22e">cdr</span> virtual)))
-              (view
-               (delete-other-windows)
-               (let (
-                     <span style="color:#75715e">;; silence &#34;Directory has changed on disk&#34;</span>
-                     (inhibit-message <span style="color:#66d9ef">t</span>))
-                 (ivy-set-view-recur (cadr view))))
-              (<span style="color:#66d9ef">t</span>
-               (switch-to-buffer
-                buffer <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;force-same-window</span>)))))))
-
-<span style="color:#75715e">;; Neotree</span>
-(use-package neotree
-  :config
-  <span style="color:#75715e">;; Customize to open file in view-mode</span>
-  (defun neo-open-file (full-path <span style="color:#66d9ef">&amp;optional</span> arg)
-    (neo-global--select-mru-window arg)
-    (view-file full-path)))
-(setq neo-show-hidden-files <span style="color:#66d9ef">t</span>)
-(setq neo-smart-open <span style="color:#66d9ef">t</span>)
-
-<span style="color:#75715e">;; Pdf-preview (printing in Mac environments)</span>
-(when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;darwin</span>)
-(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-(use-package pdf-preview)
-(setq pdf-preview-preview-command <span style="color:#e6db74">&#34;open -a Preview.app&#34;</span>)
-(setq ps-line-number <span style="color:#66d9ef">t</span>)))
-</code></pre></div><h2 id="vimライクなキーバインド">Vimライクなキーバインド</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#75715e">;; View-mode key map</span>
+</span></span><span style="display:flex;"><span>(use-package keys-in-view-mode)
+</span></span><span style="display:flex;"><span>(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
+</span></span><span style="display:flex;"><span>  (bind-keys :map view-mode-map
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">backward-char</span>)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#f92672">.</span> next-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#f92672">.</span> previous-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-char</span>)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;J&#34;</span> <span style="color:#f92672">.</span> scroll-down-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;K&#34;</span> <span style="color:#f92672">.</span> scroll-up-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">scroll-down</span>)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">beginning-of-line</span>)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">end-of-line</span>)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#f92672">.</span> goto-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#f92672">.</span> View-goto-percent)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">.</span> dired-jump)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#f92672">.</span> magit-status)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#f92672">.</span> vc-diff)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#f92672">.</span> neotree-toggle)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">.</span> swiper-migemo)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> save-buffer)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#f92672">.</span> vim-undo)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#f92672">.</span> vim-redo)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#f92672">.</span> vim-jump-brace)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#f92672">.</span> forward-word+1)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;W&#34;</span> <span style="color:#f92672">.</span> backward-word)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#f92672">.</span> vim-o)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#f92672">.</span> vim-O)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">.</span> copy-region-as-kill)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;Y&#34;</span> <span style="color:#f92672">.</span> vim-copy-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#f92672">.</span> vim-p)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;P&#34;</span> <span style="color:#f92672">.</span> vim-P)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">.</span> vim-del-char)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">.</span> vim-del-char-to-insert)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#f92672">.</span> vim-backward-kill-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;D&#34;</span> <span style="color:#f92672">.</span> vim-kill-line)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#f92672">.</span> vim-kill-line-to-insert)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">.</span> vim-forward-char-to-insert)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">.</span> vim-end-of-line-to-insert)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">.</span> view-mode)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;I&#34;</span> <span style="color:#f92672">.</span> vim-beginning-of-line-to-insert)
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#34;L&#34;</span> <span style="color:#f92672">.</span> pdf-preview-Buffer))
+</span></span><span style="display:flex;"><span>(key-chord-define view-mode-map <span style="color:#e6db74">&#34;cc&#34;</span> <span style="color:#e6db74">&#39;vim-kill-whole-line-to-insert</span>)
+</span></span><span style="display:flex;"><span>(key-chord-define view-mode-map <span style="color:#e6db74">&#34;dd&#34;</span> <span style="color:#e6db74">&#39;vim-kill-whole-line</span>)
+</span></span><span style="display:flex;"><span>(key-chord-define view-mode-map <span style="color:#e6db74">&#34;gg&#34;</span> <span style="color:#e6db74">&#39;View-goto-line</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; In my case, use eikana.app to remap mac&#39;s fn key to &#34;S-&lt;f12&gt;&#34; only in emacs I will.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; This allows you to toggle view-mode with one key</span>
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;S-&lt;f12&gt;&#34;</span> <span style="color:#e6db74">&#39;view-mode</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">; Change mode-line color in view-mode</span>
+</span></span><span style="display:flex;"><span>(use-package viewer)
+</span></span><span style="display:flex;"><span>(setq viewer-modeline-color-view <span style="color:#e6db74">&#34;dark red&#34;</span>)
+</span></span><span style="display:flex;"><span>(viewer-change-modeline-color-setup)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Add hl-line-mode to view-mode</span>
+</span></span><span style="display:flex;"><span>(when (<span style="color:#a6e22e">functionp</span> <span style="color:#e6db74">&#39;hl-line-mode</span>)
+</span></span><span style="display:flex;"><span>  (add-hook <span style="color:#e6db74">&#39;view-mode-hook</span> <span style="color:#f92672">&#39;</span>(lambda () (hl-line-mode <span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>  (defadvice view-mode-disable (after disable-hl-line-mode activate)
+</span></span><span style="display:flex;"><span>    (hl-line-mode <span style="color:#ae81ff">-1</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Open-file from ivy-switbuffer in view-mode</span>
+</span></span><span style="display:flex;"><span>(defun ivy--switch-buffer-action (buffer)
+</span></span><span style="display:flex;"><span>  (with-ivy-window
+</span></span><span style="display:flex;"><span>    (if (zerop (<span style="color:#a6e22e">length</span> buffer))
+</span></span><span style="display:flex;"><span>        (switch-to-buffer
+</span></span><span style="display:flex;"><span>         ivy-text <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;force-same-window</span>)
+</span></span><span style="display:flex;"><span>      (let ((virtual (<span style="color:#a6e22e">assoc</span> buffer ivy--virtual-buffers))
+</span></span><span style="display:flex;"><span>            (view (<span style="color:#a6e22e">assoc</span> buffer ivy-views)))
+</span></span><span style="display:flex;"><span>        (cond ((and virtual
+</span></span><span style="display:flex;"><span>                    (not (<span style="color:#a6e22e">get-buffer</span> buffer)))
+</span></span><span style="display:flex;"><span>               <span style="color:#75715e">;; (find-file (cdr virtual)))</span>
+</span></span><span style="display:flex;"><span>               (view-file (<span style="color:#a6e22e">cdr</span> virtual)))
+</span></span><span style="display:flex;"><span>              (view
+</span></span><span style="display:flex;"><span>               (delete-other-windows)
+</span></span><span style="display:flex;"><span>               (let (
+</span></span><span style="display:flex;"><span>                     <span style="color:#75715e">;; silence &#34;Directory has changed on disk&#34;</span>
+</span></span><span style="display:flex;"><span>                     (inhibit-message <span style="color:#66d9ef">t</span>))
+</span></span><span style="display:flex;"><span>                 (ivy-set-view-recur (cadr view))))
+</span></span><span style="display:flex;"><span>              (<span style="color:#66d9ef">t</span>
+</span></span><span style="display:flex;"><span>               (switch-to-buffer
+</span></span><span style="display:flex;"><span>                buffer <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;force-same-window</span>)))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Neotree</span>
+</span></span><span style="display:flex;"><span>(use-package neotree
+</span></span><span style="display:flex;"><span>  :config
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Customize to open file in view-mode</span>
+</span></span><span style="display:flex;"><span>  (defun neo-open-file (full-path <span style="color:#66d9ef">&amp;optional</span> arg)
+</span></span><span style="display:flex;"><span>    (neo-global--select-mru-window arg)
+</span></span><span style="display:flex;"><span>    (view-file full-path)))
+</span></span><span style="display:flex;"><span>(setq neo-show-hidden-files <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>(setq neo-smart-open <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Pdf-preview (printing in Mac environments)</span>
+</span></span><span style="display:flex;"><span>(when (<span style="color:#a6e22e">eq</span> system-type <span style="color:#e6db74">&#39;darwin</span>)
+</span></span><span style="display:flex;"><span>(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
+</span></span><span style="display:flex;"><span>(use-package pdf-preview)
+</span></span><span style="display:flex;"><span>(setq pdf-preview-preview-command <span style="color:#e6db74">&#34;open -a Preview.app&#34;</span>)
+</span></span><span style="display:flex;"><span>(setq ps-line-number <span style="color:#66d9ef">t</span>)))
+</span></span></code></pre></div><h2 id="vimライクなキーバインド">Vimライクなキーバインド</h2>
 <p>基本的にview-modeでは不可能だったことを可能にするのが目的なので、Emacsの機能で十分なことまで、vimライクにこだわることは無意味だと思います。
 とりあえず以下のコマンドを使えるようにしています。</p>
 <table>
@@ -443,146 +438,146 @@ viper-modeとかEvilを使わないで、view-modeだけでvimライクな編集
 view-modeを解除して必要な作業をし終わったらまたview-modoに戻すだけです(^^)</p>
 <p>まだ不完全な挙動もあるので、さらなる検証が必要ですが、
 elispビギナーのわたしでも書ける程度の簡単なものですから、詳しい方ならもっと複雑な挙動も設定できると思います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; keys-in-view-mode.el</span>
-<span style="color:#75715e">;; ==============================</span>
-<span style="color:#75715e">;; like a</span>
-(defun vim-forward-char-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (forward-char <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like A</span>
-(defun vim-end-of-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (end-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like I</span>
-(defun vim-beginning-of-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like cc</span>
-(defun vim-kill-whole-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-whole-line)
-  (open-line <span style="color:#ae81ff">1</span>)
-  (backward-line)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;:kill-whole-line and edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like dd</span>
-(defun vim-kill-whole-line ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-whole-line)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;kill-whole-line&#34;</span>))
-<span style="color:#75715e">;; like D</span>
-(defun vim-kill-line ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-line)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;kill-line&#34;</span>))
-<span style="color:#75715e">;; like C</span>
-(defun vim-kill-line-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-line)
-  (message <span style="color:#e6db74">&#34;kill-line and edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like o</span>
-(defun vim-o ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (forward-line)
-  (open-line <span style="color:#ae81ff">1</span>)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like O</span>
-(defun vim-O ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (open-line <span style="color:#ae81ff">1</span>)
-  (beginning-of-line)
-  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
-<span style="color:#75715e">;; like x</span>
-(defun vim-del-char ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (delete-char <span style="color:#ae81ff">1</span>)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;delete-char&#34;</span>))
-<span style="color:#75715e">;; like c</span>
-(defun vim-del-char-to-insert ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (delete-char <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;delete-char and edit mode !&#34;</span>))
-<span style="color:#75715e">;; like u</span>
-(defun vim-undo ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (undo-tree-undo)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;undo !&#34;</span>))
-<span style="color:#75715e">;; like C-r</span>
-(defun vim-redo ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (undo-tree-redo)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;redo !&#34;</span>))
-<span style="color:#75715e">;; like Y</span>
-(defun vim-copy-line (arg)
-  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
-  (kill-ring-save (line-beginning-position)
-                  (line-beginning-position (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> arg)))
-  (message <span style="color:#e6db74">&#34;%d line%s copied&#34;</span> arg (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">=</span> <span style="color:#ae81ff">1</span> arg) <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;s&#34;</span>)))
-<span style="color:#75715e">;; like P</span>
-(defun vim-P ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (beginning-of-line)
-  (yank)
-  (beginning-of-line)
-  (forward-line <span style="color:#ae81ff">-1</span>)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
-<span style="color:#75715e">;; like p</span>
-(defun vim-p ()
-  (interactive)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (yank)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
-<span style="color:#75715e">;; like w</span>
-(defun forward-word+1 ()
-  (interactive)
-  (forward-word)
-  (forward-char))
-<span style="color:#75715e">;; like %</span>
-(defun vim-jump-brace()
-  <span style="color:#e6db74">&#34;Jump to correspondence parenthesis&#34;</span>
-  (interactive)
-  (<span style="color:#66d9ef">let</span> ((c (following-char))
-				(p (preceding-char)))
-		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax c) <span style="color:#ae81ff">40</span>) (forward-list)
-			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax p) <span style="color:#ae81ff">41</span>) (backward-list)
-				(backward-up-list)))))
-<span style="color:#75715e">;; Delete from cursor position to beginning-of-line</span>
-(defun vim-backward-kill-line (arg)
-  <span style="color:#e6db74">&#34;Kill chars backward until encountering the beginning of line.&#34;</span>
-  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
-  (view-mode <span style="color:#ae81ff">0</span>)
-  (kill-line <span style="color:#ae81ff">0</span>)
-  (view-mode <span style="color:#ae81ff">1</span>)
-  (message <span style="color:#e6db74">&#34;backward-kill-line&#34;</span>))
-
-(<span style="color:#a6e22e">provide</span> <span style="color:#e6db74">&#39;keys-in-view-mode</span>)
-<span style="color:#75715e">;;; keys-in-view-mode.el ends here</span>
-</code></pre></div><h2 id="view-modeにもともと備わっているキーバインド">View-modeにもともと備わっているキーバインド</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; keys-in-view-mode.el</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; ==============================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like a</span>
+</span></span><span style="display:flex;"><span>(defun vim-forward-char-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (forward-char <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like A</span>
+</span></span><span style="display:flex;"><span>(defun vim-end-of-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (end-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like I</span>
+</span></span><span style="display:flex;"><span>(defun vim-beginning-of-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like cc</span>
+</span></span><span style="display:flex;"><span>(defun vim-kill-whole-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-whole-line)
+</span></span><span style="display:flex;"><span>  (open-line <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (backward-line)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;:kill-whole-line and edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like dd</span>
+</span></span><span style="display:flex;"><span>(defun vim-kill-whole-line ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-whole-line)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;kill-whole-line&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like D</span>
+</span></span><span style="display:flex;"><span>(defun vim-kill-line ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-line)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;kill-line&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like C</span>
+</span></span><span style="display:flex;"><span>(defun vim-kill-line-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;kill-line and edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like o</span>
+</span></span><span style="display:flex;"><span>(defun vim-o ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (forward-line)
+</span></span><span style="display:flex;"><span>  (open-line <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like O</span>
+</span></span><span style="display:flex;"><span>(defun vim-O ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (open-line <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;edit-mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like x</span>
+</span></span><span style="display:flex;"><span>(defun vim-del-char ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (delete-char <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;delete-char&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like c</span>
+</span></span><span style="display:flex;"><span>(defun vim-del-char-to-insert ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (delete-char <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;delete-char and edit mode !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like u</span>
+</span></span><span style="display:flex;"><span>(defun vim-undo ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (undo-tree-undo)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;undo !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like C-r</span>
+</span></span><span style="display:flex;"><span>(defun vim-redo ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (undo-tree-redo)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;redo !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like Y</span>
+</span></span><span style="display:flex;"><span>(defun vim-copy-line (arg)
+</span></span><span style="display:flex;"><span>  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
+</span></span><span style="display:flex;"><span>  (kill-ring-save (line-beginning-position)
+</span></span><span style="display:flex;"><span>                  (line-beginning-position (<span style="color:#a6e22e">+</span> <span style="color:#ae81ff">1</span> arg)))
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;%d line%s copied&#34;</span> arg (<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">=</span> <span style="color:#ae81ff">1</span> arg) <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;s&#34;</span>)))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like P</span>
+</span></span><span style="display:flex;"><span>(defun vim-P ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (yank)
+</span></span><span style="display:flex;"><span>  (beginning-of-line)
+</span></span><span style="display:flex;"><span>  (forward-line <span style="color:#ae81ff">-1</span>)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like p</span>
+</span></span><span style="display:flex;"><span>(defun vim-p ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (yank)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;yank !&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like w</span>
+</span></span><span style="display:flex;"><span>(defun forward-word+1 ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (forward-word)
+</span></span><span style="display:flex;"><span>  (forward-char))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; like %</span>
+</span></span><span style="display:flex;"><span>(defun vim-jump-brace()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Jump to correspondence parenthesis&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">let</span> ((c (following-char))
+</span></span><span style="display:flex;"><span>				(p (preceding-char)))
+</span></span><span style="display:flex;"><span>		(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax c) <span style="color:#ae81ff">40</span>) (forward-list)
+</span></span><span style="display:flex;"><span>			(<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">eq</span> (char-syntax p) <span style="color:#ae81ff">41</span>) (backward-list)
+</span></span><span style="display:flex;"><span>				(backward-up-list)))))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Delete from cursor position to beginning-of-line</span>
+</span></span><span style="display:flex;"><span>(defun vim-backward-kill-line (arg)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Kill chars backward until encountering the beginning of line.&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive <span style="color:#e6db74">&#34;p&#34;</span>)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (kill-line <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>  (view-mode <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  (message <span style="color:#e6db74">&#34;backward-kill-line&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">provide</span> <span style="color:#e6db74">&#39;keys-in-view-mode</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;;; keys-in-view-mode.el ends here</span>
+</span></span></code></pre></div><h2 id="view-modeにもともと備わっているキーバインド">View-modeにもともと備わっているキーバインド</h2>
 <ul>
 <li>Backspace : 1ページ分前スクロールする</li>
 <li>z : 1ページ分スクロールする</li>
@@ -616,7 +611,7 @@ elispビギナーのわたしでも書ける程度の簡単なものですから
 </ul>
 <p>わたしも試しましたが、いづれもいろいろと制約が生じて使いづらいです。
 特にfind-fileをview-modeで開く設定にすると何かと不都合が生じるので、私の場合は、以下のようにしています。</p>
-<pre><code>1. diredのRETキーをview-modeで開く設定にする。vキーの機能をRETに割り当てるだけです。
+<pre tabindex="0"><code>1. diredのRETキーをview-modeで開く設定にする。vキーの機能をRETに割り当てるだけです。
 2. 編集モードで開く機能は、oキーに割当てます。
 3. find-fileでファイルを開くときは、編集モードで開く（当然新規ファイルも編集モード）
 </code></pre><h2 id="switchbuffer--neotreeからもview-modeでファイルを開きたい">Switch−buffer / Neotreeからもview-modeでファイルを開きたい</h2>
@@ -828,7 +823,7 @@ EmacsとVimの比較論をするつもりはありませんが文章書きがメ
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -852,7 +847,7 @@ EmacsとVimの比較論をするつもりはありませんが文章書きがメ
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

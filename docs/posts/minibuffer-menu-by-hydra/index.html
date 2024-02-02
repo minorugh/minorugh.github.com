@@ -48,15 +48,10 @@
 
 
 <meta itemprop="name" content="hydraをミニメニューとして使う">
-<meta itemprop="description" content="hydraは、関連するコマンドを複数定義して、 それらのコマンドを連続して簡単に呼び出せるようにするツールです。基本的にはsmartrepの機能と同じですが、パラメーターによっていろいろ応用できるようなので試してみました。メニュー内容をエコーエリアに表示させることもできるのでGUIとしても優れています。">
-<meta itemprop="datePublished" content="2018-01-10T20:36:33+09:00" />
+<meta itemprop="description" content="hydraは、関連するコマンドを複数定義して、 それらのコマンドを連続して簡単に呼び出せるようにするツールです。基本的にはsmartrepの機能と同じですが、パラメーターによっていろいろ応用できるようなので試してみました。メニュー内容をエコーエリアに表示させることもできるのでGUIとしても優れています。"><meta itemprop="datePublished" content="2018-01-10T20:36:33+09:00" />
 <meta itemprop="dateModified" content="2018-01-10T20:36:33+09:00" />
 <meta itemprop="wordCount" content="539">
-
-
-
 <meta itemprop="keywords" content="hydra," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hydraをミニメニューとして使う"/>
 <meta name="twitter:description" content="hydraは、関連するコマンドを複数定義して、 それらのコマンドを連続して簡単に呼び出せるようにするツールです。基本的にはsmartrepの機能と同じですが、パラメーターによっていろいろ応用できるようなので試してみました。メニュー内容をエコーエリアに表示させることもできるのでGUIとしても優れています。"/>
@@ -161,56 +156,55 @@
 <p><img src="https://goo.gl/C4GVjH" alt="Alt Text"></p>
 <p>目的のファイルを開くのに、<code>find-file</code>やdired-jumpなどからアクセスするのが一般的だけれど、Dropboxやemacs設定ファイルなどよく使うフオルダーは一発で開けれるほうが便利です。</p>
 <p>パラメーター（:exit t）を設定すると、いづれかの選択キーを押したら自動的にメニューが消えてくれます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; for my-dired</span>
-<span style="color:#75715e">;; =======================================</span>
-(defhydra hydra-dired (<span style="color:#e6db74">:hint</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">:exit</span> <span style="color:#66d9ef">t</span>)
-   <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">_r_: Restart  _g_: GitHub  _t_: Tramp  _j_: Dired  _e_: Easy-hugo  _d_: Dropbox  _w_: Webdir  _i_: Inits  _c_:howm
-</span><span style="color:#e6db74">&#34;</span>
-  (<span style="color:#e6db74">&#34;e&#34;</span> easy-hugo)
-  (<span style="color:#e6db74">&#34;c&#34;</span> howm-create)
-  (<span style="color:#e6db74">&#34;r&#34;</span> restart-emacs)
-  (<span style="color:#e6db74">&#34;t&#34;</span> counsel-tramp)
-  (<span style="color:#e6db74">&#34;i&#34;</span> my/init-dir)
-  (<span style="color:#e6db74">&#34;d&#34;</span> my/dropbox)
-  (<span style="color:#e6db74">&#34;w&#34;</span> my/www-dir)
-  (<span style="color:#e6db74">&#34;g&#34;</span> my/github)
-  (<span style="color:#e6db74">&#34;j&#34;</span> dired-jump)
-  (<span style="color:#e6db74">&#34;q&#34;</span> keyboard-quit))
-(bind-key <span style="color:#e6db74">&#34;M-.&#34;</span> <span style="color:#e6db74">&#39;hydra-dired/body</span>)
-
-</code></pre></div><h2 id="window-menu">window menu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; for my-dired</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; =======================================</span>
+</span></span><span style="display:flex;"><span>(defhydra hydra-dired (<span style="color:#e6db74">:hint</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">:exit</span> <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">_r_: Restart  _g_: GitHub  _t_: Tramp  _j_: Dired  _e_: Easy-hugo  _d_: Dropbox  _w_: Webdir  _i_: Inits  _c_:howm
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;e&#34;</span> easy-hugo)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;c&#34;</span> howm-create)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;r&#34;</span> restart-emacs)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;t&#34;</span> counsel-tramp)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;i&#34;</span> my/init-dir)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;d&#34;</span> my/dropbox)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;w&#34;</span> my/www-dir)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;g&#34;</span> my/github)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;j&#34;</span> dired-jump)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;q&#34;</span> keyboard-quit))
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;M-.&#34;</span> <span style="color:#e6db74">&#39;hydra-dired/body</span>)
+</span></span></code></pre></div><h2 id="window-menu">window menu</h2>
 <p><img src="https://goo.gl/oiodAL" alt="Alt Text"></p>
 <p>こちらは、Emacsのwindow管理のメニューです。パラメター（:exit t）  は設定していないのでほかのコマンドが実行されるまでは、メニュー画面を持続します。</p>
 <p>smartrepと同じ機能ですね。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; for window control</span>
-<span style="color:#75715e">;; ==========================================</span>
-(defhydra hydra-window (<span style="color:#e6db74">:hint</span>)
-  <span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">[Window]  _0_: Del  _1_: Del-all  _2_: ◀▶  _3_: ▲▼  _{_: ←  _}_: →  _~_: ↓  _=_: ↑ _+_: BL  _o_: Split  _s_: Swap
-</span><span style="color:#e6db74">&#34;</span>
-  (<span style="color:#e6db74">&#34;s&#34;</span> swap-buffers)
-  (<span style="color:#e6db74">&#34;o&#34;</span> other-window-or-split)
-  (<span style="color:#e6db74">&#34;0&#34;</span> delete-window)
-  (<span style="color:#e6db74">&#34;1&#34;</span> delete-other-windows)
-  (<span style="color:#e6db74">&#34;2&#34;</span> split-window-below)
-  (<span style="color:#e6db74">&#34;3&#34;</span> split-window-right)
-  (<span style="color:#e6db74">&#34;{&#34;</span> shrink-window-horizontally)
-  (<span style="color:#e6db74">&#34;}&#34;</span> enlarge-window-horizontally)
-  (<span style="color:#e6db74">&#34;~&#34;</span> enlarge-window)
-  (<span style="color:#e6db74">&#34;=&#34;</span> shrink-window)
-  (<span style="color:#e6db74">&#34;+&#34;</span> balance-windows))
-(key-chord-define-global <span style="color:#e6db74">&#34;,,&#34;</span> <span style="color:#e6db74">&#39;hydra-window/body</span>)
-
-<span style="color:#75715e">;; Other-window-or-sprit</span>
-(defun other-window-or-split ()
-  <span style="color:#e6db74">&#34;Other-window-or-sprit.&#34;</span>
-  (interactive)
-  (when (one-window-p)
-    (split-window-horizontally))
-    (other-window <span style="color:#ae81ff">1</span>))
-(bind-key <span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#e6db74">&#39;other-window-or-split</span>)
-</code></pre></div><h2 id="参考サイト">参考サイト</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#75715e">;; for window control</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; ==========================================</span>
+</span></span><span style="display:flex;"><span>(defhydra hydra-window (<span style="color:#e6db74">:hint</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Window]  _0_: Del  _1_: Del-all  _2_: ◀▶  _3_: ▲▼  _{_: ←  _}_: →  _~_: ↓  _=_: ↑ _+_: BL  _o_: Split  _s_: Swap
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;s&#34;</span> swap-buffers)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;o&#34;</span> other-window-or-split)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;0&#34;</span> delete-window)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;1&#34;</span> delete-other-windows)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;2&#34;</span> split-window-below)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;3&#34;</span> split-window-right)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;{&#34;</span> shrink-window-horizontally)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;}&#34;</span> enlarge-window-horizontally)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;~&#34;</span> enlarge-window)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;=&#34;</span> shrink-window)
+</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;+&#34;</span> balance-windows))
+</span></span><span style="display:flex;"><span>(key-chord-define-global <span style="color:#e6db74">&#34;,,&#34;</span> <span style="color:#e6db74">&#39;hydra-window/body</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Other-window-or-sprit</span>
+</span></span><span style="display:flex;"><span>(defun other-window-or-split ()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Other-window-or-sprit.&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (when (one-window-p)
+</span></span><span style="display:flex;"><span>    (split-window-horizontally))
+</span></span><span style="display:flex;"><span>    (other-window <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>(bind-key <span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#e6db74">&#39;other-window-or-split</span>)
+</span></span></code></pre></div><h2 id="参考サイト">参考サイト</h2>
 <p><a href="https://github.com/abo-abo/hydra">https://github.com/abo-abo/hydra</a></p>
 <p><a href="http://emacs.rubikitch.com/hydra/">http://emacs.rubikitch.com/hydra/</a></p>
       </div>
@@ -396,7 +390,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -420,7 +414,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

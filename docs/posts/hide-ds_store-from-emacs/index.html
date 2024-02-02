@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Hide .DS_Store file from Emacs">
-<meta itemprop="description" content=".DS_StoreファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場">
-<meta itemprop="datePublished" content="2019-08-08T12:18:18+09:00" />
+<meta itemprop="description" content=".DS_StoreファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場"><meta itemprop="datePublished" content="2019-08-08T12:18:18+09:00" />
 <meta itemprop="dateModified" content="2019-08-08T12:18:18+09:00" />
 <meta itemprop="wordCount" content="161">
-
-
-
 <meta itemprop="keywords" content="mac," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hide .DS_Store file from Emacs"/>
 <meta name="twitter:description" content=".DS_StoreファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場"/>
@@ -157,26 +152,26 @@
       <div class="post-content">
         <p><code>.DS_Store</code>ファイルをMacから削除する…というTipsは山ほどあるのですが、いづれもいつの間にかまた復活してしまいます。なので私の場合は、Emacsの各シーンで非表示になるように設定しています。</p>
 <h2 id="counsel">counsel</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq counsel-find-file-ignore-regexp (regexp-opt <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;.DS_Store&#34;</span>)))
-</code></pre></div><h2 id="dired">dired</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; omit .DS_Store</span>
-(require <span style="color:#e6db74">&#39;dired-x</span>)
-(setq-default dired-omit-files-p <span style="color:#66d9ef">t</span>)
-(setq dired-omit-files <span style="color:#e6db74">&#34;^\\.DS_Store&#34;</span>)
-</code></pre></div><h2 id="neotree">neotree</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Patched to allow everything but .DS_Store</span>
-<span style="color:#75715e">;; Tips from https://github.com/syl20bnr/spacemacs/issues/2751</span>
-(with-eval-after-load <span style="color:#e6db74">&#39;neotree</span>
-  (defun neo-util--walk-dir (path)
-    <span style="color:#e6db74">&#34;Return the subdirectories and subfiles of the PATH.&#34;</span>
-    (let* ((full-path (neo-path--file-truename path)))
-      (condition-case <span style="color:#66d9ef">nil</span>
-	  (<span style="color:#a6e22e">directory-files</span>
-	   path <span style="color:#e6db74">&#39;full</span> <span style="color:#e6db74">&#34;^\\([^.]\\|\\.[^D.][^S]\\).*&#34;</span>)
-	(<span style="color:#e6db74">&#39;file-error</span>
-	 (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Walk directory %S failed.&#34;</span> path)
-	 <span style="color:#66d9ef">nil</span>)))))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(setq counsel-find-file-ignore-regexp (regexp-opt <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;.DS_Store&#34;</span>)))
+</span></span></code></pre></div><h2 id="dired">dired</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; omit .DS_Store</span>
+</span></span><span style="display:flex;"><span>(require <span style="color:#e6db74">&#39;dired-x</span>)
+</span></span><span style="display:flex;"><span>(setq-default dired-omit-files-p <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>(setq dired-omit-files <span style="color:#e6db74">&#34;^\\.DS_Store&#34;</span>)
+</span></span></code></pre></div><h2 id="neotree">neotree</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; Patched to allow everything but .DS_Store</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; Tips from https://github.com/syl20bnr/spacemacs/issues/2751</span>
+</span></span><span style="display:flex;"><span>(with-eval-after-load <span style="color:#e6db74">&#39;neotree</span>
+</span></span><span style="display:flex;"><span>  (defun neo-util--walk-dir (path)
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Return the subdirectories and subfiles of the PATH.&#34;</span>
+</span></span><span style="display:flex;"><span>    (let* ((full-path (neo-path--file-truename path)))
+</span></span><span style="display:flex;"><span>      (condition-case <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a6e22e">directory-files</span>
+</span></span><span style="display:flex;"><span>	   path <span style="color:#e6db74">&#39;full</span> <span style="color:#e6db74">&#34;^\\([^.]\\|\\.[^D.][^S]\\).*&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#e6db74">&#39;file-error</span>
+</span></span><span style="display:flex;"><span>	 (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Walk directory %S failed.&#34;</span> path)
+</span></span><span style="display:flex;"><span>	 <span style="color:#66d9ef">nil</span>)))))
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -360,7 +355,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -384,7 +379,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

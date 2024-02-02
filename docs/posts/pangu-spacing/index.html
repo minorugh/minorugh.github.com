@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="pangu-spacing.el : 全角と半角の間に自動でスペースを入れる">
-<meta itemprop="description" content="pangu-spacing.el : 全角と半角の間に自動でスペースを入れる新実装 上記の Tipsを参考にして、markdown-modeに導入してみた。 日本語においては、いわ">
-<meta itemprop="datePublished" content="2021-11-18T08:41:01+09:00" />
+<meta itemprop="description" content="pangu-spacing.el : 全角と半角の間に自動でスペースを入れる新実装 上記の Tipsを参考にして、markdown-modeに導入してみた。 日本語においては、いわ"><meta itemprop="datePublished" content="2021-11-18T08:41:01+09:00" />
 <meta itemprop="dateModified" content="2021-11-18T08:41:01+09:00" />
 <meta itemprop="wordCount" content="531">
-
-
-
 <meta itemprop="keywords" content="elisp," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pangu-spacing.el : 全角と半角の間に自動でスペースを入れる"/>
 <meta name="twitter:description" content="pangu-spacing.el : 全角と半角の間に自動でスペースを入れる新実装 上記の Tipsを参考にして、markdown-modeに導入してみた。 日本語においては、いわ"/>
@@ -165,16 +160,16 @@
 <p><code>pangu-spacing.el</code>のコードを見るとデフォルトでは、正規表現で [a-zA-Z0-9] なっているので半角数字の場合にも同様に処理されてしまう。
 数字にも半角スペースが有効になると、[2021 年 11 月 16 日] という感じになるので、日付表示のケースでは面白くない。
 そこで、正規表現の記述を [a-zA-Z] に変更して半角数字は対象外としアルファベットのみが pangu-spacingの対象となるようにしている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf pangu-spacing
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook ((markdown-mode-hook text-mode-hook) <span style="color:#f92672">.</span> pangu-spacing-mode)
-  :config
-  (setq pangu-spacing-real-insert-separtor <span style="color:#66d9ef">t</span>)
-  (setq pangu-spacing-include-regexp
-		(rx (or (and (or (group-n <span style="color:#ae81ff">3</span> (any <span style="color:#e6db74">&#34;。，！？；：「」（）、&#34;</span>))
-						 (group-n <span style="color:#ae81ff">1</span> (or (category japanese))))))
-			(group-n <span style="color:#ae81ff">2</span> (in <span style="color:#e6db74">&#34;a-zA-Z&#34;</span>)))))
-</code></pre></div><p>上記の例では、markdown-mode と text-modeに導入している。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(leaf pangu-spacing
+</span></span><span style="display:flex;"><span>  :ensure <span style="color:#66d9ef">t</span>
+</span></span><span style="display:flex;"><span>  :hook ((markdown-mode-hook text-mode-hook) <span style="color:#f92672">.</span> pangu-spacing-mode)
+</span></span><span style="display:flex;"><span>  :config
+</span></span><span style="display:flex;"><span>  (setq pangu-spacing-real-insert-separtor <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>  (setq pangu-spacing-include-regexp
+</span></span><span style="display:flex;"><span>		(rx (or (and (or (group-n <span style="color:#ae81ff">3</span> (any <span style="color:#e6db74">&#34;。，！？；：「」（）、&#34;</span>))
+</span></span><span style="display:flex;"><span>						 (group-n <span style="color:#ae81ff">1</span> (or (category japanese))))))
+</span></span><span style="display:flex;"><span>			(group-n <span style="color:#ae81ff">2</span> (in <span style="color:#e6db74">&#34;a-zA-Z&#34;</span>)))))
+</span></span></code></pre></div><p>上記の例では、markdown-mode と text-modeに導入している。</p>
 
       </div>
     </article>
@@ -359,7 +354,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -383,7 +378,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Dockerを利用してCGI/SSI が動作するWEBサーバーを構築">
-<meta itemprop="description" content="Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。 Docker Web サーバーの構築例は、nginx を使ったものが多かったが">
-<meta itemprop="datePublished" content="2022-10-05T14:08:49+09:00" />
+<meta itemprop="description" content="Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。 Docker Web サーバーの構築例は、nginx を使ったものが多かったが"><meta itemprop="datePublished" content="2022-10-05T14:08:49+09:00" />
 <meta itemprop="dateModified" content="2022-10-05T14:08:49+09:00" />
 <meta itemprop="wordCount" content="1098">
-
-
-
 <meta itemprop="keywords" content="," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dockerを利用してCGI/SSI が動作するWEBサーバーを構築"/>
 <meta name="twitter:description" content="Dockerの勉強を兼ねてCGI動作確認用のローカルWEBサーバーを構築してみた。 Docker Web サーバーの構築例は、nginx を使ったものが多かったが"/>
@@ -163,54 +158,54 @@
 <h2 id="dockerインストール">dockerインストール</h2>
 <p>自分の環境（Debian11）へのDockerインストールの手順は、下記<code>makefile</code> の通り。
 ついでにdocker-composeもインストールして使えるようにした。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e">## makefile
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">docker</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker
-</span><span style="color:#75715e"></span>	sudo apt-get install ca-certificates lsb-release
-	curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-	echo <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian  </span>$$<span style="color:#e6db74">(lsb_release -cs) stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list
-	sudo apt update
-	sudo apt install docker-ce docker-ce-cli containerd.io
-
-<span style="color:#a6e22e">docker-compose</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker-compose
-</span><span style="color:#75715e"></span>	sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
-</code></pre></div><h2 id="dockerコマンドをsudoなしで実行できるようにする">dockerコマンドをsudoなしで実行できるようにする</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#75715e">## makefile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">docker</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	sudo apt-get install ca-certificates lsb-release
+</span></span><span style="display:flex;"><span>	curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian  </span>$$<span style="color:#e6db74">(lsb_release -cs) stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list
+</span></span><span style="display:flex;"><span>	sudo apt update
+</span></span><span style="display:flex;"><span>	sudo apt install docker-ce docker-ce-cli containerd.io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">docker-compose</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Install docker-compose
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+</span></span><span style="display:flex;"><span>	sudo chmod +x /usr/local/bin/docker-compose
+</span></span></code></pre></div><h2 id="dockerコマンドをsudoなしで実行できるようにする">dockerコマンドをsudoなしで実行できるようにする</h2>
 <p>dockerコマンドを入力するたびにsudoをつけるのは面倒なので下記の設定を行う。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># dockerグループを作る</span>
-$ sudo groupadd docker
-<span style="color:#75715e"># dockerを操作するユーザ(ここでは今のユーザ)をdockerグループに所属させる</span>
-$ sudo gpasswd -a $USER docker
-<span style="color:#75715e"># dockerデーモンを再起動する</span>
-$ sudo restart docker
-<span style="color:#75715e"># 再ログインすると反映される</span>
-$ exit
-<span style="color:#75715e"># Dockerをブート時に自動起動させる</span>
-$ sudo systemctl enable --now docker
-</code></pre></div><p>頻繁の使うことになるコマンドは、<code>zshrc</code> (または<code>bashrc</code>)に、aliasを設定しておくと更に便利</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#75715e"># zshrc</span>
-<span style="color:#75715e"># For docker-compose</span>
-alias dcbd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d --build&#34;</span>
-alias dcup<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d&#34;</span>
-alias dcdn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose down -v&#34;</span>
-alias dcps<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose ps&#34;</span>
-alias dcex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker container exec -it &lt;コンテナ名&gt; bash&#34;</span>
-</code></pre></div><h2 id="dockerファイル構成">dockerファイル構成</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">webcgi
-├──server
-│    ├──apache
-│    │    └──000-default.conf
-│    ├──php
-│    │    └──php.ini
-│    └──Dockerfile
-├──www
-│    └──html
-│        ├──index.html
-│        ├──info.php
-│        ├──index.pl
-│        ├──index.py
-│        └──index.rb
-└──docker-compose.yml
-</code></pre></div><h2 id="how-to-use">How to use</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># dockerグループを作る</span>
+</span></span><span style="display:flex;"><span>$ sudo groupadd docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dockerを操作するユーザ(ここでは今のユーザ)をdockerグループに所属させる</span>
+</span></span><span style="display:flex;"><span>$ sudo gpasswd -a $USER docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dockerデーモンを再起動する</span>
+</span></span><span style="display:flex;"><span>$ sudo restart docker
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再ログインすると反映される</span>
+</span></span><span style="display:flex;"><span>$ exit
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dockerをブート時に自動起動させる</span>
+</span></span><span style="display:flex;"><span>$ sudo systemctl enable --now docker
+</span></span></code></pre></div><p>頻繁の使うことになるコマンドは、<code>zshrc</code> (または<code>bashrc</code>)に、aliasを設定しておくと更に便利</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zshrc" data-lang="zshrc"><span style="display:flex;"><span><span style="color:#75715e"># zshrc</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For docker-compose</span>
+</span></span><span style="display:flex;"><span>alias dcbd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d --build&#34;</span>
+</span></span><span style="display:flex;"><span>alias dcup<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose up -d&#34;</span>
+</span></span><span style="display:flex;"><span>alias dcdn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose down -v&#34;</span>
+</span></span><span style="display:flex;"><span>alias dcps<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker-compose ps&#34;</span>
+</span></span><span style="display:flex;"><span>alias dcex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker container exec -it &lt;コンテナ名&gt; bash&#34;</span>
+</span></span></code></pre></div><h2 id="dockerファイル構成">dockerファイル構成</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>webcgi
+</span></span><span style="display:flex;"><span>├──server
+</span></span><span style="display:flex;"><span>│    ├──apache
+</span></span><span style="display:flex;"><span>│    │    └──000-default.conf
+</span></span><span style="display:flex;"><span>│    ├──php
+</span></span><span style="display:flex;"><span>│    │    └──php.ini
+</span></span><span style="display:flex;"><span>│    └──Dockerfile
+</span></span><span style="display:flex;"><span>├──www
+</span></span><span style="display:flex;"><span>│    └──html
+</span></span><span style="display:flex;"><span>│        ├──index.html
+</span></span><span style="display:flex;"><span>│        ├──info.php
+</span></span><span style="display:flex;"><span>│        ├──index.pl
+</span></span><span style="display:flex;"><span>│        ├──index.py
+</span></span><span style="display:flex;"><span>│        └──index.rb
+</span></span><span style="display:flex;"><span>└──docker-compose.yml
+</span></span></code></pre></div><h2 id="how-to-use">How to use</h2>
 <ol>
 <li>download ZIP &amp;&amp; unzip</li>
 <li>mv docker-webcgi-main YOUR_PROJECT_NAME</li>
@@ -219,66 +214,66 @@ alias dcex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d
 </ol>
 <h2 id="files">files</h2>
 <h3 id="docker-composeyml">docker-compose.yml</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">version: <span style="color:#e6db74">&#39;3&#39;</span>
-services:
-  webcgi:
-    container_name: webcgi
-
-    build: ./server
-    ports:
-     - 80:80
-    restart: always
-
-    volumes:
-       - ./www:/var/www
-</code></pre></div><h3 id="serverapache000-defaultconf">server/apache/000-default.conf</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Alias /html/ <span style="color:#e6db74">&#34;/var/www/html/&#34;</span>
-&lt;Directory <span style="color:#e6db74">&#34;/var/www/html&#34;</span>&gt; 
-   AllowOverride All
-   Options +ExecCGI +Includes
-   AddType text/html .html
-   AddHandler server-parsed .html
-   AddHandler cgi-script .cgi .pl .py .rb
-&lt;/Directory&gt;
-</code></pre></div><h3 id="serverphpphpini">server/php/php.ini</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>Date<span style="color:#f92672">]</span>
-date.timezone <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Asia/Tokyo&#34;</span>
-<span style="color:#f92672">[</span>mbstring<span style="color:#f92672">]</span>
-mbstring.internal_encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>
-mbstring.language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Japanese&#34;</span>
-<span style="color:#f92672">[</span>error<span style="color:#f92672">]</span>
-display_errors <span style="color:#f92672">=</span> Off
-display_startup_errors <span style="color:#f92672">=</span> Off
-</code></pre></div><h3 id="serverdockerfile">server/dockerfile</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># dockerイメージの指定</span>
-FROM php:7.4-apache
-
-<span style="color:#75715e"># 設定ファイルをdockerコンテナ内のPHPとApacheに読み込ませる</span>
-COPY ./php/php.ini /usr/local/etc/php/
-COPY ./apache/000-default.conf /etc/apache2/conf-available/
-
-<span style="color:#75715e"># インストール</span>
-<span style="color:#75715e"># `apt-get install`で任意の自身に必要なミドルウェアを指定しインストールする</span>
-<span style="color:#75715e"># `a2enmod rewrite`でApacheの設定を.htaccessで上書きできるようにしている</span>
-
-RUN apt-get update <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>git <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>zip <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>unzip <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>nano <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>python3 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>ruby <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get -y clean <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/* <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod cgid <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod include <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod rewrite <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enconf 000-default
-
-RUN useradd -o -U -m -u <span style="color:#ae81ff">1000</span> minoru
-WORKDIR /var/www
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>services:
+</span></span><span style="display:flex;"><span>  webcgi:
+</span></span><span style="display:flex;"><span>    container_name: webcgi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    build: ./server
+</span></span><span style="display:flex;"><span>    ports:
+</span></span><span style="display:flex;"><span>     - 80:80
+</span></span><span style="display:flex;"><span>    restart: always
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    volumes:
+</span></span><span style="display:flex;"><span>       - ./www:/var/www
+</span></span></code></pre></div><h3 id="serverapache000-defaultconf">server/apache/000-default.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Alias /html/ <span style="color:#e6db74">&#34;/var/www/html/&#34;</span>
+</span></span><span style="display:flex;"><span>&lt;Directory <span style="color:#e6db74">&#34;/var/www/html&#34;</span>&gt; 
+</span></span><span style="display:flex;"><span>   AllowOverride All
+</span></span><span style="display:flex;"><span>   Options +ExecCGI +Includes
+</span></span><span style="display:flex;"><span>   AddType text/html .html
+</span></span><span style="display:flex;"><span>   AddHandler server-parsed .html
+</span></span><span style="display:flex;"><span>   AddHandler cgi-script .cgi .pl .py .rb
+</span></span><span style="display:flex;"><span>&lt;/Directory&gt;
+</span></span></code></pre></div><h3 id="serverphpphpini">server/php/php.ini</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>Date<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>date.timezone <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Asia/Tokyo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mbstring<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>mbstring.internal_encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>
+</span></span><span style="display:flex;"><span>mbstring.language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Japanese&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>error<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>display_errors <span style="color:#f92672">=</span> Off
+</span></span><span style="display:flex;"><span>display_startup_errors <span style="color:#f92672">=</span> Off
+</span></span></code></pre></div><h3 id="serverdockerfile">server/dockerfile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># dockerイメージの指定</span>
+</span></span><span style="display:flex;"><span>FROM php:7.4-apache
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 設定ファイルをdockerコンテナ内のPHPとApacheに読み込ませる</span>
+</span></span><span style="display:flex;"><span>COPY ./php/php.ini /usr/local/etc/php/
+</span></span><span style="display:flex;"><span>COPY ./apache/000-default.conf /etc/apache2/conf-available/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># インストール</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># `apt-get install`で任意の自身に必要なミドルウェアを指定しインストールする</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># `a2enmod rewrite`でApacheの設定を.htaccessで上書きできるようにしている</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RUN apt-get update <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>git <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>zip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>unzip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>nano <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>python3 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>ruby <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> apt-get -y clean <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/* <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod cgid <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod include <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enmod rewrite <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> a2enconf 000-default
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RUN useradd -o -U -m -u <span style="color:#ae81ff">1000</span> minoru
+</span></span><span style="display:flex;"><span>WORKDIR /var/www
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -462,7 +457,7 @@ WORKDIR /var/www
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -486,7 +481,7 @@ WORKDIR /var/www
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

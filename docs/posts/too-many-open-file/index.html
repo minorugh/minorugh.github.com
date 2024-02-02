@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Macの &#39;too many open file&#39; エラーを解消する方法">
-<meta itemprop="description" content="MacでEmacsを起動しているときに &#39;too many open file&#39; と出て固まってしまうことがありました。 別環境のDebianで起動しているEmacsでは、そうし">
-<meta itemprop="datePublished" content="2018-05-02T13:58:42+09:00" />
+<meta itemprop="description" content="MacでEmacsを起動しているときに &#39;too many open file&#39; と出て固まってしまうことがありました。 別環境のDebianで起動しているEmacsでは、そうし"><meta itemprop="datePublished" content="2018-05-02T13:58:42+09:00" />
 <meta itemprop="dateModified" content="2018-05-02T13:58:42+09:00" />
 <meta itemprop="wordCount" content="474">
-
-
-
 <meta itemprop="keywords" content="mac," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Macの &#39;too many open file&#39; エラーを解消する方法"/>
 <meta name="twitter:description" content="MacでEmacsを起動しているときに &#39;too many open file&#39; と出て固まってしまうことがありました。 別環境のDebianで起動しているEmacsでは、そうし"/>
@@ -145,7 +140,7 @@
 
     <article>
       <h1 class="post-title">
-        <a href="http://minorugh.github.io/posts/too-many-open-file/">Macの &lsquo;too many open file&rsquo; エラーを解消する方法</a>
+        <a href="http://minorugh.github.io/posts/too-many-open-file/">Macの &rsquo;too many open file&rsquo; エラーを解消する方法</a>
       </h1>
 
       
@@ -165,47 +160,47 @@
 <h2 id="macの上限値を調べる">Macの上限値を調べる</h2>
 <p>ターミナルでコマンドを打って現在の上限数を確認。
 私の場合は、以下の表示でした。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl limit
-    cpu         unlimited      unlimited
-    filesize    unlimited      unlimited
-    data        unlimited      unlimited
-    stack       <span style="color:#ae81ff">8388608</span>        <span style="color:#ae81ff">67104768</span>
-    core        <span style="color:#ae81ff">0</span>              unlimited
-    rss         unlimited      unlimited
-    memlock     unlimited      unlimited
-    maxproc     <span style="color:#ae81ff">1418</span>           <span style="color:#ae81ff">2128</span>
-    maxfiles    <span style="color:#ae81ff">256</span>            unlimited
-</code></pre></div><p>maxfilesが 256 になっているのが確認できました。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo launchctl limit
+</span></span><span style="display:flex;"><span>    cpu         unlimited      unlimited
+</span></span><span style="display:flex;"><span>    filesize    unlimited      unlimited
+</span></span><span style="display:flex;"><span>    data        unlimited      unlimited
+</span></span><span style="display:flex;"><span>    stack       <span style="color:#ae81ff">8388608</span>        <span style="color:#ae81ff">67104768</span>
+</span></span><span style="display:flex;"><span>    core        <span style="color:#ae81ff">0</span>              unlimited
+</span></span><span style="display:flex;"><span>    rss         unlimited      unlimited
+</span></span><span style="display:flex;"><span>    memlock     unlimited      unlimited
+</span></span><span style="display:flex;"><span>    maxproc     <span style="color:#ae81ff">1418</span>           <span style="color:#ae81ff">2128</span>
+</span></span><span style="display:flex;"><span>    maxfiles    <span style="color:#ae81ff">256</span>            unlimited
+</span></span></code></pre></div><p>maxfilesが 256 になっているのが確認できました。</p>
 <h2 id="設定ファイルを作る">設定ファイルを作る</h2>
 <p><code>/Library/LaunchDaemons/limit.maxfiles.plist</code> に設定ファイルを作成する。</p>
 <p>初期では、当該ファイルはないので新規に作成します。</p>
-<pre><code>$sudo vi /Library/LaunchDaemons/limit.maxfiles.plist
+<pre tabindex="0"><code>$sudo vi /Library/LaunchDaemons/limit.maxfiles.plist
 </code></pre><p>vi が開かれたら以下のようにペーストします。</p>
 <h5 id="limitmaxfilesplist">limit.maxfiles.plist</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&lt;</span>?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#e6db74">?&gt;</span>  
-<span style="color:#f92672">&lt;!</span><span style="color:#66d9ef">DOCTYPE</span> plist <span style="color:#66d9ef">PUBLIC</span> <span style="color:#e6db74">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#e6db74">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;</span>plist version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>  
-  <span style="color:#f92672">&lt;</span>dict<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">Label</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;string&gt;limit.maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ProgramArguments</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;array&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;launchctl&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>limit<span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">524288</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
-</span><span style="color:#e6db74">      &lt;string&gt;524288&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/array&gt;
-</span><span style="color:#e6db74">    &lt;key&gt;RunAtLoad&lt;/</span>key<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">true</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ServiceIPC</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
-</span><span style="color:#e6db74">    &lt;false/</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/dict&gt;
-</span><span style="color:#e6db74">&lt;/</span>plist<span style="color:#f92672">&gt;</span>
-</code></pre></div><h2 id="plistファイルを読み込んで適用させる">plistファイルを読み込んで適用させる。</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
-</code></pre></div><h2 id="適用されたことを確認する">適用されたことを確認する</h2>
-<pre><code>$ sudo launchctl limit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>?xml version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#e6db74">?&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#66d9ef">DOCTYPE</span> plist <span style="color:#66d9ef">PUBLIC</span> <span style="color:#e6db74">&#34;-//Apple//DTD PLIST 1.0//EN&#34;</span> <span style="color:#e6db74">&#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>plist version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span>dict<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">Label</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;string&gt;limit.maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ProgramArguments</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;array&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;string&gt;launchctl&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>limit<span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;string&gt;maxfiles&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">524288</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/string&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;string&gt;524288&lt;/s</span>tring<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/array&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;key&gt;RunAtLoad&lt;/</span>key<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">true</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>key<span style="color:#f92672">&gt;</span><span style="color:#66d9ef">ServiceIPC</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74">/key&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;false/</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">/dict&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/</span>plist<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h2 id="plistファイルを読み込んで適用させる">plistファイルを読み込んで適用させる。</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+</span></span></code></pre></div><h2 id="適用されたことを確認する">適用されたことを確認する</h2>
+<pre tabindex="0"><code>$ sudo launchctl limit
     cpu         unlimited      unlimited
     filesize    unlimited      unlimited
     data        unlimited      unlimited
@@ -400,7 +395,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -424,7 +419,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

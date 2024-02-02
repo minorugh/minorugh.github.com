@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="Debian 10(buster) を 11(bullseye)へ更新">
-<meta itemprop="description" content="Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま">
-<meta itemprop="datePublished" content="2021-08-23T08:21:40+09:00" />
+<meta itemprop="description" content="Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま"><meta itemprop="datePublished" content="2021-08-23T08:21:40+09:00" />
 <meta itemprop="dateModified" content="2021-08-23T08:21:40+09:00" />
 <meta itemprop="wordCount" content="629">
-
-
-
 <meta itemprop="keywords" content="Debian," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Debian 10(buster) を 11(bullseye)へ更新"/>
 <meta name="twitter:description" content="Debian 11.0 was released on August 14th, 2021. The release included many major changes, described in our press release and the Release Notes. ということで、取り急ぎ更新してみました。 参考にしたのは、下記のTipsです。というよりそのまま"/>
@@ -155,7 +150,7 @@
       
 
       <div class="post-content">
-        <pre><code>Debian 11.0 was released on August 14th, 2021. 
+        <pre tabindex="0"><code>Debian 11.0 was released on August 14th, 2021. 
 The release included many major changes, described in our press release and the Release Notes.
 </code></pre><p>ということで、取り急ぎ更新してみました。</p>
 <p>参考にしたのは、下記のTipsです。というよりそのままのコピーです(^^)</p>
@@ -167,7 +162,7 @@ The release included many major changes, described in our press release and the 
 <li>アップデートに先立って現状のbusterを最新版に更新（update/upgrade）しておきます。</li>
 <li>次に、/etc/apt/sources.list を下記のとうりに書き換えます。</li>
 </ul>
-<pre><code>deb http://ftp.jp.debian.org/debian/ bullseye main contrib non-free
+<pre tabindex="0"><code>deb http://ftp.jp.debian.org/debian/ bullseye main contrib non-free
 deb-src http://ftp.jp.debian.org/debian/ bullseye main contrib non-free
 
 deb http://ftp.jp.debian.org/debian/ bullseye-updates main contrib non-free
@@ -186,12 +181,12 @@ deb-src http://security.debian.org/ bullseye-security main
 <h2 id="確認">確認</h2>
 <p>Debianのバージョンとカーネルのバージョン確認しておきます。</p>
 <h3 id="debianのバージョン">Debianのバージョン</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cat /etc/debian_version
-11.0
-</code></pre></div><h3 id="カーネルのバージョン">カーネルのバージョン</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ uname -a
-Linux e590 5.10.0-8-amd64 <span style="color:#75715e">#1 SMP Debian 5.10.46-4 (2021-08-03) x86_64 GNU/Linux</span>
-</code></pre></div><p>※ 上記の e590 というのは、私のマシン名です。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cat /etc/debian_version
+</span></span><span style="display:flex;"><span>11.0
+</span></span></code></pre></div><h3 id="カーネルのバージョン">カーネルのバージョン</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ uname -a
+</span></span><span style="display:flex;"><span>Linux e590 5.10.0-8-amd64 <span style="color:#75715e">#1 SMP Debian 5.10.46-4 (2021-08-03) x86_64 GNU/Linux</span>
+</span></span></code></pre></div><p>※ 上記の e590 というのは、私のマシン名です。</p>
 <h2 id="スクリーンショット">スクリーンショット</h2>
 <p>Debian 11 xface4 のデスクトップ画面のスクショです。だいぶん垢抜けしてきました(^^)</p>
 <p><img src="https://live.staticflickr.com/65535/51395292747_c52f2dc3e8_b.jpg" alt="Alt Text"></p>
@@ -379,7 +374,7 @@ Linux e590 5.10.0-8-amd64 <span style="color:#75715e">#1 SMP Debian 5.10.46-4 (2
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -403,7 +398,7 @@ Linux e590 5.10.0-8-amd64 <span style="color:#75715e">#1 SMP Debian 5.10.46-4 (2
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

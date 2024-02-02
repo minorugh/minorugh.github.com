@@ -47,15 +47,10 @@
 
 
 <meta itemprop="name" content="direx-project &#43; popwinで快適なディレクトリツリー環境を構築する">
-<meta itemprop="description" content="Emacsでディレクトリツリーを表示させるパッケージにはいくつかの選択肢があります。neotreeが人気のようですが表示幅が自由にカスタマイ">
-<meta itemprop="datePublished" content="2019-04-08T19:31:31+09:00" />
+<meta itemprop="description" content="Emacsでディレクトリツリーを表示させるパッケージにはいくつかの選択肢があります。neotreeが人気のようですが表示幅が自由にカスタマイ"><meta itemprop="datePublished" content="2019-04-08T19:31:31+09:00" />
 <meta itemprop="dateModified" content="2019-04-08T19:31:31+09:00" />
 <meta itemprop="wordCount" content="370">
-
-
-
 <meta itemprop="keywords" content="direx," />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="direx-project &#43; popwinで快適なディレクトリツリー環境を構築する"/>
 <meta name="twitter:description" content="Emacsでディレクトリツリーを表示させるパッケージにはいくつかの選択肢があります。neotreeが人気のようですが表示幅が自由にカスタマイ"/>
@@ -165,24 +160,24 @@
 <li><a href="https://blog.shibayu36.org/entry/2013/02/12/191459">https://blog.shibayu36.org/entry/2013/02/12/191459</a></li>
 </ul>
 <h2 id="設定">設定</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; direx</span>
-(use-package direx)
-(setq direx:leaf-icon <span style="color:#e6db74">&#34;  &#34;</span> direx:open-icon <span style="color:#e6db74">&#34;📂&#34;</span> direx:closed-icon <span style="color:#e6db74">&#34;📁&#34;</span>)
-(push <span style="color:#f92672">&#39;</span>(direx:direx-mode :position left :width <span style="color:#ae81ff">35</span> :dedicated <span style="color:#66d9ef">t</span>)
-      popwin:special-display-config)
-<span style="color:#75715e">;; use direx-project.el</span>
-<span style="color:#75715e">;; https://blog.shibayu36.org/entry/2013/02/12/191459</span>
-(bind-key
- [f11]
- (defun direx:jump-to-project-directory ()
-   <span style="color:#e6db74">&#34;If in project, launch direx-project otherwise start direx.&#34;</span>
-  (interactive)
-  (let ((result (ignore-errors
-                  (direx-project:jump-to-project-root-other-window)
-                  <span style="color:#66d9ef">t</span>)))
-    (unless result
-      (direx:jump-to-directory-other-window)))))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#75715e">;; direx</span>
+</span></span><span style="display:flex;"><span>(use-package direx)
+</span></span><span style="display:flex;"><span>(setq direx:leaf-icon <span style="color:#e6db74">&#34;  &#34;</span> direx:open-icon <span style="color:#e6db74">&#34;📂&#34;</span> direx:closed-icon <span style="color:#e6db74">&#34;📁&#34;</span>)
+</span></span><span style="display:flex;"><span>(push <span style="color:#f92672">&#39;</span>(direx:direx-mode :position left :width <span style="color:#ae81ff">35</span> :dedicated <span style="color:#66d9ef">t</span>)
+</span></span><span style="display:flex;"><span>      popwin:special-display-config)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; use direx-project.el</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">;; https://blog.shibayu36.org/entry/2013/02/12/191459</span>
+</span></span><span style="display:flex;"><span>(bind-key
+</span></span><span style="display:flex;"><span> [f11]
+</span></span><span style="display:flex;"><span> (defun direx:jump-to-project-directory ()
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;If in project, launch direx-project otherwise start direx.&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (let ((result (ignore-errors
+</span></span><span style="display:flex;"><span>                  (direx-project:jump-to-project-root-other-window)
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">t</span>)))
+</span></span><span style="display:flex;"><span>    (unless result
+</span></span><span style="display:flex;"><span>      (direx:jump-to-directory-other-window)))))
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -366,7 +361,7 @@
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="http://minorugh.github.io/"></a></span>
             <span></span>
             <span><a href="http://minorugh.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -390,7 +385,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 
