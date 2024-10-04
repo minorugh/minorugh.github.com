@@ -28,7 +28,7 @@ dotfilesとは、ホームディレクトリに置いてあるドット(.)から
 dotfilesを極めることで、メインマシンの更新時や複数端末などで自分の育て上げた快適な作業環境を瞬時にサクっと再生したり移植することができます。これからの時代の働き方には効率的なdotfilesが必須だと言えます。
 
 ### 2.1. dotfilesの構成
-dotfilesの詳しい作り方は後述しますが、出来上がった私の今の dotfilesは以下のような構成になっています。
+dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以下のような構成になっています。
 
 ```codesession
 ~/src/github.com/minorugh/dotfiles
