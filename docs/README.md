@@ -4,8 +4,7 @@
 
 layout: default
 ---
-# Index
-My Online Documents
+# My Online Documents
 
 ## 1. Dotfiles
 
