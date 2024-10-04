@@ -59,8 +59,6 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 └── README.md
 
 ```
-※ Githubに構築したリポジトリをGit管理する上でローカルマシンにも同じデレクトリー `~/src/github.com/<ユーザーID>/' を作成しておきます。私の場合は、`~/src/github.com/minorugh/' になります。
-
 
 ## 3. dotfilesの作り方
 dotfilesってのはわかったけど、具体的な手順がわからないという人のために簡単な作り方を書説明します。
