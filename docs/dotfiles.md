@@ -17,24 +17,9 @@ dotfilesとは、ホームディレクトリに置いてあるドット(.)から
 
 dotfilesを極めることで、メインマシンの更新時や複数端末などで自分の育て上げた快適な作業環境を瞬時にサクっと再生したり移植することができます。これからの時代の働き方には効率的なdotfilesが必須だと言えます。
 
-
-### 1.2. わたしの環境
-このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
-
-* Debian 12.7  86_64 GNU/Linux
-* ThinkPad P1 Gen1 i7/32GB/1TB
-* ThinkPad X250 i5/16GB/500GB
-* zsh 5.9
-* vim 9.0
-* GNU Emacs 29.4
-
-## 2. dotfilesの作り方
-dotfilesの構成と実際の作り方を説明します。
-
-### 2.1. dotfilesの構成
-Githubに構築したリポジトリをGit管理する上で間違いを避ける意味でローカルマシンにも同じデレクトリー構成 `~/src/github.com/<ユーザーID>/' を作成しておきます。
-
+### 1.2. dotfilesの構成
 dotfilesの詳しい作り方は後述しますが、出来上がった私の今の dotfilesは以下のような構成になっています。
+
 ```codesession
 ~/src/github.com/minorugh/dotfiles
 │
@@ -62,12 +47,31 @@ dotfilesの詳しい作り方は後述しますが、出来上がった私の今
 └── README.md
 
 ```
+※ Githubに構築したリポジトリをGit管理する上でローカルマシンにも同じデレクトリー `~/src/github.com/<ユーザーID>/' を作成しておきます。私の場合は、`~/src/github.com/minorugh/' になります。
+
+### 1.3. わたしの環境
+このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
+
+* Debian 12.7  86_64 GNU/Linux
+* ThinkPad P1 Gen1 i7/32GB/1TB
+* ThinkPad X250 i5/16GB/500GB
+* zsh 5.9
+* vim 9.0
+* GNU Emacs 29.4
 
 
+## 2. dotfilesの作り方
+dotfilesってのはわかったけど、具体的な手順がわからないという人のために簡単な作り方を書説明します。
 
-Make による自動化はカスタマイズが非常に簡単なのでお勧めします。
+* GitHubにてdotfilesという名前のリポジトリを作成する(READMEだけは作成しておく)
+* 自分のPCにdotfilesのリポジトリを git cloneしてくる(私の場合なら `~/src/github.com/minrugh/' でterminalを起動して git clone)
+* とりあえず、使っているシェルの設定(~/.bashrc)をdotfiles以下にコピーする
+* 元の~/.bashrcを退避させる mkdir backup && mv ~/.bashrc backup
+* dotfilesの.bashrcにシンボリックリンクを貼る ln -s ~/dotfiles/.bashrc ~
+* あとはdotfiles以下でコミットしてpushしたら出来上がり :tada:
+* 同じように管理したいものdotfilesディレクトリにコピーしてシンボリックリンクを貼っていく
 
-## 3. dotfilesからmakeで自動的に環境構築する
+### 2.1. 事前の準備
 makefileで自動実行させる前に以下のような手順が必要です。
 * 
 * 3.1. 予めOSインストール用のUSBを作成しておきます。
