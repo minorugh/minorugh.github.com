@@ -2,6 +2,7 @@
 layout: default
 title: Dotfiles
 ---
+{% include header.html %}
 
 # Dotfiles for Debian Linux
 
