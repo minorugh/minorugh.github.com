@@ -7,9 +7,9 @@ title: Dotfiles
 
 ## 1. はじめに
 ```note
-* ここは [@minoruGH](https://twitter.com/minorugh) の Dotfiles の一部を解説しているページです。
-* この [ditfiles](https://github.com/minorugh/dotfiles) は Debian Linux 用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました
-* [makefile](https://github.com/minorugh/dotfiles/blob/main/Makefile) と Dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
+* ここは [@minoruGH](https://twitter.com/minorugh) の dotfiles の一部を解説しているページです。
+* この ditfiles は Debian Linux 用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました
+* [makefile](https://github.com/minorugh/dotfiles/blob/main/Makefile) と dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
 
 ```
 
