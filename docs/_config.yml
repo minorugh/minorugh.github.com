@@ -1,11 +1,23 @@
 title: minorugh.github.io
 description: minoru's online documents on GitHub Pages
 url: https://minorugh.github.io
-remote_theme: https://github.com/JV-conseil/jekyll-theme-read-the-docs
+# remote_theme: https://github.com/JV-conseil/jekyll-theme-read-the-docs
+
+remote_theme: carlosperate/jekyll-theme-rtd
 
 # Theme settings:
-readme_index:
-  with_frontmatter: true
+site_author: Carlos Pereira Atencio
+repo_url: "https://github.com/carlosperate/jekyll-theme-rtd"
+edit_on_github: true
+github_docs_folder: true
+sticky_navigation: true
+prev_next_buttons_location: bottom
+search_enabled: true
+hljs_style: github-gist
+
+# # Theme settings:
+# readme_index:
+#   with_frontmatter: true
 
 plugins:
   - jemoji
