@@ -24,11 +24,47 @@ dotfilesを極めることで、メインマシンの更新時や複数端末な
 * Debian 12.7  86_64 GNU/Linux
 * ThinkPad P1 Gen1 i7/32GB/1TB
 * ThinkPad X250 i5/16GB/500GB
-* zsh
-* Vim
+* zsh 5.9
+* vim 9.0
 * GNU Emacs 29.4
 
-## 2. Makefileで環境を構築してみよう
+## 2. dotfilesの作り方
+dotfilesの構成と実際の作り方を説明します。
+
+### 2.1. dotfilesの構成
+Githubに構築したリポジトリをGit管理する上で間違いを避ける意味でローカルマシンにも同じデレクトリー構成 `~/src/github.com/<ユーザーID>/' を作成しておきます。
+
+dotfilesの詳しい作り方は後述しますが、出来上がった私の今の dotfilesは以下のような構成になっています。
+```codesession
+~/src/github.com/minorugh/dotfiles
+│
+├── .config/
+├── .emacs.d/
+├── .font/
+├── .git/
+├── .gnupg/
+├── .local/
+├── .vim/
+├── bin/
+├── devils/
+├── etc/
+├── tex/
+├── .Xmodmap
+├── .Xresources
+├── .autologin.sh
+├── .bashrc
+├── .gitignore
+├── .tmux.conf
+├── .vimrce
+├── .zprofile
+├── .zshrc
+├── Makefile
+└── README.md
+
+```
+
+
+
 Make による自動化はカスタマイズが非常に簡単なのでお勧めします。
 
 ## 3. Makefileで環境構築する手順
