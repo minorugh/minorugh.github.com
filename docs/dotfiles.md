@@ -5,18 +5,25 @@ title: Dotfiles
 
 # My dotfiles based on Makefile
 
-## Screenshot
+## 1. はじめに
+```note
+* ここは [@minoruGH](https://twitter.com/minorugh)  の Dotfilesの一部を解説しているページです。
+* [makefile](https://github.com/minorugh/dotfiles/blob/main/Makefile) と Dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
+
+```
+
+## 2.Screenshot
 ![Debian11 xfce4 desktop](https://live.staticflickr.com/65535/51395292747_c52f2dc3e8_b.jpg) 
 ![Emacs-29.1](https://live.staticflickr.com/65535/53032684552_3f0767459c_b.jpg)
 
-## Let's build environment with Makefile
+## 3.Let's build environment with Makefile
 
 This dot file is for Debian Linux. I created it by referring to
 [masasam/dotfiles](https://github.com/masasam/dotfiles).
 
 Automation with Make is recommended as it is very easy to customize.
 
-## First, do a clean install of debian from the install USB
+## 4.First, do a clean install of debian from the install USB
 After a clean install, prepare manually before running make.
 The guidance is as follows:
 
