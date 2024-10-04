@@ -84,7 +84,7 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 dotfilesってのはわかったけど、具体的な手順がわからないという人のために簡単な作り方を書説明します。
 
 * GitHubにてdotfilesという名前のリポジトリを作成する（READMEだけは作成しておく）
-* 自分のPCにdotfilesのリポジトリを git cloneしてくる（私の場合なら `~/src/github.com/minrugh/dotfiles'）
+* 自分のPCにdotfilesのリポジトリを git cloneしてくる（私の場合なら `~/src/github.com/minrugh/dotfiles`）
 * とりあえず、使っているシェルの設定（~/.bashrc）をdotfiles以下にコピーする
 * その他必要なドットファイルや設定をデレクトリー構成ごとコピーします（前項の構成を参考に…）
 * あとはdotfiles以下でコミットしてpushしたら出来上がり
