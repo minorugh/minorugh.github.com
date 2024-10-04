@@ -66,10 +66,10 @@ After this, refer to makefile
 How to restore with makefile,Please refer to 
 [masasam/dotfiles](https://github.com/masasam/dotfiles). 
 
-## My GNU Emacs configuration 
+## My Emacs configuration 
 Detailed explanation is written at the following URL.
 
-* [https://minorugh.github.io/.emacs.d](https://minorugh.github.io/.emacs.d/) 
+* [https://minorugh.github.io](https://minorugh.github.io/init.html) 
 
 ----
 
