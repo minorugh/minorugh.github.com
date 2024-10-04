@@ -8,15 +8,15 @@ layout: default
 
 ## 1. Dotfiles
 
-* [dotfiles](https://minorugh.github.io/emacs/dotfiles.html) 
+* [dotfiles](https://minorugh.github.io/dotfiles.html) 
 
 ## 2. Emacs Configulation
 
-* [init.el](https://minorugh.github.io/emacs/init.html) 
+* [init.el](https://minorugh.github.io/init.html) 
 
 ## 3. Qiita Articles
 
-* [qiita](https://minorugh.github.io/emacs/qiita.html)
+* [qiita](https://minorugh.github.io/qiita.html)
 
 ## 4. Links
 
