@@ -12,12 +12,22 @@ title: Dotfiles
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
 
 ```
-### 1.1. dotfilesとは？
+### 1.1. わたしの環境
+このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
+
+* Debian 12.7  86_64 GNU/Linux
+* ThinkPad P1 Gen1 i7/32GB/1TB
+* ThinkPad X250 i5/16GB/500GB
+* zsh 5.9
+* vim 9.0
+* GNU Emacs 29.4
+
+### 2. dotfilesとは？
 dotfilesとは、ホームディレクトリに置いてあるドット(.)から始まる設定ファイル(.bashrcとか)を管理しているリポジトリのことです。シェルやエディタの設定からアプリケーションの設定まで幅広いものが置かれています。
 
 dotfilesを極めることで、メインマシンの更新時や複数端末などで自分の育て上げた快適な作業環境を瞬時にサクっと再生したり移植することができます。これからの時代の働き方には効率的なdotfilesが必須だと言えます。
 
-### 1.2. dotfilesの構成
+### 2.1. dotfilesの構成
 dotfilesの詳しい作り方は後述しますが、出来上がった私の今の dotfilesは以下のような構成になっています。
 
 ```codesession
@@ -49,18 +59,8 @@ dotfilesの詳しい作り方は後述しますが、出来上がった私の今
 ```
 ※ Githubに構築したリポジトリをGit管理する上でローカルマシンにも同じデレクトリー `~/src/github.com/<ユーザーID>/' を作成しておきます。私の場合は、`~/src/github.com/minorugh/' になります。
 
-### 1.3. わたしの環境
-このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
 
-* Debian 12.7  86_64 GNU/Linux
-* ThinkPad P1 Gen1 i7/32GB/1TB
-* ThinkPad X250 i5/16GB/500GB
-* zsh 5.9
-* vim 9.0
-* GNU Emacs 29.4
-
-
-## 2. dotfilesの作り方
+## 3. dotfilesの作り方
 dotfilesってのはわかったけど、具体的な手順がわからないという人のために簡単な作り方を書説明します。
 
 * GitHubにてdotfilesという名前のリポジトリを作成する(READMEだけは作成しておく)
@@ -71,7 +71,7 @@ dotfilesってのはわかったけど、具体的な手順がわからないと
 * あとはdotfiles以下でコミットしてpushしたら出来上がり :tada:
 * 同じように管理したいものdotfilesディレクトリにコピーしてシンボリックリンクを貼っていく
 
-### 2.1. 事前の準備
+### 3.1. 事前の準備
 makefileで自動実行させる前に以下のような手順が必要です。
 * 
 * 3.1. 予めOSインストール用のUSBを作成しておきます。
