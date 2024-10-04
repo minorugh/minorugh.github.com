@@ -61,21 +61,13 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 ## 3. dotfilesの作り方
 dotfilesってのはわかったけど、具体的な手順がわからないという人のために簡単な作り方を書説明します。
 
-* GitHubにてdotfilesという名前のリポジトリを作成する(READMEだけは作成しておく)
-* 自分のPCにdotfilesのリポジトリを git cloneしてくる(私の場合なら `~/src/github.com/minrugh/' でterminalを起動して git clone)
-* とりあえず、使っているシェルの設定(~/.bashrc)をdotfiles以下にコピーする
-* 元の~/.bashrcを退避させる mkdir backup && mv ~/.bashrc backup
-* dotfilesの.bashrcにシンボリックリンクを貼る ln -s ~/dotfiles/.bashrc ~
-* あとはdotfiles以下でコミットしてpushしたら出来上がり :tada:
-* 同じように管理したいものdotfilesディレクトリにコピーしてシンボリックリンクを貼っていく
+* GitHubにてdotfilesという名前のリポジトリを作成する（READMEだけは作成しておく）
+* 自分のPCにdotfilesのリポジトリを git cloneしてくる（私の場合なら `~/src/github.com/minrugh/dotfiles'）
+* とりあえず、使っているシェルの設定（~/.bashrc）をdotfiles以下にコピーする
+* その他必要なドットファイルや設定をデレクトリー構成ごとコピーします（前項の構成を参考に…）
+* あとはdotfiles以下でコミットしてpushしたら出来上がり
 
-### 3.1. 事前の準備
-makefileで自動実行させる前に以下のような手順が必要です。
-* 
-* 3.1. 予めOSインストール用のUSBを作成しておきます。
-* 3.2. インストールUSBからOS（debian/macOSなど）をクリーンインストールします。
-* 3.3. makeで自動実行させる前にいくつかの準備を手動で行います。
-* 3.4. ターミナルからmakefileを走らせる。
+## 4. Makefileの作り方
 
 ```
 ## =====================================================================
