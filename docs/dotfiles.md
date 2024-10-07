@@ -3,7 +3,7 @@ layout: default
 title: Dotfiles
 ---
 
-# Dotfiles for Debian Linux
+# dotfiles based on Makefile
 
 ## 1. はじめに
 ```note
