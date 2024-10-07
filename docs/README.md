@@ -6,7 +6,7 @@ layout: default
 ---
 # My Online Documents
 
-## 1. Dotfiles based on Makefile
+## 1. dotfiles based on Makefile
 
 * [dotfiles](https://minorugh.github.io/dotfiles.html) 
 
@@ -14,7 +14,7 @@ layout: default
 
 * [init.el](https://minorugh.github.io/init.html) 
 
-## 3. Qiita Articles
+## 3. Qiita Post Articles
 
 * [qiita](https://minorugh.github.io/qiita.html)
 
