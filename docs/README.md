@@ -24,5 +24,3 @@ layout: default
 * [gospel-haiku.com](https://gospel-haiku.com) 
 * [mioru's Blog](https://blog.gospel-haiku.com/post/) 
 * [haiku & essay](https://es.gospel-haiku.com/post/) 
-
-
