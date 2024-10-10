@@ -94,7 +94,7 @@ Since configuration file of [rclone](https://github.com/rclone/rclone) is encryp
 you install and set up [git-crypt](https://github.com/AGWA/git-crypt) at first step.
 Backup directory sample is [here](https://github.com/masasam/dotfiles/tree/master/backup_sample).
 
-## How to use git-crypt
+### 3.1. git-cryptの使い方
 
 	git-crypt init
 
@@ -117,7 +117,7 @@ It is encrypted except in your laptop or desktop after you commit rclone.conf.
 
 After cloning a repository with encrypted files, unlock with gnupg at this command.
 
-#### Criteria of things managed by backup directory
+### 3.2. バックアップディレクトリが管理するものの基準
 
 - What can not be placed on github
 
@@ -132,7 +132,7 @@ After cloning a repository with encrypted files, unlock with gnupg at this comma
 
    Sylpheed configuration file and mail data etc.
 
-# Arch Linux install
+## 4. Debian Linux のインストール
 
 Why Arch linux?
 
@@ -162,7 +162,7 @@ Run the following command, replacing /dev/sdx with your drive, e.g. /dev/sdb. (D
 
 	sudo dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
-#### Boot in USB memory
+### 4.1. USBメモリーで起動
 
 Change it to boot from usb in BIOS UEFI.
 
@@ -317,7 +317,7 @@ Set boot loader
 	grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 	grub-mkconfig -o /boot/grub/grub.cfg
 
-#### Prepare drivers and Xorg Gnome
+### 4.2 ドライバとXorg Gnomeの準備
 
 Install drivers that match your environment
 
@@ -357,7 +357,7 @@ For thinkpad x1 carbon gen10
 
 	pacman -S sof-firmware fprintd
 
-#### Login with ${USER} to arrange home directory
+### 4.3. ホームディレクトリをアレンジするために${USER}でログインする。
 
 Turn off autosuspend at config
 
@@ -376,7 +376,7 @@ Install yay
 	makepkg -si
 	yay -S termite
 
-#### Preparing dotfiles
+### 4.4. ドットファイルの準備
 
 	sudo pacman -S gvfs gvfs-smb git-crypt gnupg openssh
 
@@ -411,7 +411,7 @@ Run the following after set the ssh key
 	cd ~/Pictures
 	git clone -b image git@github.com:masasam/image.git
 
-### dconf setting
+### 4.5. dconfの設定
 
     sudo pacman -S dconf-editor
 
@@ -432,7 +432,7 @@ Run the following after set the ssh key
 
 --------------------------------------
 
-You can make install from here
+# You can make install from here
 
 --------------------------------------
 
