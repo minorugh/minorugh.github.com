@@ -21,7 +21,7 @@ makeのないディストリビューションは存在しないので、
 このコマンドで簡単に開発環境を構築できます。
 
 ``` shell
-    make install
+	make install
 ```
 
 ノートパソコンのセッティングを再度心配する必要はなくなります。
@@ -31,7 +31,7 @@ makeのないディストリビューションは存在しないので、
 make installの後、以下のコマンドでdotfilesをデプロイできます。
 
 ``` shell
-    make init
+	make init
 ```
 
 
@@ -40,7 +40,7 @@ make installの後、以下のコマンドでdotfilesをデプロイできます
 このMakefileの引数はこのコマンドで見ることができる。
 
 ``` shell
-    make
+	make
 ```
 
 
@@ -48,10 +48,15 @@ make installの後、以下のコマンドでdotfilesをデプロイできます
 
 ### 2.4. allinstall のコマンド
 
+``` shell
 	make allinstall
+```
 
-You can install all with this command.
-You can install anything written after allinstall in the makefile.
+
+このコマンドでallをインストールできます。
+
+makefileのallinstallの後に書かれているものは何でもインストールできます。
+
 
     make backup
 
@@ -65,7 +70,7 @@ You can backup packages all with this command.
 
 You can update packages all with this command.
 
-## Synchronize backup directory to cloud
+## 3. バックアップディレクトリをクラウドに同期
 
 [rclone](https://github.com/rclone/rclone) setting
 
