@@ -6,7 +6,51 @@
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
 ```
 ![emacs](https://minorugh.github.io/img/emacs29.4.png)
+### 1.1. わたしの環境
+このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
 
+* Debian 12.7  86_64 GNU/Linux
+* ThinkPad P1 Gen1 i7/32GB/1TB
+* ThinkPad X250 i5/16GB/500GB
+* zsh 5.9
+* vim 9.0
+* GNU Emacs 29.4
+
+### 1.2. dotfilesとは？
+dotfilesとは、ホームディレクトリに置いてあるドット（.）から始まる設定ファイル（.bashrcとか）を管理しているリポジトリのことです。シェルやエディタの設定からアプリケーションの設定まで幅広いものが置かれています。
+
+dotfilesを極めることでメインマシンを更新したりサブマシーンに同じ環境を移植したりするときに日々育て上げた快適な作業環境を瞬時にサクっと再生・移植することが出来ます。これからの時代の開発環境には効率的な dotfilesが必須だと言えます。
+
+### 1.3. dotfilesの構成
+dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以下のような構成になっています。
+
+```codesession
+~/src/github.com/minorugh/dotfiles
+│
+├── .config/
+├── .emacs.d/
+├── .font/
+├── .git/
+├── .gnupg/
+├── .local/
+├── .vim/
+├── bin/
+├── devils/
+├── etc/
+├── tex/
+├── .Xmodmap
+├── .Xresources
+├── .autologin.sh
+├── .bashrc
+├── .gitignore
+├── .tmux.conf
+├── .vimrce
+├── .zprofile
+├── .zshrc
+├── Makefile
+└── README.md
+
+```
 
 ## 2. Makefile で環境を構築しよう
 makeのないディストリビューションは存在しないので、
