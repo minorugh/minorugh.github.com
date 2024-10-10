@@ -44,7 +44,7 @@ make installの後、以下のコマンドでdotfilesをデプロイできます
 ```
 
 
-![make](https://minorugh.github.io/img/make.png)
+![make](https://minorugh.github.io/img/makelist.png)
 
 ### 2.4. allinstall のコマンド
 
