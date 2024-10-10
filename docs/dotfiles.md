@@ -1,25 +1,20 @@
-# Dotfiles based on Makefile
+# Dotfiles on Makefile
 
 ## はじめに
 ```note
-* ここは [@minoruGH](https://twitter.com/minorugh) の dotfiles の一部を解説しているページです。
 * 私の ditfiles は Debian Linux 用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました。
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
-
 ```
 ![emacs](https://minorugh.github.io/img/emacs29.4.png)
 
 
 ## Makefile で環境を構築しよう
-
-```note
-この dotfile は Arch linux 用です。  makeのないディストリビューションは存在しないので、
+makeのないディストリビューションは存在しないので、
 [Makefile](https://github.com/minorugh/dotfiles/blob/master/Makefile)を
 作れば、どのディストリビューションにも対応できます。  さっそく
 [Makefile](https://github.com/minorugh/dotfiles/blob/master/Makefile)を
 作ってみましょう。
 
-```
 
 ### With Makefile, such a good thing
 
