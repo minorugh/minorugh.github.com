@@ -2,7 +2,7 @@
 
 ## はじめに
 ```note
-* 私の ditfiles は Debian Linux 用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました。
+* この ditfilesは Debian Linux用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました。
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
 ```
 ![emacs](https://minorugh.github.io/img/emacs29.4.png)
