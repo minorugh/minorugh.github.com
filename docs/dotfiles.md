@@ -1,6 +1,6 @@
 # Dotfiles on Makefile
 
-## はじめに
+## 1. はじめに
 ```note
 * この ditfilesは Debian Linux用です。[masasam/dotfiles](https://github.com/masasam/dotfiles) を参考に作成しました。
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
@@ -8,7 +8,7 @@
 ![emacs](https://minorugh.github.io/img/emacs29.4.png)
 
 
-## Makefile で環境を構築しよう
+## 2. Makefile で環境を構築しよう
 makeのないディストリビューションは存在しないので、
 [Makefile](https://github.com/minorugh/dotfiles/blob/master/Makefile)を
 作れば、どのディストリビューションにも対応できます。  さっそく
@@ -16,29 +16,37 @@ makeのないディストリビューションは存在しないので、
 作ってみましょう。
 
 
-### With Makefile, such a good thing
+### 2.1. Makefileを使うととても便利です
 
-Easy to build development environment with this command.
+このコマンドで簡単に開発環境を構築できます。
 
+``` shell
     make install
+```
 
-I never have to worry about setting my laptop again.
+ノートパソコンのセッティングを再度心配する必要はなくなります。
 
-### Deploying dotfiles can be done in a moment
+### 2.2. dotfilesのデプロイはすぐにできます
 
-After make install you can deploy dotfiles with this command.
+make installの後、以下のコマンドでdotfilesをデプロイできます。
 
+``` shell
     make init
+```
 
-### With Makefile, you will be able to recover your usual environment in 1 hour
 
-You can see argument on this Makefile with this command.
+### 2.3. Makefileを使えばいつもの環境を 1 時間で復旧できます
 
+このMakefileの引数はこのコマンドで見ることができる。
+
+``` shell
     make
+```
 
-![make](https://raw.githubusercontent.com/masasam/image/image/make.png)
 
-### Commands for allinstall
+![make](https://minorugh.github.io/img/make.png)
+
+### 2.4. allinstall のコマンド
 
 	make allinstall
 
