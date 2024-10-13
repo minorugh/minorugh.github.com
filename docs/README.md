@@ -22,7 +22,7 @@ layout: default
 
 * [qiita](https://minorugh.github.io/qiita.html)
 
-## 4. Links
+## 5. Links
 
 * [snap.minorugh.com](https://snap.minorugh.com) 
 * [gospel-haiku.com](https://gospel-haiku.com) 
