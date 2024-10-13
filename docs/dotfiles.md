@@ -29,6 +29,7 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 ├── .git/
 ├── .gnupg/
 ├── .local/
+├── .mutt/
 ├── .vim/
 ├── bin/
 ├── devils/
@@ -39,6 +40,7 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 ├── .autologin.sh
 ├── .bashrc
 ├── .gitignore
+├── .muttrc
 ├── .tmux.conf
 ├── .vimrce
 ├── .zprofile
