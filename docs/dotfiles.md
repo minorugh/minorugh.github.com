@@ -6,6 +6,7 @@
 * dotfils本体は、[GitHub](https://github.com/minorugh/dotfiles) に公開しています。
 ```
 ![emacs](https://minorugh.github.io/img/emacs29.4.png)
+![emacs](https://minorugh.github.io/img/neomutt.png)
 ### 1.1. わたしの環境
 このドキュメントを参考に dotfilesを構築されるときに環境による差異が発生する可能性が高いので私の使っている環境を書いておきます。
 
