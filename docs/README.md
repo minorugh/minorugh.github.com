@@ -6,7 +6,7 @@ layout: default
 ---
 # My Online Documents
 
-## 1. dotfiles based on Makefile
+## 1. Dotfiles on Makefile
 
 * [dotfiles](https://minorugh.github.io/dotfiles.html) 
 
