@@ -14,7 +14,11 @@ layout: default
 
 * [init.el](https://minorugh.github.io/init.html) 
 
-## 3. Qiita Post Articles
+## 3. Neomutt Configulation
+
+* [neomutt](https://minorugh.github.io/neomutt.html)
+
+## 4. Qiita Post Articles
 
 * [qiita](https://minorugh.github.io/qiita.html)
 
