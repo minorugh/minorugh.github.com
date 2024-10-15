@@ -14,11 +14,7 @@ title: Neomutt Configuration
 │     └─ addressbook
 │
 ├── .mutt/
-│     ├─ color/
-│     │   ├─ dracula.rc
-│     │   ├─ solarized.rc
-│     │   └─ zenburn.rc
-│     │
+│     ├─ dracula.muttrc
 │     ├─ certificates
 │     ├─ mailcap
 │     ├─ password.rc
@@ -130,6 +126,10 @@ unset markers              # no ugly plus signs
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
 
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
 # Sidebar Navigation ---------------------------------------
 bind index,pager ]   sidebar-next
 bind index,pager [   sidebar-prev
@@ -152,18 +152,12 @@ bind pager l display-toggle-weed      # header suppression switching
 bind index,pager F forward-message    # Forwarding Mail
 
 # # Color settings for mutt --------------------------------
-#source ~/.mutt/color/masasam.rc
-#source ~/.mutt/color/solarized.rc
-#source ~/.mutt/color/neonwolf.rc
-#source ~/.mutt/color/vombatidae.rc
-#source ~/.mutt/color/zenburn.rc
 source ~/.mutt/color/dracula.rc
 
 # .muttrc ends here
 ############################################################
 
 ```
-
 
 
 導入の記録と設定をここにまとめていく。
