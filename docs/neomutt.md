@@ -10,15 +10,22 @@ title: Neomutt Configuration
 ```codesession
 ~/
 │
+├── Dropbox
+│     └─ backup
+│          └─ mutt
+│              ├─ password.rc
+│              └─ signature.rc
+│
 ├── .abook/
 │     └─ addressbook
 │
 ├── .mutt/
 │     ├─ dracula.muttrc
+│     ├─ nord.muttrc
 │     ├─ certificates
 │     ├─ mailcap
-│     ├─ password.rc
-│     └─ signature.rc
+│     ├─ password-sample.rc
+│     └─ signature-sample
 │
 └── .muttrc
 
