@@ -70,24 +70,11 @@ set mailcap_path = ~/.mutt/mailcap
 set print_command="nkf -em | e2ps -size 11 -head muttmail | lpr"
 
 # notify-send ----------------------------------------------
-set new_mail_command="notify-send --icon='/usr/share/pixmaps/neomutt.xpm'\
-'New Email' '%n new messages, %u unread.' &"
+set new_mail_command="notify-send --icon='/usr/share/pixmaps/neomutt.xpm' 'New Email' '%n new messages, %u unread.' &"
 
 # Open URL using w3m ---------------------------------------
 macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: \
 set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
-
-# Tips from "https://hanagurotanuki.blogspot.com/2015/04/mutturlw3m.html?utm_source=pocket_shared#google_vignette"
-# -----------------------------------------------------------
-# After typing Ctrl-B to launch w3m, type : (a colon) to tell w3m to convert URL strings to links.
-# w3m's Option Setting Panel (type o) and set the "Treat URL-like strings as links in all pages" to YES.
-# Then you won't have to keep typing : as you page through the message.
-# ----------------------------------------------------------
-# Open w3m url in an external plaza--------------------------
-# Open w3m, type o to open the Option Setting Panel,
-# scroll down to "External Program Settings" and set the "External Browser" or "Second External 
-# Browser" to "firefox" or "google-chrome". Select "OK" to save the setting.
-# To use the External Browser, type M to view the current page or <Esc>M to follow a link; 
 
 # Change the following line to a different editor you prefer.
 set editor="emacsclient"
@@ -108,8 +95,7 @@ set status_chars  = " *%A"
 set status_format = "---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]---%>-%?p?( %p postponed )?---"
 
 # Index View Options ---------------------------------------
-set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
+set index_format="%4C %Z %<[y?%<[d?%[%H:%M           ]&%[%m/%d (%a) %H:%M]>&%[%Y/%m/%d %H:%M]> %-15.15L (%?l?%4l&%4c?) %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
 set uncollapse_jump                        # don't collapse on an unread message
@@ -117,7 +103,7 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Pager View Options ---------------------------------------
-set pager_index_lines = 10 # number of index lines to show
+set pager_index_lines =  8 # number of index lines to show
 set pager_context = 3      # number of context lines to show
 set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
@@ -139,8 +125,8 @@ bind index,pager \cv sidebar-toggle-visible
 # Index Key Bindings ---------------------------------------
 bind index,attach g first-entry       # Go to first entry
 bind index,attach G last-entry        # Go to last entry
-bind index,pager f next-page          # Go to next page
-bind index,pager b previous-page      # Go to previous page
+bind index,pager  f next-page         # Go to next page
+bind index,pager  b previous-page     # Go to previous page
 
 # Pager Key Bindings ---------------------------------------
 bind pager g top                      # Go to the top of the email
@@ -151,14 +137,80 @@ bind pager h exit                     # Exit Menu
 bind pager l display-toggle-weed      # header suppression switching
 bind index,pager F forward-message    # Forwarding Mail
 
-# # Color settings for mutt --------------------------------
-source ~/.mutt/color/dracula.rc
+# Color settings for mutt --------------------------------
+#source ~/.mutt/dracula.muttrc
+source ~/.mutt/nord.muttrc
+
 
 # .muttrc ends here
 ############################################################
-
 ```
 
 
 導入の記録と設定をここにまとめていく。
+
+## Makefile
+Debian12で使った Makefailです。
+
+``` makefile
+neomutt: ## Init neomutt mail client with abook
+	sudo apt install neomutt abook w3m
+	mkdir -p ${HOME}/.mutt
+	ln -vsf {${PWD},${HOME}}/.muttrc
+	ln -vsf {${PWD},${HOME}}/.w3m/keymap
+	for item in mailcap certifcates dracula.muttrc nord.muttrc; do
+		ln -vsf {${PWD},${HOME}}/.mutt/$$item; done
+	for item in password.rc signature; do ln -vsf {${HOME}/Dropbox/backup/mutt,${HOME}/.mutt}/$$item; done
+	test -L ${HOME}/.abook || rm -rf ${HOME}/.abook
+	ln -vsfn {${HOME}/Dropbox/backup/mutt,${HOME}}/.abook
+
+mutt.sh: ## Change startup directory so that attachments are stored in ~/Downloads.
+	sudo ln -vsfn ${PWD}/bin/neomutt.sh /usr/local/bin
+	sudo chmod +x /usr/local/bin/neomutt.sh
+	ln -vsfn {${PWD},${HOME}}/.local/share/applications/neomutt.desktop
+
+dracula-theme: ## Install dracula theme for gnome-terminal
+	cd ${HOME}/Downloads
+	git clone https://github.com/dracula/gnome-terminal
+	cd gnome-terminal && ./install.sh
+	rm -fr ${HOME}/Downloads/gnome-terminal
+
+nord-theme: ## Install dracula theme for gnome-terminal
+	sudo apt install dconf-cli uuid-runtime
+	cd ${HOME}/Downloads
+	git clone https://github.com/nordtheme/gnome-terminal.git
+	cd gnome-terminal/src && ./nord.sh
+	rm -fr ${HOME}/Downloads/gnome-terminal
+
+```
+
+### 認証情報ファイルの作成
+多くの導入Tipsでは認証情報を設定したファイルをgpg化することを勧めていますが面倒なので私の場合は `~/Dropbox/backup/mutt` に保存した生ファイルからシンボリックリンクして使っています。Dropboxの管理者からは見えてしまうことになりますが割り切ることにしました。
+
+内容は、`.mutt`内の `password-sample.rc` `signature-sample` を参照して作成します。
+
+### neomuttのインストールと設定 
+認証ファイルの作成、保存が終わったらあとはターミナルから`make neomutt`するだけで neomuttのinstallが完了します。
+
+### gnome-terminal のthemeを変更する
+* nemuttのcolor設定は、dracura.muttrc nead.rc の二種類からどちらかを選べるようにしています。
+* その設定は、`~/neomuttrc` の最終行にあります。
+* その場合、gnome-terminal のcolor-theme もそれぞれ選んだ方に合わせる必要があります。
+
+### MuttのURLをw3mを使って開く
+Webでヒットするmutt導入Tipsはどれも古く、特に urlviewを使った仕組みはあまり快適ではありません。
+メール本文のURLにはリンクははられているのでマウスで`右クリック→リンクを開く` を選べばプラウザアプリが起動します。
+
+ただ、キーボードだけで操作できる/する…というのがMuttの基本コンセプトなので調べてたら素敵なTipsが見つかりました。
+* [MuttのURLをw3mを使って開く](https://hanagurotanuki.blogspot.com/2015/04/mutturlw3m.html?utm_source=pocket_shared#google_vignette) 
+
+``` dotenv
+macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: \
+set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+```
+
+
+
+w3m画面から Alt-Shift-m でw3mに設定した外部プラウザが開く。
+
 
