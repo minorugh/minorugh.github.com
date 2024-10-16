@@ -208,9 +208,18 @@ Webでヒットするmutt導入Tipsはどれも古く、特に urlviewを使っ�
 macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: \
 set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
 ```
+Tips内の説明では、`C-b`でw3m画面にしたあと[:]を叩き、URLを選んで[Enter]でW3mで見るという仕組みですがこれも極めて使い勝手が悪いです。
 
+w3m画面からは Alt-Shift-m でw3mに設定した外部プラウザが開く…という機能があるのでこれを活用します。
+手順は以下のとおりです。
 
+1. `C-b`で開いたw3m上で[o]を押すとw3mの設定画面がでます。
+2. 雑多な設定グループに「全てのページのURL風の文字列をリンクする」をyesにします。
+3. 外部プログラムの「外部プラウザ2」に google-chrome（またはfirefox）を書き込みます。
+4. 全て修正したら [OK]ボタンを押して設定画面を閉じます。
 
-w3m画面から Alt-Shift-m でw3mに設定した外部プラウザが開く。
+以上の設定が済んだらneomuttを再起動して動作を確認してみましょう。
+メール表示から`C-b`でw3m画面に変わるので開きたいURLを選んで `Alt+Shift-m` で外部プラウザが立ち上がります。
+
 
 
