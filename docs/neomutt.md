@@ -27,6 +27,9 @@ title: Neomutt Configuration
 │     ├─ password-sample.rc
 │     └─ signature-sample
 │
+├── .abook/
+│     └─ addressbook
+│
 └── .muttrc
 
 ```
@@ -198,6 +201,14 @@ nord-theme: ## Install dracula theme for gnome-terminal
 
 ### neomuttのインストールと設定 
 認証ファイルの作成、保存が終わったらあとはターミナルから`make neomutt`するだけで neomuttのinstallが完了します。
+
+installが終わったらターミナルから`$ neomutt`と入力して起動するかどうか確認しておきましょう。
+
+### muttの起動用スクリプトを作る
+
+
+
+
 
 ### gnome-terminal のthemeを変更する
 * nemuttのcolor設定は、dracura.muttrc nead.rc の二種類からどちらかを選べるようにしています。

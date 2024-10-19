@@ -23,14 +23,17 @@ dotfilesの詳しい作り方は後述しますが、私の今の dotfilesは以
 ```codesession
 ~/src/github.com/minorugh/dotfiles
 │
+├── .abook/
 ├── .config/
 ├── .emacs.d/
 ├── .font/
 ├── .git/
+├── .git-crypt/
 ├── .gnupg/
 ├── .local/
 ├── .mutt/
 ├── .vim/
+├── .w3m/
 ├── bin/
 ├── devils/
 ├── etc/
